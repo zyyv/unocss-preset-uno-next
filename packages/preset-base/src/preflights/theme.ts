@@ -1,7 +1,6 @@
 import type { Preflight } from '@unocss/core'
 import type { Theme } from '../theme/types'
 
-// 驼峰转连字符
 function camelToHyphen(str: string) {
   return str.replace(/[A-Z]/g, '-$&').toLowerCase()
 }
