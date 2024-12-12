@@ -1,7 +1,7 @@
 import type { CSSObject } from '@unocss/core'
 
 export interface Colors {
-  [key: string]: Colors & { DEFAULT?: string } | string
+  [key: string]: Colors | string
 }
 
 export interface Theme {

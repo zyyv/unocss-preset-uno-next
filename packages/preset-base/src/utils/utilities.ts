@@ -105,29 +105,9 @@ export function parseColor(body: string, theme: Theme): ParsedColorValue | undef
     return
 
   let color: string | undefined
-  const bracket = h.bracketOfColor(main)
-  const bracketOrMain = bracket || main
-
-  if (h.numberWithUnit(bracketOrMain))
-    return
-
-  if (/^#[\da-f]+$/i.test(bracketOrMain))
-    color = bracketOrMain
-  else if (/^hex-[\da-fA-F]+$/.test(bracketOrMain))
-    color = `#${bracketOrMain.slice(4)}`
-  else if (main.startsWith('$'))
-    color = h.cssvar(main)
-
-  color = color || bracket
-
-  if (!color) {
-    const colorData = getThemeColor(theme, [main])
-    if (typeof colorData === 'string')
-      color = colorData
-  }
-
   let no = 'DEFAULT'
-  if (!color) {
+
+  if (theme.color?.[name]) {
     let colorData
     const [scale] = colors.slice(-1)
     if (/^\d+$/.test(scale)) {
@@ -151,6 +131,31 @@ export function parseColor(body: string, theme: Theme): ParsedColorValue | undef
     }
   }
 
+  const bracket = h.bracketOfColor(main)
+  const bracketOrMain = bracket || main
+
+  if (h.numberWithUnit(bracketOrMain))
+    return
+
+  if (/^#[\da-f]+$/i.test(bracketOrMain))
+    color = bracketOrMain
+  else if (/^hex-[\da-fA-F]+$/.test(bracketOrMain))
+    color = `#${bracketOrMain.slice(4)}`
+  else if (main.startsWith('$'))
+    color = h.cssvar(main)
+
+  color = color || bracket
+
+  if (!color) {
+    const colorData = getThemeColor(theme, [main])
+    if (typeof colorData === 'string')
+      color = colorData
+  }
+
+  if (!color) {
+
+  }
+
   return {
     opacity,
     name,
@@ -159,6 +164,10 @@ export function parseColor(body: string, theme: Theme): ParsedColorValue | undef
     cssColor: parseCssColor(color),
     alpha: h.bracket.cssvar.percent(opacity ?? ''),
   }
+}
+
+export function parseThemeColor(colors: string[], theme: Theme) {
+
 }
 
 /**
