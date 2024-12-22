@@ -1,5 +1,5 @@
 import { defineConfig, presetUno } from 'unocss'
-import { presetStarter } from './packages/preset-wind-v4/src'
+import { presetStarter } from './packages/preset-mini/src'
 
 // Just for Vscode Extension
 

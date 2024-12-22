@@ -1,6 +1,6 @@
 import { createGenerator } from 'unocss'
 import { expect, it } from 'vitest'
-import { presetWindV4 } from '../packages/preset-wind-v4/src'
+import { presetWindV4 } from '../packages/preset-mini/src'
 
 it('presetStarter', async () => {
   const uno = await createGenerator({
