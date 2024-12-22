@@ -15,7 +15,7 @@ function themeToCSSVars(theme: Theme): string {
     for (const key in obj) {
       if (key === 'DEFAULT') {
         if (Object.keys(obj).length === 1) {
-          cssVariables += `--${prefix}: ${obj[key].replace(alphaPlaceholdersRE, '1')};\n`
+          cssVariables += `${camelToHyphen(`--${prefix}`)}: ${obj[key].replace(alphaPlaceholdersRE, '1')};\n`
         }
         continue
       }
@@ -23,13 +23,13 @@ function themeToCSSVars(theme: Theme): string {
         process(obj[key], `${prefix}-${key}`)
       }
       else {
-        cssVariables += `--${prefix}-${key}: ${obj[key].replace(alphaPlaceholdersRE, '1')};\n`
+        cssVariables += `${camelToHyphen(`--${prefix}-${key}`)}: ${obj[key].replace(alphaPlaceholdersRE, '1')};\n`
       }
     }
   }
 
   for (const key in theme) {
-    process((theme as any)[key], camelToHyphen(key))
+    process((theme as any)[key], key)
   }
 
   return cssVariables
