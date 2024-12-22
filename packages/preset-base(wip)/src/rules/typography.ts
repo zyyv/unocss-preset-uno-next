@@ -1,5 +1,5 @@
+import type { CSSObject, Rule } from '@unocss/core'
 import type { Theme } from '../theme'
-import { type CSSObject, escapeRegExp, type Rule } from '@unocss/core'
 import { getStringComponent, h, parseCssColor } from '../utils'
 import { bracketTypeRe } from '../utils/handlers/regex'
 
@@ -23,11 +23,10 @@ export const fonts: Rule<Theme>[] = [
     const rawColorComment = generator.config.envMode === 'dev' && color ? ` /* ${color} */` : ''
     const css: CSSObject = {}
 
-    if (key != null) {
-      css.color = colorToString(`var(--color-${key})`, opacity) + rawColorComment
-    }
-    else if (color) {
-      css.color = colorToString(color, opacity) + rawColorComment
+    if (color) {
+      css['--un-text-opacity'] = `${opacity || 100}%`
+      const value = key ? `var(--color-${key})` : color
+      css.color = `color-mix(in oklch, ${value} var(--un-text-opacity), transparent)${rawColorComment}`
     }
 
     return css
@@ -145,14 +144,14 @@ function getThemeColor(theme: Theme, keys: string[]) {
   return obj
 }
 
-const alphaPlaceholders = ['%alpha', '<alpha-value>']
-const alphaPlaceholdersRE = new RegExp(alphaPlaceholders.map(v => escapeRegExp(v)).join('|'))
+// const alphaPlaceholders = ['%alpha', '<alpha-value>']
+// const alphaPlaceholdersRE = new RegExp(alphaPlaceholders.map(v => escapeRegExp(v)).join('|'))
 
-function colorToString(color: string, opacity?: string) {
-  if (opacity) {
-    const alpha = h.bracket.cssvar.percent(opacity ?? '')
-    color = color.replace(alphaPlaceholdersRE, alpha ?? '1')
-    return `color-mix(in oklch, ${color} ${opacity}%, transparent)`
-  }
-  return color
-}
+// function colorToString(color: string, opacity?: string) {
+//   if (opacity) {
+//     const alpha = h.bracket.cssvar.percent(opacity ?? '')
+//     color = color.replace(alphaPlaceholdersRE, alpha ?? '1')
+//     return `color-mix(in oklch, ${color} ${opacity}%, transparent)`
+//   }
+//   return color
+// }

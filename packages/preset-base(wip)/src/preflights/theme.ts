@@ -1,5 +1,8 @@
-import type { Preflight } from '@unocss/core'
 import type { Theme } from '../theme/types'
+import { escapeRegExp, type Preflight } from '@unocss/core'
+
+const alphaPlaceholders = ['%alpha', '<alpha-value>']
+const alphaPlaceholdersRE = new RegExp(alphaPlaceholders.map(v => escapeRegExp(v)).join('|'))
 
 function camelToHyphen(str: string) {
   return str.replace(/[A-Z]/g, '-$&').toLowerCase()
@@ -12,7 +15,7 @@ function themeToCSSVars(theme: Theme): string {
     for (const key in obj) {
       if (key === 'DEFAULT') {
         if (Object.keys(obj).length === 1) {
-          cssVariables += `--${prefix}: ${obj[key]};\n`
+          cssVariables += `--${prefix}: ${obj[key].replace(alphaPlaceholdersRE, '1')};\n`
         }
         continue
       }
@@ -20,7 +23,7 @@ function themeToCSSVars(theme: Theme): string {
         process(obj[key], `${prefix}-${key}`)
       }
       else {
-        cssVariables += `--${prefix}-${key}: ${obj[key]};\n`
+        cssVariables += `--${prefix}-${key}: ${obj[key].replace(alphaPlaceholdersRE, '1')};\n`
       }
     }
   }
