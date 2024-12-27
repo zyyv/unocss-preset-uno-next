@@ -6,11 +6,11 @@ export interface Colors {
 
 export interface Theme {
   font?: Record<string, string>
-  color?: Colors
+  colors?: Colors
   spacing?: Record<string, string>
   breakpoint?: Record<string, string>
   container?: Record<string, string>
-  text: Record<string, string | [string, string | CSSObject] | [string, string, string] | CSSObject>
+  text: Record<string, CSSObject>
   fontWeight?: Record<string, string>
   tracking?: Record<string, string>
   leading?: Record<string, string>

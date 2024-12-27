@@ -1,6 +1,6 @@
 import type { Theme } from './types'
 import { animate } from './animate'
-import { color } from './colors'
+import { colors } from './colors'
 import { blur } from './filters'
 import { font, fontWeight, leading, text, tracking } from './font'
 import { dropShadow, insetShadow, perspective, radius, shadow, spacing } from './misc'
@@ -9,7 +9,7 @@ import { ease } from './transition'
 
 export const theme = {
   font,
-  color,
+  colors,
   spacing,
   breakpoint,
   container,

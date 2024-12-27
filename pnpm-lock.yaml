@@ -38,10 +38,10 @@ importers:
         version: 9.16.0(jiti@2.4.1)
       preset-base:
         specifier: workspace:*
-        version: link:packages/preset-base
+        version: link:packages/preset-base(wip)
       preset-wind-v4:
         specifier: workspace:*
-        version: link:packages/preset-wind-v4
+        version: link:packages/preset-mini
       typescript:
         specifier: 5.7.2
         version: 5.7.2
@@ -58,7 +58,7 @@ importers:
         specifier: ^2.1.4
         version: 2.1.8(@types/node@22.10.1)
 
-  packages/preset-base:
+  packages/preset-base(wip):
     dependencies:
       '@unocss/core':
         specifier: ^0.65.1
@@ -67,7 +67,7 @@ importers:
         specifier: ^0.65.1
         version: 0.65.1
 
-  packages/preset-wind-v4:
+  packages/preset-mini:
     dependencies:
       '@unocss/core':
         specifier: ^0.65.1

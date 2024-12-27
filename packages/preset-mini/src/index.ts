@@ -1,5 +1,5 @@
 import type { Postprocessor, PresetOptions } from '@unocss/core'
-import type { Theme, ThemeAnimation } from './theme'
+import type { Theme } from './theme'
 import { definePreset } from '@unocss/core'
 import { extractorArbitraryVariants } from '@unocss/extractor-arbitrary-variants'
 import { preflights } from './preflights'
@@ -12,7 +12,7 @@ export { preflights } from './preflights'
 export { colors, theme } from './theme'
 export { parseColor } from './utils'
 
-export type { Theme, ThemeAnimation }
+export type { Theme }
 
 export interface DarkModeSelectors {
   /**

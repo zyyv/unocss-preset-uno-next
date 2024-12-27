@@ -1,6 +1,6 @@
-import type { CSSObject, Rule } from '@unocss/core'
+import type { CSSObject, Rule, RuleContext } from '@unocss/core'
 import type { Theme } from '../theme'
-import { getStringComponent, h, parseCssColor } from '../utils'
+import { getStringComponent, h, isCSSMathFn, parseCssColor } from '../utils'
 import { bracketTypeRe } from '../utils/handlers/regex'
 
 export const fonts: Rule<Theme>[] = [
@@ -8,13 +8,17 @@ export const fonts: Rule<Theme>[] = [
   // [/^text-(.+)$/, handleText, { autocomplete: 'text-$fontSize' }],
 
   // // text size
-  // [/^(?:text|font)-size-(.+)$/, handleSize, { autocomplete: 'text-size-$fontSize' }],
+  [/^(?:text|font)-size-(.+)$/, handleSize, { autocomplete: 'text-size-$fontSize' }],
 
-  // // text colors
-  // [/^text-(?:color-)?(.+)$/, handlerColorOrSize, { autocomplete: 'text-$colors' }],
+  // text colors
+  [/^text-(?:color-)?(.+)$/, handlerColorOrSize, { autocomplete: 'text-$colors' }],
 
   // colors
-  [/^(?:color|c)-(.+)$/, ([, body], { theme, generator }): CSSObject | undefined => {
+  [/^(?:color|c)-(.+)$/, createDynamicColorMatcher()],
+]
+
+function createDynamicColorMatcher() {
+  return ([, body]: string[], { theme, generator }: RuleContext<Theme>): CSSObject | undefined => {
     const data = parseColor(body, theme)
     if (!data)
       return
@@ -30,8 +34,28 @@ export const fonts: Rule<Theme>[] = [
     }
 
     return css
-  }],
-]
+  }
+}
+
+function handleSize([, s]: string[], { theme }: RuleContext<Theme>): CSSObject | undefined {
+  if (theme.text?.[s] != null) {
+    return {
+      'font-size': `var(--text-${s}-font-size)`,
+      'line-height': `var(--un-leading, var(--text-${s}--line-height))`,
+    }
+  }
+  else {
+    const d = h.bracket.cssvar.global.rem(s)
+    if (d)
+      return { 'font-size': d }
+  }
+}
+
+function handlerColorOrSize(match: RegExpMatchArray, ctx: RuleContext<Theme>): CSSObject | undefined {
+  if (isCSSMathFn(h.bracket(match[1])))
+    return handleSize(match, ctx)
+  return createDynamicColorMatcher()(match, ctx)
+}
 
 export function splitShorthand(body: string, type: string) {
   const [front, rest] = getStringComponent(body, '[', ']', ['/', ':']) ?? []
@@ -123,7 +147,7 @@ function parseThemeColor(theme: Theme, keys: string[]) {
 }
 
 function getThemeColor(theme: Theme, keys: string[]) {
-  let obj = theme.color as Theme['color'] | string
+  let obj = theme.colors as Theme['colors'] | string
   let index = -1
 
   for (const k of keys) {

@@ -9,5 +9,8 @@ it('presetStarter', async () => {
 
   const { css } = await uno.generate('text-red', { preflights: false })
 
-  expect(css).toMatchInlineSnapshot(`""`)
+  expect(css).toMatchInlineSnapshot(`
+    "/* layer: default */
+    .text-red{--un-text-opacity:1;color:oklch(0.704 0.191 22.216 / var(--un-text-opacity));}"
+  `)
 })

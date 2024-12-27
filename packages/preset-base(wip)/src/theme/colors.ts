@@ -1,6 +1,6 @@
 import type { Theme } from './types'
 
-export const color = {
+export const colors = {
   black: '#000',
   white: '#fff',
   slate: {
@@ -315,39 +315,39 @@ export const color = {
     900: 'oklch(16.84% 0 0)',
     950: 'oklch(13.44% 0 0)',
   },
-  get lightblue() {
-    return this.sky
-  },
-  get lightBlue() {
-    return this.sky
-  },
-  get warmgray() {
-    return this.stone
-  },
-  get warmGray() {
-    return this.stone
-  },
-  get truegray() {
-    return this.neutral
-  },
-  get trueGray() {
-    return this.neutral
-  },
-  get coolgray() {
-    return this.gray
-  },
-  get coolGray() {
-    return this.gray
-  },
-  get bluegray() {
-    return this.slate
-  },
-  get blueGray() {
-    return this.slate
-  },
-} satisfies Theme['color']
+  // get lightblue() {
+  //   return this.sky
+  // },
+  // get lightBlue() {
+  //   return this.sky
+  // },
+  // get warmgray() {
+  //   return this.stone
+  // },
+  // get warmGray() {
+  //   return this.stone
+  // },
+  // get truegray() {
+  //   return this.neutral
+  // },
+  // get trueGray() {
+  //   return this.neutral
+  // },
+  // get coolgray() {
+  //   return this.gray
+  // },
+  // get coolGray() {
+  //   return this.gray
+  // },
+  // get bluegray() {
+  //   return this.slate
+  // },
+  // get blueGray() {
+  //   return this.slate
+  // },
+} satisfies Theme['colors']
 
-Object.values(color as Required<Theme>['color']).forEach((color) => {
+Object.values(colors as Required<Theme>['colors']).forEach((color) => {
   if (typeof color !== 'string' && color !== undefined) {
     color.DEFAULT = color.DEFAULT || color[400] as string
     // Object.keys(color).forEach((key) => {
