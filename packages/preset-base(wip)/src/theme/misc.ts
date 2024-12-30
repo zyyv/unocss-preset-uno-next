@@ -23,8 +23,8 @@ export const shadow = {
   'lg': `var(--un-shadow-inset) 0 10px 15px -3px rgb(0 0 0 / 0.1) var(--un-shadow-inset) 0 4px 6px -4px rgb(0 0 0 / 0.1)`,
   'xl': `var(--un-shadow-inset) 0 20px 25px -5px rgb(0 0 0 / 0.1) var(--un-shadow-inset) 0 8px 10px -6px rgb(0 0 0 / 0.1)`,
   '2xl': `var(--un-shadow-inset) 0 25px 50px -12px rgb(0 0 0 / 0.25)`,
-  // 'none': '0 0 rgb(0 0 0 / 0)',
-  // 'inner': 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
+  'none': '0 0 rgb(0 0 0 / 0)',
+  'inner': 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
 } satisfies Theme['shadow']
 
 export const insetShadow = {
@@ -41,6 +41,15 @@ export const dropShadow = {
   'xl': '0 9px 7px rgb(0 0 0 / 0.1)',
   '2xl': '0 25px 25px rgb(0 0 0 / 0.15)',
 } satisfies Theme['dropShadow']
+
+export const textShadow = {
+  DEFAULT: '0 0 1px rgb(0 0 0 / 0.2), 0 0 1px rgb(1 0 5 / 0.1)',
+  none: '0 0 rgb(0 0 0 / 0)',
+  sm: '1px 1px 3px rgb(36 37 47 / 0.25)',
+  md: '0 1px 2px rgb(30 29 39 / 0.19), 1px 2px 4px rgb(54 64 147 / 0.18)',
+  lg: '3px 3px 6px rgb(0 0 0 / 0.26), 0 0 5px rgb(15 3 86 / 0.22)',
+  xl: '1px 1px 3px rgb(0 0 0 / 0.29), 2px 4px 7px rgb(73 64 125 / 0.35)',
+} satisfies Theme['textShadow']
 
 export const perspective = {
   dramatic: '100px',

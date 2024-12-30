@@ -18,8 +18,10 @@ export interface Theme {
   shadow?: Record<string, string>
   insetShadow?: Record<string, string>
   dropShadow?: Record<string, string>
+  textShadow?: Record<string, string>
   ease?: Record<string, string>
   animate?: Record<string, string>
   blur?: Record<string, string>
   perspective?: Record<string, string>
+  textStrokeWidth?: Record<string, string>
 }

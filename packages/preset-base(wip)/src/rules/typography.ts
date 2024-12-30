@@ -1,11 +1,11 @@
 import type { CSSObject, Rule, RuleContext } from '@unocss/core'
 import type { Theme } from '../theme'
-import { getStringComponent, h, isCSSMathFn, parseCssColor } from '../utils'
+import { getStringComponent, globalKeywords, h, isCSSMathFn, parseCssColor } from '../utils'
 import { bracketTypeRe } from '../utils/handlers/regex'
 
 export const fonts: Rule<Theme>[] = [
   // text
-  // [/^text-(.+)$/, handleText, { autocomplete: 'text-$fontSize' }],
+  [/^text-(.+)$/, handleSize, { autocomplete: 'text-$fontSize' }],
 
   // // text size
   [/^(?:text|font)-size-(.+)$/, handleSize, { autocomplete: 'text-size-$fontSize' }],
@@ -14,10 +14,165 @@ export const fonts: Rule<Theme>[] = [
   [/^text-(?:color-)?(.+)$/, handlerColorOrSize, { autocomplete: 'text-$colors' }],
 
   // colors
-  [/^(?:color|c)-(.+)$/, createDynamicColorMatcher()],
+  [/^(?:color|c)-(.+)$/, createDynamicColorMatcher('color', 'text')],
+
+  // style
+  [/^(?:text|color|c)-(.+)$/, ([, v]) => globalKeywords.includes(v) ? { color: v } : undefined, { autocomplete: `(text|color|c)-(${globalKeywords.join('|')})` }],
+
+  // opacity
+  [/^(?:text|color|c)-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-text-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: '(text|color|c)-(op|opacity)-<percent>' }],
+
+  // weights
+  [
+    /^(?:font|fw)-?([^-]+)$/,
+    ([, s], { theme }) => {
+      const v = theme.fontWeight?.[s] ? `var(--font-weight-${s})` : h.bracket.global.number(s)
+      return {
+        '--un-font-weight': v,
+        'font-weight': v,
+      }
+    },
+    {
+      autocomplete: [
+        '(font|fw)-(100|200|300|400|500|600|700|800|900)',
+        '(font|fw)-$fontWeight',
+      ],
+    },
+  ],
+
+  // leadings
+  [
+    /^(?:font-)?(?:leading|lh|line-height)-(.+)$/,
+    ([, s], { theme }) => {
+      const v = theme.leading?.[s] ? `var(--leading-${s})` : h.bracket.cssvar.global.rem(s)
+      return {
+        '--un-font-weight': v,
+        'line-height': v,
+      }
+    },
+    { autocomplete: '(leading|lh|line-height)-$lineHeight' },
+  ],
+
+  // synthesis
+  ['font-synthesis-weight', { 'font-synthesis': 'weight' }],
+  ['font-synthesis-style', { 'font-synthesis': 'style' }],
+  ['font-synthesis-small-caps', { 'font-synthesis': 'small-caps' }],
+  ['font-synthesis-none', { 'font-synthesis': 'none' }],
+  [/^font-synthesis-(.+)$/, ([, s]) => ({ 'font-synthesis': h.bracket.cssvar.global(s) })],
+
+  // tracking
+  [
+    /^(?:font-)?tracking-(.+)$/,
+    ([, s], { theme }) => {
+      const v = theme.tracking?.[s] ? `var(--tracking-${s})` : h.bracket.cssvar.global.rem(s)
+      return {
+        '--un-tracking': v,
+        'letter-spacing': v,
+      }
+    },
+    { autocomplete: 'tracking-$letterSpacing' },
+  ],
+
+  // word-spacing
+  [
+    /^(?:font-)?word-spacing-(.+)$/,
+    ([, s], { theme }) => {
+      // Use the same variable as tracking
+      const v = theme.tracking?.[s] ? `var(--word-spacing-${s})` : h.bracket.cssvar.global.rem(s)
+      return {
+        '--un-word-spacing': v,
+        'word-spacing': v,
+      }
+    },
+    { autocomplete: 'word-spacing-$wordSpacing' },
+  ],
+
+  // stretch
+  ['font-stretch-normal', { 'font-stretch': 'normal' }],
+  ['font-stretch-ultra-condensed', { 'font-stretch': 'ultra-condensed' }],
+  ['font-stretch-extra-condensed', { 'font-stretch': 'extra-condensed' }],
+  ['font-stretch-condensed', { 'font-stretch': 'condensed' }],
+  ['font-stretch-semi-condensed', { 'font-stretch': 'semi-condensed' }],
+  ['font-stretch-semi-expanded', { 'font-stretch': 'semi-expanded' }],
+  ['font-stretch-expanded', { 'font-stretch': 'expanded' }],
+  ['font-stretch-extra-expanded', { 'font-stretch': 'extra-expanded' }],
+  ['font-stretch-ultra-expanded', { 'font-stretch': 'ultra-expanded' }],
+  [
+    /^font-stretch-(.+)$/,
+    ([, s]) => ({ 'font-stretch': h.bracket.cssvar.fraction.global(s) }),
+    { autocomplete: 'font-stretch-<percentage>' },
+  ],
+
+  // family
+  [
+    /^font-(.+)$/,
+    ([, d], { theme }) => {
+      const v = theme.font?.[d] ? `var(--font-${d})` : h.bracket.cssvar.global(d)
+      return {
+        'font-family': v,
+      }
+    },
+    { autocomplete: 'font-$fontFamily' },
+  ],
 ]
 
-function createDynamicColorMatcher() {
+export const tabSizes: Rule<Theme>[] = [
+  [/^tab(?:-(.+))?$/, ([, s]) => {
+    const v = h.bracket.cssvar.global.number(s || '4')
+    if (v != null) {
+      return {
+        '-moz-tab-size': v,
+        '-o-tab-size': v,
+        'tab-size': v,
+      }
+    }
+  }],
+]
+
+export const textIndents: Rule<Theme>[] = [
+  [/^indent(?:-(.+))?$/, ([, s]) => {
+    const v = h.bracket.number(s)
+    if (v != null) {
+      return { 'text-indent': `calc(var(--spacing) * ${v})` }
+    }
+  }, { autocomplete: 'indent-$textIndent' }],
+]
+
+export const textStrokes: Rule<Theme>[] = [
+  // widths
+  [/^text-stroke(?:-(.+))?$/, ([, s], { theme }) => {
+    return {
+      '-webkit-text-stroke-width': theme.textStrokeWidth?.[s] ? `var(--text-stroke-width-${s})` : h.bracket.cssvar.px(s),
+    }
+  }, { autocomplete: 'text-stroke-$textStrokeWidth' }],
+
+  // colors
+  [/^text-stroke-(.+)$/, createDynamicColorMatcher('-webkit-text-stroke-color', 'text-stroke'), { autocomplete: 'text-stroke-$colors' }],
+  [/^text-stroke-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-text-stroke-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'text-stroke-(op|opacity)-<percent>' }],
+]
+
+export const textShadows: Rule<Theme>[] = [
+  [/^text-shadow(?:-(.+))?$/, ([, s], { theme }) => {
+    const v = theme.textShadow?.[s || 'DEFAULT']
+    if (v != null) {
+      return {
+        '--un-text-shadow': colorableShadows(v, '--un-text-shadow-color').join(','),
+        'text-shadow': 'var(--un-text-shadow)',
+      }
+    }
+    return { 'text-shadow': h.bracket.cssvar.global(s) }
+  }, { autocomplete: 'text-shadow-$textShadow' }],
+  ['text-shadow-none', {
+    '--un-text-shadow': `0 0 var(--un-text-shadow-color, rgb(0 0 0 / 0))`,
+    'text-shadow': `var(--un-text-shadow)`,
+  }],
+
+  // colors
+  [/^text-shadow-color-(.+)$/, createDynamicColorMatcher('--un-text-shadow-color', 'text-shadow'), { autocomplete: 'text-shadow-color-$colors' }],
+  [/^text-shadow-color-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-text-shadow-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'text-shadow-color-(op|opacity)-<percent>' }],
+]
+
+function createDynamicColorMatcher(property: string, varName: string) {
   return ([, body]: string[], { theme, generator }: RuleContext<Theme>): CSSObject | undefined => {
     const data = parseColor(body, theme)
     if (!data)
@@ -28,9 +183,9 @@ function createDynamicColorMatcher() {
     const css: CSSObject = {}
 
     if (color) {
-      css['--un-text-opacity'] = `${opacity || 100}%`
+      css[`--un-${varName}-opacity`] = `${opacity || 100}%`
       const value = key ? `var(--color-${key})` : color
-      css.color = `color-mix(in oklch, ${value} var(--un-text-opacity), transparent)${rawColorComment}`
+      css[property] = `color-mix(in oklch, ${value} var(--un-${varName}-opacity), transparent)${rawColorComment}`
     }
 
     return css
@@ -54,7 +209,7 @@ function handleSize([, s]: string[], { theme }: RuleContext<Theme>): CSSObject |
 function handlerColorOrSize(match: RegExpMatchArray, ctx: RuleContext<Theme>): CSSObject | undefined {
   if (isCSSMathFn(h.bracket(match[1])))
     return handleSize(match, ctx)
-  return createDynamicColorMatcher()(match, ctx)
+  return createDynamicColorMatcher('color', 'text')(match, ctx)
 }
 
 export function splitShorthand(body: string, type: string) {

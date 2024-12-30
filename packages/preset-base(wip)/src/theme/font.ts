@@ -81,3 +81,11 @@ export const leading = {
   relaxed: '1.625',
   loose: '2',
 } satisfies Theme['leading']
+
+export const textStrokeWidth: Theme['textStrokeWidth'] = {
+  DEFAULT: '1.5rem',
+  none: '0',
+  sm: 'thin',
+  md: 'medium',
+  lg: 'thick',
+} satisfies Theme['textStrokeWidth']

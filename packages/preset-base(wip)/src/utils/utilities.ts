@@ -34,7 +34,7 @@ export function directionSize(propertyPrefix: string): DynamicMatcher {
 type ThemeColorKeys = 'color' | 'borderColor' | 'backgroundColor' | 'textColor' | 'shadowColor' | 'accentColor'
 
 function getThemeColorForKey(theme: Theme, colors: string[]) {
-  let obj = theme.color as Theme['color'] | string
+  let obj = theme.colors as Theme['colors'] | string
   let index = -1
 
   for (const c of colors) {
