@@ -1,6 +1,7 @@
 import type { CSSObject, Rule, RuleContext } from '@unocss/core'
 import type { Theme } from '../theme'
-import { getStringComponent, globalKeywords, h, isCSSMathFn, parseCssColor } from '../utils'
+import { colorVariable, getStringComponent, globalKeywords, h, isCSSMathFn, parseCssColor } from '../utils'
+import { passThemeKey } from '../utils/constant'
 import { bracketTypeRe } from '../utils/handlers/regex'
 
 export const fonts: Rule<Theme>[] = [
@@ -140,9 +141,11 @@ export const textIndents: Rule<Theme>[] = [
 
 export const textStrokes: Rule<Theme>[] = [
   // widths
-  [/^text-stroke(?:-(.+))?$/, ([, s], { theme }) => {
+  [/^text-stroke(?:-(.+))?$/, ([, s = 'DEFAULT'], { theme }) => {
     return {
-      '-webkit-text-stroke-width': theme.textStrokeWidth?.[s] ? `var(--text-stroke-width-${s})` : h.bracket.cssvar.px(s),
+      '-webkit-text-stroke-width': theme.textStrokeWidth?.[s]
+        ? passThemeKey.includes(s) ? theme.textStrokeWidth?.[s] : `var(--text-stroke-width-${s})`
+        : h.bracket.cssvar.px(s),
     }
   }, { autocomplete: 'text-stroke-$textStrokeWidth' }],
 
@@ -152,20 +155,16 @@ export const textStrokes: Rule<Theme>[] = [
 ]
 
 export const textShadows: Rule<Theme>[] = [
-  [/^text-shadow(?:-(.+))?$/, ([, s], { theme }) => {
-    const v = theme.textShadow?.[s || 'DEFAULT']
+  [/^text-shadow(?:-(.+))?$/, ([, s = 'DEFAULT'], { theme }) => {
+    const v = theme.textShadow?.[s]
     if (v != null) {
       return {
-        '--un-text-shadow': colorableShadows(v, '--un-text-shadow-color').join(','),
+        '--un-text-shadow': colorVariable(v, 'un-text-shadow-color'),
         'text-shadow': 'var(--un-text-shadow)',
       }
     }
     return { 'text-shadow': h.bracket.cssvar.global(s) }
   }, { autocomplete: 'text-shadow-$textShadow' }],
-  ['text-shadow-none', {
-    '--un-text-shadow': `0 0 var(--un-text-shadow-color, rgb(0 0 0 / 0))`,
-    'text-shadow': `var(--un-text-shadow)`,
-  }],
 
   // colors
   [/^text-shadow-color-(.+)$/, createDynamicColorMatcher('--un-text-shadow-color', 'text-shadow'), { autocomplete: 'text-shadow-color-$colors' }],

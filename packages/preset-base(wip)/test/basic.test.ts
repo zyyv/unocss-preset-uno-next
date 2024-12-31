@@ -30,13 +30,17 @@ it('presetStarter', async () => {
     // 'indent-4',
     // 'text-stroke',
     // 'text-stroke-sm',
-    'text-stroke-red',
-    'text-stroke-op-20',
+    // 'text-stroke-none',
+    // 'text-stroke-red',
+    // 'text-stroke-op-20',
+    // 'text-shadow',
+    // 'text-shadow-color-red',
+    // 'text-shadow-color-op-50',
+    'm2',
   ], { preflights: false })
 
   expect(css).toMatchInlineSnapshot(`
     "/* layer: default */
-    .text-stroke-red{--un-text-stroke-opacity:100%;-webkit-text-stroke-color:color-mix(in oklch, var(--color-red-400) var(--un-text-stroke-opacity), transparent);}
-    .text-stroke-op-20{--un-text-stroke-opacity:20%;}"
+    .m2{margin:0.5rem;}"
   `)
 })

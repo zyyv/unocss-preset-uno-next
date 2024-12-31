@@ -3,7 +3,7 @@ import { animate } from './animate'
 import { colors } from './colors'
 import { blur } from './filters'
 import { font, fontWeight, leading, text, textStrokeWidth, tracking } from './font'
-import { dropShadow, insetShadow, perspective, radius, shadow, spacing } from './misc'
+import { dropShadow, insetShadow, perspective, radius, shadow, spacing, textShadow } from './misc'
 import { breakpoint, container } from './screen'
 import { ease } from './transition'
 
@@ -22,6 +22,7 @@ export const theme = {
   shadow,
   insetShadow,
   dropShadow,
+  textShadow,
   ease,
   animate,
   blur,

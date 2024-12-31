@@ -1,9 +1,9 @@
 import type { Theme } from '../theme/types'
 import { escapeRegExp, type Preflight } from '@unocss/core'
+import { passThemeKey } from '../utils'
 
 const alphaPlaceholders = ['%alpha', '<alpha-value>']
 const alphaPlaceholdersRE = new RegExp(alphaPlaceholders.map(v => escapeRegExp(v)).join('|'))
-const passThemeKey = ['DEFAULT', 'none']
 
 function camelToHyphen(str: string) {
   return str.replace(/[A-Z]/g, '-$&').toLowerCase()
