@@ -1,3 +1,5 @@
+/* eslint-disable regexp/no-empty-group */
+/* eslint-disable regexp/no-empty-capturing-group */
 import type { Rule } from '@unocss/core'
 import type { Theme } from '../theme'
 import { directionSize } from '../utils'
