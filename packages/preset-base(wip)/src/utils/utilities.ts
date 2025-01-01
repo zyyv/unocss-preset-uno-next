@@ -32,38 +32,32 @@ export function directionSize(propertyPrefix: string): DynamicMatcher<Theme> {
   }
 
   return (([_, direction, size]: string[]): CSSEntries | undefined => {
-    let v = h.bracket.cssvar.global.auto.rem(size)
+    let v: string | number | undefined
+
+    v = h.bracket.cssvar.global.auto(size)
 
     if (v != null) {
       return directionMap[direction].map(i => [`${propertyPrefix}${i}`, v])
     }
 
-    v = h.fraction.number(size)
+    v = h.fraction.number(size) ?? spaceMap[size as keyof typeof spaceMap]
+
     if (v != null) {
-      if (v.endsWith('%')) {
-        const num = Number(v.slice(0, -1)) / 100
+      let num = Number(v)
+      if (String(v).endsWith('%')) {
+        num = Number(String(v).slice(0, -1)) / 100
       }
 
-      return directionMap[direction].map(i => [`${propertyPrefix}${i}`, v])
+      return directionMap[direction].map(i => [`${propertyPrefix}${i}`, `calc(var(--spacing) * ${num})`])
     }
 
-    // if (spaceMap[size as keyof typeof spaceMap]) {
-    //   v = `calc(var(--spacing) * ${spaceMap[size as keyof typeof spaceMap]})`
-    // }
-    // else {
-    //   v = h.bracket.cssvar.global.auto.fraction.rem(size)
-    // }
-
-    // if (v != null) {
-    //   return directionMap[direction].map(i => [`${propertyPrefix}${i}`, v])
-    // }
-    // else if (size?.startsWith('-')) {
-    //   const _v = spaceMap[size.slice(1) as keyof typeof spaceMap]
-    //   if (_v != null) {
-    //     v = `calc(var(--spacing) * -${_v})`
-    //     return directionMap[direction].map(i => [`${propertyPrefix}${i}`, v])
-    //   }
-    // }
+    if (size?.startsWith('-')) {
+      const _v = spaceMap[size.slice(1) as keyof typeof spaceMap]
+      if (_v != null) {
+        v = `calc(var(--spacing) * -${_v})`
+        return directionMap[direction].map(i => [`${propertyPrefix}${i}`, v])
+      }
+    }
   }) as DynamicMatcher<Theme>
 }
 

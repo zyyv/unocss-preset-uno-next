@@ -36,11 +36,21 @@ it('presetStarter', async () => {
     // 'text-shadow',
     // 'text-shadow-color-red',
     // 'text-shadow-color-op-50',
-    'm2',
+    'm-4',
+    'm--2',
+    'm-1/2',
+    'ma',
+    'm--xs',
+    'm-xs',
   ], { preflights: false })
 
   expect(css).toMatchInlineSnapshot(`
     "/* layer: default */
-    .m2{margin:0.5rem;}"
+    .m--2{margin:calc(var(--spacing) * -2);}
+    .m--xs{margin:calc(var(--spacing) * -3);}
+    .m-1\\/2{margin:calc(var(--spacing) * 0.5);}
+    .m-4{margin:calc(var(--spacing) * 4);}
+    .m-xs{margin:calc(var(--spacing) * 3);}
+    .ma{margin:auto;}"
   `)
 })
