@@ -1,4 +1,4 @@
-import type { CSSEntries, DynamicMatcher, RuleContext, StaticRule } from '@unocss/core'
+import type { CSSEntries, CSSObject, DynamicMatcher, RuleContext, StaticRule } from '@unocss/core'
 import type { ParsedColorValue } from '@unocss/rule-utils'
 import type { Theme } from '../theme'
 import { toArray } from '@unocss/core'
@@ -61,37 +61,6 @@ export function directionSize(propertyPrefix: string): DynamicMatcher<Theme> {
   }) as DynamicMatcher<Theme>
 }
 
-// type ThemeColorKeys = 'color' | 'borderColor' | 'backgroundColor' | 'textColor' | 'shadowColor' | 'accentColor'
-
-function getThemeColorForKey(theme: Theme, colors: string[]) {
-  let obj = theme.colors as Theme['colors'] | string
-  let index = -1
-
-  for (const c of colors) {
-    index += 1
-    if (obj && typeof obj !== 'string') {
-      const camel = colors.slice(index).join('-').replace(/(-[a-z])/g, n => n.slice(1).toUpperCase())
-      if (obj[camel])
-        return obj[camel]
-
-      if (obj[c]) {
-        obj = obj[c]
-        continue
-      }
-    }
-    return undefined
-  }
-
-  return obj
-}
-
-/**
- * Obtain color from theme by camel-casing colors.
- */
-function getThemeColor(theme: Theme, colors: string[]) {
-  return getThemeColorForKey(theme, colors)
-}
-
 /**
  * Split utility shorthand delimited by / or :
  */
@@ -103,92 +72,6 @@ export function splitShorthand(body: string, type: string) {
 
     if (match == null || match === type)
       return [front, rest]
-  }
-}
-
-/**
- * Parse color string into {@link ParsedColorValue} (if possible). Color value will first be matched to theme object before parsing.
- * See also color.tests.ts for more examples.
- *
- * @example Parseable strings:
- * 'red' // From theme, if 'red' is available
- * 'red-100' // From theme, plus scale
- * 'red-100/20' // From theme, plus scale/opacity
- * '[rgb(100 2 3)]/[var(--op)]' // Bracket with rgb color and bracket with opacity
- *
- * @param body - Color string to be parsed.
- * @param theme - {@link Theme} object.
- * @return object if string is parseable.
- */
-export function parseColor(body: string, theme: Theme): ParsedColorValue | undefined {
-  const split = splitShorthand(body, 'color')
-  if (!split)
-    return
-
-  const [main, opacity] = split
-  const colors = main
-    .replace(/([a-z])(\d)/g, '$1-$2')
-    .split(/-/g)
-  const [name] = colors
-
-  if (!name)
-    return
-
-  let color: string | undefined
-  let no = 'DEFAULT'
-
-  if (theme.colors?.[name]) {
-    let colorData
-    const [scale] = colors.slice(-1)
-    if (/^\d+$/.test(scale)) {
-      no = scale
-      colorData = getThemeColor(theme, colors.slice(0, -1))
-      if (!colorData || typeof colorData === 'string')
-        color = undefined
-      else
-        color = colorData[no] as string
-    }
-    else {
-      colorData = getThemeColor(theme, colors)
-      if (!colorData && colors.length <= 2) {
-        [, no = no] = colors
-        colorData = getThemeColor(theme, [name])
-      }
-      if (typeof colorData === 'string')
-        color = colorData
-      else if (no && colorData)
-        color = colorData[no] as string
-    }
-  }
-
-  const bracket = h.bracketOfColor(main)
-  const bracketOrMain = bracket || main
-
-  if (h.numberWithUnit(bracketOrMain))
-    return
-
-  if (/^#[\da-f]+$/i.test(bracketOrMain))
-    color = bracketOrMain
-  else if (/^hex-[\da-fA-F]+$/.test(bracketOrMain))
-    color = `#${bracketOrMain.slice(4)}`
-  else if (main.startsWith('$'))
-    color = h.cssvar(main)
-
-  color = color || bracket
-
-  if (!color) {
-    const colorData = getThemeColor(theme, [main])
-    if (typeof colorData === 'string')
-      color = colorData
-  }
-
-  return {
-    opacity,
-    name,
-    no,
-    color,
-    cssColor: parseCssColor(color),
-    alpha: h.bracket.cssvar.percent(opacity ?? ''),
   }
 }
 
@@ -229,6 +112,139 @@ export function colorableShadows(shadows: string | string[], colorVar: string) {
   }
 
   return colored
+}
+
+export function colorResolver(property: string, varName: string) {
+  return ([, body]: string[], { theme, generator }: RuleContext<Theme>): CSSObject | undefined => {
+    const data = parseColor(body, theme)
+    if (!data)
+      return
+
+    const { color, key, opacity } = data
+    const rawColorComment = generator.config.envMode === 'dev' && color ? ` /* ${color} */` : ''
+    const css: CSSObject = {}
+
+    if (color) {
+      css[`--un-${varName}-opacity`] = `${opacity || 100}%`
+      const value = key ? `var(--color-${key})` : color
+      css[property] = `color-mix(in oklch, ${value} var(--un-${varName}-opacity), transparent)${rawColorComment}`
+    }
+
+    return css
+  }
+}
+
+/**
+ * Parse color string into {@link ParsedColorValue} (if possible). Color value will first be matched to theme object before parsing.
+ * See also color.tests.ts for more examples.
+ *
+ * @example Parseable strings:
+ * 'red' // From theme, if 'red' is available
+ * 'red-100' // From theme, plus scale
+ * 'red-100/20' // From theme, plus scale/opacity
+ * '[rgb(100 2 3)]/[var(--op)]' // Bracket with rgb color and bracket with opacity
+ *
+ * @param body - Color string to be parsed.
+ * @param theme - {@link Theme} object.
+ * @return object if string is parseable.
+ */
+export function parseColor(body: string, theme: Theme) {
+  const split = splitShorthand(body, 'color')
+  if (!split)
+    return
+
+  const [main, opacity] = split
+  const colors = main
+    .replace(/([a-z])(\d)/g, '$1-$2')
+    .split(/-/g)
+  const [name] = colors
+
+  if (!name)
+    return
+
+  let { no, key, color } = parseThemeColor(theme, colors) ?? parseThemeColor(theme, [main]) ?? {}
+
+  if (!color) {
+    const bracket = h.bracketOfColor(main)
+    const bracketOrMain = bracket || main
+
+    if (h.numberWithUnit(bracketOrMain))
+      return
+
+    if (/^#[\da-f]+$/i.test(bracketOrMain))
+      color = bracketOrMain
+    else if (/^hex-[\da-fA-F]+$/.test(bracketOrMain))
+      color = `#${bracketOrMain.slice(4)}`
+    else if (main.startsWith('$'))
+      color = h.cssvar(main)
+
+    color = color || bracket
+  }
+
+  return {
+    opacity,
+    name,
+    no,
+    color,
+    alpha: h.bracket.cssvar.percent(opacity ?? ''),
+    key,
+  }
+}
+
+export function parseThemeColor(theme: Theme, keys: string[]) {
+  let color: string | undefined
+  let no
+  let key
+
+  let _keys = keys
+  const [scale] = keys.slice(-1)
+
+  if (/^\d+$/.test(scale)) {
+    no = scale
+    _keys = keys.slice(0, -1)
+  }
+
+  const colorData = getThemeColor(theme, _keys)
+
+  if (typeof colorData === 'object') {
+    color = colorData[no ?? '400'] as string
+    key = [..._keys, no ?? '400'].join('-')
+  }
+  else if (typeof colorData === 'string' && !no) {
+    color = colorData
+    key = _keys.join('-')
+  }
+
+  if (!color)
+    return
+
+  return {
+    color,
+    no,
+    key,
+  }
+}
+
+export function getThemeColor(theme: Theme, keys: string[]) {
+  let obj = theme.colors as Theme['colors'] | string
+  let index = -1
+
+  for (const k of keys) {
+    index += 1
+    if (obj && typeof obj !== 'string') {
+      const camel = keys.slice(index).join('-').replace(/(-[a-z])/g, n => n.slice(1).toUpperCase())
+      if (obj[camel])
+        return obj[camel]
+
+      if (obj[k]) {
+        obj = obj[k]
+        continue
+      }
+    }
+    return undefined
+  }
+
+  return obj
 }
 
 export function colorVariable(str: string, varName: string) {

@@ -1,6 +1,6 @@
 import type { CSSObject, Rule, RuleContext } from '@unocss/core'
 import type { Theme } from '../theme'
-import { colorVariable, getStringComponent, globalKeywords, h, isCSSMathFn, parseCssColor } from '../utils'
+import { colorResolver, colorVariable, getStringComponent, globalKeywords, h, isCSSMathFn } from '../utils'
 import { passThemeKey } from '../utils/constant'
 import { bracketTypeRe } from '../utils/handlers/regex'
 
@@ -15,7 +15,7 @@ export const fonts: Rule<Theme>[] = [
   [/^text-(?:color-)?(.+)$/, handlerColorOrSize, { autocomplete: 'text-$colors' }],
 
   // colors
-  [/^(?:color|c)-(.+)$/, createDynamicColorMatcher('color', 'text')],
+  [/^(?:color|c)-(.+)$/, colorResolver('color', 'text')],
 
   // style
   [/^(?:text|color|c)-(.+)$/, ([, v]) => globalKeywords.includes(v) ? { color: v } : undefined, { autocomplete: `(text|color|c)-(${globalKeywords.join('|')})` }],
@@ -150,7 +150,7 @@ export const textStrokes: Rule<Theme>[] = [
   }, { autocomplete: 'text-stroke-$textStrokeWidth' }],
 
   // colors
-  [/^text-stroke-(.+)$/, createDynamicColorMatcher('-webkit-text-stroke-color', 'text-stroke'), { autocomplete: 'text-stroke-$colors' }],
+  [/^text-stroke-(.+)$/, colorResolver('-webkit-text-stroke-color', 'text-stroke'), { autocomplete: 'text-stroke-$colors' }],
   [/^text-stroke-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-text-stroke-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'text-stroke-(op|opacity)-<percent>' }],
 ]
 
@@ -167,29 +167,9 @@ export const textShadows: Rule<Theme>[] = [
   }, { autocomplete: 'text-shadow-$textShadow' }],
 
   // colors
-  [/^text-shadow-color-(.+)$/, createDynamicColorMatcher('--un-text-shadow-color', 'text-shadow'), { autocomplete: 'text-shadow-color-$colors' }],
+  [/^text-shadow-color-(.+)$/, colorResolver('--un-text-shadow-color', 'text-shadow'), { autocomplete: 'text-shadow-color-$colors' }],
   [/^text-shadow-color-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-text-shadow-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'text-shadow-color-(op|opacity)-<percent>' }],
 ]
-
-function createDynamicColorMatcher(property: string, varName: string) {
-  return ([, body]: string[], { theme, generator }: RuleContext<Theme>): CSSObject | undefined => {
-    const data = parseColor(body, theme)
-    if (!data)
-      return
-
-    const { color, key, opacity } = data
-    const rawColorComment = generator.config.envMode === 'dev' && color ? ` /* ${color} */` : ''
-    const css: CSSObject = {}
-
-    if (color) {
-      css[`--un-${varName}-opacity`] = `${opacity || 100}%`
-      const value = key ? `var(--color-${key})` : color
-      css[property] = `color-mix(in oklch, ${value} var(--un-${varName}-opacity), transparent)${rawColorComment}`
-    }
-
-    return css
-  }
-}
 
 function handleSize([, s]: string[], { theme }: RuleContext<Theme>): CSSObject | undefined {
   if (theme.text?.[s] != null) {
@@ -208,7 +188,7 @@ function handleSize([, s]: string[], { theme }: RuleContext<Theme>): CSSObject |
 function handlerColorOrSize(match: RegExpMatchArray, ctx: RuleContext<Theme>): CSSObject | undefined {
   if (isCSSMathFn(h.bracket(match[1])))
     return handleSize(match, ctx)
-  return createDynamicColorMatcher('color', 'text')(match, ctx)
+  return colorResolver('color', 'text')(match, ctx)
 }
 
 export function splitShorthand(body: string, type: string) {
@@ -220,106 +200,6 @@ export function splitShorthand(body: string, type: string) {
     if (match == null || match === type)
       return [front, rest]
   }
-}
-
-function parseColor(body: string, theme: Theme) {
-  const split = splitShorthand(body, 'color')
-  if (!split)
-    return
-
-  const [main, opacity] = split
-  const colors = main
-    .replace(/([a-z])(\d)/g, '$1-$2')
-    .split(/-/g)
-  const [name] = colors
-
-  if (!name)
-    return
-
-  let { no, key, color } = parseThemeColor(theme, colors) ?? parseThemeColor(theme, [main]) ?? {}
-
-  if (!color) {
-    const bracket = h.bracketOfColor(main)
-    const bracketOrMain = bracket || main
-
-    if (h.numberWithUnit(bracketOrMain))
-      return
-
-    if (/^#[\da-f]+$/i.test(bracketOrMain))
-      color = bracketOrMain
-    else if (/^hex-[\da-fA-F]+$/.test(bracketOrMain))
-      color = `#${bracketOrMain.slice(4)}`
-    else if (main.startsWith('$'))
-      color = h.cssvar(main)
-
-    color = color || bracket
-  }
-
-  return {
-    opacity,
-    name,
-    no,
-    color,
-    cssColor: parseCssColor(color),
-    alpha: h.bracket.cssvar.percent(opacity ?? ''),
-    key,
-  }
-}
-
-function parseThemeColor(theme: Theme, keys: string[]) {
-  let color: string | undefined
-  let no
-  let key
-
-  let _keys = keys
-  const [scale] = keys.slice(-1)
-
-  if (/^\d+$/.test(scale)) {
-    no = scale
-    _keys = keys.slice(0, -1)
-  }
-
-  const colorData = getThemeColor(theme, _keys)
-
-  if (typeof colorData === 'object') {
-    color = colorData[no ?? '400'] as string
-    key = [..._keys, no ?? '400'].join('-')
-  }
-  else if (typeof colorData === 'string' && !no) {
-    color = colorData
-    key = _keys.join('-')
-  }
-
-  if (!color)
-    return
-
-  return {
-    color,
-    no,
-    key,
-  }
-}
-
-function getThemeColor(theme: Theme, keys: string[]) {
-  let obj = theme.colors as Theme['colors'] | string
-  let index = -1
-
-  for (const k of keys) {
-    index += 1
-    if (obj && typeof obj !== 'string') {
-      const camel = keys.slice(index).join('-').replace(/(-[a-z])/g, n => n.slice(1).toUpperCase())
-      if (obj[camel])
-        return obj[camel]
-
-      if (obj[k]) {
-        obj = obj[k]
-        continue
-      }
-    }
-    return undefined
-  }
-
-  return obj
 }
 
 // const alphaPlaceholders = ['%alpha', '<alpha-value>']
