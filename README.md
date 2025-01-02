@@ -5,7 +5,7 @@ This is a proof-of-concept repository, but it is also the direction I am working
 ## Roadmap
 
 - [ ] Rules
-  - [ ] align
+  - [x] align
   - [ ] behaviors
   - [ ] border
   - [ ] color
