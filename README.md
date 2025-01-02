@@ -6,7 +6,7 @@ This is a proof-of-concept repository, but it is also the direction I am working
 
 - [ ] Rules
   - [x] align
-  - [ ] behaviors
+  - [x] behaviors
   - [ ] border
   - [ ] color
   - [ ] container
