@@ -4,6 +4,8 @@ import { textAligns, verticalAligns } from './align'
 import { appearance, outline, willChange } from './behaviors'
 import { borders } from './border'
 import { bgColors, colorScheme, opacity } from './color'
+import { containerParent } from './container'
+import { textDecorations } from './decoration'
 import { margins, paddings } from './spacing'
 import { fonts, tabSizes, textIndents, textShadows, textStrokes } from './typography'
 
@@ -24,4 +26,6 @@ export const rules: Rule<Theme>[] = [
   bgColors,
   opacity,
   colorScheme,
+  containerParent,
+  textDecorations,
 ].flat()
