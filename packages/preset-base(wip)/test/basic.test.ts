@@ -48,6 +48,14 @@ it('presetStarter', async () => {
     // 'outline-2',
     // 'outline-none',
     // 'outline-red/20',
+    // 'b',
+    // 'b-dashed',
+    // 'b-none',
+    // 'b-red',
+    // 'b-x-red',
+    // 'b-op-50',
+    // 'b-x-op-50',
+    // 'b-bs-teal/20',
   ], { preflights: false })
 
   expect(css).toMatchInlineSnapshot(`""`)

@@ -5,6 +5,8 @@ export const spacing = {
 } satisfies Theme['spacing']
 
 export const radius = {
+  'DEFAULT': '0.25rem',
+  'none': '0',
   'xs': '0.125rem',
   'sm': '0.25rem',
   'md': '0.375rem',
