@@ -20,7 +20,7 @@ This is a proof-of-concept repository, but it is also the direction I am working
   - [ ] ring
   - [ ] shadow
   - [ ] size
-  - [ ] spacing
+  - [x] spacing
   - [ ] static
   - [ ] svg
   - [ ] transform

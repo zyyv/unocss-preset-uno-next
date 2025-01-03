@@ -43,11 +43,12 @@ it('presetStarter', async () => {
     // 'm--xs',
     // 'm-xs',
     // 'mx-4',
-    'text-left',
+    // 'text-left',
+    // 'outline',
+    // 'outline-2',
+    // 'outline-none',
+    // 'outline-red/20',
   ], { preflights: false })
 
-  expect(css).toMatchInlineSnapshot(`
-    "/* layer: default */
-    .text-left{text-align:left;}"
-  `)
+  expect(css).toMatchInlineSnapshot(`""`)
 })

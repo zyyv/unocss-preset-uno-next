@@ -18,7 +18,7 @@ export const outline: Rule<Theme>[] = [
     'outline-width': '1px',
   }],
   ...['auto', 'dashed', 'dotted', 'double', 'hidden', 'solid', 'groove', 'ridge', 'inset', 'outset', ...globalKeywords].map(v => [`outline-${v}`, { '--un-outline-style': v, 'outline-style': v }] as Rule<Theme>),
-  ['outline-none', { 'outline': '2px solid transparent', 'outline-offset': '2px' }],
+  ['outline-none', { '--un-outline-style': 'none', 'outline-style': 'none' }],
 ]
 
 function handleWidth([, b]: string[]): CSSObject | undefined {
@@ -37,7 +37,7 @@ function handleColorOrWidth(match: RegExpMatchArray, ctx: RuleContext<Theme>): C
   return colorResolver('outline-color', 'outline-color')(match, ctx) as CSSObject | undefined
 }
 
-export const appearance: Rule[] = [
+export const appearance: Rule<Theme>[] = [
   ['appearance-auto', { '-webkit-appearance': 'auto', 'appearance': 'auto' }],
   ['appearance-none', { '-webkit-appearance': 'none', 'appearance': 'none' }],
 ]
@@ -49,6 +49,6 @@ function willChangeProperty(prop: string): string | undefined {
   }[prop]
 }
 
-export const willChange: Rule[] = [
+export const willChange: Rule<Theme>[] = [
   [/^will-change-(.+)/, ([, p]) => ({ 'will-change': willChangeProperty(p) })],
 ]
