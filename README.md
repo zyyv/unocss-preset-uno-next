@@ -8,12 +8,12 @@ This is a proof-of-concept repository, but it is also the direction I am working
   - [x] align
   - [x] behaviors
   - [x] border
-  - [ ] color
-  - [ ] container
-  - [ ] decoration
-  - [ ] flex
-  - [ ] gap
-  - [ ] grid
+  - [x] color
+  - [x] container
+  - [x] decoration
+  - [x] flex
+  - [x] gap
+  - [x] grid
   - [ ] layout
   - [ ] position
   - [ ] question-mark

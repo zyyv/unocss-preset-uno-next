@@ -6,6 +6,9 @@ import { borders } from './border'
 import { bgColors, colorScheme, opacity } from './color'
 import { containerParent } from './container'
 import { textDecorations } from './decoration'
+import { flex } from './flex'
+import { gaps } from './gap'
+import { grids } from './grid'
 import { margins, paddings } from './spacing'
 import { fonts, tabSizes, textIndents, textShadows, textStrokes } from './typography'
 
@@ -28,4 +31,7 @@ export const rules: Rule<Theme>[] = [
   colorScheme,
   containerParent,
   textDecorations,
+  flex,
+  gaps,
+  grids,
 ].flat()
