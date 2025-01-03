@@ -287,3 +287,8 @@ export function position(str: string) {
   if (['top', 'left', 'right', 'bottom', 'center'].includes(str))
     return str
 }
+
+export function none(str: string) {
+  if (str === 'none')
+    return 'none'
+}
