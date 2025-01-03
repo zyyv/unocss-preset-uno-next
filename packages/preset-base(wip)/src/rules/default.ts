@@ -3,6 +3,7 @@ import type { Theme } from '../theme'
 import { textAligns, verticalAligns } from './align'
 import { appearance, outline, willChange } from './behaviors'
 import { borders } from './border'
+import { bgColors, colorScheme, opacity } from './color'
 import { margins, paddings } from './spacing'
 import { fonts, tabSizes, textIndents, textShadows, textStrokes } from './typography'
 
@@ -20,4 +21,7 @@ export const rules: Rule<Theme>[] = [
   outline,
   willChange,
   borders,
+  bgColors,
+  opacity,
+  colorScheme,
 ].flat()

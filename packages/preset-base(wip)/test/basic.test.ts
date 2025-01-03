@@ -56,6 +56,13 @@ it('presetStarter', async () => {
     // 'b-op-50',
     // 'b-x-op-50',
     // 'b-bs-teal/20',
+    // 'op-20',
+    // 'bg-red',
+    // 'bg-red-500',
+    // 'bg-red-500:20',
+    // 'bg-red-500/20',
+    // 'bg-[length:100%_100%]',
+
   ], { preflights: false })
 
   expect(css).toMatchInlineSnapshot(`""`)
