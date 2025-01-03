@@ -1,6 +1,6 @@
 import type { CSSObject, Rule, RuleContext } from '@unocss/core'
 import type { Theme } from '../theme'
-import { colorResolver, colorVariable, getStringComponent, globalKeywords, h, isCSSMathFn } from '../utils'
+import { colorResolver, colorVariable, getStringComponent, globalKeywords, h, isCSSMathFn, numberResolver } from '../utils'
 import { passThemeKey } from '../utils/constant'
 import { bracketTypeRe } from '../utils/handlers/regex'
 
@@ -132,9 +132,16 @@ export const tabSizes: Rule<Theme>[] = [
 
 export const textIndents: Rule<Theme>[] = [
   [/^indent(?:-(.+))?$/, ([, s]) => {
-    const v = h.bracket.number(s)
+    let v: string | number | undefined = numberResolver(s)
+
     if (v != null) {
       return { 'text-indent': `calc(var(--spacing) * ${v})` }
+    }
+
+    v = h.bracket.cssvar.auto.global.rem(s)
+
+    if (v != null) {
+      return { 'text-indent': v }
     }
   }, { autocomplete: 'indent-$textIndent' }],
 ]

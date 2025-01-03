@@ -9,6 +9,19 @@ import { cssMathFnRE, cssVarFnRE, directionMap, globalKeywords, xyzArray, xyzMap
 
 export const CONTROL_MINI_NO_NEGATIVE = '$$mini-no-negative'
 
+export function numberResolver(size: string, defaultValue: string | number = ''): number | undefined {
+  const v = h.fraction.number(size) ?? defaultValue
+
+  if (v != null) {
+    let num = Number(v)
+    if (String(v).endsWith('%')) {
+      num = Number(String(v).slice(0, -1)) / 100
+    }
+
+    return num
+  }
+}
+
 /**
  * Provide {@link DynamicMatcher} function returning spacing definition. See spacing rules.
  *
@@ -40,15 +53,10 @@ export function directionSize(propertyPrefix: string): DynamicMatcher<Theme> {
       return directionMap[direction].map(i => [`${propertyPrefix}${i}`, v])
     }
 
-    v = h.fraction.number(size) ?? spaceMap[size as keyof typeof spaceMap]
+    v = numberResolver(size, spaceMap[size as keyof typeof spaceMap])
 
     if (v != null) {
-      let num = Number(v)
-      if (String(v).endsWith('%')) {
-        num = Number(String(v).slice(0, -1)) / 100
-      }
-
-      return directionMap[direction].map(i => [`${propertyPrefix}${i}`, `calc(var(--spacing) * ${num})`])
+      return directionMap[direction].map(i => [`${propertyPrefix}${i}`, `calc(var(--spacing) * ${v})`])
     }
 
     if (size?.startsWith('-')) {
