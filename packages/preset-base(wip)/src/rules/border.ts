@@ -86,18 +86,11 @@ function handlerBorderSize([, a = '', b = '1']: string[]): CSSEntries | undefine
 }
 
 function handlerBorderColorOrSize([, a = '', b]: string[], ctx: RuleContext<Theme>): CSSEntries | undefined {
-  console.log('handlerBorderColorOrSize', a, b)
-
   if (a in directionMap) {
     if (isCSSMathFn(h.bracket(b)))
       return handlerBorderSize(['', a, b])
 
     if (hasParseableColor(b, ctx.theme)) {
-      // return Object.assign(
-      //   {},
-      //   ...directionMap[a].map(i => colorResolver(`border${i}-color`, `border${i}`)(['', b], ctx)),
-      // )
-
       return Object.assign(
         {},
         ...directionMap[a].map(i => borderColorResolver(i)(['', b], ctx.theme)),
@@ -115,10 +108,15 @@ function handlerBorderOpacity([, a = '', opacity]: string[]): CSSEntries | undef
 function handlerRounded([, a = '', s]: string[], { theme }: RuleContext<Theme>): CSSEntries | undefined {
   if (a in cornerMap) {
     const _s = s || 'DEFAULT'
-    const _v = theme.radius?.[_s] ?? h.bracket.cssvar.global.fraction.rem(_s || '1')
+    if (_s === 'full')
+      return cornerMap[a].map(i => [`border${i}-radius`, 'calc(infinity * 1px)'])
 
+    const _v = theme.radius?.[_s] ?? h.bracket.cssvar.global.fraction.rem(_s || '1')
     if (_v != null) {
-      return cornerMap[a].map(i => [`border${i}-radius`, passThemeKey.includes(_s) ? _v : `var(--un-radius-${_s})`])
+      return cornerMap[a].map(i => [
+        `border${i}-radius`,
+        theme.radius && _s in theme.radius && !passThemeKey.includes(_s) ? `var(--un-radius-${_s})` : _v,
+      ])
     }
   }
 }
