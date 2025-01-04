@@ -9,7 +9,7 @@ import { cssMathFnRE, cssVarFnRE, directionMap, globalKeywords, xyzArray, xyzMap
 
 export const CONTROL_MINI_NO_NEGATIVE = '$$mini-no-negative'
 
-export function numberResolver(size: string, defaultValue: string | number = ''): number | undefined {
+export function numberResolver(size: string, defaultValue?: string | number): number | undefined {
   const v = h.fraction.number(size) ?? defaultValue
 
   if (v != null) {
