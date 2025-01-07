@@ -67,7 +67,23 @@ it('presetStarter', async () => {
     // 'bg-red-500/20',
     // 'bg-[length:100%_100%]',
 
+    // 'translate-x-2',
+    // 'translate-z-2',
+    // 'translate-2',
+    // 'rotate-2',
+    // 'rotate-x-2',
+    // 'rotate-y-2',
+    // 'rotate-z-2',
+    // 'translate-[var(--foo),var(--bar)]',
+    'skew-2',
+    'skew-x-2',
+    'skew-y-2',
   ], { preflights: false })
 
-  expect(css).toMatchInlineSnapshot(`""`)
+  expect(css).toMatchInlineSnapshot(`
+    "/* layer: default */
+    .skew-2{--un-skew-x:skewX(2deg);--un-skew-y:skewY(2deg);transform:var(--un-rotate-x) var(--un-rotate-y) var(--un-rotate-z) var(--un-skew-x) var(--un-skew-y);}
+    .skew-x-2{--un-skew-x:skewX(2deg);transform:var(--un-rotate-x) var(--un-rotate-y) var(--un-rotate-z) var(--un-skew-x) var(--un-skew-y);}
+    .skew-y-2{--un-skew-y:skewY(2deg);transform:var(--un-rotate-x) var(--un-rotate-y) var(--un-rotate-z) var(--un-skew-x) var(--un-skew-y);}"
+  `)
 })

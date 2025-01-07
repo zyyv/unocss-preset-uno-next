@@ -29,7 +29,7 @@ export const transitions: Rule<Theme>[] = [
       if (!prop && !d) {
         return {
           'transition-property': theme.transitionProperty?.DEFAULT,
-          'transition-timing-function': theme.easing?.DEFAULT,
+          'transition-timing-function': theme.ease?.DEFAULT,
           'transition-duration': theme.duration?.DEFAULT ?? h.time('150'),
         }
       }

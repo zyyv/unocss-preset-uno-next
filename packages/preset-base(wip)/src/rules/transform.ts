@@ -1,8 +1,8 @@
 /* eslint-disable regexp/no-empty-group */
 /* eslint-disable regexp/no-empty-capturing-group */
-import type { CSSValues, Rule, RuleContext } from '@unocss/core'
+import type { CSSValues, Rule } from '@unocss/core'
 import type { Theme } from '../theme'
-import { h, makeGlobalStaticRules, positionMap, transformXYZ } from '../utils'
+import { h, makeGlobalStaticRules, numberResolver, positionMap, transformXYZ, xyzMap } from '../utils'
 
 const transformValues = [
   'translate',
@@ -11,59 +11,27 @@ const transformValues = [
 ]
 
 const transformCpu = [
-  'translateX(var(--un-translate-x))',
-  'translateY(var(--un-translate-y))',
-  // 'translateZ(var(--un-translate-z))',
-  'rotate(var(--un-rotate))',
-  // 'rotateX(var(--un-rotate-x))',
-  // 'rotateY(var(--un-rotate-y))',
-  'rotateZ(var(--un-rotate-z))',
-  'skewX(var(--un-skew-x))',
-  'skewY(var(--un-skew-y))',
-  'scaleX(var(--un-scale-x))',
-  'scaleY(var(--un-scale-y))',
-  // 'scaleZ(var(--un-scale-z))',
+  'var(--un-rotate-x)',
+  'var(--un-rotate-y)',
+  'var(--un-rotate-z)',
+  'var(--un-skew-x)',
+  'var(--un-skew-y)',
 ].join(' ')
 
-const transform = [
-  'translateX(var(--un-translate-x))',
-  'translateY(var(--un-translate-y))',
-  'translateZ(var(--un-translate-z))',
-  'rotate(var(--un-rotate))',
-  'rotateX(var(--un-rotate-x))',
-  'rotateY(var(--un-rotate-y))',
-  'rotateZ(var(--un-rotate-z))',
-  'skewX(var(--un-skew-x))',
-  'skewY(var(--un-skew-y))',
-  'scaleX(var(--un-scale-x))',
-  'scaleY(var(--un-scale-y))',
-  'scaleZ(var(--un-scale-z))',
-].join(' ')
+const transform = transformCpu
 
 const transformGpu = [
-  'translate3d(var(--un-translate-x), var(--un-translate-y), var(--un-translate-z))',
-  'rotate(var(--un-rotate))',
-  'rotateX(var(--un-rotate-x))',
-  'rotateY(var(--un-rotate-y))',
-  'rotateZ(var(--un-rotate-z))',
-  'skewX(var(--un-skew-x))',
-  'skewY(var(--un-skew-y))',
-  'scaleX(var(--un-scale-x))',
-  'scaleY(var(--un-scale-y))',
-  'scaleZ(var(--un-scale-z))',
+  'translateZ(0)',
+  transformCpu,
 ].join(' ')
 
 export const transformBase = {
   // transform
-  '--un-rotate': 0,
-  '--un-rotate-x': 0,
-  '--un-rotate-y': 0,
-  '--un-rotate-z': 0,
-  '--un-scale-x': 1,
-  '--un-scale-y': 1,
-  '--un-scale-z': 1,
-  '--un-skew-x': 0,
-  '--un-skew-y': 0,
+  '--un-rotate-x': 'rotateX(0)',
+  '--un-rotate-y': 'rotateY(0)',
+  '--un-rotate-z': 'rotateZ(0)',
+  '--un-skew-x': 'skewX(0)',
+  '--un-skew-y': 'skewY(0)',
   '--un-translate-x': 0,
   '--un-translate-y': 0,
   '--un-translate-z': 0,
@@ -79,12 +47,11 @@ export const transforms: Rule<Theme>[] = [
   ],
 
   // perspectives
-  [/^(?:transform-)?perspect(?:ive)?-(.+)$/, ([, s]) => {
-    const v = h.bracket.cssvar.px.numberWithUnit(s)
+  [/^(?:transform-)?perspect(?:ive)?-(.+)$/, ([, s], { theme }) => {
+    const v = theme.perspective?.[s] ?? h.bracket.cssvar.px.numberWithUnit(s)
     if (v != null) {
       return {
-        '-webkit-perspective': v,
-        'perspective': v,
+        perspective: s in (theme.perspective ?? {}) ? `var(--un-perspective-${s})` : v,
       }
     }
   }],
@@ -94,7 +61,6 @@ export const transforms: Rule<Theme>[] = [
     const v = h.bracket.cssvar(s) ?? (s.length >= 3 ? positionMap[s] : undefined)
     if (v != null) {
       return {
-        '-webkit-perspective-origin': v,
         'perspective-origin': v,
       }
     }
@@ -111,8 +77,11 @@ export const transforms: Rule<Theme>[] = [
   [/^(?:transform-)?scale-([xyz])-(.+)$/, handleScale, { custom: { preflightKeys }, autocomplete: [`transform-(${transformValues.join('|')})-<percent>`, `transform-(${transformValues.join('|')})-(x|y|z)-<percent>`, `(${transformValues.join('|')})-<percent>`, `(${transformValues.join('|')})-(x|y|z)-<percent>`] }],
 
   // style
-  [/^(?:transform-)?preserve-3d$/, () => ({ 'transform-style': 'preserve-3d' })],
-  [/^(?:transform-)?preserve-flat$/, () => ({ 'transform-style': 'flat' })],
+  ['transform-3d', { 'transform-style': 'preserve-3d' }],
+  ['transform-flat', { 'transform-style': 'flat' }],
+
+  // transform-box
+  [/^transform-(border|content|fill|stroke|view)$/, ([,d]) => ({ 'transform-box': `${d}-box` })],
 
   // base
   ['transform', { transform }, { custom: { preflightKeys } }],
@@ -120,17 +89,17 @@ export const transforms: Rule<Theme>[] = [
     custom: { preflightKeys: ['--un-translate-x', '--un-translate-y', '--un-rotate', '--un-rotate-z', '--un-skew-x', '--un-skew-y', '--un-scale-x', '--un-scale-y'] },
   }],
   ['transform-gpu', { transform: transformGpu }, { custom: { preflightKeys } }],
-  ['transform-3d', { 'transform-style': 'preserve-3d' }],
   ['transform-none', { transform: 'none' }],
   ...makeGlobalStaticRules('transform'),
 ]
 
-function handleTranslate([, d, b]: string[], { theme }: RuleContext<Theme>): CSSValues | undefined {
-  const v = theme.spacing?.[b] ?? h.bracket.cssvar.fraction.rem(b)
+function handleTranslate([, d, b]: string[]): CSSValues | undefined {
+  const v = numberResolver(b) ?? h.bracket.cssvar.rem(b)
+
   if (v != null) {
     return [
-      ...transformXYZ(d, v, 'translate'),
-      ['transform', transform],
+      ...transformXYZ(d, typeof v === 'number' ? `calc(var(--spacing) * ${v})` : v, 'translate'),
+      ['translate', `var(--un-translate-x) var(--un-translate-y)${d === 'z' ? ' var(--un-translate-z)' : ''}`],
     ]
   }
 }
@@ -149,19 +118,14 @@ function handleRotate([, d = '', b]: string[]): CSSValues | undefined {
   const v = h.bracket.cssvar.degree(b)
   if (v != null) {
     if (d) {
-      return {
-        '--un-rotate': 0,
-        [`--un-rotate-${d}`]: v,
-        'transform': transform,
-      }
+      return [
+        ...transformXYZ(d, v.endsWith('deg') ? `rotate${d.toUpperCase()}(${v})` : v, 'rotate'),
+        ['transform', transform],
+      ]
     }
     else {
       return {
-        '--un-rotate-x': 0,
-        '--un-rotate-y': 0,
-        '--un-rotate-z': 0,
-        '--un-rotate': v,
-        'transform': transform,
+        rotate: h.bracket.cssvar.degree(b),
       }
     }
   }
@@ -169,9 +133,10 @@ function handleRotate([, d = '', b]: string[]): CSSValues | undefined {
 
 function handleSkew([, d, b]: string[]): CSSValues | undefined {
   const v = h.bracket.cssvar.degree(b)
-  if (v != null) {
+  const ds = xyzMap[d]
+  if (v != null && ds) {
     return [
-      ...transformXYZ(d, v, 'skew'),
+      ...ds.map(_d => [`--un-skew${_d}`, v.endsWith('deg') ? `skew${_d.slice(1).toUpperCase()}(${v})` : v]) as any,
       ['transform', transform],
     ]
   }

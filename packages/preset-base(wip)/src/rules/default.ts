@@ -10,6 +10,7 @@ import { flex } from './flex'
 import { gaps } from './gap'
 import { grids } from './grid'
 import { margins, paddings } from './spacing'
+import { transforms } from './transform'
 import { fonts, tabSizes, textIndents, textShadows, textStrokes } from './typography'
 
 export const rules: Rule<Theme>[] = [
@@ -34,4 +35,6 @@ export const rules: Rule<Theme>[] = [
   flex,
   gaps,
   grids,
+
+  transforms,
 ].flat()
