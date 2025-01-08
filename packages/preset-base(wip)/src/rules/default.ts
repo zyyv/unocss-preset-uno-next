@@ -13,6 +13,7 @@ import { margins, paddings } from './spacing'
 import { transforms } from './transform'
 import { transitions } from './transition'
 import { fonts, tabSizes, textIndents, textShadows, textStrokes } from './typography'
+import { cssProperty, cssVariables } from './variables'
 
 export const rules: Rule<Theme>[] = [
   fonts,
@@ -39,4 +40,6 @@ export const rules: Rule<Theme>[] = [
 
   transforms,
   transitions,
+  cssVariables,
+  cssProperty,
 ].flat()

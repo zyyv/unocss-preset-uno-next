@@ -26,7 +26,7 @@ This is a proof-of-concept repository, but it is also the direction I am working
   - [x] transform
   - [x] transition
   - [x] typography
-  - [ ] variable
+  - [x] variable
 - [x] Theme
   - [x] animate
   - [x] colors
