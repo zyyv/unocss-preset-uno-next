@@ -17,13 +17,13 @@ This is a proof-of-concept repository, but it is also the direction I am working
   - [x] layout
   - [x] position
   - [x] question-mark
-  - [ ] ring
+  - [x] ring
   - [ ] shadow
   - [ ] size
   - [x] spacing
   - [ ] static
-  - [ ] svg
-  - [ ] transform
+  - [x] svg
+  - [x] transform
   - [ ] transition
   - [x] typography
   - [ ] variable

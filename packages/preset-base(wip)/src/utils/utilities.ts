@@ -1,4 +1,4 @@
-import type { CSSEntries, CSSObject, DynamicMatcher, RuleContext, StaticRule } from '@unocss/core'
+import type { CSSEntries, CSSObject, DynamicMatcher, RuleContext, StaticRule, VariantContext } from '@unocss/core'
 import type { ParsedColorValue } from '@unocss/rule-utils'
 import type { Theme } from '../theme'
 import { toArray } from '@unocss/core'
@@ -266,29 +266,29 @@ export function hasParseableColor(color: string | undefined, theme: Theme) {
   return color != null && !!parseColor(color, theme)?.color
 }
 
-// const reLetters = /[a-z]+/gi
-// const resolvedBreakpoints = new WeakMap<any, { point: string, size: string }[]>()
+const reLetters = /[a-z]+/gi
+const resolvedBreakpoints = new WeakMap<any, { point: string, size: string }[]>()
 
-// export function resolveBreakpoints({ theme, generator }: Readonly<VariantContext<Theme>>, key: 'breakpoints' | 'verticalBreakpoints' = 'breakpoints') {
-//   const breakpoints: Record<string, string> | undefined = (generator?.userConfig?.theme as any)?.[key] || theme[key]
+export function resolveBreakpoints({ theme, generator }: Readonly<VariantContext<Theme>>, key: 'breakpoints' | 'verticalBreakpoints' = 'breakpoints') {
+  const breakpoints: Record<string, string> | undefined = (generator?.userConfig?.theme as any)?.[key] || theme[key]
 
-//   if (!breakpoints)
-//     return undefined
+  if (!breakpoints)
+    return undefined
 
-//   if (resolvedBreakpoints.has(theme))
-//     return resolvedBreakpoints.get(theme)
+  if (resolvedBreakpoints.has(theme))
+    return resolvedBreakpoints.get(theme)
 
-//   const resolved = Object.entries(breakpoints)
-//     .sort((a, b) => Number.parseInt(a[1].replace(reLetters, '')) - Number.parseInt(b[1].replace(reLetters, '')))
-//     .map(([point, size]) => ({ point, size }))
+  const resolved = Object.entries(breakpoints)
+    .sort((a, b) => Number.parseInt(a[1].replace(reLetters, '')) - Number.parseInt(b[1].replace(reLetters, '')))
+    .map(([point, size]) => ({ point, size }))
 
-//   resolvedBreakpoints.set(theme, resolved)
-//   return resolved
-// }
+  resolvedBreakpoints.set(theme, resolved)
+  return resolved
+}
 
-// export function resolveVerticalBreakpoints(context: Readonly<VariantContext<Theme>>) {
-//   return resolveBreakpoints(context, 'verticalBreakpoints')
-// }
+export function resolveVerticalBreakpoints(context: Readonly<VariantContext<Theme>>) {
+  return resolveBreakpoints(context, 'verticalBreakpoints')
+}
 
 export function makeGlobalStaticRules(prefix: string, property?: string): StaticRule[] {
   return globalKeywords.map(keyword => [`${prefix}-${keyword}`, { [property ?? prefix]: keyword }])

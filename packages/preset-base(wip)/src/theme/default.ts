@@ -4,7 +4,7 @@ import { colors } from './colors'
 import { blur } from './filters'
 import { font, fontWeight, leading, text, textStrokeWidth, tracking } from './font'
 import { dropShadow, insetShadow, perspective, radius, shadow, spacing, textShadow } from './misc'
-import { breakpoint, container } from './screen'
+import { breakpoint, container } from './size'
 import { ease } from './transition'
 
 export const theme = {
