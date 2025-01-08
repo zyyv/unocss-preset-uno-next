@@ -311,3 +311,7 @@ export function transformXYZ(d: string, v: string, name: string): [string, strin
 
   return values.map((v, i) => [`--un-${name}-${xyzArray[i]}`, v])
 }
+
+export function camelToHyphen(str: string) {
+  return str.replace(/[A-Z]/g, '-$&').toLowerCase()
+}

@@ -1,7 +1,7 @@
 import { createGenerator } from 'unocss'
 import { expect, it } from 'vitest'
 import { presetBase } from '../src/index'
-import { getStringComponents } from '../src/utils'
+import { colorToString, getStringComponents, parseCssColor } from '../src/utils'
 
 it('presetStarter', async () => {
   const uno = await createGenerator({
@@ -89,12 +89,21 @@ it('presetStarter', async () => {
     // 'transition-colors',
     // 'ease-in-out',
 
-    'shadow',
+    // 'shadow',
+    // 'shadow-red',
+    // 'inset-ring',
+    // 'inset-ring-4',
+    // 'inset-ring-red',
+    // 'inset-ring-red:20',
+    // 'inset-ring-op-20',
+    'ring',
+    'ring-4',
   ], { preflights: false })
 
   expect(css).toMatchInlineSnapshot(`
     "/* layer: default */
-    .shadow{--un-shadow:var(--un-shadow-inset) 0 1px 3px 0 rgb(0 0 0 / 0.1), var(--un-shadow-inset) 0 1px 2px -1px rgb(0 0 0 / 0.1);box-shadow:var(--un-inset-shadow), var(--un-inset-ring-shadow), var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}"
+    .ring{--un-ring-shadow:var(--un-ring-inset) 0 0 0 calc(1px + var(--un-ring-offset-width)) var(--un-ring-color, currentColor);box-shadow:var(--un-inset-shadow), var(--un-inset-ring-shadow), var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
+    .ring-4{--un-ring-shadow:var(--un-ring-inset) 0 0 0 calc(4px + var(--un-ring-offset-width)) var(--un-ring-color, currentColor);box-shadow:var(--un-inset-shadow), var(--un-inset-ring-shadow), var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}"
   `)
 
   expect(getStringComponents(`var(--un-shadow-inset) 0 1px rgb(0 0 0 / 0.05)`, ' ', 6)).toMatchInlineSnapshot(`
@@ -105,4 +114,18 @@ it('presetStarter', async () => {
       "rgb(0 0 0 / 0.05)",
     ]
   `)
+
+  expect(parseCssColor(`rgb(0 0 0 / 0.05)`)).toMatchInlineSnapshot(`
+    {
+      "alpha": "0.05",
+      "components": [
+        "0",
+        "0",
+        "0",
+      ],
+      "type": "rgb",
+    }
+  `)
+
+  expect(colorToString(parseCssColor(`rgb(0 0 0 / 0.05)`)!)).toMatchInlineSnapshot(`"rgb(0 0 0 / 0.05)"`)
 })

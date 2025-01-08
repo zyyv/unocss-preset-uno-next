@@ -9,6 +9,7 @@ import { textDecorations } from './decoration'
 import { flex } from './flex'
 import { gaps } from './gap'
 import { grids } from './grid'
+import { rings } from './ring'
 import { boxShadows } from './shadow'
 import { margins, paddings } from './spacing'
 import { transforms } from './transform'
@@ -39,6 +40,7 @@ export const rules: Rule<Theme>[] = [
   gaps,
   grids,
 
+  rings,
   boxShadows,
   transforms,
   transitions,
