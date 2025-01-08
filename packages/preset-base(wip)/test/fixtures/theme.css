@@ -394,6 +394,7 @@
 --text-shadow-md: 0 1px 2px rgb(30 29 39 / 0.19), 1px 2px 4px rgb(54 64 147 / 0.18);
 --text-shadow-lg: 3px 3px 6px rgb(0 0 0 / 0.26), 0 0 5px rgb(15 3 86 / 0.22);
 --text-shadow-xl: 1px 1px 3px rgb(0 0 0 / 0.29), 2px 4px 7px rgb(73 64 125 / 0.35);
+--ease-linear: linear;
 --ease-in: cubic-bezier(0.4, 0, 1, 1);
 --ease-out: cubic-bezier(0, 0, 0.2, 1);
 --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
@@ -413,4 +414,16 @@
 --perspective-normal: 500px;
 --perspective-midrange: 800px;
 --perspective-distant: 1200px;
+--property-all: all;
+--property-colors: color,background-color,border-color,text-decoration-color,fill,stroke,--un-gradient-from,--un-gradient-via,--un-gradient-to;
+--property-opacity: opacity;
+--property-shadow: box-shadow;
+--property-transform: transform,translate,scale,rotate;
+--defaults-transition-duration: 150ms;
+--defaults-font-family: var(--font-sans);
+--defaults-font-feature-settings: var(--font-sans--font-feature-settings);
+--defaults-font-variation-settings: var(--font-sans--font-variation-settings);
+--defaults-mono-font-family: var(--font-mono);
+--defaults-mono-font-feature-settings: var(--font-mono--font-feature-settings);
+--defaults-mono-font-variation-settings: var(--font-mono--font-variation-settings);
 }

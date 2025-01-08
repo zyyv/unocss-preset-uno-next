@@ -61,18 +61,18 @@ export const perspective = {
   distant: '1200px',
 } satisfies Theme['perspective']
 
-// export const defaults = {
-//   transition: {
-//     duration: '150ms',
-//   },
-//   font: {
-//     family: 'var(--font-sans)',
-//     featureSettings: 'var(--font-sans--font-feature-settings)',
-//     variationSettings: 'var(--font-sans--font-variation-settings)',
-//   },
-//   monoFont: {
-//     family: 'var(--font-mono)',
-//     featureSettings: 'var(--font-mono--font-feature-settings)',
-//     variationSettings: 'var(--font-mono--font-variation-settings)',
-//   },
-// }
+export const defaults = {
+  transition: {
+    duration: '150ms',
+  },
+  font: {
+    family: 'var(--font-sans)',
+    featureSettings: 'var(--font-sans--font-feature-settings)',
+    variationSettings: 'var(--font-sans--font-variation-settings)',
+  },
+  monoFont: {
+    family: 'var(--font-mono)',
+    featureSettings: 'var(--font-mono--font-feature-settings)',
+    variationSettings: 'var(--font-mono--font-variation-settings)',
+  },
+}

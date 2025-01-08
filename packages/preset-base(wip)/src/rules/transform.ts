@@ -106,10 +106,11 @@ function handleTranslate([, d, b]: string[]): CSSValues | undefined {
 
 function handleScale([, d, b]: string[]): CSSValues | undefined {
   const v = h.bracket.cssvar.fraction.percent(b)
+
   if (v != null) {
     return [
       ...transformXYZ(d, v, 'scale'),
-      ['transform', transform],
+      ['scale', `var(--un-scale-x) var(--un-scale-y)${d === 'z' ? ' var(--un-scale-z)' : ''}`],
     ]
   }
 }

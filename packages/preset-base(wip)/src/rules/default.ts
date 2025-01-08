@@ -11,6 +11,7 @@ import { gaps } from './gap'
 import { grids } from './grid'
 import { margins, paddings } from './spacing'
 import { transforms } from './transform'
+import { transitions } from './transition'
 import { fonts, tabSizes, textIndents, textShadows, textStrokes } from './typography'
 
 export const rules: Rule<Theme>[] = [
@@ -37,4 +38,5 @@ export const rules: Rule<Theme>[] = [
   grids,
 
   transforms,
+  transitions,
 ].flat()

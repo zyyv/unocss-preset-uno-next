@@ -12,7 +12,7 @@ function resolveTransitionProperty(prop: string, theme: Theme): string | undefin
     if ((prop.startsWith('[') && prop.endsWith(']'))) {
       prop = prop.slice(1, -1)
     }
-    const props = prop.split(',').map(p => theme.transitionProperty?.[p] ?? h.properties(p))
+    const props = prop.split(',').map(p => theme.property?.[p] ?? h.properties(p))
     if (props.every(Boolean)) {
       p = props.join(',')
     }
@@ -26,32 +26,34 @@ export const transitions: Rule<Theme>[] = [
   [
     /^transition(?:-(\D+?))?(?:-(\d+))?$/,
     ([, prop, d], { theme }) => {
+      const defaultTransition = {
+        'transition-property': theme.property?.DEFAULT,
+        'transition-timing-function': `var(--un-ease, var(--default-transition-timing-function))`,
+        'transition-duration': `var(--un-duration, var(--default-transition-duration))`,
+      }
+
       if (!prop && !d) {
         return {
-          'transition-property': theme.transitionProperty?.DEFAULT,
-          'transition-timing-function': theme.ease?.DEFAULT,
-          'transition-duration': theme.duration?.DEFAULT ?? h.time('150'),
+          ...defaultTransition,
         }
       }
 
       else if (prop != null) {
         const p = resolveTransitionProperty(prop, theme)
-        const duration = theme.duration?.[d || 'DEFAULT'] ?? h.time(d || '150')
 
         if (p) {
           return {
+            '--un-duration': d && h.time(d),
+            ...defaultTransition,
             'transition-property': p,
-            'transition-timing-function': theme.easing?.DEFAULT,
-            'transition-duration': duration,
           }
         }
       }
 
       else if (d != null) {
         return {
-          'transition-property': theme.transitionProperty?.DEFAULT,
-          'transition-timing-function': theme.easing?.DEFAULT,
-          'transition-duration': theme.duration?.[d] ?? h.time(d),
+          '--un-duration': h.time(d),
+          ...defaultTransition,
         }
       }
     },
@@ -63,20 +65,30 @@ export const transitions: Rule<Theme>[] = [
   // timings
   [
     /^(?:transition-)?duration-(.+)$/,
-    ([, d], { theme }) => ({ 'transition-duration': theme.duration?.[d || 'DEFAULT'] ?? h.bracket.cssvar.time(d) }),
+    ([, d]) => ({
+      '--un-duration': h.bracket.cssvar.time(d),
+      'transition-duration': h.bracket.cssvar.time(d),
+    }),
     { autocomplete: ['transition-duration-$duration', 'duration-$duration'] },
   ],
 
   [
     /^(?:transition-)?delay-(.+)$/,
-    ([, d], { theme }) => ({ 'transition-delay': theme.duration?.[d || 'DEFAULT'] ?? h.bracket.cssvar.time(d) }),
+    ([, d]) => ({ 'transition-delay': h.bracket.cssvar.time(d) }),
     { autocomplete: ['transition-delay-$duration', 'delay-$duration'] },
   ],
 
   [
-    /^(?:transition-)?ease(?:-(.+))?$/,
-    ([, d], { theme }) => ({ 'transition-timing-function': theme.easing?.[d || 'DEFAULT'] ?? h.bracket.cssvar(d) }),
-    { autocomplete: ['transition-ease-(linear|in|out|in-out|DEFAULT)', 'ease-(linear|in|out|in-out|DEFAULT)'] },
+    /^(?:transition-)?ease-(.+)$/,
+    ([, d], { theme }) => {
+      const v = d in (theme.ease ?? {}) ? `var(--ease-${d})` : h.bracket.cssvar(d)
+
+      return {
+        '--un-ease': v,
+        'transition-timing-function': v,
+      }
+    },
+    { autocomplete: ['transition-ease-(linear|in|out|in-out)', 'ease-(linear|in|out|in-out)'] },
   ],
 
   // props

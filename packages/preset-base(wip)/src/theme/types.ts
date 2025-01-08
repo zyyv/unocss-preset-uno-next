@@ -24,4 +24,6 @@ export interface Theme {
   blur?: Record<string, string>
   perspective?: Record<string, string>
   textStrokeWidth?: Record<string, string>
+  property?: Record<string, string>
+  defaults?: Record<string, Record<string, string>>
 }
