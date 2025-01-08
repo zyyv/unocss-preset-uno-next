@@ -22,7 +22,7 @@ export const boxShadows: Rule<Theme>[] = [
     if ((v != null || c != null) && !hasParseableColor(c, theme)) {
       return {
         '--un-shadow': colorableShadows((v || c)!, '--un-shadow-color').join(','),
-        'box-shadow': 'var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow)',
+        'box-shadow': 'var(--un-inset-shadow), var(--un-inset-ring-shadow), var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow)',
       }
     }
     return colorResolver('--un-shadow-color', 'shadow')(match, context)

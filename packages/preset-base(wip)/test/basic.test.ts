@@ -1,6 +1,7 @@
 import { createGenerator } from 'unocss'
 import { expect, it } from 'vitest'
 import { presetBase } from '../src/index'
+import { getStringComponents } from '../src/utils'
 
 it('presetStarter', async () => {
   const uno = await createGenerator({
@@ -88,7 +89,20 @@ it('presetStarter', async () => {
     // 'transition-colors',
     // 'ease-in-out',
 
+    'shadow',
   ], { preflights: false })
 
-  expect(css).toMatchInlineSnapshot(`""`)
+  expect(css).toMatchInlineSnapshot(`
+    "/* layer: default */
+    .shadow{--un-shadow:var(--un-shadow-inset) 0 1px 3px 0 rgb(0 0 0 / 0.1), var(--un-shadow-inset) 0 1px 2px -1px rgb(0 0 0 / 0.1);box-shadow:var(--un-inset-shadow), var(--un-inset-ring-shadow), var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}"
+  `)
+
+  expect(getStringComponents(`var(--un-shadow-inset) 0 1px rgb(0 0 0 / 0.05)`, ' ', 6)).toMatchInlineSnapshot(`
+    [
+      "var(--un-shadow-inset)",
+      "0",
+      "1px",
+      "rgb(0 0 0 / 0.05)",
+    ]
+  `)
 })
