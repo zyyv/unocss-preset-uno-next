@@ -24,7 +24,7 @@ This is a proof-of-concept repository, but it is also the direction I am working
   - [ ] static
   - [x] svg
   - [x] transform
-  - [ ] transition
+  - [x] transition
   - [x] typography
   - [ ] variable
 - [x] Theme
