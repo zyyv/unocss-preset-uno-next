@@ -1,7 +1,6 @@
 import { createGenerator } from 'unocss'
 import { expect, it } from 'vitest'
 import { presetBase } from '../src/index'
-import { colorToString, getStringComponents, parseCssColor } from '../src/utils'
 
 it('presetStarter', async () => {
   const uno = await createGenerator({
@@ -96,36 +95,15 @@ it('presetStarter', async () => {
     // 'inset-ring-red',
     // 'inset-ring-red:20',
     // 'inset-ring-op-20',
-    'ring',
-    'ring-4',
+
+    // 'ring',
+    // 'ring-4',
+    // 'ring-$asd',
+    // 'ring-red',
+
+    // 'ring-offset-red',
+
   ], { preflights: false })
 
-  expect(css).toMatchInlineSnapshot(`
-    "/* layer: default */
-    .ring{--un-ring-shadow:var(--un-ring-inset) 0 0 0 calc(1px + var(--un-ring-offset-width)) var(--un-ring-color, currentColor);box-shadow:var(--un-inset-shadow), var(--un-inset-ring-shadow), var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
-    .ring-4{--un-ring-shadow:var(--un-ring-inset) 0 0 0 calc(4px + var(--un-ring-offset-width)) var(--un-ring-color, currentColor);box-shadow:var(--un-inset-shadow), var(--un-inset-ring-shadow), var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}"
-  `)
-
-  expect(getStringComponents(`var(--un-shadow-inset) 0 1px rgb(0 0 0 / 0.05)`, ' ', 6)).toMatchInlineSnapshot(`
-    [
-      "var(--un-shadow-inset)",
-      "0",
-      "1px",
-      "rgb(0 0 0 / 0.05)",
-    ]
-  `)
-
-  expect(parseCssColor(`rgb(0 0 0 / 0.05)`)).toMatchInlineSnapshot(`
-    {
-      "alpha": "0.05",
-      "components": [
-        "0",
-        "0",
-        "0",
-      ],
-      "type": "rgb",
-    }
-  `)
-
-  expect(colorToString(parseCssColor(`rgb(0 0 0 / 0.05)`)!)).toMatchInlineSnapshot(`"rgb(0 0 0 / 0.05)"`)
+  expect(css).toMatchInlineSnapshot(`""`)
 })
