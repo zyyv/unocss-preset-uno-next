@@ -4,7 +4,7 @@ import { colors } from './colors'
 import { blur } from './filters'
 import { font, fontWeight, leading, text, textStrokeWidth, tracking } from './font'
 import { defaults, dropShadow, insetShadow, perspective, radius, shadow, spacing, textShadow } from './misc'
-import { breakpoint, container } from './size'
+import { breakpoint, container, verticalBreakpoint } from './size'
 import { ease, property } from './transition'
 
 export const theme = {
@@ -12,6 +12,7 @@ export const theme = {
   colors,
   spacing,
   breakpoint,
+  verticalBreakpoint,
   container,
   text,
   fontWeight,

@@ -24,3 +24,5 @@ export const breakpoint = {
   'xl': '80rem',
   '2xl': '96rem',
 } satisfies Theme['breakpoint']
+
+export const verticalBreakpoint = { ...breakpoint } satisfies Theme['breakpoint']

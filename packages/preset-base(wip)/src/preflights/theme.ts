@@ -17,7 +17,10 @@ function themeToCSSVars(theme: Theme): string {
       if (passThemeKey.includes(key))
         continue
 
-      if (typeof obj[key] === 'object') {
+      if (Array.isArray(obj[key])) {
+        cssVariables += `${camelToHyphen(`--${prefix}-${key}`)}: ${obj[key].join(',').replace(alphaPlaceholdersRE, '1')};\n`
+      }
+      else if (typeof obj[key] === 'object') {
         process(obj[key], `${prefix}-${key}`)
       }
       else {

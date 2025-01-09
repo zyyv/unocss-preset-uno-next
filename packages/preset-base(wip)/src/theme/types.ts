@@ -9,6 +9,7 @@ export interface Theme {
   colors?: Colors
   spacing?: Record<string, string>
   breakpoint?: Record<string, string>
+  verticalBreakpoint?: Record<string, string>
   container?: Record<string, string>
   text: Record<string, CSSObject>
   fontWeight?: Record<string, string>
