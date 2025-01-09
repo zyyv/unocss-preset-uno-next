@@ -13,14 +13,22 @@ function getPropName(minmax: string, hw: string) {
   return `${minmax || ''}${sizeMapping[hw]}`
 }
 
-type SizeProps = 'width' | 'height' | 'maxWidth' | 'maxHeight' | 'minWidth' | 'minHeight' | 'inlineSize' | 'blockSize' | 'maxInlineSize' | 'maxBlockSize' | 'minInlineSize' | 'minBlockSize'
+// function getSizeValue(minmax: string, hw: string, theme: Theme, prop: string) {
+//   const str = getPropName(minmax, hw).replace(/-(\w)/g, (_, p) => p.toUpperCase())
+//   const v = theme[str]?.[prop]
+//   if (v != null)
+//     return v
 
-function getSizeValue(minmax: string, hw: string, theme: Theme, prop: string) {
-  const str = getPropName(minmax, hw).replace(/-(\w)/g, (_, p) => p.toUpperCase()) as SizeProps
-  const v = theme[str]?.[prop]
-  if (v != null)
-    return v
+//   switch (prop) {
+//     case 'fit':
+//     case 'max':
+//     case 'min':
+//       return `${prop}-content`
+//   }
 
+//   return h.bracket.cssvar.global.auto.fraction.rem(prop)
+// }
+function getSizeValue(prop: string) {
   switch (prop) {
     case 'fit':
     case 'max':
@@ -32,9 +40,9 @@ function getSizeValue(minmax: string, hw: string, theme: Theme, prop: string) {
 }
 
 export const sizes: Rule<Theme>[] = [
-  [/^size-(min-|max-)?(.+)$/, ([, m, s], { theme }) => ({
-    [getPropName(m, 'w')]: getSizeValue(m, 'w', theme, s),
-    [getPropName(m, 'h')]: getSizeValue(m, 'h', theme, s),
+  [/^size-(min-|max-)?(.+)$/, ([, m, s]) => ({
+    [getPropName(m, 'w')]: getSizeValue(s),
+    [getPropName(m, 'h')]: getSizeValue(s),
   })],
   [/^(?:size-)?(min-|max-)?([wh])-?(.+)$/, ([, m, w, s], { theme }) => ({ [getPropName(m, w)]: getSizeValue(m, w, theme, s) })],
   [/^(?:size-)?(min-|max-)?(block|inline)-(.+)$/, ([, m, w, s], { theme }) => ({ [getPropName(m, w)]: getSizeValue(m, w, theme, s) }), {

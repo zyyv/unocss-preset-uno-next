@@ -103,7 +103,12 @@ it('presetStarter', async () => {
 
     // 'ring-offset-red',
 
+    'size-max',
+
   ], { preflights: false })
 
-  expect(css).toMatchInlineSnapshot(`""`)
+  expect(css).toMatchInlineSnapshot(`
+    "/* layer: default */
+    .size-max{width:max-content;height:max-content;}"
+  `)
 })
