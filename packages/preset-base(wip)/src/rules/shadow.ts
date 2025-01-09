@@ -1,6 +1,6 @@
-import type { Rule } from '@unocss/core'
+import type { CSSObject, Rule, RuleContext } from '@unocss/core'
 import type { Theme } from '../theme'
-import { colorableShadows, colorResolver, h, hasParseableColor } from '../utils'
+import { camelToHyphen, colorableShadows, colorResolver, h, hasParseableColor } from '../utils'
 import { varEmpty } from './static'
 
 export const boxShadowsBase = {
@@ -12,23 +12,31 @@ export const boxShadowsBase = {
 const preflightKeys = Object.keys(boxShadowsBase)
 
 export const boxShadows: Rule<Theme>[] = [
-  // color
-  [/^shadow(?:-(.+))?$/, (match, context) => {
+  // shadow
+  [/^shadow(?:-(.+))?$/, hanldeShadow('shadow'), { custom: { preflightKeys }, autocomplete: ['shadow-$colors', 'shadow-$shadow'] }],
+  [/^shadow-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-shadow-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'shadow-(op|opacity)-<percent>' }],
+  ['shadow-inset', { '--un-shadow-inset': 'inset' }],
+
+  // inset shadow
+  [/^inset-shadow(?:-(.+))?$/, hanldeShadow('insetShadow'), { custom: { preflightKeys }, autocomplete: ['inset-shadow-$colors', 'inset-shadow-$insetShadow'] }],
+  [/^inset-shadow-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-inset-shadow-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'shadow-(op|opacity)-<percent>' }],
+
+]
+
+function hanldeShadow(themeKey: 'shadow' | 'insetShadow') {
+  return (match: RegExpMatchArray, ctx: RuleContext<Theme>): CSSObject | undefined => {
     const [, d] = match
-    const { theme } = context
-    const v = theme.shadow?.[d || 'sm']
+    const { theme } = ctx
+    const v = theme[themeKey]?.[d || 'DEFAULT']
     const c = d ? h.bracket.cssvar(d) : undefined
+    const colorVar = camelToHyphen(themeKey)
 
     if ((v != null || c != null) && !hasParseableColor(c, theme)) {
       return {
-        '--un-shadow': colorableShadows((v || c)!, '--un-shadow-color').join(','),
-        'box-shadow': 'var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow)',
+        '--un-shadow': colorableShadows((v || c)!, `--un-${colorVar}-color`).join(','),
+        'box-shadow': 'var(--un-inset-shadow), var(--un-inset-ring-shadow), var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow)',
       }
     }
-    return colorResolver('--un-shadow-color', 'shadow')(match, context)
-  }, { custom: { preflightKeys }, autocomplete: ['shadow-$colors', 'shadow-$boxShadow'] }],
-  [/^shadow-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-shadow-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'shadow-(op|opacity)-<percent>' }],
-
-  // inset
-  ['shadow-inset', { '--un-shadow-inset': 'inset' }],
-]
+    return colorResolver(`--un-${colorVar}-color`, colorVar)(match, ctx)
+  }
+}

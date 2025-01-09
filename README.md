@@ -18,7 +18,7 @@ This is a proof-of-concept repository, but it is also the direction I am working
   - [x] position
   - [x] question-mark
   - [x] ring
-  - [ ] shadow
+  - [x] shadow
   - [ ] size
   - [x] spacing
   - [ ] static

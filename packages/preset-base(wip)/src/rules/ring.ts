@@ -1,6 +1,6 @@
 import type { CSSObject, Rule, RuleContext } from '@unocss/core'
 import type { Theme } from '../theme'
-import { colorResolver, h, isCSSMathFn } from '../utils'
+import { colorResolver, h } from '../utils'
 import { varEmpty } from './static'
 
 export const ringBase = {
@@ -16,42 +16,49 @@ const preflightKeys = Object.keys(ringBase)
 export const rings: Rule<Theme>[] = [
   // ring
   [/^ring(?:-(.+))?$/, ([, d]) => {
-    const value = h.px(d || '1')
-    if (value) {
+    const v = h.px(d || '1')
+    if (v != null) {
       return {
-        '--un-ring-width': value,
-        '--un-ring-offset-shadow': 'var(--un-ring-inset) 0 0 0 var(--un-ring-offset-width) var(--un-ring-offset-color)',
-        '--un-ring-shadow': 'var(--un-ring-inset) 0 0 0 calc(var(--un-ring-width) + var(--un-ring-offset-width)) var(--un-ring-color)',
-        'box-shadow': 'var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow)',
+        '--un-ring-shadow': `var(--un-ring-inset) 0 0 0 calc(${v} + var(--un-ring-offset-width)) var(--un-ring-color, currentColor)`,
+        'box-shadow': 'var(--un-inset-shadow), var(--un-inset-ring-shadow), var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow)',
       }
     }
   }, { custom: { preflightKeys }, autocomplete: 'ring-$ringWidth' }],
-
-  // size
-  [/^ring-(?:width-|size-)(.+)$/, handleWidth, { autocomplete: 'ring-(width|size)-$lineWidth' }],
-
-  // offset size
-  ['ring-offset', { '--un-ring-offset-width': '1px' }],
-  [/^ring-offset-(?:width-|size-)?(.+)$/, ([, d]) => ({ '--un-ring-offset-width': h.bracket.cssvar.px(d) }), { autocomplete: 'ring-offset-(width|size)-$lineWidth' }],
-
-  // colors
-  [/^ring-(.+)$/, handleColorOrWidth, { autocomplete: 'ring-$colors' }],
+  [/^ring-(.+)$/, createHandleColor('ring'), { autocomplete: 'ring-$colors' }],
   [/^ring-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-ring-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'ring-(op|opacity)-<percent>' }],
 
-  // offset color
-  [/^ring-offset-(.+)$/, colorResolver('--un-ring-offset-color', 'ring-offset'), { autocomplete: 'ring-offset-$colors' }],
+  // inset ring
+  [/^inset-ring(?:-(.+))?$/, ([, d]) => {
+    const v = h.px(d || '1')
+    if (v != null) {
+      return {
+        '--un-inset-ring-shadow': `inset 0 0 0 ${v} var(--un-inset-ring-color, currentColor)`,
+        'box-shadow': 'var(--un-inset-shadow), var(--un-inset-ring-shadow), var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow)',
+      }
+    }
+  }],
+  [/^inset-ring-(.+)$/, createHandleColor('inset-ring'), { autocomplete: 'inset-ring-$colors' }],
+  [/^inset-ring-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-inset-ring-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'inset-ring-(op|opacity)-<percent>' }],
+
+  // offset
+  [/^ring-offset(?:-(.+))?$/, ([, d]) => {
+    const v = h.px(d || '1')
+    if (v != null) {
+      return {
+        '--un-ring-offset-width': v,
+        '--un-ring-offset-shadow': 'var(--un-ring-inset,) 0 0 0 var(--un-ring-offset-width) var(--un-ring-offset-color)',
+      }
+    }
+  }, { autocomplete: 'ring-offset-$colors' }],
+  [/^ring-offset-(.+)$/, createHandleColor('ring-offset'), { autocomplete: 'ring-offset-$colors' }],
   [/^ring-offset-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-ring-offset-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'ring-offset-(op|opacity)-<percent>' }],
 
   // style
   ['ring-inset', { '--un-ring-inset': 'inset' }],
 ]
 
-function handleWidth([, b]: string[]): CSSObject {
-  return { '--un-ring-width': h.bracket.cssvar.px(b) }
-}
-
-function handleColorOrWidth(match: RegExpMatchArray, ctx: RuleContext<Theme>): CSSObject | undefined {
-  if (isCSSMathFn(h.bracket(match[1])))
-    return handleWidth(match)
-  return colorResolver('--un-ring-color', 'ring')(match, ctx) as CSSObject | undefined
+function createHandleColor(property: string) {
+  return (match: RegExpMatchArray, ctx: RuleContext<Theme>): CSSObject | undefined => {
+    return colorResolver(`--un-${property}-color`, property)(match, ctx) as CSSObject | undefined
+  }
 }

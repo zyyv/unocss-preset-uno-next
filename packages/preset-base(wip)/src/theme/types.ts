@@ -15,10 +15,10 @@ export interface Theme {
   tracking?: Record<string, string>
   leading?: Record<string, string>
   radius?: Record<string, string>
-  shadow?: Record<string, string>
-  insetShadow?: Record<string, string>
-  dropShadow?: Record<string, string>
-  textShadow?: Record<string, string>
+  shadow?: Record<string, string | string[]>
+  insetShadow?: Record<string, string | string[]>
+  dropShadow?: Record<string, string | string[]>
+  textShadow?: Record<string, string | string[]>
   ease?: Record<string, string>
   animate?: Record<string, string>
   blur?: Record<string, string>

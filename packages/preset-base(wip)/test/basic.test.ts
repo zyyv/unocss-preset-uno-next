@@ -88,6 +88,21 @@ it('presetStarter', async () => {
     // 'transition-colors',
     // 'ease-in-out',
 
+    // 'shadow',
+    // 'shadow-red',
+    // 'inset-ring',
+    // 'inset-ring-4',
+    // 'inset-ring-red',
+    // 'inset-ring-red:20',
+    // 'inset-ring-op-20',
+
+    // 'ring',
+    // 'ring-4',
+    // 'ring-$asd',
+    // 'ring-red',
+
+    // 'ring-offset-red',
+
   ], { preflights: false })
 
   expect(css).toMatchInlineSnapshot(`""`)
