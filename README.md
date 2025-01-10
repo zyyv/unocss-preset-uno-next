@@ -4,7 +4,7 @@ This is a proof-of-concept repository, but it is also the direction I am working
 
 ## Roadmap
 
-- [ ] Rules
+- [x] Rules
   - [x] align
   - [x] behaviors
   - [x] border
