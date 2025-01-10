@@ -35,6 +35,23 @@ This is a proof-of-concept repository, but it is also the direction I am working
   - [x] misc
   - [x] screen
   - [x] transition
+- [ ] Variants
+  - [ ] aria
+  - [ ] breakpoints
+  - [ ] children
+  - [ ] combinators
+  - [ ] container
+  - [ ] dark
+  - [ ] data
+  - [ ] default
+  - [ ] directions
+  - [ ] important
+  - [ ] media
+  - [ ] misc
+  - [ ] negative
+  - [ ] pseudo
+  - [ ] startingstyle
+  - [ ] supports
 
 ## License
 
