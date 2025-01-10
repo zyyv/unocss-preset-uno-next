@@ -21,7 +21,7 @@ This is a proof-of-concept repository, but it is also the direction I am working
   - [x] shadow
   - [x] size
   - [x] spacing
-  - [ ] static
+  - [x] static
   - [x] svg
   - [x] transform
   - [x] transition

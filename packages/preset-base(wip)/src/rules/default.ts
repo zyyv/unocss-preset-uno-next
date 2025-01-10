@@ -13,6 +13,7 @@ import { rings } from './ring'
 import { boxShadows } from './shadow'
 import { aspectRatio, sizes } from './size'
 import { margins, paddings } from './spacing'
+import { appearances, breaks, contains, contents, contentVisibility, cursors, displays, fontSmoothings, fontStyles, pointerEvents, resizes, textOverflows, textTransforms, textWraps, userSelects, whitespaces } from './static'
 import { transforms } from './transform'
 import { transitions } from './transition'
 import { fonts, tabSizes, textIndents, textShadows, textStrokes } from './typography'
@@ -42,6 +43,22 @@ export const rules: Rule<Theme>[] = [
   grids,
   sizes,
   aspectRatio,
+  displays,
+  appearances,
+  cursors,
+  contains,
+  pointerEvents,
+  resizes,
+  userSelects,
+  whitespaces,
+  contentVisibility,
+  contents,
+  breaks,
+  textWraps,
+  textOverflows,
+  textTransforms,
+  fontStyles,
+  fontSmoothings,
   rings,
   boxShadows,
   transforms,
