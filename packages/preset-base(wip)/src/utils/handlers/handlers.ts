@@ -132,6 +132,7 @@ export function percent(str: string) {
       return `${round(num)}%`
   }
 }
+
 // export function percent(str: string) {
 //   if (str.endsWith('%'))
 //     str = str.slice(0, -1)

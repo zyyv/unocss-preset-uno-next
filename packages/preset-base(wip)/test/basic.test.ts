@@ -103,12 +103,37 @@ it('presetStarter', async () => {
 
     // 'ring-offset-red',
 
-    'size-max',
+    // 'size-max',
+    // 'size-5',
+    // 'size-5rem',
+    // 'size-1/2',
+    // 'size-2px',
+
+    // 'max-w-5',
+    // 'w-5',
+    // 'w-full',
+    'w-lg',
+    'w-prose',
+    'w-screen',
+    'h-screen',
+    'size-screen',
+    'w-screen-xl',
+    'w-xl',
+    // 'w-1/2',
+    // 'w-5rem',
+    // 'block-5',
+    // 'inline-5',
 
   ], { preflights: false })
 
   expect(css).toMatchInlineSnapshot(`
     "/* layer: default */
-    .size-max{width:max-content;height:max-content;}"
+    .size-screen{width:100vw;height:100vh;}
+    .h-screen{height:100vh;}
+    .w-lg{width:32rem;}
+    .w-prose{width:65ch;}
+    .w-screen{width:100vw;}
+    .w-xl{width:36rem;}
+    .w-screen-xl{width:80rem;}"
   `)
 })

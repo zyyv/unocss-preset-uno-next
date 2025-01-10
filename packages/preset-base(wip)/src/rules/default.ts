@@ -11,7 +11,7 @@ import { gaps } from './gap'
 import { grids } from './grid'
 import { rings } from './ring'
 import { boxShadows } from './shadow'
-import { sizes } from './size'
+import { aspectRatio, sizes } from './size'
 import { margins, paddings } from './spacing'
 import { transforms } from './transform'
 import { transitions } from './transition'
@@ -41,6 +41,7 @@ export const rules: Rule<Theme>[] = [
   gaps,
   grids,
   sizes,
+  aspectRatio,
   rings,
   boxShadows,
   transforms,
