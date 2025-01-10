@@ -269,7 +269,7 @@ export function hasParseableColor(color: string | undefined, theme: Theme) {
 const reLetters = /[a-z]+/gi
 const resolvedBreakpoints = new WeakMap<any, { point: string, size: string }[]>()
 
-export function resolveBreakpoints({ theme, generator }: Readonly<VariantContext<Theme>>, key: 'breakpoints' | 'verticalBreakpoints' = 'breakpoints') {
+export function resolveBreakpoints({ theme, generator }: Readonly<VariantContext<Theme>>, key: 'breakpoint' | 'verticalBreakpoint' = 'breakpoint') {
   const breakpoints: Record<string, string> | undefined = (generator?.userConfig?.theme as any)?.[key] || theme[key]
 
   if (!breakpoints)
@@ -287,7 +287,7 @@ export function resolveBreakpoints({ theme, generator }: Readonly<VariantContext
 }
 
 export function resolveVerticalBreakpoints(context: Readonly<VariantContext<Theme>>) {
-  return resolveBreakpoints(context, 'verticalBreakpoints')
+  return resolveBreakpoints(context, 'verticalBreakpoint')
 }
 
 export function makeGlobalStaticRules(prefix: string, property?: string): StaticRule[] {

@@ -19,7 +19,7 @@ This is a proof-of-concept repository, but it is also the direction I am working
   - [x] question-mark
   - [x] ring
   - [x] shadow
-  - [ ] size
+  - [x] size
   - [x] spacing
   - [ ] static
   - [x] svg

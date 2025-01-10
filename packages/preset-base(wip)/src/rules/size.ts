@@ -13,41 +13,47 @@ function getPropName(minmax: string, hw: string) {
   return `${minmax || ''}${sizeMapping[hw]}`
 }
 
-type SizeProps = 'width' | 'height' | 'maxWidth' | 'maxHeight' | 'minWidth' | 'minHeight' | 'inlineSize' | 'blockSize' | 'maxInlineSize' | 'maxBlockSize' | 'minInlineSize' | 'minBlockSize'
-
-function getSizeValue(minmax: string, hw: string, theme: Theme, prop: string) {
-  const str = getPropName(minmax, hw).replace(/-(\w)/g, (_, p) => p.toUpperCase()) as SizeProps
-  const v = theme[str]?.[prop]
-  if (v != null)
-    return v
+function getSizeValue(theme: Theme, hw: string, prop: string) {
+  let v = theme.container?.[prop]
 
   switch (prop) {
     case 'fit':
     case 'max':
     case 'min':
-      return `${prop}-content`
+      v = `${prop}-content`
+      break
+    case 'screen':
+      v = hw === 'w' ? '100vw' : '100vh'
+      break
   }
 
-  return h.bracket.cssvar.global.auto.fraction.rem(prop)
+  if (h.number(prop) != null) {
+    v = `calc(var(--spacing) * ${h.number(prop)})`
+  }
+
+  return v ?? h.bracket.cssvar.global.auto.fraction.rem(prop)
 }
 
 export const sizes: Rule<Theme>[] = [
   [/^size-(min-|max-)?(.+)$/, ([, m, s], { theme }) => ({
-    [getPropName(m, 'w')]: getSizeValue(m, 'w', theme, s),
-    [getPropName(m, 'h')]: getSizeValue(m, 'h', theme, s),
+    [getPropName(m, 'w')]: getSizeValue(theme, 'w', s),
+    [getPropName(m, 'h')]: getSizeValue(theme, 'h', s),
   })],
-  [/^(?:size-)?(min-|max-)?([wh])-?(.+)$/, ([, m, w, s], { theme }) => ({ [getPropName(m, w)]: getSizeValue(m, w, theme, s) })],
-  [/^(?:size-)?(min-|max-)?(block|inline)-(.+)$/, ([, m, w, s], { theme }) => ({ [getPropName(m, w)]: getSizeValue(m, w, theme, s) }), {
+  [/^(?:size-)?(min-|max-)?([wh])-?(.+)$/, ([, m, w, s], { theme }) => ({ [getPropName(m, w)]: getSizeValue(theme, w, s) })],
+  [/^(?:size-)?(min-|max-)?(block|inline)-(.+)$/, ([, m, w, s], { theme }) => ({ [getPropName(m, w)]: getSizeValue(theme, w, s) }), {
     autocomplete: [
-      '(w|h)-$width|height|maxWidth|maxHeight|minWidth|minHeight|inlineSize|blockSize|maxInlineSize|maxBlockSize|minInlineSize|minBlockSize',
-      '(block|inline)-$width|height|maxWidth|maxHeight|minWidth|minHeight|inlineSize|blockSize|maxInlineSize|maxBlockSize|minInlineSize|minBlockSize',
+      '(w|h)-<num>',
+      '(w|h)-(full|screen|fit|max|min)',
+      '(max|min)-(w|h)-<num>',
+      '(max|min)-(w|h)-(full|screen|fit|max|min)',
+      '(block|inline)-<num>',
+      '(block|inline)-(full|screen|fit|max|min)',
       '(max|min)-(w|h|block|inline)',
-      '(max|min)-(w|h|block|inline)-$width|height|maxWidth|maxHeight|minWidth|minHeight|inlineSize|blockSize|maxInlineSize|maxBlockSize|minInlineSize|minBlockSize',
-      '(w|h)-full',
-      '(max|min)-(w|h)-full',
+      '(max|min)-(w|h|block|inline)-<num>',
+      '(max|min)-(w|h|block|inline)-(full|screen|fit|max|min)',
     ],
   }],
-  [/^(?:size-)?(min-|max-)?(h)-screen-(.+)$/, ([, m, h, p], context) => ({ [getPropName(m, h)]: handleBreakpoint(context, p, 'verticalBreakpoints') })],
+  [/^(?:size-)?(min-|max-)?(h)-screen-(.+)$/, ([, m, h, p], context) => ({ [getPropName(m, h)]: handleBreakpoint(context, p, 'verticalBreakpoint') })],
   [/^(?:size-)?(min-|max-)?(w)-screen-(.+)$/, ([, m, w, p], context) => ({ [getPropName(m, w)]: handleBreakpoint(context, p) }), {
     autocomplete: [
       '(w|h)-screen',
@@ -60,7 +66,7 @@ export const sizes: Rule<Theme>[] = [
   }],
 ]
 
-function handleBreakpoint(context: Readonly<RuleContext<Theme>>, point: string, key: 'breakpoints' | 'verticalBreakpoints' = 'breakpoints') {
+function handleBreakpoint(context: Readonly<RuleContext<Theme>>, point: string, key: 'breakpoint' | 'verticalBreakpoint' = 'breakpoint') {
   const bp = resolveBreakpoints(context, key)
   if (bp)
     return bp.find(i => i.point === point)?.size
@@ -78,6 +84,6 @@ function getAspectRatio(prop: string) {
   return h.bracket.cssvar.global.auto.number(prop)
 }
 
-export const aspectRatio: Rule[] = [
+export const aspectRatio: Rule<Theme>[] = [
   [/^(?:size-)?aspect-(?:ratio-)?(.+)$/, ([, d]: string[]) => ({ 'aspect-ratio': getAspectRatio(d) }), { autocomplete: ['aspect-(square|video|ratio)', 'aspect-ratio-(square|video)'] }],
 ]
