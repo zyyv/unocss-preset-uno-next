@@ -1,10 +1,10 @@
 import { createGenerator } from 'unocss'
 import { expect, it } from 'vitest'
-import { presetBase } from '../src/index'
+import { presetUnoNext } from '../src/index'
 
 it('presetStarter', async () => {
   const uno = await createGenerator({
-    presets: [presetBase()],
+    presets: [presetUnoNext()],
   })
 
   const { css } = await uno.generate('')
