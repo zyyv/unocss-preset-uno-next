@@ -1,4 +1,5 @@
-import type { Postprocessor, PresetOptions } from '@unocss/core'
+import type { Theme } from './theme'
+import { definePreset, type Postprocessor, type PresetOptions } from '@unocss/core'
 import { extractorArbitraryVariants } from '@unocss/extractor-arbitrary-variants'
 import { preflights } from './preflights'
 import { rules } from './rules/default'
@@ -64,7 +65,7 @@ export interface PresetUnoNextOptions extends PresetOptions {
   arbitraryVariants?: boolean
 }
 
-export function presetUnoNext(options: PresetUnoNextOptions = {}): PresetOptions {
+export const presetUnoNext = definePreset<PresetUnoNextOptions, Theme>((options = {}) => {
   options.dark = options.dark ?? 'class'
   options.attributifyPseudo = options.attributifyPseudo ?? false
   options.preflight = options.preflight ?? true
@@ -86,7 +87,7 @@ export function presetUnoNext(options: PresetUnoNextOptions = {}): PresetOptions
       shorthands,
     },
   }
-}
+})
 
 export function VarPrefixPostprocessor(prefix: string): Postprocessor | undefined {
   if (prefix !== 'un-') {

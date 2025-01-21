@@ -1,6 +1,6 @@
 import type { CSSObject, Rule, RuleContext } from '@unocss/core'
 import type { Theme } from '../theme'
-import { colorResolver, colorVariable, getStringComponent, globalKeywords, h, isCSSMathFn, numberResolver } from '../utils'
+import { colorResolver, getStringComponent, globalKeywords, h, isCSSMathFn, numberResolver } from '../utils'
 import { passThemeKey } from '../utils/constant'
 import { bracketTypeRe } from '../utils/handlers/regex'
 
@@ -162,16 +162,16 @@ export const textStrokes: Rule<Theme>[] = [
 ]
 
 export const textShadows: Rule<Theme>[] = [
-  [/^text-shadow(?:-(.+))?$/, ([, s = 'DEFAULT'], { theme }) => {
-    const v = theme.textShadow?.[s]
-    if (v != null) {
-      return {
-        '--un-text-shadow': colorVariable(v, 'un-text-shadow-color'),
-        'text-shadow': 'var(--un-text-shadow)',
-      }
-    }
-    return { 'text-shadow': h.bracket.cssvar.global(s) }
-  }, { autocomplete: 'text-shadow-$textShadow' }],
+  // [/^text-shadow(?:-(.+))?$/, ([, s = 'DEFAULT'], { theme }) => {
+  //   const v = theme.textShadow?.[s]
+  //   if (v != null) {
+  //     return {
+  //       '--un-text-shadow': colorVariable(v, 'un-text-shadow-color'),
+  //       'text-shadow': 'var(--un-text-shadow)',
+  //     }
+  //   }
+  //   return { 'text-shadow': h.bracket.cssvar.global(s) }
+  // }, { autocomplete: 'text-shadow-$textShadow' }],
 
   // colors
   [/^text-shadow-color-(.+)$/, colorResolver('--un-text-shadow-color', 'text-shadow'), { autocomplete: 'text-shadow-color-$colors' }],

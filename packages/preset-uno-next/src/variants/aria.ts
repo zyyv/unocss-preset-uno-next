@@ -1,4 +1,4 @@
-import type { Variant, VariantContext, VariantObject } from '@unocss/core'
+import type { Variant, VariantObject } from '@unocss/core'
 import type { Theme } from '../theme'
 import { h, variantGetParameter } from '../utils'
 
