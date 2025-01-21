@@ -35,23 +35,23 @@ This is a proof-of-concept repository, but it is also the direction I am working
   - [x] misc
   - [x] screen
   - [x] transition
-- [ ] Variants
-  - [ ] aria
+- [x] Variants
+  - [x] aria
   - [x] breakpoints
   - [x] children
   - [x] combinators
-  - [ ] container
-  - [ ] dark
-  - [ ] data
-  - [ ] default
-  - [ ] directions
-  - [ ] important
-  - [ ] media
-  - [ ] misc
-  - [ ] negative
-  - [ ] pseudo
-  - [ ] startingstyle
-  - [ ] supports
+  - [x] container
+  - [x] dark
+  - [x] data
+  - [x] default
+  - [x] directions
+  - [x] important
+  - [x] media
+  - [x] misc
+  - [x] negative
+  - [x] pseudo
+  - [x] startingstyle
+  - [x] supports
 
 - [ ] Supplementary test case comparison
 

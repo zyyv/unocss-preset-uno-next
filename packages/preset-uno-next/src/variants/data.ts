@@ -37,7 +37,7 @@ function taggedData(tagName: string): Variant<Theme> {
   }
 }
 
-export const variantTaggedDataAttributes: Variant[] = [
+export const variantTaggedDataAttributes: Variant<Theme>[] = [
   taggedData('group'),
   taggedData('peer'),
   taggedData('parent'),

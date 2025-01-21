@@ -27,4 +27,10 @@ export interface Theme {
   textStrokeWidth?: Record<string, string>
   property?: Record<string, string>
   defaults?: Record<string, Record<string, string>>
+
+  // for variant
+  aria?: Record<string, string>
+  data?: Record<string, string>
+  media?: Record<string, string>
+  supports?: Record<string, string>
 }
