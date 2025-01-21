@@ -1,7 +1,10 @@
-import type { PresetOptions } from '@unocss/core'
+import type { Postprocessor, PresetOptions } from '@unocss/core'
+import { extractorArbitraryVariants } from '@unocss/extractor-arbitrary-variants'
 import { preflights } from './preflights'
 import { rules } from './rules/default'
+import { shorthands } from './shorthands'
 import { theme } from './theme'
+import { variants } from './variants/default'
 
 export interface DarkModeSelectors {
   /**
@@ -19,7 +22,7 @@ export interface DarkModeSelectors {
   dark?: string
 }
 
-export interface PresetMiniOptions extends PresetOptions {
+export interface PresetUnoNextOptions extends PresetOptions {
   /**
    * Dark mode options
    *
@@ -61,11 +64,38 @@ export interface PresetMiniOptions extends PresetOptions {
   arbitraryVariants?: boolean
 }
 
-export function presetUnoNext() {
+export function presetUnoNext(options: PresetUnoNextOptions = {}): PresetOptions {
+  options.dark = options.dark ?? 'class'
+  options.attributifyPseudo = options.attributifyPseudo ?? false
+  options.preflight = options.preflight ?? true
+  options.variablePrefix = options.variablePrefix ?? 'un-'
+
   return {
-    name: 'preset-base',
+    name: '@unocss/preset-uno-next',
     rules,
     theme,
     preflights,
+    variants: variants(options),
+    options,
+    prefix: options.prefix,
+    postprocess: VarPrefixPostprocessor(options.variablePrefix),
+    extractorDefault: options.arbitraryVariants === false
+      ? undefined
+      : extractorArbitraryVariants(),
+    autocomplete: {
+      shorthands,
+    },
+  }
+}
+
+export function VarPrefixPostprocessor(prefix: string): Postprocessor | undefined {
+  if (prefix !== 'un-') {
+    return (obj) => {
+      obj.entries.forEach((i) => {
+        i[0] = i[0].replace(/^--un-/, `--${prefix}`)
+        if (typeof i[1] === 'string')
+          i[1] = i[1].replace(/var\(--un-/g, `var(--${prefix}`)
+      })
+    }
   }
 }
