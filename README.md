@@ -53,7 +53,8 @@ This is a proof-of-concept repository, but it is also the direction I am working
   - [x] startingstyle
   - [x] supports
 
-- [ ] Supplementary test case comparison
+- [x] Supplementary test case comparison - [See the result](./packages/preset-uno-next/test/fixtures/token-different.test.md)
+- [ ] Fix the difference
 
 ## License
 

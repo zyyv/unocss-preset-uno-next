@@ -12,43 +12,26 @@ it('presetStarter', async () => {
     presets: [presetUno()],
   })
 
-  const sameTargets: string[] = []
-  const differentTargets: {
-    token: string
-    css: {
-      unonext: string
-      uno: string
-    }
-  }[] = []
+  /*
+| Token | UnoNext | Uno | Same |
+| --- | --- | --- | --- |
+|  |  |  | |
+   */
 
-  const ps = presetMiniTargets.map(async (target) => {
+  let result = `
+| Token | Same | UnoNext | Uno |
+| --- | --- | --- | --- |
+`.trim()
+
+  for (const target of presetMiniTargets) {
     const [cssnext, css] = await Promise.all([
-      unoNext.generate(target, { preflights: false }).then(r => r.css),
-      uno.generate(target, { preflights: false }).then(r => r.css),
+      unoNext.generate(target, { preflights: false }).then(r => r.css.replace('/* layer: default */', '').trim()),
+      uno.generate(target, { preflights: false }).then(r => r.css.replace('/* layer: default */', '').trim()),
     ])
 
-    if (cssnext === css) {
-      sameTargets.push(target)
-    }
-    else {
-      differentTargets.push({
-        token: target,
-        css: {
-          unonext: cssnext.replace('/* layer: default */', '').trim(),
-          uno: css.replace('/* layer: default */', '').trim(),
-        },
-      })
-    }
-  })
+    const same = cssnext === css
+    result += `| ${target} | ${same ? '✅' : '❌'} | \`${cssnext}\` | \`${css}\` |\n`
+  }
 
-  await Promise.all(ps)
-
-  await expect({
-    length: sameTargets.length,
-    data: sameTargets,
-  }).toMatchFileSnapshot('./fixtures/same-targets.json')
-  await expect({
-    length: differentTargets.length,
-    data: differentTargets,
-  }).toMatchFileSnapshot('./fixtures/different-targets.json')
+  expect(result).toMatchFileSnapshot('./fixtures/token-different.test.md')
 })
