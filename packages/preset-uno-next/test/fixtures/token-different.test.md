@@ -1,5 +1,9 @@
+
+# Overview
+
 | Token | Same | UnoNext | Uno |
-| --- | --- | --- | --- || text-left | ✅ | `.text-left{text-align:left;}` | `.text-left{text-align:left;}` |
+| --- | --- | --- | --- |
+| text-left | ✅ | `.text-left{text-align:left;}` | `.text-left{text-align:left;}` |
 | text-align-right | ✅ | `.text-align-right{text-align:right;}` | `.text-align-right{text-align:right;}` |
 | text-align-inherit | ✅ | `.text-align-inherit{text-align:inherit;}` | `.text-align-inherit{text-align:inherit;}` |
 | vertical-baseline | ✅ | `.vertical-baseline{vertical-align:baseline;}` | `.vertical-baseline{vertical-align:baseline;}` |
