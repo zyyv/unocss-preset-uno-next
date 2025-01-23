@@ -12,17 +12,23 @@ it('presetStarter', async () => {
     presets: [presetUno()],
   })
 
-  /*
-| Token | UnoNext | Uno | Same |
-| --- | --- | --- | --- |
-|  |  |  | |
-   */
+  const needFixed = []
 
-  let result = `
-# Overview
+  let sameString = `## Same Tokens
 
 | Token | Same | UnoNext | Uno |
 | --- | --- | --- | --- |
+  `
+
+  let differentString = `
+## Different Tokens
+
+| Token | Same | UnoNext | Uno |
+| --- | --- | --- | --- |
+`
+
+  let result = `# Overview
+
 `
 
   for (const target of presetMiniTargets) {
@@ -31,9 +37,22 @@ it('presetStarter', async () => {
       uno.generate(target, { preflights: false }).then(r => r.css.replace('/* layer: default */', '').trim()),
     ])
 
+    if (css && !cssnext) {
+      needFixed.push(target)
+    }
+
     const same = cssnext === css
-    result += `| ${target} | ${same ? '✅' : '❌'} | \`${cssnext}\` | \`${css}\` |\n`
+
+    if (same) {
+      sameString += `| ${target} | ✅ | ${cssnext ? `${cssnext}` : '❓'} | ${css ? `${css}` : '❓'} |\n`
+    }
+    else {
+      differentString += `| ${target} | ❌ | ${cssnext ? `${cssnext}` : '❓'} | ${css ? `${css}` : '❓'} |\n`
+    }
   }
 
+  result += sameString + differentString
+
   expect(result).toMatchFileSnapshot('./fixtures/token-different.test.md')
+  expect(needFixed).toMatchSnapshot()
 })
