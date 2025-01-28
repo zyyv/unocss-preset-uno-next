@@ -41,7 +41,7 @@ it('presetStarter', async () => {
       needFixed.push(target)
     }
 
-    const escape = (code: string) => `<code>${code.replace(/\|/g, '\\|').replace(/\n/g, '<br>')}</code>`
+    const escape = (code: string) => `<pre lang="css">${code.replace(/\|/g, '\\|').replace(/\n/g, '<br>')}</pre>`
 
     const same = cssnext === css
 
