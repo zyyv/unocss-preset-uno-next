@@ -41,13 +41,15 @@ it('presetStarter', async () => {
       needFixed.push(target)
     }
 
+    const escape = (code: string) => `<code>${code.replace(/\|/g, '\\|').replace(/\n/g, '<br>')}</code>`
+
     const same = cssnext === css
 
     if (same) {
-      sameString += `| ${target} | ✅ | ${cssnext ? `${cssnext}` : '❓'} | ${css ? `${css}` : '❓'} |\n`
+      sameString += `| \`${target}\` | ✅ | ${cssnext ? `${escape(cssnext)}` : '❓'} | ${css ? `${escape(css)}` : '❓'} |\n`
     }
     else {
-      differentString += `| ${target} | ❌ | ${cssnext ? `${cssnext}` : '❓'} | ${css ? `${css}` : '❓'} |\n`
+      differentString += `| \`${target}\` | ❌ | ${cssnext ? `${escape(cssnext)}` : '❓'} | ${css ? `${escape(css)}` : '❓'} |\n`
     }
   }
 
