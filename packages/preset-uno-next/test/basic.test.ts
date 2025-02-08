@@ -64,10 +64,11 @@ it('test case', async () => {
     presets: [presetUnoNext()],
   })
 
-  const { css } = await unoNext.generate('outline-color-red-100', { preflights: false })
+  const { css } = await unoNext.generate('outline-color-red-100 text-[length:var(--size)]:$leading', { preflights: false })
 
   expect(css).toMatchInlineSnapshot(`
     "/* layer: default */
+    .text-\\[length\\:var\\(--size\\)\\]\\:\\$leading{font-size:var(--size);line-height:var(--leading);}
     .outline-color-red-100{--un-outline-color-opacity:100%;outline-color:color-mix(in oklch, var(--color-red-100) var(--un-outline-color-opacity), transparent);}"
   `)
 })

@@ -1,5 +1,3 @@
-import type { CSSObject } from '@unocss/core'
-
 export interface Colors {
   [key: string]: Colors | string
 }
@@ -11,7 +9,7 @@ export interface Theme {
   breakpoint?: Record<string, string>
   verticalBreakpoint?: Record<string, string>
   container?: Record<string, string>
-  text: Record<string, CSSObject>
+  text: Record<string, { fontSize?: string, lineHeight?: string, letterSpacing?: string }>
   fontWeight?: Record<string, string>
   tracking?: Record<string, string>
   leading?: Record<string, string>

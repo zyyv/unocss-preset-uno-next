@@ -6,7 +6,7 @@ import { bracketTypeRe } from '../utils/handlers/regex'
 
 export const fonts: Rule<Theme>[] = [
   // text
-  [/^text-(.+)$/, handleSize, { autocomplete: 'text-$fontSize' }],
+  [/^text-(.+)$/, handleText, { autocomplete: 'text-$fontSize' }],
 
   // // text size
   [/^(?:text|font)-size-(.+)$/, handleSize, { autocomplete: 'text-size-$fontSize' }],
@@ -177,6 +177,35 @@ export const textShadows: Rule<Theme>[] = [
   [/^text-shadow-color-(.+)$/, colorResolver('--un-text-shadow-color', 'text-shadow'), { autocomplete: 'text-shadow-color-$colors' }],
   [/^text-shadow-color-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-text-shadow-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'text-shadow-color-(op|opacity)-<percent>' }],
 ]
+
+function handleText([, s = 'base']: string[], { theme }: RuleContext<Theme>): CSSObject | undefined {
+  const split = splitShorthand(s, 'length')
+  if (!split)
+    return
+
+  const [size, leading] = split
+
+  const sizePairs = theme.text?.[size]
+  const lineHeight = leading ? theme.leading?.[leading] || h.bracket.cssvar.global.rem(leading) : undefined
+
+  if (sizePairs) {
+    return {
+      'font-size': sizePairs.fontSize,
+      'line-height': lineHeight ?? sizePairs.lineHeight ?? '1',
+      'letter-spacing': sizePairs.letterSpacing,
+    }
+  }
+
+  const fontSize = h.bracketOfLength.rem(size)
+  if (lineHeight && fontSize) {
+    return {
+      'font-size': fontSize,
+      'line-height': lineHeight,
+    }
+  }
+
+  return { 'font-size': h.bracketOfLength.rem(s) }
+}
 
 function handleSize([, s]: string[], { theme }: RuleContext<Theme>): CSSObject | undefined {
   if (theme.text?.[s] != null) {

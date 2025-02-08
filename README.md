@@ -56,6 +56,13 @@ This is a proof-of-concept repository, but it is also the direction I am working
 - [x] Supplementary test case comparison - [See the result](./packages/preset-uno-next/test/fixtures/token-different.test.md)
 - [ ] Fix the difference
 
+## Differences
+
+- New preflights for UnoCSS theme
+- Remove `zIndex` theme key
+- Remove theme color short key
+- etc.
+
 ## License
 
 [MIT](./LICENSE)

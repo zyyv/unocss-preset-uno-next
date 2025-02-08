@@ -81,6 +81,11 @@
 | `text-[length:var(--size)]` | ✅ | <code>.text-\[length\:var\(--size\)\]{font-size:var(--size);}</code> | <code>.text-\[length\:var\(--size\)\]{font-size:var(--size);}</code> |
 | `text-[length:2em]` | ✅ | <code>.text-\[length\:2em\]{font-size:2em;}</code> | <code>.text-\[length\:2em\]{font-size:2em;}</code> |
 | `text-[length:calc(1em-1px)]` | ✅ | <code>.text-\[length\:calc\(1em-1px\)\]{font-size:calc(1em - 1px);}</code> | <code>.text-\[length\:calc\(1em-1px\)\]{font-size:calc(1em - 1px);}</code> |
+| `text-sm/3` | ✅ | <code>.text-sm\/3{font-size:0.875rem;line-height:0.75rem;}</code> | <code>.text-sm\/3{font-size:0.875rem;line-height:0.75rem;}</code> |
+| `text-sm/[10px]` | ✅ | <code>.text-sm\/\[10px\]{font-size:0.875rem;line-height:10px;}</code> | <code>.text-sm\/\[10px\]{font-size:0.875rem;line-height:10px;}</code> |
+| `text-[11px]/4` | ✅ | <code>.text-\[11px\]\/4{font-size:11px;line-height:1rem;}</code> | <code>.text-\[11px\]\/4{font-size:11px;line-height:1rem;}</code> |
+| `text-[12px]/[13px]` | ✅ | <code>.text-\[12px\]\/\[13px\]{font-size:12px;line-height:13px;}</code> | <code>.text-\[12px\]\/\[13px\]{font-size:12px;line-height:13px;}</code> |
+| `text-[length:var(--size)]:$leading` | ✅ | <code>.text-\[length\:var\(--size\)\]\:\$leading{font-size:var(--size);line-height:var(--leading);}</code> | <code>.text-\[length\:var\(--size\)\]\:\$leading{font-size:var(--size);line-height:var(--leading);}</code> |
 | `text-[calc(1rem-1px)]` | ✅ | <code>.text-\[calc\(1rem-1px\)\]{font-size:calc(1rem - 1px);}</code> | <code>.text-\[calc\(1rem-1px\)\]{font-size:calc(1rem - 1px);}</code> |
 | `text-size-1em` | ✅ | <code>.text-size-1em{font-size:1em;}</code> | <code>.text-size-1em{font-size:1em;}</code> |
 | `font-size-1.5rem` | ✅ | <code>.font-size-1\.5rem{font-size:1.5rem;}</code> | <code>.font-size-1\.5rem{font-size:1.5rem;}</code> |
@@ -429,6 +434,9 @@
 | `transition-normal` | ✅ | <code>.transition-normal{transition-behavior:normal;}</code> | <code>.transition-normal{transition-behavior:normal;}</code> |
 | `font-[system-ui]` | ✅ | <code>.font-\[system-ui\]{font-family:system-ui;}</code> | <code>.font-\[system-ui\]{font-family:system-ui;}</code> |
 | `font-$font-name` | ✅ | <code>.font-\$font-name{font-family:var(--font-name);}</code> | <code>.font-\$font-name{font-family:var(--font-name);}</code> |
+| `text-4xl` | ✅ | <code>.text-4xl{font-size:2.25rem;line-height:2.5rem;}</code> | <code>.text-4xl{font-size:2.25rem;line-height:2.5rem;}</code> |
+| `text-base` | ✅ | <code>.text-base{font-size:1rem;line-height:1.5rem;}</code> | <code>.text-base{font-size:1rem;line-height:1.5rem;}</code> |
+| `text-lg` | ✅ | <code>.text-lg{font-size:1.125rem;line-height:1.75rem;}</code> | <code>.text-lg{font-size:1.125rem;line-height:1.75rem;}</code> |
 | `text-2em` | ✅ | <code>.text-2em{font-size:2em;}</code> | <code>.text-2em{font-size:2em;}</code> |
 | `text-size-unset` | ✅ | <code>.text-size-unset{font-size:unset;}</code> | <code>.text-size-unset{font-size:unset;}</code> |
 | `text-size-[2em]` | ✅ | <code>.text-size-\[2em\]{font-size:2em;}</code> | <code>.text-size-\[2em\]{font-size:2em;}</code> |
@@ -488,6 +496,7 @@
 | `[font-variation-settings:"wght"_400,_"opsz"_14]` | ✅ | <code>.\[font-variation-settings\:\"wght\"_400\,_\"opsz\"_14\]{font-variation-settings:"wght" 400, "opsz" 14;}</code> | <code>.\[font-variation-settings\:\"wght\"_400\,_\"opsz\"_14\]{font-variation-settings:"wght" 400, "opsz" 14;}</code> |
 | `[--css-variable:"wght"_400,_"opsz"_14]` | ✅ | <code>.\[--css-variable\:\"wght\"_400\,_\"opsz\"_14\]{--css-variable:"wght" 400, "opsz" 14;}</code> | <code>.\[--css-variable\:\"wght\"_400\,_\"opsz\"_14\]{--css-variable:"wght" 400, "opsz" 14;}</code> |
 | `group-hover:group-focus:text-center` | ✅ | <code>.group:hover:focus .group-hover\:group-focus\:text-center{text-align:center;}</code> | <code>.group:hover:focus .group-hover\:group-focus\:text-center{text-align:center;}</code> |
+| `peer-not-placeholder-shown:text-2xl` | ✅ | <code>.peer:not(:placeholder-shown)~.peer-not-placeholder-shown\:text-2xl{font-size:1.5rem;line-height:2rem;}</code> | <code>.peer:not(:placeholder-shown)~.peer-not-placeholder-shown\:text-2xl{font-size:1.5rem;line-height:2rem;}</code> |
 | `-mt-safe` | ✅ | ❓ | ❓ |
 | `-!mb-safe` | ✅ | ❓ | ❓ |
 | `!-ms-safe` | ✅ | ❓ | ❓ |
@@ -498,6 +507,8 @@
 | `all-[[data-hvr]:hover]:[color:red]` | ✅ | <code>.all-\[\[data-hvr\]\:hover\]\:\[color\:red\] [data-hvr]:hover{color:red;}</code> | <code>.all-\[\[data-hvr\]\:hover\]\:\[color\:red\] [data-hvr]:hover{color:red;}</code> |
 | `all:m-auto` | ✅ | <code>.all\:m-auto *{margin:auto;}</code> | <code>.all\:m-auto *{margin:auto;}</code> |
 | `children:m-auto` | ✅ | <code>.children\:m-auto>*{margin:auto;}</code> | <code>.children\:m-auto>*{margin:auto;}</code> |
+| `dark:text-xl` | ✅ | <code>.dark .dark\:text-xl{font-size:1.25rem;line-height:1.75rem;}</code> | <code>.dark .dark\:text-xl{font-size:1.25rem;line-height:1.75rem;}</code> |
+| `light:text-sm` | ✅ | <code>.light .light\:text-sm{font-size:0.875rem;line-height:1.25rem;}</code> | <code>.light .light\:text-sm{font-size:0.875rem;line-height:1.25rem;}</code> |
 | `uno-layer-uno_css:block` | ✅ | <code>/* layer: uno_css */<br>.uno-layer-uno_css\:block{display:block;}</code> | <code>/* layer: uno_css */<br>.uno-layer-uno_css\:block{display:block;}</code> |
 | `layer-[utility]:block` | ✅ | <code>@layer utility{<br>.layer-\[utility\]\:block{display:block;}<br>}</code> | <code>@layer utility{<br>.layer-\[utility\]\:block{display:block;}<br>}</code> |
 | `uno-layer-[uno_css]:block` | ✅ | <code>/* layer: uno css */<br>.uno-layer-\[uno_css\]\:block{display:block;}</code> | <code>/* layer: uno css */<br>.uno-layer-\[uno_css\]\:block{display:block;}</code> |
@@ -510,6 +521,10 @@
 | `after:content-[quoted:unocss]` | ✅ | <code>.after\:content-\[quoted\:unocss\]::after{content:"unocss";}</code> | <code>.after\:content-\[quoted\:unocss\]::after{content:"unocss";}</code> |
 | `rtl:text-right` | ✅ | <code>[dir="rtl"] .rtl\:text-right{text-align:right;}</code> | <code>[dir="rtl"] .rtl\:text-right{text-align:right;}</code> |
 | `ltr:text-left` | ✅ | <code>[dir="ltr"] .ltr\:text-left{text-align:left;}</code> | <code>[dir="ltr"] .ltr\:text-left{text-align:left;}</code> |
+| `peer-not-placeholder-shown:text-3xl` | ✅ | <code>.peer:not(:placeholder-shown)~.peer-not-placeholder-shown\:text-3xl{font-size:1.875rem;line-height:2.25rem;}</code> | <code>.peer:not(:placeholder-shown)~.peer-not-placeholder-shown\:text-3xl{font-size:1.875rem;line-height:2.25rem;}</code> |
+| `peer-is-placeholder-shown:text-3xl` | ✅ | <code>.peer:is(:placeholder-shown)~.peer-is-placeholder-shown\:text-3xl{font-size:1.875rem;line-height:2.25rem;}</code> | <code>.peer:is(:placeholder-shown)~.peer-is-placeholder-shown\:text-3xl{font-size:1.875rem;line-height:2.25rem;}</code> |
+| `group-where-placeholder-shown:text-4xl` | ✅ | <code>.group:where(:placeholder-shown) .group-where-placeholder-shown\:text-4xl{font-size:2.25rem;line-height:2.5rem;}</code> | <code>.group:where(:placeholder-shown) .group-where-placeholder-shown\:text-4xl{font-size:2.25rem;line-height:2.5rem;}</code> |
+| `group-has-placeholder-shown:text-4xl` | ✅ | <code>.group:has(:placeholder-shown) .group-has-placeholder-shown\:text-4xl{font-size:2.25rem;line-height:2.5rem;}</code> | <code>.group:has(:placeholder-shown) .group-has-placeholder-shown\:text-4xl{font-size:2.25rem;line-height:2.5rem;}</code> |
 | `scope-[unocss]:block` | ✅ | <code>unocss .scope-\[unocss\]\:block{display:block;}</code> | <code>unocss .scope-\[unocss\]\:block{display:block;}</code> |
 | `scope-[[data-any]]:inline` | ✅ | <code>[data-any] .scope-\[\[data-any\]\]\:inline{display:inline;}</code> | <code>[data-any] .scope-\[\[data-any\]\]\:inline{display:inline;}</code> |
 | `parent-hover:text-center` | ✅ | <code>.parent:hover>.parent-hover\:text-center{text-align:center;}</code> | <code>.parent:hover>.parent-hover\:text-center{text-align:center;}</code> |
@@ -680,11 +695,6 @@
 | `text-[color:--variable]` | ❌ | <code>.text-\[color\:--variable\]{--un-text-opacity:100%;color:color-mix(in oklch, var(--variable) var(--un-text-opacity), transparent);}</code> | <code>.text-\[color\:--variable\]{color:var(--variable);}</code> |
 | `text-[color:var(--color)]` | ❌ | <code>.text-\[color\:var\(--color\)\]{--un-text-opacity:100%;color:color-mix(in oklch, var(--color) var(--un-text-opacity), transparent);}</code> | <code>.text-\[color\:var\(--color\)\]{color:var(--color);}</code> |
 | `text-[color:var(--color-x)]:[trick]` | ❌ | <code>.text-\[color\:var\(--color-x\)\]\:\[trick\]{--un-text-opacity:[trick]%;color:color-mix(in oklch, var(--color-x) var(--un-text-opacity), transparent);}</code> | <code>.text-\[color\:var\(--color-x\)\]\:\[trick\]{color:var(--color-x);}</code> |
-| `text-sm/3` | ❌ | ❓ | <code>.text-sm\/3{font-size:0.875rem;line-height:0.75rem;}</code> |
-| `text-sm/[10px]` | ❌ | ❓ | <code>.text-sm\/\[10px\]{font-size:0.875rem;line-height:10px;}</code> |
-| `text-[11px]/4` | ❌ | ❓ | <code>.text-\[11px\]\/4{font-size:11px;line-height:1rem;}</code> |
-| `text-[12px]/[13px]` | ❌ | ❓ | <code>.text-\[12px\]\/\[13px\]{font-size:12px;line-height:13px;}</code> |
-| `text-[length:var(--size)]:$leading` | ❌ | ❓ | <code>.text-\[length\:var\(--size\)\]\:\$leading{font-size:var(--size);line-height:var(--leading);}</code> |
 | `bg-[#153]/10` | ❌ | <code>.bg-\[\#153\]\/10{--un-bg-opacity:10%;background-color:color-mix(in oklch, #153 var(--un-bg-opacity), transparent);}</code> | <code>.bg-\[\#153\]\/10{background-color:rgb(17 85 51 / 0.1);}</code> |
 | `bg-[#1533]` | ❌ | <code>.bg-\[\#1533\]{--un-bg-opacity:100%;background-color:color-mix(in oklch, #1533 var(--un-bg-opacity), transparent);}</code> | <code>.bg-\[\#1533\]{--un-bg-opacity:0.2;background-color:rgb(17 85 51 / var(--un-bg-opacity));}</code> |
 | `bg-[#1533]/10` | ❌ | <code>.bg-\[\#1533\]\/10{--un-bg-opacity:10%;background-color:color-mix(in oklch, #1533 var(--un-bg-opacity), transparent);}</code> | <code>.bg-\[\#1533\]\/10{background-color:rgb(17 85 51 / 0.1);}</code> |
@@ -921,9 +931,6 @@
 | `transition-ease-in` | ❌ | <code>.transition-ease-in{--un-ease:var(--ease-in);transition-timing-function:var(--ease-in);}</code> | <code>.transition-ease-in{transition-timing-function:cubic-bezier(0.4, 0, 1, 1);}</code> |
 | `font-mono` | ❌ | <code>.font-mono{font-family:var(--font-mono);}</code> | <code>.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;}</code> |
 | `font-550` | ❌ | <code>.font-550{--un-font-weight:550;font-weight:550;}</code> | <code>.font-550{font-weight:550;}</code> |
-| `text-4xl` | ❌ | <code>.text-4xl{font-size:var(--text-4xl-font-size);line-height:var(--un-leading, var(--text-4xl--line-height));}</code> | <code>.text-4xl{font-size:2.25rem;line-height:2.5rem;}</code> |
-| `text-base` | ❌ | <code>.text-base{font-size:var(--text-base-font-size);line-height:var(--un-leading, var(--text-base--line-height));}</code> | <code>.text-base{font-size:1rem;line-height:1.5rem;}</code> |
-| `text-lg` | ❌ | <code>.text-lg{font-size:var(--text-lg-font-size);line-height:var(--un-leading, var(--text-lg--line-height));}</code> | <code>.text-lg{font-size:1.125rem;line-height:1.75rem;}</code> |
 | `font-thin` | ❌ | <code>.font-thin{--un-font-weight:var(--font-weight-thin);font-weight:var(--font-weight-thin);}</code> | <code>.font-thin{font-weight:100;}</code> |
 | `font-900` | ❌ | <code>.font-900{--un-font-weight:900;font-weight:900;}</code> | <code>.font-900{font-weight:900;}</code> |
 | `font-050` | ❌ | <code>.font-050{--un-font-weight:50;font-weight:50;}</code> | <code>.font-050{font-weight:50;}</code> |
@@ -1021,7 +1028,6 @@
 | `md:!hidden` | ❌ | <code>@media (min-width: 48rem){<br>.md\:\!hidden{display:none !important;}<br>}</code> | <code>@media (min-width: 768px){<br>.md\:\!hidden{display:none !important;}<br>}</code> |
 | `md:m-1` | ❌ | <code>@media (min-width: 48rem){<br>.md\:m-1{margin:calc(var(--spacing) * 1);}<br>}</code> | <code>@media (min-width: 768px){<br>.md\:m-1{margin:0.25rem;}<br>}</code> |
 | `not-hover:p-3` | ❌ | <code>.not-hover\:p-3:not(:hover){padding:calc(var(--spacing) * 3);}</code> | <code>.not-hover\:p-3:not(:hover){padding:0.75rem;}</code> |
-| `peer-not-placeholder-shown:text-2xl` | ❌ | <code>.peer:not(:placeholder-shown)~.peer-not-placeholder-shown\:text-2xl{font-size:var(--text-2xl-font-size);line-height:var(--un-leading, var(--text-2xl--line-height));}</code> | <code>.peer:not(:placeholder-shown)~.peer-not-placeholder-shown\:text-2xl{font-size:1.5rem;line-height:2rem;}</code> |
 | `sm:m-1` | ❌ | <code>@media (min-width: 40rem){<br>.sm\:m-1{margin:calc(var(--spacing) * 1);}<br>}</code> | <code>@media (min-width: 640px){<br>.sm\:m-1{margin:0.25rem;}<br>}</code> |
 | `sm:m1` | ❌ | <code>@media (min-width: 40rem){<br>.sm\:m1{margin:calc(var(--spacing) * 1);}<br>}</code> | <code>@media (min-width: 640px){<br>.sm\:m1{margin:0.25rem;}<br>}</code> |
 | `important:p-3` | ❌ | <code>.important\:p-3{padding:calc(var(--spacing) * 3) !important;}</code> | <code>.important\:p-3{padding:0.75rem !important;}</code> |
@@ -1033,8 +1039,6 @@
 | `all:m1/1` | ❌ | <code>.all\:m1\/1 *{margin:calc(var(--spacing) * 1);}</code> | <code>.all\:m1\/1 *{margin:100%;}</code> |
 | `next:mt-0` | ❌ | <code>.next\:mt-0+*{margin-top:calc(var(--spacing) * 0);}</code> | <code>.next\:mt-0+*{margin-top:0;}</code> |
 | `dark:not-odd:text-red` | ❌ | <code>.dark .dark\:not-odd\:text-red:not(:nth-child(odd)){--un-text-opacity:100%;color:color-mix(in oklch, var(--color-red-400) var(--un-text-opacity), transparent);}</code> | <code>.dark .dark\:not-odd\:text-red:not(:nth-child(odd)){--un-text-opacity:1;color:rgb(248 113 113 / var(--un-text-opacity));}</code> |
-| `dark:text-xl` | ❌ | <code>.dark .dark\:text-xl{font-size:var(--text-xl-font-size);line-height:var(--un-leading, var(--text-xl--line-height));}</code> | <code>.dark .dark\:text-xl{font-size:1.25rem;line-height:1.75rem;}</code> |
-| `light:text-sm` | ❌ | <code>.light .light\:text-sm{font-size:var(--text-sm-font-size);line-height:var(--un-leading, var(--text-sm--line-height));}</code> | <code>.light .light\:text-sm{font-size:0.875rem;line-height:1.25rem;}</code> |
 | `uno-layer-1:translate-0` | ❌ | <code>/* layer: 1 */<br>.uno-layer-1\:translate-0{--un-translate-x:calc(var(--spacing) * 0);--un-translate-y:calc(var(--spacing) * 0);translate:var(--un-translate-x) var(--un-translate-y);}</code> | <code>/* layer: 1 */<br>.uno-layer-1\:translate-0{--un-translate-x:0;--un-translate-y:0;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |
 | `layer-base:translate-0` | ❌ | <code>@layer base{<br>.layer-base\:translate-0{--un-translate-x:calc(var(--spacing) * 0);--un-translate-y:calc(var(--spacing) * 0);translate:var(--un-translate-x) var(--un-translate-y);}<br>}</code> | <code>@layer base{<br>.layer-base\:translate-0{--un-translate-x:0;--un-translate-y:0;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}<br>}</code> |
 | `-rotate-2` | ❌ | <code>.-rotate-2{rotate:-2deg;}</code> | <code>.-rotate-2{--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-rotate:-2deg;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |
@@ -1069,13 +1073,9 @@
 | `is-hover:p-4px` | ❌ | ❓ | <code>.is-hover\:p-4px:is(:hover){padding:4px;}</code> |
 | `where-hover:p-2` | ❌ | <code>.where-hover\:p-2:where(:hover){padding:calc(var(--spacing) * 2);}</code> | <code>.where-hover\:p-2:where(:hover){padding:0.5rem;}</code> |
 | `has-hover:p-2` | ❌ | <code>.has-hover\:p-2:has(:hover){padding:calc(var(--spacing) * 2);}</code> | <code>.has-hover\:p-2:has(:hover){padding:0.5rem;}</code> |
-| `peer-not-placeholder-shown:text-3xl` | ❌ | <code>.peer:not(:placeholder-shown)~.peer-not-placeholder-shown\:text-3xl{font-size:var(--text-3xl-font-size);line-height:var(--un-leading, var(--text-3xl--line-height));}</code> | <code>.peer:not(:placeholder-shown)~.peer-not-placeholder-shown\:text-3xl{font-size:1.875rem;line-height:2.25rem;}</code> |
 | `hover:not-first:checked:bg-true-gray/10` | ❌ | ❓ | <code>.hover\:not-first\:checked\:bg-true-gray\/10:checked:not(:first-child):hover{background-color:rgb(163 163 163 / 0.1);}</code> |
-| `peer-is-placeholder-shown:text-3xl` | ❌ | <code>.peer:is(:placeholder-shown)~.peer-is-placeholder-shown\:text-3xl{font-size:var(--text-3xl-font-size);line-height:var(--un-leading, var(--text-3xl--line-height));}</code> | <code>.peer:is(:placeholder-shown)~.peer-is-placeholder-shown\:text-3xl{font-size:1.875rem;line-height:2.25rem;}</code> |
 | `hover:is-first:checked:bg-true-gray/10` | ❌ | ❓ | <code>.hover\:is-first\:checked\:bg-true-gray\/10:checked:is(:first-child):hover{background-color:rgb(163 163 163 / 0.1);}</code> |
-| `group-where-placeholder-shown:text-4xl` | ❌ | <code>.group:where(:placeholder-shown) .group-where-placeholder-shown\:text-4xl{font-size:var(--text-4xl-font-size);line-height:var(--un-leading, var(--text-4xl--line-height));}</code> | <code>.group:where(:placeholder-shown) .group-where-placeholder-shown\:text-4xl{font-size:2.25rem;line-height:2.5rem;}</code> |
 | `focus-within:where-first:checked:bg-gray/20` | ❌ | <code>.focus-within\:where-first\:checked\:bg-gray\/20:checked:where(:first-child):focus-within{--un-bg-opacity:20%;background-color:color-mix(in oklch, var(--color-gray-400) var(--un-bg-opacity), transparent);}</code> | <code>.focus-within\:where-first\:checked\:bg-gray\/20:checked:where(:first-child):focus-within{background-color:rgb(156 163 175 / 0.2);}</code> |
-| `group-has-placeholder-shown:text-4xl` | ❌ | <code>.group:has(:placeholder-shown) .group-has-placeholder-shown\:text-4xl{font-size:var(--text-4xl-font-size);line-height:var(--un-leading, var(--text-4xl--line-height));}</code> | <code>.group:has(:placeholder-shown) .group-has-placeholder-shown\:text-4xl{font-size:2.25rem;line-height:2.5rem;}</code> |
 | `focus-within:has-first:checked:bg-gray/20` | ❌ | <code>.focus-within\:has-first\:checked\:bg-gray\/20:checked:has(:first-child):focus-within{--un-bg-opacity:20%;background-color:color-mix(in oklch, var(--color-gray-400) var(--un-bg-opacity), transparent);}</code> | <code>.focus-within\:has-first\:checked\:bg-gray\/20:checked:has(:first-child):focus-within{background-color:rgb(156 163 175 / 0.2);}</code> |
 | `has-[:hover]:m-1` | ❌ | <code>.has-\[\:hover\]\:m-1:has(:hover){margin:calc(var(--spacing) * 1);}</code> | <code>.has-\[\:hover\]\:m-1:has(:hover){margin:0.25rem;}</code> |
 | `group-not-[[data-potato]]:m-1` | ❌ | <code>.group:not([data-potato]) .group-not-\[\[data-potato\]\]\:m-1{margin:calc(var(--spacing) * 1);}</code> | <code>.group:not([data-potato]) .group-not-\[\[data-potato\]\]\:m-1{margin:0.25rem;}</code> |
