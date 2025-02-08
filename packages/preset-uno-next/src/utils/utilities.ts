@@ -7,6 +7,10 @@ import { bracketTypeRe, numberWithUnitRE, splitComma } from './handlers/regex'
 import { cssMathFnRE, cssVarFnRE, directionMap, globalKeywords, xyzArray, xyzMap } from './mappings'
 
 export const CONTROL_MINI_NO_NEGATIVE = '$$mini-no-negative'
+export const SpecialColorKey = {
+  transparent: 'transparent',
+  current: 'currentColor',
+}
 
 export function numberResolver(size: string, defaultValue?: string | number): number | undefined {
   const v = h.fraction.number(size) ?? defaultValue
@@ -132,9 +136,14 @@ export function colorResolver(property: string, varName: string) {
     const css: CSSObject = {}
 
     if (color) {
-      css[`--un-${varName}-opacity`] = `${opacity || 100}%`
-      const value = key ? `var(--color-${key})` : color
-      css[property] = `color-mix(in oklch, ${value} var(--un-${varName}-opacity), transparent)${rawColorComment}`
+      if (Object.values(SpecialColorKey).includes(color)) {
+        css[property] = color
+      }
+      else {
+        css[`--un-${varName}-opacity`] = `${opacity || 100}%`
+        const value = key ? `var(--color-${key})` : color
+        css[property] = `color-mix(in oklch, ${value} var(--un-${varName}-opacity), transparent)${rawColorComment}`
+      }
     }
 
     return css
@@ -192,7 +201,7 @@ export function parseColor(body: string, theme: Theme) {
     opacity,
     name,
     no,
-    color,
+    color: color ?? SpecialColorKey[name as keyof typeof SpecialColorKey],
     alpha: h.bracket.cssvar.percent(opacity ?? ''),
     key,
   }

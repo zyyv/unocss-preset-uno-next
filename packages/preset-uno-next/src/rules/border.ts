@@ -2,7 +2,7 @@
 /* eslint-disable regexp/no-empty-capturing-group */
 import type { CSSEntries, CSSObject, Rule, RuleContext } from '@unocss/core'
 import type { Theme } from '../theme'
-import { cornerMap, directionMap, globalKeywords, h, hasParseableColor, isCSSMathFn, parseColor, passThemeKey } from '../utils'
+import { cornerMap, directionMap, globalKeywords, h, hasParseableColor, isCSSMathFn, parseColor, passThemeKey, SpecialColorKey } from '../utils'
 
 export const borderStyles = ['solid', 'dashed', 'dotted', 'double', 'hidden', 'none', 'groove', 'ridge', 'inset', 'outset', ...globalKeywords]
 
@@ -54,12 +54,17 @@ function transformBorderColor(color: string, opacity: string | number | undefine
   const css: CSSObject = {}
 
   if (color) {
-    css[`--un-border-opacity`] = `${opacity || 100}%`
-    if (direction && direction !== '') {
-      css[`--un-border${direction}-opacity`] = `var(--un-border-opacity)`
+    if (Object.values(SpecialColorKey).includes(color)) {
+      css[`border${direction}-color`] = color
     }
-    const value = key ? `var(--color-${key})` : color
-    css[`border${direction}-color`] = `color-mix(in oklch, ${value} var(--un-border${direction}-opacity), transparent)`
+    else {
+      css[`--un-border-opacity`] = `${opacity || 100}%`
+      if (direction && direction !== '') {
+        css[`--un-border${direction}-opacity`] = `var(--un-border-opacity)`
+      }
+      const value = key ? `var(--color-${key})` : color
+      css[`border${direction}-color`] = `color-mix(in oklch, ${value} var(--un-border${direction}-opacity), transparent)`
+    }
   }
 
   return css
