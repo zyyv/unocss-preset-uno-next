@@ -9,6 +9,7 @@ import { textDecorations } from './decoration'
 import { flex } from './flex'
 import { gaps } from './gap'
 import { grids } from './grid'
+import { alignments, boxSizing, flexGridJustifiesAlignments, floats, insets, justifies, orders, placements, positions, zIndexes } from './position'
 import { rings } from './ring'
 import { boxShadows } from './shadow'
 import { aspectRatio, sizes } from './size'
@@ -65,4 +66,14 @@ export const rules: Rule<Theme>[] = [
   transitions,
   cssVariables,
   cssProperty,
+  alignments,
+  boxSizing,
+  flexGridJustifiesAlignments,
+  floats,
+  insets,
+  justifies,
+  orders,
+  placements,
+  positions,
+  zIndexes,
 ].flat()

@@ -58,3 +58,16 @@ it('presetStarter', async () => {
   expect(result).toMatchFileSnapshot('./fixtures/token-different.test.md')
   expect(needFixed).toMatchSnapshot()
 })
+
+it('test case', async () => {
+  const unoNext = await createGenerator({
+    presets: [presetUnoNext()],
+  })
+
+  const { css } = await unoNext.generate('outline-color-red-100', { preflights: false })
+
+  expect(css).toMatchInlineSnapshot(`
+    "/* layer: default */
+    .outline-color-red-100{--un-outline-color-opacity:100%;outline-color:color-mix(in oklch, var(--color-red-100) var(--un-outline-color-opacity), transparent);}"
+  `)
+})

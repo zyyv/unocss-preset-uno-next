@@ -19,6 +19,7 @@
 | `v-end` | ✅ | <code>.v-end{vertical-align:bottom;}</code> | <code>.v-end{vertical-align:bottom;}</code> |
 | `outline-offset-inherit` | ✅ | <code>.outline-offset-inherit{outline-offset:inherit;}</code> | <code>.outline-offset-inherit{outline-offset:inherit;}</code> |
 | `outline-offset-4` | ✅ | <code>.outline-offset-4{outline-offset:4px;}</code> | <code>.outline-offset-4{outline-offset:4px;}</code> |
+| `outline-offset-none` | ✅ | <code>.outline-offset-none{outline-offset:0;}</code> | <code>.outline-offset-none{outline-offset:0;}</code> |
 | `outline-offset-[var(--offset)]` | ✅ | <code>.outline-offset-\[var\(--offset\)\]{outline-offset:var(--offset);}</code> | <code>.outline-offset-\[var\(--offset\)\]{outline-offset:var(--offset);}</code> |
 | `appearance-none` | ✅ | <code>.appearance-none{-webkit-appearance:none;appearance:none;}</code> | <code>.appearance-none{-webkit-appearance:none;appearance:none;}</code> |
 | `appearance-auto` | ✅ | <code>.appearance-auto{-webkit-appearance:auto;appearance:auto;}</code> | <code>.appearance-auto{-webkit-appearance:auto;appearance:auto;}</code> |
@@ -186,6 +187,57 @@
 | `grid-areas-$variable` | ✅ | <code>.grid-areas-\$variable{grid-template-areas:var(--variable);}</code> | <code>.grid-areas-\$variable{grid-template-areas:var(--variable);}</code> |
 | `grid-cols-subgrid` | ✅ | <code>.grid-cols-subgrid{grid-template-columns:subgrid;}</code> | <code>.grid-cols-subgrid{grid-template-columns:subgrid;}</code> |
 | `grid-rows-subgrid` | ✅ | <code>.grid-rows-subgrid{grid-template-rows:subgrid;}</code> | <code>.grid-rows-subgrid{grid-template-rows:subgrid;}</code> |
+| `static` | ✅ | <code>.static{position:static;}</code> | <code>.static{position:static;}</code> |
+| `relative` | ✅ | <code>.relative{position:relative;}</code> | <code>.relative{position:relative;}</code> |
+| `absolute` | ✅ | <code>.absolute{position:absolute;}</code> | <code>.absolute{position:absolute;}</code> |
+| `pos-fixed` | ✅ | <code>.pos-fixed{position:fixed;}</code> | <code>.pos-fixed{position:fixed;}</code> |
+| `pos-unset` | ✅ | <code>.pos-unset{position:unset;}</code> | <code>.pos-unset{position:unset;}</code> |
+| `position-sticky` | ✅ | <code>.position-sticky{position:sticky;}</code> | <code>.position-sticky{position:sticky;}</code> |
+| `position-inherit` | ✅ | <code>.position-inherit{position:inherit;}</code> | <code>.position-inherit{position:inherit;}</code> |
+| `justify-inherit` | ✅ | <code>.justify-inherit{justify-content:inherit;}</code> | <code>.justify-inherit{justify-content:inherit;}</code> |
+| `justify-start` | ✅ | <code>.justify-start{justify-content:flex-start;}</code> | <code>.justify-start{justify-content:flex-start;}</code> |
+| `justify-center` | ✅ | <code>.justify-center{justify-content:center;}</code> | <code>.justify-center{justify-content:center;}</code> |
+| `justify-items-end` | ✅ | <code>.justify-items-end{justify-items:end;}</code> | <code>.justify-items-end{justify-items:end;}</code> |
+| `justify-items-unset` | ✅ | <code>.justify-items-unset{justify-items:unset;}</code> | <code>.justify-items-unset{justify-items:unset;}</code> |
+| `justify-self-stretch` | ✅ | <code>.justify-self-stretch{justify-self:stretch;}</code> | <code>.justify-self-stretch{justify-self:stretch;}</code> |
+| `justify-self-revert` | ✅ | <code>.justify-self-revert{justify-self:revert;}</code> | <code>.justify-self-revert{justify-self:revert;}</code> |
+| `order-none` | ✅ | <code>.order-none{order:0;}</code> | <code>.order-none{order:0;}</code> |
+| `content-start` | ✅ | <code>.content-start{align-content:flex-start;}</code> | <code>.content-start{align-content:flex-start;}</code> |
+| `content-inherit` | ✅ | <code>.content-inherit{align-content:inherit;}</code> | <code>.content-inherit{align-content:inherit;}</code> |
+| `content-center` | ✅ | <code>.content-center{align-content:center;}</code> | <code>.content-center{align-content:center;}</code> |
+| `items-end` | ✅ | <code>.items-end{align-items:flex-end;}</code> | <code>.items-end{align-items:flex-end;}</code> |
+| `items-unset` | ✅ | <code>.items-unset{align-items:unset;}</code> | <code>.items-unset{align-items:unset;}</code> |
+| `self-stretch` | ✅ | <code>.self-stretch{align-self:stretch;}</code> | <code>.self-stretch{align-self:stretch;}</code> |
+| `self-revert` | ✅ | <code>.self-revert{align-self:revert;}</code> | <code>.self-revert{align-self:revert;}</code> |
+| `place-content-stretch` | ✅ | <code>.place-content-stretch{place-content:stretch;}</code> | <code>.place-content-stretch{place-content:stretch;}</code> |
+| `place-items-stretch` | ✅ | <code>.place-items-stretch{place-items:stretch;}</code> | <code>.place-items-stretch{place-items:stretch;}</code> |
+| `place-self-stretch` | ✅ | <code>.place-self-stretch{place-self:stretch;}</code> | <code>.place-self-stretch{place-self:stretch;}</code> |
+| `place-content-inherit` | ✅ | <code>.place-content-inherit{place-content:inherit;}</code> | <code>.place-content-inherit{place-content:inherit;}</code> |
+| `place-items-unset` | ✅ | <code>.place-items-unset{place-items:unset;}</code> | <code>.place-items-unset{place-items:unset;}</code> |
+| `place-self-revert` | ✅ | <code>.place-self-revert{place-self:revert;}</code> | <code>.place-self-revert{place-self:revert;}</code> |
+| `top-$top-height` | ✅ | <code>.top-\$top-height{top:var(--top-height);}</code> | <code>.top-\$top-height{top:var(--top-height);}</code> |
+| `inset-unset` | ✅ | <code>.inset-unset{inset:unset;}</code> | <code>.inset-unset{inset:unset;}</code> |
+| `inset-e-inherit` | ✅ | <code>.inset-e-inherit{inset-inline-end:inherit;}</code> | <code>.inset-e-inherit{inset-inline-end:inherit;}</code> |
+| `inset-ie-revert` | ✅ | <code>.inset-ie-revert{inset-inline-end:revert;}</code> | <code>.inset-ie-revert{inset-inline-end:revert;}</code> |
+| `inset-[5px]` | ✅ | <code>.inset-\[5px\]{inset:5px;}</code> | <code>.inset-\[5px\]{inset:5px;}</code> |
+| `inset-block-unset` | ✅ | <code>.inset-block-unset{inset-block-start:unset;inset-block-end:unset;}</code> | <code>.inset-block-unset{inset-block-start:unset;inset-block-end:unset;}</code> |
+| `float-left` | ✅ | <code>.float-left{float:left;}</code> | <code>.float-left{float:left;}</code> |
+| `float-none` | ✅ | <code>.float-none{float:none;}</code> | <code>.float-none{float:none;}</code> |
+| `float-unset` | ✅ | <code>.float-unset{float:unset;}</code> | <code>.float-unset{float:unset;}</code> |
+| `clear-both` | ✅ | <code>.clear-both{clear:both;}</code> | <code>.clear-both{clear:both;}</code> |
+| `clear-none` | ✅ | <code>.clear-none{clear:none;}</code> | <code>.clear-none{clear:none;}</code> |
+| `clear-revert` | ✅ | <code>.clear-revert{clear:revert;}</code> | <code>.clear-revert{clear:revert;}</code> |
+| `box-content` | ✅ | <code>.box-content{box-sizing:content-box;}</code> | <code>.box-content{box-sizing:content-box;}</code> |
+| `box-border` | ✅ | <code>.box-border{box-sizing:border-box;}</code> | <code>.box-border{box-sizing:border-box;}</code> |
+| `box-inherit` | ✅ | <code>.box-inherit{box-sizing:inherit;}</code> | <code>.box-inherit{box-sizing:inherit;}</code> |
+| `z0` | ✅ | <code>.z0{z-index:0;}</code> | <code>.z0{z-index:0;}</code> |
+| `z-0` | ✅ | <code>.z-0{z-index:0;}</code> | <code>.z-0{z-index:0;}</code> |
+| `z-1` | ✅ | <code>.z-1{z-index:1;}</code> | <code>.z-1{z-index:1;}</code> |
+| `z-100` | ✅ | <code>.z-100{z-index:100;}</code> | <code>.z-100{z-index:100;}</code> |
+| `z-auto` | ✅ | <code>.z-auto{z-index:auto;}</code> | <code>.z-auto{z-index:auto;}</code> |
+| `z-inherit` | ✅ | <code>.z-inherit{z-index:inherit;}</code> | <code>.z-inherit{z-index:inherit;}</code> |
+| `pos-z--1` | ✅ | <code>.pos-z--1{z-index:-1;}</code> | <code>.pos-z--1{z-index:-1;}</code> |
+| `position-z-auto` | ✅ | <code>.position-z-auto{z-index:auto;}</code> | <code>.position-z-auto{z-index:auto;}</code> |
 | `ring-inset` | ✅ | <code>.ring-inset{--un-ring-inset:inset;}</code> | <code>.ring-inset{--un-ring-inset:inset;}</code> |
 | `shadow-op-$opacity-variable` | ✅ | <code>.shadow-op-\$opacity-variable{--un-shadow-opacity:var(--opacity-variable);}</code> | <code>.shadow-op-\$opacity-variable{--un-shadow-opacity:var(--opacity-variable);}</code> |
 | `shadow-inset` | ✅ | <code>.shadow-inset{--un-shadow-inset:inset;}</code> | <code>.shadow-inset{--un-shadow-inset:inset;}</code> |
@@ -416,6 +468,11 @@
 | `grid-col-$variable` | ✅ | <code>.grid-col-\$variable{grid-column:var(--variable);}</code> | <code>.grid-col-\$variable{grid-column:var(--variable);}</code> |
 | `grid-auto-rows-$variable` | ✅ | <code>.grid-auto-rows-\$variable{grid-auto-rows:var(--variable);}</code> | <code>.grid-auto-rows-\$variable{grid-auto-rows:var(--variable);}</code> |
 | `grid-auto-cols-$variable` | ✅ | <code>.grid-auto-cols-\$variable{grid-auto-columns:var(--variable);}</code> | <code>.grid-auto-cols-\$variable{grid-auto-columns:var(--variable);}</code> |
+| `order-$variable` | ✅ | <code>.order-\$variable{order:var(--variable);}</code> | <code>.order-\$variable{order:var(--variable);}</code> |
+| `inset-$variable` | ✅ | <code>.inset-\$variable{inset:var(--variable);}</code> | <code>.inset-\$variable{inset:var(--variable);}</code> |
+| `inset-s-$variable` | ✅ | <code>.inset-s-\$variable{inset-inline-start:var(--variable);}</code> | <code>.inset-s-\$variable{inset-inline-start:var(--variable);}</code> |
+| `inset-inline-$variable` | ✅ | <code>.inset-inline-\$variable{inset-inline-start:var(--variable);inset-inline-end:var(--variable);}</code> | <code>.inset-inline-\$variable{inset-inline-start:var(--variable);inset-inline-end:var(--variable);}</code> |
+| `z-$variable` | ✅ | <code>.z-\$variable{z-index:var(--variable);}</code> | <code>.z-\$variable{z-index:var(--variable);}</code> |
 | `transition-delay-$variable` | ✅ | <code>.transition-delay-\$variable{transition-delay:var(--variable);}</code> | <code>.transition-delay-\$variable{transition-delay:var(--variable);}</code> |
 | `text-size-$variable` | ✅ | <code>.text-size-\$variable{font-size:var(--variable);}</code> | <code>.text-size-\$variable{font-size:var(--variable);}</code> |
 | `fw-$variable` | ✅ | <code>.fw-\$variable{font-weight:var(--variable);}</code> | <code>.fw-\$variable{font-weight:var(--variable);}</code> |
@@ -445,6 +502,7 @@
 | `layer-[utility]:block` | ✅ | <code>@layer utility{<br>.layer-\[utility\]\:block{display:block;}<br>}</code> | <code>@layer utility{<br>.layer-\[utility\]\:block{display:block;}<br>}</code> |
 | `uno-layer-[uno_css]:block` | ✅ | <code>/* layer: uno css */<br>.uno-layer-\[uno_css\]\:block{display:block;}</code> | <code>/* layer: uno css */<br>.uno-layer-\[uno_css\]\:block{display:block;}</code> |
 | `!m-$c-m` | ✅ | <code>.\!m-\$c-m{margin:var(--c-m) !important;}</code> | <code>.\!m-\$c-m{margin:var(--c-m) !important;}</code> |
+| `-z-1` | ✅ | <code>.-z-1{z-index:-1;}</code> | <code>.-z-1{z-index:-1;}</code> |
 | `supports-[(display:_grid)]:block` | ✅ | <code>@supports (display: grid){<br>.supports-\[\(display\:_grid\)\]\:block{display:block;}<br>}</code> | <code>@supports (display: grid){<br>.supports-\[\(display\:_grid\)\]\:block{display:block;}<br>}</code> |
 | `media-[(--cssvar)]:block` | ✅ | <code>@media (--cssvar){<br>.media-\[\(--cssvar\)\]\:block{display:block;}<br>}</code> | <code>@media (--cssvar){<br>.media-\[\(--cssvar\)\]\:block{display:block;}<br>}</code> |
 | `print:block` | ✅ | <code>@media print{<br>.print\:block{display:block;}<br>}</code> | <code>@media print{<br>.print\:block{display:block;}<br>}</code> |
@@ -471,7 +529,7 @@
 | `outline-none` | ❌ | <code>.outline-none{--un-outline-style:none;outline-style:none;}</code> | <code>.outline-none{outline:2px solid transparent;outline-offset:2px;}</code> |
 | `outline` | ❌ | <code>.outline{outline-style:var(--un-outline-style);outline-width:1px;}</code> | <code>.outline{outline-style:solid;}</code> |
 | `outline-inherit` | ❌ | <code>.outline-inherit{--un-outline-style:inherit;outline-style:inherit;}</code> | <code>.outline-inherit{outline-style:inherit;}</code> |
-| `outline-size-none` | ❌ | ❓ | <code>.outline-size-none{outline-width:0;}</code> |
+| `outline-size-none` | ❌ | <code>.outline-size-none{outline-style:var(--un-outline-style);outline-width:0;}</code> | <code>.outline-size-none{outline-width:0;}</code> |
 | `outline-size-unset` | ❌ | <code>.outline-size-unset{outline-style:var(--un-outline-style);outline-width:unset;}</code> | <code>.outline-size-unset{outline-width:unset;}</code> |
 | `outline-width-revert` | ❌ | <code>.outline-width-revert{outline-style:var(--un-outline-style);outline-width:revert;}</code> | <code>.outline-width-revert{outline-width:revert;}</code> |
 | `outline-hidden` | ❌ | <code>.outline-hidden{--un-outline-style:hidden;outline-style:hidden;}</code> | <code>.outline-hidden{outline-style:hidden;}</code> |
@@ -479,7 +537,6 @@
 | `outline-gray-400` | ❌ | <code>.outline-gray-400{--un-outline-color-opacity:100%;outline-color:color-mix(in oklch, var(--color-gray-400) var(--un-outline-color-opacity), transparent);}</code> | <code>.outline-gray-400{--un-outline-color-opacity:1;outline-color:rgb(156 163 175 / var(--un-outline-color-opacity));}</code> |
 | `outline-size-4` | ❌ | <code>.outline-size-4{outline-style:var(--un-outline-style);outline-width:4px;}</code> | <code>.outline-size-4{outline-width:4px;}</code> |
 | `outline-width-4` | ❌ | <code>.outline-width-4{outline-style:var(--un-outline-style);outline-width:4px;}</code> | <code>.outline-width-4{outline-width:4px;}</code> |
-| `outline-offset-none` | ❌ | ❓ | <code>.outline-offset-none{outline-offset:0;}</code> |
 | `outline-unset` | ❌ | <code>.outline-unset{--un-outline-style:unset;outline-style:unset;}</code> | <code>.outline-unset{outline-style:unset;}</code> |
 | `outline-revert-layer` | ❌ | <code>.outline-revert-layer{--un-outline-style:revert-layer;outline-style:revert-layer;}</code> | <code>.outline-revert-layer{outline-style:revert-layer;}</code> |
 | `outline-solid` | ❌ | <code>.outline-solid{--un-outline-style:solid;outline-style:solid;}</code> | <code>.outline-solid{outline-style:solid;}</code> |
@@ -511,8 +568,8 @@
 | `px-1` | ❌ | <code>.px-1{padding-inline:calc(var(--spacing) * 1);}</code> | <code>.px-1{padding-left:0.25rem;padding-right:0.25rem;}</code> |
 | `ps-4` | ❌ | <code>.ps-4{padding-inline-start:calc(var(--spacing) * 4);}</code> | <code>.ps-4{padding-inline-start:1rem;}</code> |
 | `pe-8` | ❌ | <code>.pe-8{padding-inline-end:calc(var(--spacing) * 8);}</code> | <code>.pe-8{padding-inline-end:2rem;}</code> |
-| `start-4` | ❌ | ❓ | <code>.start-4{inset-inline-start:1rem;}</code> |
-| `end-8` | ❌ | ❓ | <code>.end-8{inset-inline-end:2rem;}</code> |
+| `start-4` | ❌ | <code>.start-4{inset-inline-start:calc(var(--spacing) * 4);}</code> | <code>.start-4{inset-inline-start:1rem;}</code> |
+| `end-8` | ❌ | <code>.end-8{inset-inline-end:calc(var(--spacing) * 8);}</code> | <code>.end-8{inset-inline-end:2rem;}</code> |
 | `border-black` | ❌ | <code>.border-black{--un-border-opacity:100%;border-color:color-mix(in oklch, var(--color-black) var(--un-border-opacity), transparent);}</code> | <code>.border-black{--un-border-opacity:1;border-color:rgb(0 0 0 / var(--un-border-opacity));}</code> |
 | `border-s-green-500` | ❌ | <code>.border-s-green-500{--un-border-opacity:100%;--un-border-inline-start-opacity:var(--un-border-opacity);border-inline-start-color:color-mix(in oklch, var(--color-green-500) var(--un-border-inline-start-opacity), transparent);}</code> | <code>.border-s-green-500{--un-border-opacity:1;--un-border-inline-start-opacity:var(--un-border-opacity);border-inline-start-color:rgb(34 197 94 / var(--un-border-inline-start-opacity));}</code> |
 | `border-e-red-400` | ❌ | <code>.border-e-red-400{--un-border-opacity:100%;--un-border-inline-end-opacity:var(--un-border-opacity);border-inline-end-color:color-mix(in oklch, var(--color-red-400) var(--un-border-inline-end-opacity), transparent);}</code> | <code>.border-e-red-400{--un-border-opacity:1;--un-border-inline-end-opacity:var(--un-border-opacity);border-inline-end-color:rgb(248 113 113 / var(--un-border-inline-end-opacity));}</code> |
@@ -677,71 +734,20 @@
 | `overflow-inherit` | ❌ | ❓ | <code>.overflow-inherit{overflow:inherit;}</code> |
 | `overflow-x-scroll` | ❌ | ❓ | <code>.overflow-x-scroll{overflow-x:scroll;}</code> |
 | `overflow-y-clip` | ❌ | ❓ | <code>.overflow-y-clip{overflow-y:clip;}</code> |
-| `static` | ❌ | ❓ | <code>.static{position:static;}</code> |
-| `relative` | ❌ | ❓ | <code>.relative{position:relative;}</code> |
-| `absolute` | ❌ | ❓ | <code>.absolute{position:absolute;}</code> |
-| `pos-fixed` | ❌ | ❓ | <code>.pos-fixed{position:fixed;}</code> |
-| `pos-unset` | ❌ | ❓ | <code>.pos-unset{position:unset;}</code> |
-| `position-sticky` | ❌ | ❓ | <code>.position-sticky{position:sticky;}</code> |
-| `position-inherit` | ❌ | ❓ | <code>.position-inherit{position:inherit;}</code> |
-| `justify-inherit` | ❌ | ❓ | <code>.justify-inherit{justify-content:inherit;}</code> |
-| `justify-start` | ❌ | ❓ | <code>.justify-start{justify-content:flex-start;}</code> |
-| `justify-center` | ❌ | ❓ | <code>.justify-center{justify-content:center;}</code> |
-| `justify-items-end` | ❌ | ❓ | <code>.justify-items-end{justify-items:end;}</code> |
-| `justify-items-unset` | ❌ | ❓ | <code>.justify-items-unset{justify-items:unset;}</code> |
-| `justify-self-stretch` | ❌ | ❓ | <code>.justify-self-stretch{justify-self:stretch;}</code> |
-| `justify-self-revert` | ❌ | ❓ | <code>.justify-self-revert{justify-self:revert;}</code> |
-| `order-first` | ❌ | ❓ | <code>.order-first{order:-9999;}</code> |
-| `order-none` | ❌ | ❓ | <code>.order-none{order:0;}</code> |
-| `content-start` | ❌ | ❓ | <code>.content-start{align-content:flex-start;}</code> |
-| `content-inherit` | ❌ | ❓ | <code>.content-inherit{align-content:inherit;}</code> |
-| `content-center` | ❌ | ❓ | <code>.content-center{align-content:center;}</code> |
-| `items-end` | ❌ | ❓ | <code>.items-end{align-items:flex-end;}</code> |
-| `items-unset` | ❌ | ❓ | <code>.items-unset{align-items:unset;}</code> |
-| `self-stretch` | ❌ | ❓ | <code>.self-stretch{align-self:stretch;}</code> |
-| `self-revert` | ❌ | ❓ | <code>.self-revert{align-self:revert;}</code> |
-| `place-content-stretch` | ❌ | ❓ | <code>.place-content-stretch{place-content:stretch;}</code> |
-| `place-items-stretch` | ❌ | ❓ | <code>.place-items-stretch{place-items:stretch;}</code> |
-| `place-self-stretch` | ❌ | ❓ | <code>.place-self-stretch{place-self:stretch;}</code> |
-| `place-content-inherit` | ❌ | ❓ | <code>.place-content-inherit{place-content:inherit;}</code> |
-| `place-items-unset` | ❌ | ❓ | <code>.place-items-unset{place-items:unset;}</code> |
-| `place-self-revert` | ❌ | ❓ | <code>.place-self-revert{place-self:revert;}</code> |
-| `top-0` | ❌ | ❓ | <code>.top-0{top:0;}</code> |
-| `top-$top-height` | ❌ | ❓ | <code>.top-\$top-height{top:var(--top-height);}</code> |
+| `order-first` | ❌ | <code>.order-first{order:calc(-infinity);}</code> | <code>.order-first{order:-9999;}</code> |
+| `top-0` | ❌ | <code>.top-0{top:calc(var(--spacing) * 0);}</code> | <code>.top-0{top:0;}</code> |
 | `inset-none` | ❌ | ❓ | <code>.inset-none{inset:0;}</code> |
-| `inset-unset` | ❌ | ❓ | <code>.inset-unset{inset:unset;}</code> |
-| `inset-x-5` | ❌ | ❓ | <code>.inset-x-5{left:1.25rem;right:1.25rem;}</code> |
-| `inset-y-5` | ❌ | ❓ | <code>.inset-y-5{top:1.25rem;bottom:1.25rem;}</code> |
-| `inset-t-5` | ❌ | ❓ | <code>.inset-t-5{top:1.25rem;}</code> |
-| `inset-b-5` | ❌ | ❓ | <code>.inset-b-5{bottom:1.25rem;}</code> |
-| `inset-e-5` | ❌ | ❓ | <code>.inset-e-5{inset-inline-end:1.25rem;}</code> |
-| `inset-e-inherit` | ❌ | ❓ | <code>.inset-e-inherit{inset-inline-end:inherit;}</code> |
-| `inset-bs-5` | ❌ | ❓ | <code>.inset-bs-5{inset-block-start:1.25rem;}</code> |
-| `inset-ie-5` | ❌ | ❓ | <code>.inset-ie-5{inset-inline-end:1.25rem;}</code> |
-| `inset-ie-revert` | ❌ | ❓ | <code>.inset-ie-revert{inset-inline-end:revert;}</code> |
-| `inset-0` | ❌ | ❓ | <code>.inset-0{inset:0;}</code> |
-| `inset-5` | ❌ | ❓ | <code>.inset-5{inset:1.25rem;}</code> |
-| `inset-[5px]` | ❌ | ❓ | <code>.inset-\[5px\]{inset:5px;}</code> |
-| `inset-inline-5` | ❌ | ❓ | <code>.inset-inline-5{inset-inline-start:1.25rem;inset-inline-end:1.25rem;}</code> |
-| `inset-block-5` | ❌ | ❓ | <code>.inset-block-5{inset-block-start:1.25rem;inset-block-end:1.25rem;}</code> |
-| `inset-block-unset` | ❌ | ❓ | <code>.inset-block-unset{inset-block-start:unset;inset-block-end:unset;}</code> |
-| `float-left` | ❌ | ❓ | <code>.float-left{float:left;}</code> |
-| `float-none` | ❌ | ❓ | <code>.float-none{float:none;}</code> |
-| `float-unset` | ❌ | ❓ | <code>.float-unset{float:unset;}</code> |
-| `clear-both` | ❌ | ❓ | <code>.clear-both{clear:both;}</code> |
-| `clear-none` | ❌ | ❓ | <code>.clear-none{clear:none;}</code> |
-| `clear-revert` | ❌ | ❓ | <code>.clear-revert{clear:revert;}</code> |
-| `box-content` | ❌ | ❓ | <code>.box-content{box-sizing:content-box;}</code> |
-| `box-border` | ❌ | ❓ | <code>.box-border{box-sizing:border-box;}</code> |
-| `box-inherit` | ❌ | ❓ | <code>.box-inherit{box-sizing:inherit;}</code> |
-| `z0` | ❌ | ❓ | <code>.z0{z-index:0;}</code> |
-| `z-0` | ❌ | ❓ | <code>.z-0{z-index:0;}</code> |
-| `z-1` | ❌ | ❓ | <code>.z-1{z-index:1;}</code> |
-| `z-100` | ❌ | ❓ | <code>.z-100{z-index:100;}</code> |
-| `z-auto` | ❌ | ❓ | <code>.z-auto{z-index:auto;}</code> |
-| `z-inherit` | ❌ | ❓ | <code>.z-inherit{z-index:inherit;}</code> |
-| `pos-z--1` | ❌ | ❓ | <code>.pos-z--1{z-index:-1;}</code> |
-| `position-z-auto` | ❌ | ❓ | <code>.position-z-auto{z-index:auto;}</code> |
+| `inset-x-5` | ❌ | <code>.inset-x-5{inline:calc(var(--spacing) * 5);}</code> | <code>.inset-x-5{left:1.25rem;right:1.25rem;}</code> |
+| `inset-y-5` | ❌ | <code>.inset-y-5{block:calc(var(--spacing) * 5);}</code> | <code>.inset-y-5{top:1.25rem;bottom:1.25rem;}</code> |
+| `inset-t-5` | ❌ | <code>.inset-t-5{top:calc(var(--spacing) * 5);}</code> | <code>.inset-t-5{top:1.25rem;}</code> |
+| `inset-b-5` | ❌ | <code>.inset-b-5{bottom:calc(var(--spacing) * 5);}</code> | <code>.inset-b-5{bottom:1.25rem;}</code> |
+| `inset-e-5` | ❌ | <code>.inset-e-5{inset-inline-end:calc(var(--spacing) * 5);}</code> | <code>.inset-e-5{inset-inline-end:1.25rem;}</code> |
+| `inset-bs-5` | ❌ | <code>.inset-bs-5{inset-block-start:calc(var(--spacing) * 5);}</code> | <code>.inset-bs-5{inset-block-start:1.25rem;}</code> |
+| `inset-ie-5` | ❌ | <code>.inset-ie-5{inset-inline-end:calc(var(--spacing) * 5);}</code> | <code>.inset-ie-5{inset-inline-end:1.25rem;}</code> |
+| `inset-0` | ❌ | <code>.inset-0{inset:calc(var(--spacing) * 0);}</code> | <code>.inset-0{inset:0;}</code> |
+| `inset-5` | ❌ | <code>.inset-5{inset:calc(var(--spacing) * 5);}</code> | <code>.inset-5{inset:1.25rem;}</code> |
+| `inset-inline-5` | ❌ | <code>.inset-inline-5{inset-inline-start:calc(var(--spacing) * 5);inset-inline-end:calc(var(--spacing) * 5);}</code> | <code>.inset-inline-5{inset-inline-start:1.25rem;inset-inline-end:1.25rem;}</code> |
+| `inset-block-5` | ❌ | <code>.inset-block-5{inset-block-start:calc(var(--spacing) * 5);inset-block-end:calc(var(--spacing) * 5);}</code> | <code>.inset-block-5{inset-block-start:1.25rem;inset-block-end:1.25rem;}</code> |
 | `ring` | ❌ | <code>.ring{--un-ring-shadow:var(--un-ring-inset) 0 0 0 calc(1px + var(--un-ring-offset-width)) var(--un-ring-color, currentColor);box-shadow:var(--un-inset-shadow), var(--un-inset-ring-shadow), var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}</code> | <code>.ring{--un-ring-width:3px;--un-ring-offset-shadow:var(--un-ring-inset) 0 0 0 var(--un-ring-offset-width) var(--un-ring-offset-color);--un-ring-shadow:var(--un-ring-inset) 0 0 0 calc(var(--un-ring-width) + var(--un-ring-offset-width)) var(--un-ring-color);box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}</code> |
 | `ring-10` | ❌ | <code>.ring-10{--un-ring-shadow:var(--un-ring-inset) 0 0 0 calc(10px + var(--un-ring-offset-width)) var(--un-ring-color, currentColor);box-shadow:var(--un-inset-shadow), var(--un-inset-ring-shadow), var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}</code> | <code>.ring-10{--un-ring-width:10px;--un-ring-offset-shadow:var(--un-ring-inset) 0 0 0 var(--un-ring-offset-width) var(--un-ring-offset-color);--un-ring-shadow:var(--un-ring-inset) 0 0 0 calc(var(--un-ring-width) + var(--un-ring-offset-width)) var(--un-ring-color);box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}</code> |
 | `ring-none` | ❌ | ❓ | <code>.ring-none{--un-ring-width:0;--un-ring-offset-shadow:var(--un-ring-inset) 0 0 0 var(--un-ring-offset-width) var(--un-ring-offset-color);--un-ring-shadow:var(--un-ring-inset) 0 0 0 calc(var(--un-ring-width) + var(--un-ring-offset-width)) var(--un-ring-color);box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}</code> |
@@ -960,11 +966,6 @@
 | `outline-$variable` | ❌ | <code>.outline-\$variable{--un-outline-color-opacity:100%;outline-color:color-mix(in oklch, var(--variable) var(--un-outline-color-opacity), transparent);}</code> | <code>.outline-\$variable{outline-color:var(--variable);}</code> |
 | `outline-width-$variable` | ❌ | <code>.outline-width-\$variable{outline-style:var(--un-outline-style);outline-width:var(--variable);}</code> | <code>.outline-width-\$variable{outline-width:var(--variable);}</code> |
 | `outline-size-$variable` | ❌ | <code>.outline-size-\$variable{outline-style:var(--un-outline-style);outline-width:var(--variable);}</code> | <code>.outline-size-\$variable{outline-width:var(--variable);}</code> |
-| `order-$variable` | ❌ | ❓ | <code>.order-\$variable{order:var(--variable);}</code> |
-| `inset-$variable` | ❌ | ❓ | <code>.inset-\$variable{inset:var(--variable);}</code> |
-| `inset-s-$variable` | ❌ | ❓ | <code>.inset-s-\$variable{inset-inline-start:var(--variable);}</code> |
-| `inset-inline-$variable` | ❌ | ❓ | <code>.inset-inline-\$variable{inset-inline-start:var(--variable);inset-inline-end:var(--variable);}</code> |
-| `z-$variable` | ❌ | ❓ | <code>.z-\$variable{z-index:var(--variable);}</code> |
 | `ring-offset-$variable` | ❌ | <code>.ring-offset-\$variable{--un-ring-offset-opacity:100%;--un-ring-offset-color:color-mix(in oklch, var(--variable) var(--un-ring-offset-opacity), transparent);}</code> | <code>.ring-offset-\$variable{--un-ring-offset-color:var(--variable);}</code> |
 | `ring-offset-width-$variable` | ❌ | ❓ | <code>.ring-offset-width-\$variable{--un-ring-offset-width:var(--variable);}</code> |
 | `ring-offset-size-$variable` | ❌ | ❓ | <code>.ring-offset-size-\$variable{--un-ring-offset-width:var(--variable);}</code> |
@@ -1047,7 +1048,6 @@
 | `-mb-px` | ❌ | ❓ | <code>.-mb-px{margin-bottom:-1px;}</code> |
 | `-mt--5cm` | ❌ | ❓ | <code>.-mt--5cm{margin-top:5cm;}</code> |
 | `-p-px` | ❌ | ❓ | <code>.-p-px{padding:-1px;}</code> |
-| `-z-1` | ❌ | ❓ | <code>.-z-1{z-index:-1;}</code> |
 | `media-mouse:block` | ❌ | ❓ | <code>@media (hover) and (pointer: fine){<br>.media-mouse\:block{display:block;}<br>}</code> |
 | `group-hover:media-mouse:bg-red` | ❌ | ❓ | <code>@media (hover) and (pointer: fine){<br>.group:hover .group-hover\:media-mouse\:bg-red{--un-bg-opacity:1;background-color:rgb(248 113 113 / var(--un-bg-opacity));}<br>}</code> |
 | `before:translate-y-full` | ❌ | <code>.before\:translate-y-full::before{--un-translate-y:calc(var(--spacing) * 1);translate:var(--un-translate-x) var(--un-translate-y);}</code> | <code>.before\:translate-y-full::before{--un-translate-y:100%;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |

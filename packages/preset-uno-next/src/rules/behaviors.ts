@@ -11,6 +11,7 @@ export const outline: Rule<Theme>[] = [
 
   // offset
   [/^outline-offset-(.+)$/, ([, d]) => ({ 'outline-offset': h.bracket.cssvar.global.px(d) }), { autocomplete: 'outline-(offset)-<num>' }],
+  ['outline-offset-none', { 'outline-offset': '0' }],
 
   // style
   ['outline', {
@@ -22,6 +23,13 @@ export const outline: Rule<Theme>[] = [
 ]
 
 function handleWidth([, b]: string[]): CSSObject | undefined {
+  if (b === 'none') {
+    return {
+      'outline-style': 'var(--un-outline-style)',
+      'outline-width': '0',
+    }
+  }
+
   const v = h.bracket.cssvar.global.px(b)
   if (v != null) {
     return {
