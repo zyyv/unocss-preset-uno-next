@@ -56,6 +56,12 @@
 | `rounded-tr` | ✅ | <code>.rounded-tr{border-top-right-radius:0.25rem;}</code> | <code>.rounded-tr{border-top-right-radius:0.25rem;}</code> |
 | `rounded-ie-be-1/2` | ✅ | <code>.rounded-ie-be-1\/2{border-end-end-radius:50%;}</code> | <code>.rounded-ie-be-1\/2{border-end-end-radius:50%;}</code> |
 | `rounded-bs-ie` | ✅ | <code>.rounded-bs-ie{border-start-end-radius:0.25rem;}</code> | <code>.rounded-bs-ie{border-start-end-radius:0.25rem;}</code> |
+| `mt-6` | ✅ | <code>.mt-6{margin-top:1.5rem;}</code> | <code>.mt-6{margin-top:1.5rem;}</code> |
+| `ms-4` | ✅ | <code>.ms-4{margin-inline-start:1rem;}</code> | <code>.ms-4{margin-inline-start:1rem;}</code> |
+| `me-8` | ✅ | <code>.me-8{margin-inline-end:2rem;}</code> | <code>.me-8{margin-inline-end:2rem;}</code> |
+| `pt-6` | ✅ | <code>.pt-6{padding-top:1.5rem;}</code> | <code>.pt-6{padding-top:1.5rem;}</code> |
+| `ps-4` | ✅ | <code>.ps-4{padding-inline-start:1rem;}</code> | <code>.ps-4{padding-inline-start:1rem;}</code> |
+| `pe-8` | ✅ | <code>.pe-8{padding-inline-end:2rem;}</code> | <code>.pe-8{padding-inline-end:2rem;}</code> |
 | `border-s-0` | ✅ | <code>.border-s-0{border-inline-start-width:0px;}</code> | <code>.border-s-0{border-inline-start-width:0px;}</code> |
 | `border-e-4` | ✅ | <code>.border-e-4{border-inline-end-width:4px;}</code> | <code>.border-e-4{border-inline-end-width:4px;}</code> |
 | `rounded-s` | ✅ | <code>.rounded-s{border-end-start-radius:0.25rem;border-start-start-radius:0.25rem;}</code> | <code>.rounded-s{border-end-start-radius:0.25rem;border-start-start-radius:0.25rem;}</code> |
@@ -343,15 +349,27 @@
 | `aspect-ratio-[auto_16/9]` | ✅ | <code>.aspect-ratio-\[auto_16\/9\]{aspect-ratio:auto 16/9;}</code> | <code>.aspect-ratio-\[auto_16\/9\]{aspect-ratio:auto 16/9;}</code> |
 | `aspect-[auto_16/9]` | ✅ | <code>.aspect-\[auto_16\/9\]{aspect-ratio:auto 16/9;}</code> | <code>.aspect-\[auto_16\/9\]{aspect-ratio:auto 16/9;}</code> |
 | `p-unset` | ✅ | <code>.p-unset{padding:unset;}</code> | <code>.p-unset{padding:unset;}</code> |
+| `p-2` | ✅ | <code>.p-2{padding:0.5rem;}</code> | <code>.p-2{padding:0.5rem;}</code> |
+| `p-t-2` | ✅ | <code>.p-t-2{padding-top:0.5rem;}</code> | <code>.p-t-2{padding-top:0.5rem;}</code> |
+| `p2` | ✅ | <code>.p2{padding:0.5rem;}</code> | <code>.p2{padding:0.5rem;}</code> |
+| `pl-10px` | ✅ | <code>.pl-10px{padding-left:10px;}</code> | <code>.pl-10px{padding-left:10px;}</code> |
 | `pl-revert` | ✅ | <code>.pl-revert{padding-left:revert;}</code> | <code>.pl-revert{padding-left:revert;}</code> |
+| `pt-2` | ✅ | <code>.pt-2{padding-top:0.5rem;}</code> | <code>.pt-2{padding-top:0.5rem;}</code> |
+| `pt2` | ✅ | <code>.pt2{padding-top:0.5rem;}</code> | <code>.pt2{padding-top:0.5rem;}</code> |
 | `pt-$title2` | ✅ | <code>.pt-\$title2{padding-top:var(--title2);}</code> | <code>.pt-\$title2{padding-top:var(--title2);}</code> |
 | `pa` | ✅ | <code>.pa{padding:auto;}</code> | <code>.pa{padding:auto;}</code> |
 | `m-inherit` | ✅ | <code>.m-inherit{margin:inherit;}</code> | <code>.m-inherit{margin:inherit;}</code> |
 | `m-[3em]` | ✅ | <code>.m-\[3em\]{margin:3em;}</code> | <code>.m-\[3em\]{margin:3em;}</code> |
+| `m-0` | ✅ | <code>.m-0{margin:0;}</code> | <code>.m-0{margin:0;}</code> |
+| `m-1/2` | ✅ | <code>.m-1\/2{margin:50%;}</code> | <code>.m-1\/2{margin:50%;}</code> |
 | `m-auto` | ✅ | <code>.m-auto{margin:auto;}</code> | <code>.m-auto{margin:auto;}</code> |
 | `mt-[-10.2%]` | ✅ | <code>.mt-\[-10\.2\%\]{margin-top:-10.2%;}</code> | <code>.mt-\[-10\.2\%\]{margin-top:-10.2%;}</code> |
 | `mt-$height` | ✅ | <code>.mt-\$height{margin-top:var(--height);}</code> | <code>.mt-\$height{margin-top:var(--height);}</code> |
 | `p-ie-revert` | ✅ | <code>.p-ie-revert{padding-inline-end:revert;}</code> | <code>.p-ie-revert{padding-inline-end:revert;}</code> |
+| `p-bs-2` | ✅ | <code>.p-bs-2{padding-block-start:0.5rem;}</code> | <code>.p-bs-2{padding-block-start:0.5rem;}</code> |
+| `pis-10px` | ✅ | <code>.pis-10px{padding-inline-start:10px;}</code> | <code>.pis-10px{padding-inline-start:10px;}</code> |
+| `pbs-2` | ✅ | <code>.pbs-2{padding-block-start:0.5rem;}</code> | <code>.pbs-2{padding-block-start:0.5rem;}</code> |
+| `pbs2` | ✅ | <code>.pbs2{padding-block-start:0.5rem;}</code> | <code>.pbs2{padding-block-start:0.5rem;}</code> |
 | `pbs-$title2` | ✅ | <code>.pbs-\$title2{padding-block-start:var(--title2);}</code> | <code>.pbs-\$title2{padding-block-start:var(--title2);}</code> |
 | `mbs-unset` | ✅ | <code>.mbs-unset{margin-block-start:unset;}</code> | <code>.mbs-unset{margin-block-start:unset;}</code> |
 | `mbs-[-10.2%]` | ✅ | <code>.mbs-\[-10\.2\%\]{margin-block-start:-10.2%;}</code> | <code>.mbs-\[-10\.2\%\]{margin-block-start:-10.2%;}</code> |
@@ -507,24 +525,38 @@
 | `[font-feature-settings:'cv02','cv03','cv04','cv11']` | ✅ | <code>.\[font-feature-settings\:\'cv02\'\,\'cv03\'\,\'cv04\'\,\'cv11\'\]{font-feature-settings:'cv02','cv03','cv04','cv11';}</code> | <code>.\[font-feature-settings\:\'cv02\'\,\'cv03\'\,\'cv04\'\,\'cv11\'\]{font-feature-settings:'cv02','cv03','cv04','cv11';}</code> |
 | `[font-variation-settings:"wght"_400,_"opsz"_14]` | ✅ | <code>.\[font-variation-settings\:\"wght\"_400\,_\"opsz\"_14\]{font-variation-settings:"wght" 400, "opsz" 14;}</code> | <code>.\[font-variation-settings\:\"wght\"_400\,_\"opsz\"_14\]{font-variation-settings:"wght" 400, "opsz" 14;}</code> |
 | `[--css-variable:"wght"_400,_"opsz"_14]` | ✅ | <code>.\[--css-variable\:\"wght\"_400\,_\"opsz\"_14\]{--css-variable:"wght" 400, "opsz" 14;}</code> | <code>.\[--css-variable\:\"wght\"_400\,_\"opsz\"_14\]{--css-variable:"wght" 400, "opsz" 14;}</code> |
+| `first:p-2` | ✅ | <code>.first\:p-2:first-child{padding:0.5rem;}</code> | <code>.first\:p-2:first-child{padding:0.5rem;}</code> |
 | `group-hover:group-focus:text-center` | ✅ | <code>.group:hover:focus .group-hover\:group-focus\:text-center{text-align:center;}</code> | <code>.group:hover:focus .group-hover\:group-focus\:text-center{text-align:center;}</code> |
+| `hover:!p-1` | ✅ | <code>.hover\:\!p-1:hover{padding:0.25rem !important;}</code> | <code>.hover\:\!p-1:hover{padding:0.25rem !important;}</code> |
+| `hover:p-5` | ✅ | <code>.hover\:p-5:hover{padding:1.25rem;}</code> | <code>.hover\:p-5:hover{padding:1.25rem;}</code> |
+| `not-hover:p-3` | ✅ | <code>.not-hover\:p-3:not(:hover){padding:0.75rem;}</code> | <code>.not-hover\:p-3:not(:hover){padding:0.75rem;}</code> |
 | `peer-not-placeholder-shown:text-2xl` | ✅ | <code>.peer:not(:placeholder-shown)~.peer-not-placeholder-shown\:text-2xl{font-size:1.5rem;line-height:2rem;}</code> | <code>.peer:not(:placeholder-shown)~.peer-not-placeholder-shown\:text-2xl{font-size:1.5rem;line-height:2rem;}</code> |
+| `important:p-3` | ✅ | <code>.important\:p-3{padding:0.75rem !important;}</code> | <code>.important\:p-3{padding:0.75rem !important;}</code> |
+| `p3!` | ✅ | <code>.p3\!{padding:0.75rem !important;}</code> | <code>.p3\!{padding:0.75rem !important;}</code> |
 | `-mt-safe` | ✅ | ❓ | ❓ |
 | `-!mb-safe` | ✅ | ❓ | ❓ |
 | `!-ms-safe` | ✅ | ❓ | ❓ |
+| `*:p-2` | ✅ | <code>.\*\:p-2 > *{padding:0.5rem;}</code> | <code>.\*\:p-2 > *{padding:0.5rem;}</code> |
+| `*-p-2` | ✅ | <code>.\*-p-2 > *{padding:0.5rem;}</code> | <code>.\*-p-2 > *{padding:0.5rem;}</code> |
 | `all-[.target]-[combinator:test-2]` | ✅ | <code>.all-\[\.target\]-\[combinator\:test-2\] .target{combinator:test-2;}</code> | <code>.all-\[\.target\]-\[combinator\:test-2\] .target{combinator:test-2;}</code> |
 | `children-[.target]-[combinator:test-2]` | ✅ | <code>.children-\[\.target\]-\[combinator\:test-2\]>.target{combinator:test-2;}</code> | <code>.children-\[\.target\]-\[combinator\:test-2\]>.target{combinator:test-2;}</code> |
 | `next-[.target]-[combinator:test-2]` | ✅ | <code>.next-\[\.target\]-\[combinator\:test-2\]+.target{combinator:test-2;}</code> | <code>.next-\[\.target\]-\[combinator\:test-2\]+.target{combinator:test-2;}</code> |
 | `sibling-[div:hover]-[combinator:test-4]` | ✅ | <code>.sibling-\[div\:hover\]-\[combinator\:test-4\]+div:hover{combinator:test-4;}</code> | <code>.sibling-\[div\:hover\]-\[combinator\:test-4\]+div:hover{combinator:test-4;}</code> |
 | `all-[[data-hvr]:hover]:[color:red]` | ✅ | <code>.all-\[\[data-hvr\]\:hover\]\:\[color\:red\] [data-hvr]:hover{color:red;}</code> | <code>.all-\[\[data-hvr\]\:hover\]\:\[color\:red\] [data-hvr]:hover{color:red;}</code> |
 | `all:m-auto` | ✅ | <code>.all\:m-auto *{margin:auto;}</code> | <code>.all\:m-auto *{margin:auto;}</code> |
+| `all:m1/1` | ✅ | <code>.all\:m1\/1 *{margin:100%;}</code> | <code>.all\:m1\/1 *{margin:100%;}</code> |
 | `children:m-auto` | ✅ | <code>.children\:m-auto>*{margin:auto;}</code> | <code>.children\:m-auto>*{margin:auto;}</code> |
+| `next:mt-0` | ✅ | <code>.next\:mt-0+*{margin-top:0;}</code> | <code>.next\:mt-0+*{margin-top:0;}</code> |
 | `dark:text-xl` | ✅ | <code>.dark .dark\:text-xl{font-size:1.25rem;line-height:1.75rem;}</code> | <code>.dark .dark\:text-xl{font-size:1.25rem;line-height:1.75rem;}</code> |
 | `light:text-sm` | ✅ | <code>.light .light\:text-sm{font-size:0.875rem;line-height:1.25rem;}</code> | <code>.light .light\:text-sm{font-size:0.875rem;line-height:1.25rem;}</code> |
 | `uno-layer-uno_css:block` | ✅ | <code>/* layer: uno_css */<br>.uno-layer-uno_css\:block{display:block;}</code> | <code>/* layer: uno_css */<br>.uno-layer-uno_css\:block{display:block;}</code> |
 | `layer-[utility]:block` | ✅ | <code>@layer utility{<br>.layer-\[utility\]\:block{display:block;}<br>}</code> | <code>@layer utility{<br>.layer-\[utility\]\:block{display:block;}<br>}</code> |
 | `uno-layer-[uno_css]:block` | ✅ | <code>/* layer: uno css */<br>.uno-layer-\[uno_css\]\:block{display:block;}</code> | <code>/* layer: uno css */<br>.uno-layer-\[uno_css\]\:block{display:block;}</code> |
 | `!m-$c-m` | ✅ | <code>.\!m-\$c-m{margin:var(--c-m) !important;}</code> | <code>.\!m-\$c-m{margin:var(--c-m) !important;}</code> |
+| `!p-5px` | ✅ | <code>.\!p-5px{padding:5px !important;}</code> | <code>.\!p-5px{padding:5px !important;}</code> |
+| `-mb-px` | ✅ | <code>.-mb-px{margin-bottom:-1px;}</code> | <code>.-mb-px{margin-bottom:-1px;}</code> |
+| `-mt--5cm` | ✅ | <code>.-mt--5cm{margin-top:5cm;}</code> | <code>.-mt--5cm{margin-top:5cm;}</code> |
+| `-p-px` | ✅ | <code>.-p-px{padding:-1px;}</code> | <code>.-p-px{padding:-1px;}</code> |
 | `-z-1` | ✅ | <code>.-z-1{z-index:-1;}</code> | <code>.-z-1{z-index:-1;}</code> |
 | `supports-[(display:_grid)]:block` | ✅ | <code>@supports (display: grid){<br>.supports-\[\(display\:_grid\)\]\:block{display:block;}<br>}</code> | <code>@supports (display: grid){<br>.supports-\[\(display\:_grid\)\]\:block{display:block;}<br>}</code> |
 | `media-[(--cssvar)]:block` | ✅ | <code>@media (--cssvar){<br>.media-\[\(--cssvar\)\]\:block{display:block;}<br>}</code> | <code>@media (--cssvar){<br>.media-\[\(--cssvar\)\]\:block{display:block;}<br>}</code> |
@@ -535,14 +567,33 @@
 | `rtl:text-right` | ✅ | <code>[dir="rtl"] .rtl\:text-right{text-align:right;}</code> | <code>[dir="rtl"] .rtl\:text-right{text-align:right;}</code> |
 | `ltr:text-left` | ✅ | <code>[dir="ltr"] .ltr\:text-left{text-align:left;}</code> | <code>[dir="ltr"] .ltr\:text-left{text-align:left;}</code> |
 | `placeholder-shown-color-transparent` | ✅ | <code>.placeholder-shown-color-transparent:placeholder-shown{color:transparent;}</code> | <code>.placeholder-shown-color-transparent:placeholder-shown{color:transparent;}</code> |
+| `not-hover:p-4px` | ✅ | <code>.not-hover\:p-4px:not(:hover){padding:4px;}</code> | <code>.not-hover\:p-4px:not(:hover){padding:4px;}</code> |
+| `is-hover:p-4px` | ✅ | <code>.is-hover\:p-4px:is(:hover){padding:4px;}</code> | <code>.is-hover\:p-4px:is(:hover){padding:4px;}</code> |
+| `where-hover:p-2` | ✅ | <code>.where-hover\:p-2:where(:hover){padding:0.5rem;}</code> | <code>.where-hover\:p-2:where(:hover){padding:0.5rem;}</code> |
+| `has-hover:p-2` | ✅ | <code>.has-hover\:p-2:has(:hover){padding:0.5rem;}</code> | <code>.has-hover\:p-2:has(:hover){padding:0.5rem;}</code> |
 | `peer-not-placeholder-shown:text-3xl` | ✅ | <code>.peer:not(:placeholder-shown)~.peer-not-placeholder-shown\:text-3xl{font-size:1.875rem;line-height:2.25rem;}</code> | <code>.peer:not(:placeholder-shown)~.peer-not-placeholder-shown\:text-3xl{font-size:1.875rem;line-height:2.25rem;}</code> |
 | `peer-is-placeholder-shown:text-3xl` | ✅ | <code>.peer:is(:placeholder-shown)~.peer-is-placeholder-shown\:text-3xl{font-size:1.875rem;line-height:2.25rem;}</code> | <code>.peer:is(:placeholder-shown)~.peer-is-placeholder-shown\:text-3xl{font-size:1.875rem;line-height:2.25rem;}</code> |
 | `group-where-placeholder-shown:text-4xl` | ✅ | <code>.group:where(:placeholder-shown) .group-where-placeholder-shown\:text-4xl{font-size:2.25rem;line-height:2.5rem;}</code> | <code>.group:where(:placeholder-shown) .group-where-placeholder-shown\:text-4xl{font-size:2.25rem;line-height:2.5rem;}</code> |
 | `group-has-placeholder-shown:text-4xl` | ✅ | <code>.group:has(:placeholder-shown) .group-has-placeholder-shown\:text-4xl{font-size:2.25rem;line-height:2.5rem;}</code> | <code>.group:has(:placeholder-shown) .group-has-placeholder-shown\:text-4xl{font-size:2.25rem;line-height:2.5rem;}</code> |
+| `has-[:hover]:m-1` | ✅ | <code>.has-\[\:hover\]\:m-1:has(:hover){margin:0.25rem;}</code> | <code>.has-\[\:hover\]\:m-1:has(:hover){margin:0.25rem;}</code> |
+| `group-not-[[data-potato]]:m-1` | ✅ | <code>.group:not([data-potato]) .group-not-\[\[data-potato\]\]\:m-1{margin:0.25rem;}</code> | <code>.group:not([data-potato]) .group-not-\[\[data-potato\]\]\:m-1{margin:0.25rem;}</code> |
+| `previous-is-[div]:m-1` | ✅ | <code>.previous:is(div)+.previous-is-\[div\]\:m-1{margin:0.25rem;}</code> | <code>.previous:is(div)+.previous-is-\[div\]\:m-1{margin:0.25rem;}</code> |
+| `peer-where-[.child]:m-1` | ✅ | <code>.peer:where(.child)~.peer-where-\[\.child\]\:m-1{margin:0.25rem;}</code> | <code>.peer:where(.child)~.peer-where-\[\.child\]\:m-1{margin:0.25rem;}</code> |
+| `parent-not-[#someId]:m-1` | ✅ | <code>.parent:not(#someId)>.parent-not-\[\#someId\]\:m-1{margin:0.25rem;}</code> | <code>.parent:not(#someId)>.parent-not-\[\#someId\]\:m-1{margin:0.25rem;}</code> |
 | `scope-[unocss]:block` | ✅ | <code>unocss .scope-\[unocss\]\:block{display:block;}</code> | <code>unocss .scope-\[unocss\]\:block{display:block;}</code> |
 | `scope-[[data-any]]:inline` | ✅ | <code>[data-any] .scope-\[\[data-any\]\]\:inline{display:inline;}</code> | <code>[data-any] .scope-\[\[data-any\]\]\:inline{display:inline;}</code> |
+| `group-focus:p-4` | ✅ | <code>.group:focus .group-focus\:p-4{padding:1rem;}</code> | <code>.group:focus .group-focus\:p-4{padding:1rem;}</code> |
 | `parent-hover:text-center` | ✅ | <code>.parent:hover>.parent-hover\:text-center{text-align:center;}</code> | <code>.parent:hover>.parent-hover\:text-center{text-align:center;}</code> |
+| `group-aria-focus:p-4` | ✅ | <code>.group-aria:focus .group-aria-focus\:p-4{padding:1rem;}</code> | <code>.group-aria:focus .group-aria-focus\:p-4{padding:1rem;}</code> |
 | `parent-aria-hover:text-center` | ✅ | <code>.parent-aria:hover>.parent-aria-hover\:text-center{text-align:center;}</code> | <code>.parent-aria:hover>.parent-aria-hover\:text-center{text-align:center;}</code> |
+| `[&:nth-child(2)]:m-10` | ✅ | <code>.\[\&\:nth-child\(2\)\]\:m-10:nth-child(2){margin:2.5rem;}</code> | <code>.\[\&\:nth-child\(2\)\]\:m-10:nth-child(2){margin:2.5rem;}</code> |
+| `[&>*]:m-11` | ✅ | <code>.\[\&\>\*\]\:m-11>*{margin:2.75rem;}</code> | <code>.\[\&\>\*\]\:m-11>*{margin:2.75rem;}</code> |
+| `[*>&]:m-12` | ✅ | <code>*>.\[\*\>\&\]\:m-12{margin:3rem;}</code> | <code>*>.\[\*\>\&\]\:m-12{margin:3rem;}</code> |
+| `[&_&]:m-13` | ✅ | <code>.\[\&_\&\]\:m-13 .\[\&_\&\]\:m-13{margin:3.25rem;}</code> | <code>.\[\&_\&\]\:m-13 .\[\&_\&\]\:m-13{margin:3.25rem;}</code> |
+| `[&[open]]:m-14` | ✅ | <code>.\[\&\[open\]\]\:m-14[open]{margin:3.5rem;}</code> | <code>.\[\&\[open\]\]\:m-14[open]{margin:3.5rem;}</code> |
+| `[&[readonly][disabled]]:m-15` | ✅ | <code>.\[\&\[readonly\]\[disabled\]\]\:m-15[readonly][disabled]{margin:3.75rem;}</code> | <code>.\[\&\[readonly\]\[disabled\]\]\:m-15[readonly][disabled]{margin:3.75rem;}</code> |
+| `[&[open]:readonly]:m-16` | ✅ | <code>.\[\&\[open\]\:readonly\]\:m-16[open]:readonly{margin:4rem;}</code> | <code>.\[\&\[open\]\:readonly\]\:m-16[open]:readonly{margin:4rem;}</code> |
+| `[*[open]:readonly_&]:[&[open]:disabled]:m-17` | ✅ | <code>*[open]:readonly .\[\*\[open\]\:readonly_\&\]\:\[\&\[open\]\:disabled\]\:m-17[open]:disabled{margin:4.25rem;}</code> | <code>*[open]:readonly .\[\*\[open\]\:readonly_\&\]\:\[\&\[open\]\:disabled\]\:m-17[open]:disabled{margin:4.25rem;}</code> |
 | `before:[&[data-active='true']]:content-['test']` | ✅ | <code>.before\:\[\&\[data-active\=\'true\'\]\]\:content-\[\'test\'\][data-active='true']::before{content:'test';}</code> | <code>.before\:\[\&\[data-active\=\'true\'\]\]\:content-\[\'test\'\][data-active='true']::before{content:'test';}</code> |
 | `data-[inline]:inline` | ✅ | <code>.data-\[inline\]\:inline[data-inline]{display:inline;}</code> | <code>.data-\[inline\]\:inline[data-inline]{display:inline;}</code> |
 | `peer-data-[state=closed]:border-3` | ✅ | <code>.peer[data-state=closed]~.peer-data-\[state\=closed\]\:border-3{border-width:3px;}</code> | <code>.peer[data-state=closed]~.peer-data-\[state\=closed\]\:border-3{border-width:3px;}</code> |
@@ -589,14 +640,8 @@
 | `rounded-md` | ❌ | <code>.rounded-md{border-radius:var(--un-radius-md);}</code> | <code>.rounded-md{border-radius:0.375rem;}</code> |
 | `rounded-t-sm` | ❌ | <code>.rounded-t-sm{border-top-left-radius:var(--un-radius-sm);border-top-right-radius:var(--un-radius-sm);}</code> | <code>.rounded-t-sm{border-top-left-radius:0.125rem;border-top-right-radius:0.125rem;}</code> |
 | `rounded-bs-sm` | ❌ | <code>.rounded-bs-sm{border-start-start-radius:var(--un-radius-sm);border-start-end-radius:var(--un-radius-sm);}</code> | <code>.rounded-bs-sm{border-start-start-radius:0.125rem;border-start-end-radius:0.125rem;}</code> |
-| `mt-6` | ❌ | <code>.mt-6{margin-top:calc(var(--spacing) * 6);}</code> | <code>.mt-6{margin-top:1.5rem;}</code> |
-| `mx-1` | ❌ | <code>.mx-1{margin-inline:calc(var(--spacing) * 1);}</code> | <code>.mx-1{margin-left:0.25rem;margin-right:0.25rem;}</code> |
-| `ms-4` | ❌ | <code>.ms-4{margin-inline-start:calc(var(--spacing) * 4);}</code> | <code>.ms-4{margin-inline-start:1rem;}</code> |
-| `me-8` | ❌ | <code>.me-8{margin-inline-end:calc(var(--spacing) * 8);}</code> | <code>.me-8{margin-inline-end:2rem;}</code> |
-| `pt-6` | ❌ | <code>.pt-6{padding-top:calc(var(--spacing) * 6);}</code> | <code>.pt-6{padding-top:1.5rem;}</code> |
-| `px-1` | ❌ | <code>.px-1{padding-inline:calc(var(--spacing) * 1);}</code> | <code>.px-1{padding-left:0.25rem;padding-right:0.25rem;}</code> |
-| `ps-4` | ❌ | <code>.ps-4{padding-inline-start:calc(var(--spacing) * 4);}</code> | <code>.ps-4{padding-inline-start:1rem;}</code> |
-| `pe-8` | ❌ | <code>.pe-8{padding-inline-end:calc(var(--spacing) * 8);}</code> | <code>.pe-8{padding-inline-end:2rem;}</code> |
+| `mx-1` | ❌ | <code>.mx-1{margin-inline:0.25rem;}</code> | <code>.mx-1{margin-left:0.25rem;margin-right:0.25rem;}</code> |
+| `px-1` | ❌ | <code>.px-1{padding-inline:0.25rem;}</code> | <code>.px-1{padding-left:0.25rem;padding-right:0.25rem;}</code> |
 | `start-4` | ❌ | <code>.start-4{inset-inline-start:calc(var(--spacing) * 4);}</code> | <code>.start-4{inset-inline-start:1rem;}</code> |
 | `end-8` | ❌ | <code>.end-8{inset-inline-end:calc(var(--spacing) * 8);}</code> | <code>.end-8{inset-inline-end:2rem;}</code> |
 | `border-black` | ❌ | <code>.border-black{--un-border-opacity:100%;border-color:color-mix(in oklch, var(--color-black) var(--un-border-opacity), transparent);}</code> | <code>.border-black{--un-border-opacity:1;border-color:rgb(0 0 0 / var(--un-border-opacity));}</code> |
@@ -806,23 +851,11 @@
 | `max-inline-20` | ❌ | <code>.max-inline-20{max-inline-size:calc(var(--spacing) * 20);}</code> | <code>.max-inline-20{max-inline-size:5rem;}</code> |
 | `min-inline-20` | ❌ | <code>.min-inline-20{min-inline-size:calc(var(--spacing) * 20);}</code> | <code>.min-inline-20{min-inline-size:5rem;}</code> |
 | `p-none` | ❌ | ❓ | <code>.p-none{padding:0;}</code> |
-| `p-2` | ❌ | <code>.p-2{padding:calc(var(--spacing) * 2);}</code> | <code>.p-2{padding:0.5rem;}</code> |
-| `p-t-2` | ❌ | <code>.p-t-2{padding-top:calc(var(--spacing) * 2);}</code> | <code>.p-t-2{padding-top:0.5rem;}</code> |
-| `p2` | ❌ | <code>.p2{padding:calc(var(--spacing) * 2);}</code> | <code>.p2{padding:0.5rem;}</code> |
-| `pl-10px` | ❌ | ❓ | <code>.pl-10px{padding-left:10px;}</code> |
-| `pt-2` | ❌ | <code>.pt-2{padding-top:calc(var(--spacing) * 2);}</code> | <code>.pt-2{padding-top:0.5rem;}</code> |
-| `pt2` | ❌ | <code>.pt2{padding-top:calc(var(--spacing) * 2);}</code> | <code>.pt2{padding-top:0.5rem;}</code> |
-| `m-0` | ❌ | <code>.m-0{margin:calc(var(--spacing) * 0);}</code> | <code>.m-0{margin:0;}</code> |
-| `m-1/2` | ❌ | <code>.m-1\/2{margin:calc(var(--spacing) * 0.5);}</code> | <code>.m-1\/2{margin:50%;}</code> |
 | `my-auto` | ❌ | <code>.my-auto{margin-block:auto;}</code> | <code>.my-auto{margin-top:auto;margin-bottom:auto;}</code> |
 | `my-revert-layer` | ❌ | <code>.my-revert-layer{margin-block:revert-layer;}</code> | <code>.my-revert-layer{margin-top:revert-layer;margin-bottom:revert-layer;}</code> |
 | `my-[var(--hello-space-y)]` | ❌ | <code>.my-\[var\(--hello-space-y\)\]{margin-block:var(--hello-space-y);}</code> | <code>.my-\[var\(--hello-space-y\)\]{margin-top:var(--hello-space-y);margin-bottom:var(--hello-space-y);}</code> |
 | `m-none` | ❌ | ❓ | <code>.m-none{margin:0;}</code> |
 | `p-ie-none` | ❌ | ❓ | <code>.p-ie-none{padding-inline-end:0;}</code> |
-| `p-bs-2` | ❌ | <code>.p-bs-2{padding-block-start:calc(var(--spacing) * 2);}</code> | <code>.p-bs-2{padding-block-start:0.5rem;}</code> |
-| `pis-10px` | ❌ | ❓ | <code>.pis-10px{padding-inline-start:10px;}</code> |
-| `pbs-2` | ❌ | <code>.pbs-2{padding-block-start:calc(var(--spacing) * 2);}</code> | <code>.pbs-2{padding-block-start:0.5rem;}</code> |
-| `pbs2` | ❌ | <code>.pbs2{padding-block-start:calc(var(--spacing) * 2);}</code> | <code>.pbs2{padding-block-start:0.5rem;}</code> |
 | `m-inline-none` | ❌ | ❓ | <code>.m-inline-none{margin-inline-start:0;margin-inline-end:0;}</code> |
 | `pb` | ❌ | ❓ | <code>.pb{padding-bottom:1rem;}</code> |
 | `px` | ❌ | ❓ | <code>.px{padding-left:1rem;padding-right:1rem;}</code> |
@@ -1010,36 +1043,26 @@
 | `hover:scale-4` | ❌ | <code>.hover\:scale-4:hover{--un-scale-x:4%;--un-scale-y:4%;scale:var(--un-scale-x) var(--un-scale-y);}</code> | <code>.hover\:scale-4:hover{--un-scale-x:0.04;--un-scale-y:0.04;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |
 | `hover:translate-x-3` | ❌ | <code>.hover\:translate-x-3:hover{--un-translate-x:calc(var(--spacing) * 3);translate:var(--un-translate-x) var(--un-translate-y);}</code> | <code>.hover\:translate-x-3:hover{--un-translate-x:0.75rem;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |
 | `peer-checked:translate-x-[var(--reveal)]` | ❌ | <code>.peer:checked~.peer-checked\:translate-x-\[var\(--reveal\)\]{--un-translate-x:var(--reveal);translate:var(--un-translate-x) var(--un-translate-y);}</code> | <code>.peer:checked~.peer-checked\:translate-x-\[var\(--reveal\)\]{--un-translate-x:var(--reveal);transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |
-| `!hover:px-10` | ❌ | <code>.\!hover\:px-10:hover{padding-inline:calc(var(--spacing) * 10) !important;}</code> | <code>.\!hover\:px-10:hover{padding-left:2.5rem !important;padding-right:2.5rem !important;}</code> |
-| `at-2xl:m2` | ❌ | <code>@media (min-width: 96rem){<br>.at-2xl\:m2{margin:calc(var(--spacing) * 2);}<br>}</code> | <code>@media (min-width: 1536px){<br>.at-2xl\:m2{margin:0.5rem;}<br>}</code> |
-| `at-lg:m2` | ❌ | <code>@media (min-width: 64rem) and (max-width: calc(80rem - 0.1px)){<br>.at-lg\:m2{margin:calc(var(--spacing) * 2);}<br>}</code> | <code>@media (min-width: 1024px) and (max-width: 1279.9px){<br>.at-lg\:m2{margin:0.5rem;}<br>}</code> |
-| `at-sm:m1` | ❌ | <code>@media (min-width: 40rem) and (max-width: calc(48rem - 0.1px)){<br>.at-sm\:m1{margin:calc(var(--spacing) * 1);}<br>}</code> | <code>@media (min-width: 640px) and (max-width: 767.9px){<br>.at-sm\:m1{margin:0.25rem;}<br>}</code> |
-| `~sm:m1` | ❌ | <code>@media (min-width: 40rem) and (max-width: calc(48rem - 0.1px)){<br>.\~sm\:m1{margin:calc(var(--spacing) * 1);}<br>}</code> | <code>@media (min-width: 640px) and (max-width: 767.9px){<br>.\~sm\:m1{margin:0.25rem;}<br>}</code> |
+| `!hover:px-10` | ❌ | <code>.\!hover\:px-10:hover{padding-inline:2.5rem !important;}</code> | <code>.\!hover\:px-10:hover{padding-left:2.5rem !important;padding-right:2.5rem !important;}</code> |
+| `at-2xl:m2` | ❌ | <code>@media (min-width: 96rem){<br>.at-2xl\:m2{margin:0.5rem;}<br>}</code> | <code>@media (min-width: 1536px){<br>.at-2xl\:m2{margin:0.5rem;}<br>}</code> |
+| `at-lg:m2` | ❌ | <code>@media (min-width: 64rem) and (max-width: calc(80rem - 0.1px)){<br>.at-lg\:m2{margin:0.5rem;}<br>}</code> | <code>@media (min-width: 1024px) and (max-width: 1279.9px){<br>.at-lg\:m2{margin:0.5rem;}<br>}</code> |
+| `at-sm:m1` | ❌ | <code>@media (min-width: 40rem) and (max-width: calc(48rem - 0.1px)){<br>.at-sm\:m1{margin:0.25rem;}<br>}</code> | <code>@media (min-width: 640px) and (max-width: 767.9px){<br>.at-sm\:m1{margin:0.25rem;}<br>}</code> |
+| `~sm:m1` | ❌ | <code>@media (min-width: 40rem) and (max-width: calc(48rem - 0.1px)){<br>.\~sm\:m1{margin:0.25rem;}<br>}</code> | <code>@media (min-width: 640px) and (max-width: 767.9px){<br>.\~sm\:m1{margin:0.25rem;}<br>}</code> |
 | `disabled:op50` | ❌ | <code>.disabled\:op50:disabled{opacity:50%;}</code> | <code>.disabled\:op50:disabled{opacity:0.5;}</code> |
-| `first:p-2` | ❌ | <code>.first\:p-2:first-child{padding:calc(var(--spacing) * 2);}</code> | <code>.first\:p-2:first-child{padding:0.5rem;}</code> |
 | `first-line:bg-green-400` | ❌ | <code>.first-line\:bg-green-400::first-line{--un-bg-opacity:100%;background-color:color-mix(in oklch, var(--color-green-400) var(--un-bg-opacity), transparent);}</code> | <code>.first-line\:bg-green-400::first-line{--un-bg-opacity:1;background-color:rgb(74 222 128 / var(--un-bg-opacity));}</code> |
 | `first-letter:bg-green-400` | ❌ | <code>.first-letter\:bg-green-400::first-letter{--un-bg-opacity:100%;background-color:color-mix(in oklch, var(--color-green-400) var(--un-bg-opacity), transparent);}</code> | <code>.first-letter\:bg-green-400::first-letter{--un-bg-opacity:1;background-color:rgb(74 222 128 / var(--un-bg-opacity));}</code> |
 | `focus-visible:outline-none` | ❌ | <code>.focus-visible\:outline-none:focus-visible{--un-outline-style:none;outline-style:none;}</code> | <code>.focus-visible\:outline-none:focus-visible{outline:2px solid transparent;outline-offset:2px;}</code> |
-| `hover:!p-1` | ❌ | <code>.hover\:\!p-1:hover{padding:calc(var(--spacing) * 1) !important;}</code> | <code>.hover\:\!p-1:hover{padding:0.25rem !important;}</code> |
 | `hover:not-first:checked:bg-red/10` | ❌ | <code>.hover\:not-first\:checked\:bg-red\/10:checked:not(:first-child):hover{--un-bg-opacity:10%;background-color:color-mix(in oklch, var(--color-red-400) var(--un-bg-opacity), transparent);}</code> | <code>.hover\:not-first\:checked\:bg-red\/10:checked:not(:first-child):hover{background-color:rgb(248 113 113 / 0.1);}</code> |
-| `hover:p-5` | ❌ | <code>.hover\:p-5:hover{padding:calc(var(--spacing) * 5);}</code> | <code>.hover\:p-5:hover{padding:1.25rem;}</code> |
-| `lt-lg:m2` | ❌ | <code>@media (max-width: calc(64rem - 0.1px)){<br>.lt-lg\:m2{margin:calc(var(--spacing) * 2);}<br>}</code> | <code>@media (max-width: 1023.9px){<br>.lt-lg\:m2{margin:0.5rem;}<br>}</code> |
-| `lt-sm:m1` | ❌ | <code>@media (max-width: calc(40rem - 0.1px)){<br>.lt-sm\:m1{margin:calc(var(--spacing) * 1);}<br>}</code> | <code>@media (max-width: 639.9px){<br>.lt-sm\:m1{margin:0.25rem;}<br>}</code> |
-| `max-sm:m1` | ❌ | <code>@media (max-width: calc(40rem - 0.1px)){<br>.max-sm\:m1{margin:calc(var(--spacing) * 1);}<br>}</code> | <code>@media (max-width: 639.9px){<br>.max-sm\:m1{margin:0.25rem;}<br>}</code> |
-| `<sm:m1` | ❌ | <code>@media (max-width: calc(40rem - 0.1px)){<br>.\<sm\:m1{margin:calc(var(--spacing) * 1);}<br>}</code> | <code>@media (max-width: 639.9px){<br>.\<sm\:m1{margin:0.25rem;}<br>}</code> |
+| `lt-lg:m2` | ❌ | <code>@media (max-width: calc(64rem - 0.1px)){<br>.lt-lg\:m2{margin:0.5rem;}<br>}</code> | <code>@media (max-width: 1023.9px){<br>.lt-lg\:m2{margin:0.5rem;}<br>}</code> |
+| `lt-sm:m1` | ❌ | <code>@media (max-width: calc(40rem - 0.1px)){<br>.lt-sm\:m1{margin:0.25rem;}<br>}</code> | <code>@media (max-width: 639.9px){<br>.lt-sm\:m1{margin:0.25rem;}<br>}</code> |
+| `max-sm:m1` | ❌ | <code>@media (max-width: calc(40rem - 0.1px)){<br>.max-sm\:m1{margin:0.25rem;}<br>}</code> | <code>@media (max-width: 639.9px){<br>.max-sm\:m1{margin:0.25rem;}<br>}</code> |
+| `<sm:m1` | ❌ | <code>@media (max-width: calc(40rem - 0.1px)){<br>.\<sm\:m1{margin:0.25rem;}<br>}</code> | <code>@media (max-width: 639.9px){<br>.\<sm\:m1{margin:0.25rem;}<br>}</code> |
 | `md:!hidden` | ❌ | <code>@media (min-width: 48rem){<br>.md\:\!hidden{display:none !important;}<br>}</code> | <code>@media (min-width: 768px){<br>.md\:\!hidden{display:none !important;}<br>}</code> |
-| `md:m-1` | ❌ | <code>@media (min-width: 48rem){<br>.md\:m-1{margin:calc(var(--spacing) * 1);}<br>}</code> | <code>@media (min-width: 768px){<br>.md\:m-1{margin:0.25rem;}<br>}</code> |
-| `not-hover:p-3` | ❌ | <code>.not-hover\:p-3:not(:hover){padding:calc(var(--spacing) * 3);}</code> | <code>.not-hover\:p-3:not(:hover){padding:0.75rem;}</code> |
-| `sm:m-1` | ❌ | <code>@media (min-width: 40rem){<br>.sm\:m-1{margin:calc(var(--spacing) * 1);}<br>}</code> | <code>@media (min-width: 640px){<br>.sm\:m-1{margin:0.25rem;}<br>}</code> |
-| `sm:m1` | ❌ | <code>@media (min-width: 40rem){<br>.sm\:m1{margin:calc(var(--spacing) * 1);}<br>}</code> | <code>@media (min-width: 640px){<br>.sm\:m1{margin:0.25rem;}<br>}</code> |
-| `important:p-3` | ❌ | <code>.important\:p-3{padding:calc(var(--spacing) * 3) !important;}</code> | <code>.important\:p-3{padding:0.75rem !important;}</code> |
-| `sm:important:p-3` | ❌ | <code>@media (min-width: 40rem){<br>.sm\:important\:p-3{padding:calc(var(--spacing) * 3) !important;}<br>}</code> | <code>@media (min-width: 640px){<br>.sm\:important\:p-3{padding:0.75rem !important;}<br>}</code> |
-| `p3!` | ❌ | <code>.p3\!{padding:calc(var(--spacing) * 3) !important;}</code> | <code>.p3\!{padding:0.75rem !important;}</code> |
-| `*:p-2` | ❌ | <code>.\*\:p-2 > *{padding:calc(var(--spacing) * 2);}</code> | <code>.\*\:p-2 > *{padding:0.5rem;}</code> |
-| `*-p-2` | ❌ | <code>.\*-p-2 > *{padding:calc(var(--spacing) * 2);}</code> | <code>.\*-p-2 > *{padding:0.5rem;}</code> |
+| `md:m-1` | ❌ | <code>@media (min-width: 48rem){<br>.md\:m-1{margin:0.25rem;}<br>}</code> | <code>@media (min-width: 768px){<br>.md\:m-1{margin:0.25rem;}<br>}</code> |
+| `sm:m-1` | ❌ | <code>@media (min-width: 40rem){<br>.sm\:m-1{margin:0.25rem;}<br>}</code> | <code>@media (min-width: 640px){<br>.sm\:m-1{margin:0.25rem;}<br>}</code> |
+| `sm:m1` | ❌ | <code>@media (min-width: 40rem){<br>.sm\:m1{margin:0.25rem;}<br>}</code> | <code>@media (min-width: 640px){<br>.sm\:m1{margin:0.25rem;}<br>}</code> |
+| `sm:important:p-3` | ❌ | <code>@media (min-width: 40rem){<br>.sm\:important\:p-3{padding:0.75rem !important;}<br>}</code> | <code>@media (min-width: 640px){<br>.sm\:important\:p-3{padding:0.75rem !important;}<br>}</code> |
 | `all-[svg]:fill-red` | ❌ | ❓ | <code>.all-\[svg\]\:fill-red svg{--un-fill-opacity:1;fill:rgb(248 113 113 / var(--un-fill-opacity));}</code> |
-| `all:m1/1` | ❌ | <code>.all\:m1\/1 *{margin:calc(var(--spacing) * 1);}</code> | <code>.all\:m1\/1 *{margin:100%;}</code> |
-| `next:mt-0` | ❌ | <code>.next\:mt-0+*{margin-top:calc(var(--spacing) * 0);}</code> | <code>.next\:mt-0+*{margin-top:0;}</code> |
 | `dark:not-odd:text-red` | ❌ | <code>.dark .dark\:not-odd\:text-red:not(:nth-child(odd)){--un-text-opacity:100%;color:color-mix(in oklch, var(--color-red-400) var(--un-text-opacity), transparent);}</code> | <code>.dark .dark\:not-odd\:text-red:not(:nth-child(odd)){--un-text-opacity:1;color:rgb(248 113 113 / var(--un-text-opacity));}</code> |
 | `uno-layer-1:translate-0` | ❌ | <code>/* layer: 1 */<br>.uno-layer-1\:translate-0{--un-translate-x:calc(var(--spacing) * 0);--un-translate-y:calc(var(--spacing) * 0);translate:var(--un-translate-x) var(--un-translate-y);}</code> | <code>/* layer: 1 */<br>.uno-layer-1\:translate-0{--un-translate-x:0;--un-translate-y:0;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |
 | `layer-base:translate-0` | ❌ | <code>@layer base{<br>.layer-base\:translate-0{--un-translate-x:calc(var(--spacing) * 0);--un-translate-y:calc(var(--spacing) * 0);translate:var(--un-translate-x) var(--un-translate-y);}<br>}</code> | <code>@layer base{<br>.layer-base\:translate-0{--un-translate-x:0;--un-translate-y:0;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}<br>}</code> |
@@ -1048,12 +1071,8 @@
 | `-translate-x-full` | ❌ | <code>.-translate-x-full{--un-translate-x:calc(calc(var(--spacing) * 1) * -1);translate:calc(var(--un-translate-x) * -1) var(--un-translate-y);}</code> | <code>.-translate-x-full{--un-translate-x:-100%;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |
 | `-translate-y-1/2` | ❌ | <code>.-translate-y-1\/2{--un-translate-y:calc(calc(var(--spacing) * 0.5) * -1);translate:calc(var(--un-translate-x) * -1) var(--un-translate-y);}</code> | <code>.-translate-y-1\/2{--un-translate-y:-50%;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |
 | `-scale-x-full` | ❌ | <code>.-scale-x-full{--un-scale-x:-100%;scale:calc(var(--un-scale-x) * -1) var(--un-scale-y);}</code> | <code>.-scale-x-full{--un-scale-x:-100%;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |
-| `!p-5px` | ❌ | ❓ | <code>.\!p-5px{padding:5px !important;}</code> |
 | `-gap-y-5` | ❌ | <code>.-gap-y-5{row-gap:calc(calc(var(--spacing) * 5) * -1);}</code> | <code>.-gap-y-5{row-gap:-1.25rem;}</code> |
 | `-gap-row-5` | ❌ | <code>.-gap-row-5{row-gap:calc(calc(var(--spacing) * 5) * -1);}</code> | <code>.-gap-row-5{row-gap:-1.25rem;}</code> |
-| `-mb-px` | ❌ | ❓ | <code>.-mb-px{margin-bottom:-1px;}</code> |
-| `-mt--5cm` | ❌ | ❓ | <code>.-mt--5cm{margin-top:5cm;}</code> |
-| `-p-px` | ❌ | ❓ | <code>.-p-px{padding:-1px;}</code> |
 | `media-mouse:block` | ❌ | ❓ | <code>@media (hover) and (pointer: fine){<br>.media-mouse\:block{display:block;}<br>}</code> |
 | `group-hover:media-mouse:bg-red` | ❌ | ❓ | <code>@media (hover) and (pointer: fine){<br>.group:hover .group-hover\:media-mouse\:bg-red{--un-bg-opacity:1;background-color:rgb(248 113 113 / var(--un-bg-opacity));}<br>}</code> |
 | `before:translate-y-full` | ❌ | <code>.before\:translate-y-full::before{--un-translate-y:calc(var(--spacing) * 1);translate:var(--un-translate-x) var(--un-translate-y);}</code> | <code>.before\:translate-y-full::before{--un-translate-y:100%;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |
@@ -1069,21 +1088,11 @@
 | `open:color-pink-100` | ❌ | <code>.open\:color-pink-100[open]{--un-text-opacity:100%;color:color-mix(in oklch, var(--color-pink-100) var(--un-text-opacity), transparent);}</code> | <code>.open\:color-pink-100[open]{--un-text-opacity:1;color:rgb(252 231 243 / var(--un-text-opacity));}</code> |
 | `in-range:color-pink-100` | ❌ | <code>.in-range\:color-pink-100:in-range{--un-text-opacity:100%;color:color-mix(in oklch, var(--color-pink-100) var(--un-text-opacity), transparent);}</code> | <code>.in-range\:color-pink-100:in-range{--un-text-opacity:1;color:rgb(252 231 243 / var(--un-text-opacity));}</code> |
 | `out-of-range:color-pink-100` | ❌ | <code>.out-of-range\:color-pink-100:out-of-range{--un-text-opacity:100%;color:color-mix(in oklch, var(--color-pink-100) var(--un-text-opacity), transparent);}</code> | <code>.out-of-range\:color-pink-100:out-of-range{--un-text-opacity:1;color:rgb(252 231 243 / var(--un-text-opacity));}</code> |
-| `not-hover:p-4px` | ❌ | ❓ | <code>.not-hover\:p-4px:not(:hover){padding:4px;}</code> |
-| `is-hover:p-4px` | ❌ | ❓ | <code>.is-hover\:p-4px:is(:hover){padding:4px;}</code> |
-| `where-hover:p-2` | ❌ | <code>.where-hover\:p-2:where(:hover){padding:calc(var(--spacing) * 2);}</code> | <code>.where-hover\:p-2:where(:hover){padding:0.5rem;}</code> |
-| `has-hover:p-2` | ❌ | <code>.has-hover\:p-2:has(:hover){padding:calc(var(--spacing) * 2);}</code> | <code>.has-hover\:p-2:has(:hover){padding:0.5rem;}</code> |
 | `hover:not-first:checked:bg-true-gray/10` | ❌ | ❓ | <code>.hover\:not-first\:checked\:bg-true-gray\/10:checked:not(:first-child):hover{background-color:rgb(163 163 163 / 0.1);}</code> |
 | `hover:is-first:checked:bg-true-gray/10` | ❌ | ❓ | <code>.hover\:is-first\:checked\:bg-true-gray\/10:checked:is(:first-child):hover{background-color:rgb(163 163 163 / 0.1);}</code> |
 | `focus-within:where-first:checked:bg-gray/20` | ❌ | <code>.focus-within\:where-first\:checked\:bg-gray\/20:checked:where(:first-child):focus-within{--un-bg-opacity:20%;background-color:color-mix(in oklch, var(--color-gray-400) var(--un-bg-opacity), transparent);}</code> | <code>.focus-within\:where-first\:checked\:bg-gray\/20:checked:where(:first-child):focus-within{background-color:rgb(156 163 175 / 0.2);}</code> |
 | `focus-within:has-first:checked:bg-gray/20` | ❌ | <code>.focus-within\:has-first\:checked\:bg-gray\/20:checked:has(:first-child):focus-within{--un-bg-opacity:20%;background-color:color-mix(in oklch, var(--color-gray-400) var(--un-bg-opacity), transparent);}</code> | <code>.focus-within\:has-first\:checked\:bg-gray\/20:checked:has(:first-child):focus-within{background-color:rgb(156 163 175 / 0.2);}</code> |
-| `has-[:hover]:m-1` | ❌ | <code>.has-\[\:hover\]\:m-1:has(:hover){margin:calc(var(--spacing) * 1);}</code> | <code>.has-\[\:hover\]\:m-1:has(:hover){margin:0.25rem;}</code> |
-| `group-not-[[data-potato]]:m-1` | ❌ | <code>.group:not([data-potato]) .group-not-\[\[data-potato\]\]\:m-1{margin:calc(var(--spacing) * 1);}</code> | <code>.group:not([data-potato]) .group-not-\[\[data-potato\]\]\:m-1{margin:0.25rem;}</code> |
-| `previous-is-[div]:m-1` | ❌ | <code>.previous:is(div)+.previous-is-\[div\]\:m-1{margin:calc(var(--spacing) * 1);}</code> | <code>.previous:is(div)+.previous-is-\[div\]\:m-1{margin:0.25rem;}</code> |
-| `peer-where-[.child]:m-1` | ❌ | <code>.peer:where(.child)~.peer-where-\[\.child\]\:m-1{margin:calc(var(--spacing) * 1);}</code> | <code>.peer:where(.child)~.peer-where-\[\.child\]\:m-1{margin:0.25rem;}</code> |
-| `parent-not-[#someId]:m-1` | ❌ | <code>.parent:not(#someId)>.parent-not-\[\#someId\]\:m-1{margin:calc(var(--spacing) * 1);}</code> | <code>.parent:not(#someId)>.parent-not-\[\#someId\]\:m-1{margin:0.25rem;}</code> |
 | `scope-[.scope\_class]:translate-0` | ❌ | <code>.scope_class .scope-\[\.scope\\_class\]\:translate-0{--un-translate-x:calc(var(--spacing) * 0);--un-translate-y:calc(var(--spacing) * 0);translate:var(--un-translate-x) var(--un-translate-y);}</code> | <code>.scope_class .scope-\[\.scope\\_class\]\:translate-0{--un-translate-x:0;--un-translate-y:0;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |
-| `group-focus:p-4` | ❌ | <code>.group:focus .group-focus\:p-4{padding:calc(var(--spacing) * 4);}</code> | <code>.group:focus .group-focus\:p-4{padding:1rem;}</code> |
 | `peer-checked:bg-blue-500` | ❌ | <code>.peer:checked~.peer-checked\:bg-blue-500{--un-bg-opacity:100%;background-color:color-mix(in oklch, var(--color-blue-500) var(--un-bg-opacity), transparent);}</code> | <code>.peer:checked~.peer-checked\:bg-blue-500{--un-bg-opacity:1;background-color:rgb(59 130 246 / var(--un-bg-opacity));}</code> |
 | `previous-checked/label:bg-red-500` | ❌ | <code>.previous\/label:checked+.previous-checked\/label\:bg-red-500{--un-bg-opacity:100%;background-color:color-mix(in oklch, var(--color-red-500) var(--un-bg-opacity), transparent);}</code> | <code>.previous\/label:checked+.previous-checked\/label\:bg-red-500{--un-bg-opacity:1;background-color:rgb(239 68 68 / var(--un-bg-opacity));}</code> |
 | `group-hover:font-10` | ❌ | <code>.group:hover .group-hover\:font-10{--un-font-weight:10;font-weight:10;}</code> | <code>.group:hover .group-hover\:font-10{font-weight:10;}</code> |
@@ -1096,7 +1105,6 @@
 | `group-[[data-attr]]/label:font-17` | ❌ | <code>.group\/label[data-attr] .group-\[\[data-attr\]\]\/label\:font-17{--un-font-weight:17;font-weight:17;}</code> | <code>.group\/label[data-attr] .group-\[\[data-attr\]\]\/label\:font-17{font-weight:17;}</code> |
 | `group-[.as-parent_&]/label:font-18` | ❌ | <code>.as-parent .group\/label .group-\[\.as-parent_\&\]\/label\:font-18{--un-font-weight:18;font-weight:18;}</code> | <code>.as-parent .group\/label .group-\[\.as-parent_\&\]\/label\:font-18{font-weight:18;}</code> |
 | `group-[.not-parent]/label:font-19` | ❌ | <code>.group\/label.not-parent .group-\[\.not-parent\]\/label\:font-19{--un-font-weight:19;font-weight:19;}</code> | <code>.group\/label.not-parent .group-\[\.not-parent\]\/label\:font-19{font-weight:19;}</code> |
-| `group-aria-focus:p-4` | ❌ | <code>.group-aria:focus .group-aria-focus\:p-4{padding:calc(var(--spacing) * 4);}</code> | <code>.group-aria:focus .group-aria-focus\:p-4{padding:1rem;}</code> |
 | `peer-aria-checked:bg-blue-500` | ❌ | <code>.peer-aria:checked~.peer-aria-checked\:bg-blue-500{--un-bg-opacity:100%;background-color:color-mix(in oklch, var(--color-blue-500) var(--un-bg-opacity), transparent);}</code> | <code>.peer-aria:checked~.peer-aria-checked\:bg-blue-500{--un-bg-opacity:1;background-color:rgb(59 130 246 / var(--un-bg-opacity));}</code> |
 | `previous-aria-checked/label:bg-red-500` | ❌ | <code>.previous-aria\/label:checked+.previous-aria-checked\/label\:bg-red-500{--un-bg-opacity:100%;background-color:color-mix(in oklch, var(--color-red-500) var(--un-bg-opacity), transparent);}</code> | <code>.previous-aria\/label:checked+.previous-aria-checked\/label\:bg-red-500{--un-bg-opacity:1;background-color:rgb(239 68 68 / var(--un-bg-opacity));}</code> |
 | `group-aria-hover:font-10` | ❌ | <code>.group-aria:hover .group-aria-hover\:font-10{--un-font-weight:10;font-weight:10;}</code> | <code>.group-aria:hover .group-aria-hover\:font-10{font-weight:10;}</code> |
@@ -1109,14 +1117,6 @@
 | `group-aria-[[data-attr]]/label:font-17` | ❌ | <code>.group-aria\/label[data-attr] .group-aria-\[\[data-attr\]\]\/label\:font-17{--un-font-weight:17;font-weight:17;}</code> | <code>.group-aria\/label[data-attr] .group-aria-\[\[data-attr\]\]\/label\:font-17{font-weight:17;}</code> |
 | `group-aria-[.as-parent_&]/label:font-18` | ❌ | <code>.as-parent .group-aria\/label .group-aria-\[\.as-parent_\&\]\/label\:font-18{--un-font-weight:18;font-weight:18;}</code> | <code>.as-parent .group-aria\/label .group-aria-\[\.as-parent_\&\]\/label\:font-18{font-weight:18;}</code> |
 | `group-aria-[.not-parent]/label:font-19` | ❌ | <code>.group-aria\/label.not-parent .group-aria-\[\.not-parent\]\/label\:font-19{--un-font-weight:19;font-weight:19;}</code> | <code>.group-aria\/label.not-parent .group-aria-\[\.not-parent\]\/label\:font-19{font-weight:19;}</code> |
-| `[&:nth-child(2)]:m-10` | ❌ | <code>.\[\&\:nth-child\(2\)\]\:m-10:nth-child(2){margin:calc(var(--spacing) * 10);}</code> | <code>.\[\&\:nth-child\(2\)\]\:m-10:nth-child(2){margin:2.5rem;}</code> |
-| `[&>*]:m-11` | ❌ | <code>.\[\&\>\*\]\:m-11>*{margin:calc(var(--spacing) * 11);}</code> | <code>.\[\&\>\*\]\:m-11>*{margin:2.75rem;}</code> |
-| `[*>&]:m-12` | ❌ | <code>*>.\[\*\>\&\]\:m-12{margin:calc(var(--spacing) * 12);}</code> | <code>*>.\[\*\>\&\]\:m-12{margin:3rem;}</code> |
-| `[&_&]:m-13` | ❌ | <code>.\[\&_\&\]\:m-13 .\[\&_\&\]\:m-13{margin:calc(var(--spacing) * 13);}</code> | <code>.\[\&_\&\]\:m-13 .\[\&_\&\]\:m-13{margin:3.25rem;}</code> |
-| `[&[open]]:m-14` | ❌ | <code>.\[\&\[open\]\]\:m-14[open]{margin:calc(var(--spacing) * 14);}</code> | <code>.\[\&\[open\]\]\:m-14[open]{margin:3.5rem;}</code> |
-| `[&[readonly][disabled]]:m-15` | ❌ | <code>.\[\&\[readonly\]\[disabled\]\]\:m-15[readonly][disabled]{margin:calc(var(--spacing) * 15);}</code> | <code>.\[\&\[readonly\]\[disabled\]\]\:m-15[readonly][disabled]{margin:3.75rem;}</code> |
-| `[&[open]:readonly]:m-16` | ❌ | <code>.\[\&\[open\]\:readonly\]\:m-16[open]:readonly{margin:calc(var(--spacing) * 16);}</code> | <code>.\[\&\[open\]\:readonly\]\:m-16[open]:readonly{margin:4rem;}</code> |
-| `[*[open]:readonly_&]:[&[open]:disabled]:m-17` | ❌ | <code>*[open]:readonly .\[\*\[open\]\:readonly_\&\]\:\[\&\[open\]\:disabled\]\:m-17[open]:disabled{margin:calc(var(--spacing) * 17);}</code> | <code>*[open]:readonly .\[\*\[open\]\:readonly_\&\]\:\[\&\[open\]\:disabled\]\:m-17[open]:disabled{margin:4.25rem;}</code> |
 | `[@supports(display:grid)]:bg-red/33` | ❌ | <code>@supports(display:grid){<br>.\[\@supports\(display\:grid\)\]\:bg-red\/33{--un-bg-opacity:33%;background-color:color-mix(in oklch, var(--color-red-400) var(--un-bg-opacity), transparent);}<br>}</code> | <code>@supports(display:grid){<br>.\[\@supports\(display\:grid\)\]\:bg-red\/33{background-color:rgb(248 113 113 / 0.33);}<br>}</code> |
 | `[@supports(display:grid)]:[*+&]:bg-red/34` | ❌ | <code>@supports(display:grid){<br>*+.\[\@supports\(display\:grid\)\]\:\[\*\+\&\]\:bg-red\/34{--un-bg-opacity:34%;background-color:color-mix(in oklch, var(--color-red-400) var(--un-bg-opacity), transparent);}<br>}</code> | <code>@supports(display:grid){<br>*+.\[\@supports\(display\:grid\)\]\:\[\*\+\&\]\:bg-red\/34{background-color:rgb(248 113 113 / 0.34);}<br>}</code> |
 | `[&[data-active="true"]]:bg-red` | ❌ | <code>.\[\&\[data-active\=\"true\"\]\]\:bg-red[data-active="true"]{--un-bg-opacity:100%;background-color:color-mix(in oklch, var(--color-red-400) var(--un-bg-opacity), transparent);}</code> | <code>.\[\&\[data-active\=\"true\"\]\]\:bg-red[data-active="true"]{--un-bg-opacity:1;background-color:rgb(248 113 113 / var(--un-bg-opacity));}</code> |
@@ -1124,7 +1124,7 @@
 | `next:checked:text-slate-200` | ❌ | <code>.next\:checked\:text-slate-200:checked+*{--un-text-opacity:100%;color:color-mix(in oklch, var(--color-slate-200) var(--un-text-opacity), transparent);}</code> | <code>.next\:checked\:text-slate-200:checked+*{--un-text-opacity:1;color:rgb(226 232 240 / var(--un-text-opacity));}</code> |
 | `checked:next:hover:text-slate-500` | ❌ | <code>.checked\:next\:hover\:text-slate-500:hover+*:checked{--un-text-opacity:100%;color:color-mix(in oklch, var(--color-slate-500) var(--un-text-opacity), transparent);}</code> | <code>.checked\:next\:hover\:text-slate-500:hover+*:checked{--un-text-opacity:1;color:rgb(100 116 139 / var(--un-text-opacity));}</code> |
 | `next:checked:children:text-slate-600` | ❌ | <code>.next\:checked\:children\:text-slate-600>*:checked+*{--un-text-opacity:100%;color:color-mix(in oklch, var(--color-slate-600) var(--un-text-opacity), transparent);}</code> | <code>.next\:checked\:children\:text-slate-600>*:checked+*{--un-text-opacity:1;color:rgb(71 85 105 / var(--un-text-opacity));}</code> |
-| `sm:lt-lg:p-10` | ❌ | <code>@media (max-width: calc(64rem - 0.1px)){@media (min-width: 40rem){<br>.sm\:lt-lg\:p-10{padding:calc(var(--spacing) * 10);}<br>}}</code> | <code>@media (max-width: 1023.9px){@media (min-width: 640px){<br>.sm\:lt-lg\:p-10{padding:2.5rem;}<br>}}</code> |
+| `sm:lt-lg:p-10` | ❌ | <code>@media (max-width: calc(64rem - 0.1px)){@media (min-width: 40rem){<br>.sm\:lt-lg\:p-10{padding:2.5rem;}<br>}}</code> | <code>@media (max-width: 1023.9px){@media (min-width: 640px){<br>.sm\:lt-lg\:p-10{padding:2.5rem;}<br>}}</code> |
 | `aria-[invalid=spelling]:underline-red-600` | ❌ | <code>.aria-\[invalid\=spelling\]\:underline-red-600[aria-invalid=spelling]{-webkit-text-decoration-color:color-mix(in oklch, var(--color-red-600) var(--un-line-opacity), transparent);--un-line-opacity:100%;text-decoration-color:color-mix(in oklch, var(--color-red-600) var(--un-line-opacity), transparent);}</code> | <code>.aria-\[invalid\=spelling\]\:underline-red-600[aria-invalid=spelling]{-webkit-text-decoration-color:rgb(220 38 38 / var(--un-line-opacity));--un-line-opacity:1;text-decoration-color:rgb(220 38 38 / var(--un-line-opacity));}</code> |
 | `data-[invalid~=grammar]:underline-green-600` | ❌ | <code>.data-\[invalid\~\=grammar\]\:underline-green-600[data-invalid~=grammar]{-webkit-text-decoration-color:color-mix(in oklch, var(--color-green-600) var(--un-line-opacity), transparent);--un-line-opacity:100%;text-decoration-color:color-mix(in oklch, var(--color-green-600) var(--un-line-opacity), transparent);}</code> | <code>.data-\[invalid\~\=grammar\]\:underline-green-600[data-invalid~=grammar]{-webkit-text-decoration-color:rgb(22 163 74 / var(--un-line-opacity));--un-line-opacity:1;text-decoration-color:rgb(22 163 74 / var(--un-line-opacity));}</code> |
 | `group-data-[state=open]:font-bold` | ❌ | <code>.group[data-state=open] .group-data-\[state\=open\]\:font-bold{--un-font-weight:var(--font-weight-bold);font-weight:var(--font-weight-bold);}</code> | <code>.group[data-state=open] .group-data-\[state\=open\]\:font-bold{font-weight:700;}</code> |

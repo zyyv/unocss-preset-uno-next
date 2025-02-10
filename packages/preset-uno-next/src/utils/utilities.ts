@@ -50,7 +50,7 @@ export function directionSize(propertyPrefix: string): DynamicMatcher<Theme> {
   return (([_, direction, size]: string[]): CSSEntries | undefined => {
     let v: string | number | undefined
 
-    v = h.bracket.cssvar.global.auto(size)
+    v = h.bracket.cssvar.global.auto.fraction.rem(size)
 
     if (v != null) {
       return directionMap[direction].map(i => [`${propertyPrefix}${i}`, v])

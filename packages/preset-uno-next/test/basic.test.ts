@@ -64,12 +64,10 @@ it('test case', async () => {
     presets: [presetUnoNext()],
   })
 
-  const { css } = await unoNext.generate('text-inherit c-transparent border-x-transparent', { preflights: false })
+  const { css } = await unoNext.generate('pl-10px', { preflights: false })
 
   expect(css).toMatchInlineSnapshot(`
     "/* layer: default */
-    .c-transparent{color:transparent;}
-    .text-inherit{color:inherit;}
-    .border-x-transparent{border-inline-color:transparent;}"
+    .pl-10px{padding-left:10px;}"
   `)
 })
