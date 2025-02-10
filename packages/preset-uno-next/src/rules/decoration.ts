@@ -16,8 +16,7 @@ export const textDecorations: Rule<Theme>[] = [
   [/^(?:underline|decoration)-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-line-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: '(underline|decoration)-(op|opacity)-<percent>' }],
 
   // offset
-  [/^(?:underline|decoration)-offset-(.+)$/, ([, s]) => ({ 'text-underline-offset': s === 'none' ? '0' : h.auto.bracket.cssvar.global.px(s) }), { autocomplete: '(underline|decoration)-(offset)-<num>' }],
-
+  [/^(?:underline|decoration)-offset-(.+)$/, ([, s]) => ({ 'text-underline-offset': h.auto.bracket.cssvar.global.px(s) }), { autocomplete: '(underline|decoration)-(offset)-<num>' }],
   // style
   ...decorationStyles.map(v => [`underline-${v}`, { 'text-decoration-style': v }] as Rule<Theme>),
   ...decorationStyles.map(v => [`decoration-${v}`, { 'text-decoration-style': v }] as Rule<Theme>),
@@ -26,7 +25,7 @@ export const textDecorations: Rule<Theme>[] = [
 ]
 
 function handleWidth([, b]: string[]): CSSObject {
-  return { 'text-decoration-thickness': b === 'none' ? '0' : h.bracket.cssvar.global.px(b) }
+  return { 'text-decoration-thickness': h.bracket.cssvar.global.px(b) }
 }
 
 function handleColorOrWidth(match: RegExpMatchArray, ctx: RuleContext<Theme>): CSSObject | undefined {

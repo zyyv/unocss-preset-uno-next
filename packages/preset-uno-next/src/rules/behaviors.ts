@@ -23,13 +23,6 @@ export const outline: Rule<Theme>[] = [
 ]
 
 function handleWidth([, b]: string[]): CSSObject | undefined {
-  if (b === 'none') {
-    return {
-      'outline-style': 'var(--un-outline-style)',
-      'outline-width': '0',
-    }
-  }
-
   const v = h.bracket.cssvar.global.px(b)
   if (v != null) {
     return {

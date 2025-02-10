@@ -85,7 +85,7 @@ function borderColorResolver(direction: string) {
 }
 
 function handlerBorderSize([, a = '', b = '1']: string[]): CSSEntries | undefined {
-  const v = h.bracket.cssvar.global.none.px(b)
+  const v = h.bracket.cssvar.global.px(b)
   if (a in directionMap && v != null)
     return directionMap[a].map(i => [`border${i}-width`, v])
 }

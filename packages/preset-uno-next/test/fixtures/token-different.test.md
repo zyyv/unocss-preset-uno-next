@@ -116,11 +116,9 @@
 | `ring-op-$opacity-variable` | ✅ | <code>.ring-op-\$opacity-variable{--un-ring-opacity:var(--opacity-variable);}</code> | <code>.ring-op-\$opacity-variable{--un-ring-opacity:var(--opacity-variable);}</code> |
 | `ring-offset-op-$opacity-variable` | ✅ | <code>.ring-offset-op-\$opacity-variable{--un-ring-offset-opacity:var(--opacity-variable);}</code> | <code>.ring-offset-op-\$opacity-variable{--un-ring-offset-opacity:var(--opacity-variable);}</code> |
 | `decoration-none` | ✅ | <code>.decoration-none{text-decoration:none;}</code> | <code>.decoration-none{text-decoration:none;}</code> |
-| `decoration-size-none` | ✅ | <code>.decoration-size-none{text-decoration-thickness:0;}</code> | <code>.decoration-size-none{text-decoration-thickness:0;}</code> |
 | `decoration-transparent` | ✅ | <code>.decoration-transparent{-webkit-text-decoration-color:transparent;text-decoration-color:transparent;}</code> | <code>.decoration-transparent{-webkit-text-decoration-color:transparent;text-decoration-color:transparent;}</code> |
 | `decoration-5` | ✅ | <code>.decoration-5{text-decoration-thickness:5px;}</code> | <code>.decoration-5{text-decoration-thickness:5px;}</code> |
 | `decoration-offset-0.6rem` | ✅ | <code>.decoration-offset-0\.6rem{text-underline-offset:0.6rem;}</code> | <code>.decoration-offset-0\.6rem{text-underline-offset:0.6rem;}</code> |
-| `decoration-offset-none` | ✅ | <code>.decoration-offset-none{text-underline-offset:0;}</code> | <code>.decoration-offset-none{text-underline-offset:0;}</code> |
 | `decoration-underline` | ✅ | <code>.decoration-underline{text-decoration-line:underline;}</code> | <code>.decoration-underline{text-decoration-line:underline;}</code> |
 | `decoration-size-unset` | ✅ | <code>.decoration-size-unset{text-decoration-thickness:unset;}</code> | <code>.decoration-size-unset{text-decoration-thickness:unset;}</code> |
 | `decoration-[calc(1rem-1px)]` | ✅ | <code>.decoration-\[calc\(1rem-1px\)\]{text-decoration-thickness:calc(1rem - 1px);}</code> | <code>.decoration-\[calc\(1rem-1px\)\]{text-decoration-thickness:calc(1rem - 1px);}</code> |
@@ -195,6 +193,12 @@
 | `grid-areas-$variable` | ✅ | <code>.grid-areas-\$variable{grid-template-areas:var(--variable);}</code> | <code>.grid-areas-\$variable{grid-template-areas:var(--variable);}</code> |
 | `grid-cols-subgrid` | ✅ | <code>.grid-cols-subgrid{grid-template-columns:subgrid;}</code> | <code>.grid-cols-subgrid{grid-template-columns:subgrid;}</code> |
 | `grid-rows-subgrid` | ✅ | <code>.grid-rows-subgrid{grid-template-rows:subgrid;}</code> | <code>.grid-rows-subgrid{grid-template-rows:subgrid;}</code> |
+| `of-y-visible` | ✅ | <code>.of-y-visible{overflow-y:visible;}</code> | <code>.of-y-visible{overflow-y:visible;}</code> |
+| `of-x-unset` | ✅ | <code>.of-x-unset{overflow-x:unset;}</code> | <code>.of-x-unset{overflow-x:unset;}</code> |
+| `overflow-auto` | ✅ | <code>.overflow-auto{overflow:auto;}</code> | <code>.overflow-auto{overflow:auto;}</code> |
+| `overflow-inherit` | ✅ | <code>.overflow-inherit{overflow:inherit;}</code> | <code>.overflow-inherit{overflow:inherit;}</code> |
+| `overflow-x-scroll` | ✅ | <code>.overflow-x-scroll{overflow-x:scroll;}</code> | <code>.overflow-x-scroll{overflow-x:scroll;}</code> |
+| `overflow-y-clip` | ✅ | <code>.overflow-y-clip{overflow-y:clip;}</code> | <code>.overflow-y-clip{overflow-y:clip;}</code> |
 | `static` | ✅ | <code>.static{position:static;}</code> | <code>.static{position:static;}</code> |
 | `relative` | ✅ | <code>.relative{position:relative;}</code> | <code>.relative{position:relative;}</code> |
 | `absolute` | ✅ | <code>.absolute{position:absolute;}</code> | <code>.absolute{position:absolute;}</code> |
@@ -275,7 +279,6 @@
 | `h-6/7` | ✅ | <code>.h-6\/7{height:85.7142857143%;}</code> | <code>.h-6\/7{height:85.7142857143%;}</code> |
 | `h-8/7` | ✅ | <code>.h-8\/7{height:114.2857142857%;}</code> | <code>.h-8\/7{height:114.2857142857%;}</code> |
 | `h-lg` | ✅ | <code>.h-lg{height:32rem;}</code> | <code>.h-lg{height:32rem;}</code> |
-| `w-none` | ✅ | ❓ | ❓ |
 | `w-auto` | ✅ | <code>.w-auto{width:auto;}</code> | <code>.w-auto{width:auto;}</code> |
 | `w-unset` | ✅ | <code>.w-unset{width:unset;}</code> | <code>.w-unset{width:unset;}</code> |
 | `w-1/4` | ✅ | <code>.w-1\/4{width:25%;}</code> | <code>.w-1\/4{width:25%;}</code> |
@@ -283,12 +286,14 @@
 | `w-1in` | ✅ | <code>.w-1in{width:1in;}</code> | <code>.w-1in{width:1in;}</code> |
 | `max-h-[1px]` | ✅ | <code>.max-h-\[1px\]{max-height:1px;}</code> | <code>.max-h-\[1px\]{max-height:1px;}</code> |
 | `max-h-unset` | ✅ | <code>.max-h-unset{max-height:unset;}</code> | <code>.max-h-unset{max-height:unset;}</code> |
+| `max-w-none` | ✅ | <code>.max-w-none{max-width:none;}</code> | <code>.max-w-none{max-width:none;}</code> |
 | `max-w-lg` | ✅ | <code>.max-w-lg{max-width:32rem;}</code> | <code>.max-w-lg{max-width:32rem;}</code> |
 | `max-w-full` | ✅ | <code>.max-w-full{max-width:100%;}</code> | <code>.max-w-full{max-width:100%;}</code> |
 | `max-w-$var` | ✅ | <code>.max-w-\$var{max-width:var(--var);}</code> | <code>.max-w-\$var{max-width:var(--var);}</code> |
 | `max-w-revert` | ✅ | <code>.max-w-revert{max-width:revert;}</code> | <code>.max-w-revert{max-width:revert;}</code> |
 | `min-h-[1px]` | ✅ | <code>.min-h-\[1px\]{min-height:1px;}</code> | <code>.min-h-\[1px\]{min-height:1px;}</code> |
 | `min-h-unset` | ✅ | <code>.min-h-unset{min-height:unset;}</code> | <code>.min-h-unset{min-height:unset;}</code> |
+| `min-w-none` | ✅ | <code>.min-w-none{min-width:none;}</code> | <code>.min-w-none{min-width:none;}</code> |
 | `min-w-lg` | ✅ | <code>.min-w-lg{min-width:32rem;}</code> | <code>.min-w-lg{min-width:32rem;}</code> |
 | `min-w-full` | ✅ | <code>.min-w-full{min-width:100%;}</code> | <code>.min-w-full{min-width:100%;}</code> |
 | `min-w-$var` | ✅ | <code>.min-w-\$var{min-width:var(--var);}</code> | <code>.min-w-\$var{min-width:var(--var);}</code> |
@@ -315,10 +320,12 @@
 | `max-block-[1px]` | ✅ | <code>.max-block-\[1px\]{max-block-size:1px;}</code> | <code>.max-block-\[1px\]{max-block-size:1px;}</code> |
 | `max-block-revert` | ✅ | <code>.max-block-revert{max-block-size:revert;}</code> | <code>.max-block-revert{max-block-size:revert;}</code> |
 | `max-inline-inherit` | ✅ | <code>.max-inline-inherit{max-inline-size:inherit;}</code> | <code>.max-inline-inherit{max-inline-size:inherit;}</code> |
+| `max-inline-none` | ✅ | <code>.max-inline-none{max-inline-size:none;}</code> | <code>.max-inline-none{max-inline-size:none;}</code> |
 | `max-inline-lg` | ✅ | <code>.max-inline-lg{max-inline-size:32rem;}</code> | <code>.max-inline-lg{max-inline-size:32rem;}</code> |
 | `max-inline-full` | ✅ | <code>.max-inline-full{max-inline-size:100%;}</code> | <code>.max-inline-full{max-inline-size:100%;}</code> |
 | `max-inline-$var` | ✅ | <code>.max-inline-\$var{max-inline-size:var(--var);}</code> | <code>.max-inline-\$var{max-inline-size:var(--var);}</code> |
 | `min-block-[1px]` | ✅ | <code>.min-block-\[1px\]{min-block-size:1px;}</code> | <code>.min-block-\[1px\]{min-block-size:1px;}</code> |
+| `min-inline-none` | ✅ | <code>.min-inline-none{min-inline-size:none;}</code> | <code>.min-inline-none{min-inline-size:none;}</code> |
 | `min-inline-lg` | ✅ | <code>.min-inline-lg{min-inline-size:32rem;}</code> | <code>.min-inline-lg{min-inline-size:32rem;}</code> |
 | `min-inline-full` | ✅ | <code>.min-inline-full{min-inline-size:100%;}</code> | <code>.min-inline-full{min-inline-size:100%;}</code> |
 | `min-inline-$var` | ✅ | <code>.min-inline-\$var{min-inline-size:var(--var);}</code> | <code>.min-inline-\$var{min-inline-size:var(--var);}</code> |
@@ -551,7 +558,7 @@
 | `outline-none` | ❌ | <code>.outline-none{--un-outline-style:none;outline-style:none;}</code> | <code>.outline-none{outline:2px solid transparent;outline-offset:2px;}</code> |
 | `outline` | ❌ | <code>.outline{outline-style:var(--un-outline-style);outline-width:1px;}</code> | <code>.outline{outline-style:solid;}</code> |
 | `outline-inherit` | ❌ | <code>.outline-inherit{--un-outline-style:inherit;outline-style:inherit;}</code> | <code>.outline-inherit{outline-style:inherit;}</code> |
-| `outline-size-none` | ❌ | <code>.outline-size-none{outline-style:var(--un-outline-style);outline-width:0;}</code> | <code>.outline-size-none{outline-width:0;}</code> |
+| `outline-size-none` | ❌ | ❓ | <code>.outline-size-none{outline-width:0;}</code> |
 | `outline-size-unset` | ❌ | <code>.outline-size-unset{outline-style:var(--un-outline-style);outline-width:unset;}</code> | <code>.outline-size-unset{outline-width:unset;}</code> |
 | `outline-width-revert` | ❌ | <code>.outline-width-revert{outline-style:var(--un-outline-style);outline-width:revert;}</code> | <code>.outline-width-revert{outline-width:revert;}</code> |
 | `outline-hidden` | ❌ | <code>.outline-hidden{--un-outline-style:hidden;outline-style:hidden;}</code> | <code>.outline-hidden{outline-style:hidden;}</code> |
@@ -573,7 +580,7 @@
 | `border-double` | ❌ | <code>.border-double{--un-border-style:double;border-style:double;}</code> | <code>.border-double{border-style:double;}</code> |
 | `border-none` | ❌ | <code>.border-none{--un-border-style:none;border-style:none;}</code> | <code>.border-none{border-style:none;}</code> |
 | `border-inherit` | ❌ | <code>.border-inherit{--un-border-style:inherit;border-style:inherit;}</code> | <code>.border-inherit{border-style:inherit;}</code> |
-| `border-size-none` | ❌ | <code>.border-size-none{border-width:none;}</code> | <code>.border-size-none{border-width:0;}</code> |
+| `border-size-none` | ❌ | ❓ | <code>.border-size-none{border-width:0;}</code> |
 | `border-x` | ❌ | <code>.border-x{border-inline-width:1px;}</code> | <code>.border-x{border-left-width:1px;border-right-width:1px;}</code> |
 | `border-ie-unset` | ❌ | <code>.border-ie-unset{--un-border-style:unset;border-inline-end-style:unset;}</code> | <code>.border-ie-unset{border-inline-end-style:unset;}</code> |
 | `border-x-size-2` | ❌ | <code>.border-x-size-2{border-inline-width:2px;}</code> | <code>.border-x-size-2{border-left-width:2px;border-right-width:2px;}</code> |
@@ -727,7 +734,9 @@
 | `ring-offset-red2` | ❌ | ❓ | <code>.ring-offset-red2{--un-ring-offset-opacity:1;--un-ring-offset-color:rgb(254 202 202 / var(--un-ring-offset-opacity));}</code> |
 | `ring-offset-red2/5` | ❌ | ❓ | <code>.ring-offset-red2\/5{--un-ring-offset-color:rgb(254 202 202 / 0.05);}</code> |
 | `ring-offset-op-5` | ❌ | <code>.ring-offset-op-5{--un-ring-offset-opacity:5%;}</code> | <code>.ring-offset-op-5{--un-ring-offset-opacity:0.05;}</code> |
+| `decoration-size-none` | ❌ | ❓ | <code>.decoration-size-none{text-decoration-thickness:0;}</code> |
 | `decoration-purple/50` | ❌ | <code>.decoration-purple\/50{-webkit-text-decoration-color:color-mix(in oklch, var(--color-purple-400) var(--un-line-opacity), transparent);--un-line-opacity:50%;text-decoration-color:color-mix(in oklch, var(--color-purple-400) var(--un-line-opacity), transparent);}</code> | <code>.decoration-purple\/50{-webkit-text-decoration-color:rgb(192 132 252 / 0.5);text-decoration-color:rgb(192 132 252 / 0.5);}</code> |
+| `decoration-offset-none` | ❌ | ❓ | <code>.decoration-offset-none{text-underline-offset:0;}</code> |
 | `underline-red-500` | ❌ | <code>.underline-red-500{-webkit-text-decoration-color:color-mix(in oklch, var(--color-red-500) var(--un-line-opacity), transparent);--un-line-opacity:100%;text-decoration-color:color-mix(in oklch, var(--color-red-500) var(--un-line-opacity), transparent);}</code> | <code>.underline-red-500{-webkit-text-decoration-color:rgb(239 68 68 / var(--un-line-opacity));--un-line-opacity:1;text-decoration-color:rgb(239 68 68 / var(--un-line-opacity));}</code> |
 | `underline-op80` | ❌ | <code>.underline-op80{--un-line-opacity:80%;}</code> | <code>.underline-op80{--un-line-opacity:0.8;}</code> |
 | `flex-basis-0` | ❌ | <code>.flex-basis-0{flex-basis:calc(var(--spacing) * 0);}</code> | <code>.flex-basis-0{flex-basis:0;}</code> |
@@ -742,12 +751,6 @@
 | `flex-gap-row-1` | ❌ | <code>.flex-gap-row-1{row-gap:calc(var(--spacing) * 1);}</code> | <code>.flex-gap-row-1{row-gap:0.25rem;}</code> |
 | `grid-gap-y-1` | ❌ | <code>.grid-gap-y-1{row-gap:calc(var(--spacing) * 1);}</code> | <code>.grid-gap-y-1{row-gap:0.25rem;}</code> |
 | `grid-gap-row-1` | ❌ | <code>.grid-gap-row-1{row-gap:calc(var(--spacing) * 1);}</code> | <code>.grid-gap-row-1{row-gap:0.25rem;}</code> |
-| `of-y-visible` | ❌ | ❓ | <code>.of-y-visible{overflow-y:visible;}</code> |
-| `of-x-unset` | ❌ | ❓ | <code>.of-x-unset{overflow-x:unset;}</code> |
-| `overflow-auto` | ❌ | ❓ | <code>.overflow-auto{overflow:auto;}</code> |
-| `overflow-inherit` | ❌ | ❓ | <code>.overflow-inherit{overflow:inherit;}</code> |
-| `overflow-x-scroll` | ❌ | ❓ | <code>.overflow-x-scroll{overflow-x:scroll;}</code> |
-| `overflow-y-clip` | ❌ | ❓ | <code>.overflow-y-clip{overflow-y:clip;}</code> |
 | `order-first` | ❌ | <code>.order-first{order:calc(-infinity);}</code> | <code>.order-first{order:-9999;}</code> |
 | `top-0` | ❌ | <code>.top-0{top:calc(var(--spacing) * 0);}</code> | <code>.top-0{top:0;}</code> |
 | `inset-none` | ❌ | ❓ | <code>.inset-none{inset:0;}</code> |
@@ -783,14 +786,13 @@
 | `h-1` | ❌ | <code>.h-1{height:calc(var(--spacing) * 1);}</code> | <code>.h-1{height:0.25rem;}</code> |
 | `h20` | ❌ | <code>.h20{height:calc(var(--spacing) * 20);}</code> | <code>.h20{height:5rem;}</code> |
 | `h-21` | ❌ | <code>.h-21{height:calc(var(--spacing) * 21);}</code> | <code>.h-21{height:5.25rem;}</code> |
+| `w-none` | ❌ | <code>.w-none{width:none;}</code> | ❓ |
 | `w-1` | ❌ | <code>.w-1{width:calc(var(--spacing) * 1);}</code> | <code>.w-1{width:0.25rem;}</code> |
 | `w-21` | ❌ | <code>.w-21{width:calc(var(--spacing) * 21);}</code> | <code>.w-21{width:5.25rem;}</code> |
 | `h-screen-sm` | ❌ | <code>.h-screen-sm{height:40rem;}</code> | <code>.h-screen-sm{height:640px;}</code> |
 | `h-screen-lg` | ❌ | <code>.h-screen-lg{height:64rem;}</code> | <code>.h-screen-lg{height:1024px;}</code> |
-| `max-w-none` | ❌ | ❓ | <code>.max-w-none{max-width:none;}</code> |
 | `max-w-20` | ❌ | <code>.max-w-20{max-width:calc(var(--spacing) * 20);}</code> | <code>.max-w-20{max-width:5rem;}</code> |
 | `max-w-screen-lg` | ❌ | <code>.max-w-screen-lg{max-width:64rem;}</code> | <code>.max-w-screen-lg{max-width:1024px;}</code> |
-| `min-w-none` | ❌ | ❓ | <code>.min-w-none{min-width:none;}</code> |
 | `min-w-20` | ❌ | <code>.min-w-20{min-width:calc(var(--spacing) * 20);}</code> | <code>.min-w-20{min-width:5rem;}</code> |
 | `min-w-screen-lg` | ❌ | <code>.min-w-screen-lg{min-width:64rem;}</code> | <code>.min-w-screen-lg{min-width:1024px;}</code> |
 | `size-w-10` | ❌ | <code>.size-w-10{width:calc(var(--spacing) * 10);}</code> | <code>.size-w-10{width:2.5rem;}</code> |
@@ -801,9 +803,7 @@
 | `block-21` | ❌ | <code>.block-21{block-size:calc(var(--spacing) * 21);}</code> | <code>.block-21{block-size:5.25rem;}</code> |
 | `inline-1` | ❌ | <code>.inline-1{inline-size:calc(var(--spacing) * 1);}</code> | <code>.inline-1{inline-size:0.25rem;}</code> |
 | `inline-21` | ❌ | <code>.inline-21{inline-size:calc(var(--spacing) * 21);}</code> | <code>.inline-21{inline-size:5.25rem;}</code> |
-| `max-inline-none` | ❌ | ❓ | <code>.max-inline-none{max-inline-size:none;}</code> |
 | `max-inline-20` | ❌ | <code>.max-inline-20{max-inline-size:calc(var(--spacing) * 20);}</code> | <code>.max-inline-20{max-inline-size:5rem;}</code> |
-| `min-inline-none` | ❌ | ❓ | <code>.min-inline-none{min-inline-size:none;}</code> |
 | `min-inline-20` | ❌ | <code>.min-inline-20{min-inline-size:calc(var(--spacing) * 20);}</code> | <code>.min-inline-20{min-inline-size:5rem;}</code> |
 | `p-none` | ❌ | ❓ | <code>.p-none{padding:0;}</code> |
 | `p-2` | ❌ | <code>.p-2{padding:calc(var(--spacing) * 2);}</code> | <code>.p-2{padding:0.5rem;}</code> |

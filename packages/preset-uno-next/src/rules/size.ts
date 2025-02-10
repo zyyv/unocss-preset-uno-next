@@ -31,7 +31,7 @@ function getSizeValue(theme: Theme, hw: string, prop: string) {
     v = `calc(var(--spacing) * ${h.number(prop)})`
   }
 
-  return v ?? h.bracket.cssvar.global.auto.fraction.rem(prop)
+  return v ?? h.bracket.cssvar.global.auto.none.fraction.rem(prop)
 }
 
 export const sizes: Rule<Theme>[] = [
