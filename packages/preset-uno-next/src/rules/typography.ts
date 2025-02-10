@@ -1,6 +1,6 @@
 import type { CSSObject, Rule, RuleContext } from '@unocss/core'
 import type { Theme } from '../theme'
-import { colorResolver, getStringComponent, globalKeywords, h, isCSSMathFn, numberResolver } from '../utils'
+import { colorableShadows, colorResolver, getStringComponent, globalKeywords, h, isCSSMathFn, numberResolver } from '../utils'
 import { passThemeKey } from '../utils/constant'
 import { bracketTypeRe } from '../utils/handlers/regex'
 
@@ -143,7 +143,7 @@ export const textIndents: Rule<Theme>[] = [
     if (v != null) {
       return { 'text-indent': v }
     }
-  }, { autocomplete: 'indent-$textIndent' }],
+  }],
 ]
 
 export const textStrokes: Rule<Theme>[] = [
@@ -162,16 +162,16 @@ export const textStrokes: Rule<Theme>[] = [
 ]
 
 export const textShadows: Rule<Theme>[] = [
-  // [/^text-shadow(?:-(.+))?$/, ([, s = 'DEFAULT'], { theme }) => {
-  //   const v = theme.textShadow?.[s]
-  //   if (v != null) {
-  //     return {
-  //       '--un-text-shadow': colorVariable(v, 'un-text-shadow-color'),
-  //       'text-shadow': 'var(--un-text-shadow)',
-  //     }
-  //   }
-  //   return { 'text-shadow': h.bracket.cssvar.global(s) }
-  // }, { autocomplete: 'text-shadow-$textShadow' }],
+  [/^text-shadow(?:-(.+))?$/, ([, s = 'DEFAULT'], { theme }) => {
+    const v = theme.textShadow?.[s]
+    if (v != null) {
+      return {
+        '--un-text-shadow': colorableShadows(v, '--un-text-shadow-color').join(','),
+        'text-shadow': 'var(--un-text-shadow)',
+      }
+    }
+    return { 'text-shadow': h.bracket.cssvar.global(s) }
+  }, { autocomplete: 'text-shadow-$textShadow' }],
 
   // colors
   [/^text-shadow-color-(.+)$/, colorResolver('--un-text-shadow-color', 'text-shadow'), { autocomplete: 'text-shadow-color-$colors' }],
@@ -237,15 +237,3 @@ export function splitShorthand(body: string, type: string) {
       return [front, rest]
   }
 }
-
-// const alphaPlaceholders = ['%alpha', '<alpha-value>']
-// const alphaPlaceholdersRE = new RegExp(alphaPlaceholders.map(v => escapeRegExp(v)).join('|'))
-
-// function colorToString(color: string, opacity?: string) {
-//   if (opacity) {
-//     const alpha = h.bracket.cssvar.percent(opacity ?? '')
-//     color = color.replace(alphaPlaceholdersRE, alpha ?? '1')
-//     return `color-mix(in oklch, ${color} ${opacity}%, transparent)`
-//   }
-//   return color
-// }

@@ -94,9 +94,15 @@ export const transforms: Rule<Theme>[] = [
 ]
 
 function handleTranslate([, d, b]: string[]): CSSValues | undefined {
-  const v = numberResolver(b) ?? h.bracket.cssvar.rem(b)
+  const v = numberResolver(b) ?? h.bracket.cssvar.none.rem(b)
 
   if (v != null) {
+    if (v === 'none') {
+      return {
+        translate: 'none',
+      }
+    }
+
     return [
       ...transformXYZ(d, typeof v === 'number' ? `calc(var(--spacing) * ${v})` : v, 'translate'),
       ['translate', `var(--un-translate-x) var(--un-translate-y)${d === 'z' ? ' var(--un-translate-z)' : ''}`],
@@ -105,9 +111,15 @@ function handleTranslate([, d, b]: string[]): CSSValues | undefined {
 }
 
 function handleScale([, d, b]: string[]): CSSValues | undefined {
-  const v = h.bracket.cssvar.fraction.percent(b)
+  const v = h.bracket.cssvar.none.fraction.percent(b)
 
   if (v != null) {
+    if (v === 'none') {
+      return {
+        scale: 'none',
+      }
+    }
+
     return [
       ...transformXYZ(d, v, 'scale'),
       ['scale', `var(--un-scale-x) var(--un-scale-y)${d === 'z' ? ' var(--un-scale-z)' : ''}`],
@@ -116,8 +128,14 @@ function handleScale([, d, b]: string[]): CSSValues | undefined {
 }
 
 function handleRotate([, d = '', b]: string[]): CSSValues | undefined {
-  const v = h.bracket.cssvar.degree(b)
+  const v = h.bracket.cssvar.none.degree(b)
   if (v != null) {
+    if (v === 'none') {
+      return {
+        rotate: 'none',
+      }
+    }
+
     if (d) {
       return [
         ...transformXYZ(d, v.endsWith('deg') ? `rotate${d.toUpperCase()}(${v})` : v, 'rotate'),
