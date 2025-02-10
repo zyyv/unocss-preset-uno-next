@@ -438,6 +438,31 @@
 | `intrinsic-size-200px` | ✅ | <code>.intrinsic-size-200px{contain-intrinsic-size:200px;}</code> | <code>.intrinsic-size-200px{contain-intrinsic-size:200px;}</code> |
 | `intrinsic-size-1/2` | ✅ | <code>.intrinsic-size-1\/2{contain-intrinsic-size:50%;}</code> | <code>.intrinsic-size-1\/2{contain-intrinsic-size:50%;}</code> |
 | `intrinsic-size-unset` | ✅ | <code>.intrinsic-size-unset{contain-intrinsic-size:unset;}</code> | <code>.intrinsic-size-unset{contain-intrinsic-size:unset;}</code> |
+| `fill-none` | ✅ | <code>.fill-none{fill:none;}</code> | <code>.fill-none{fill:none;}</code> |
+| `fill-current` | ✅ | <code>.fill-current{fill:currentColor;}</code> | <code>.fill-current{fill:currentColor;}</code> |
+| `fill-opacity-$opacity-variable` | ✅ | <code>.fill-opacity-\$opacity-variable{--un-fill-opacity:var(--opacity-variable);}</code> | <code>.fill-opacity-\$opacity-variable{--un-fill-opacity:var(--opacity-variable);}</code> |
+| `stroke-none` | ✅ | <code>.stroke-none{stroke:none;}</code> | <code>.stroke-none{stroke:none;}</code> |
+| `stroke-current` | ✅ | <code>.stroke-current{stroke:currentColor;}</code> | <code>.stroke-current{stroke:currentColor;}</code> |
+| `stroke-opacity-$opacity-variable` | ✅ | <code>.stroke-opacity-\$opacity-variable{--un-stroke-opacity:var(--opacity-variable);}</code> | <code>.stroke-opacity-\$opacity-variable{--un-stroke-opacity:var(--opacity-variable);}</code> |
+| `stroke-[1rem]` | ✅ | <code>.stroke-\[1rem\]{stroke-width:1rem;}</code> | <code>.stroke-\[1rem\]{stroke-width:1rem;}</code> |
+| `stroke-[calc(1rem-1px)]` | ✅ | <code>.stroke-\[calc\(1rem-1px\)\]{stroke-width:calc(1rem - 1px);}</code> | <code>.stroke-\[calc\(1rem-1px\)\]{stroke-width:calc(1rem - 1px);}</code> |
+| `stroke-size-1` | ✅ | <code>.stroke-size-1{stroke-width:1px;}</code> | <code>.stroke-size-1{stroke-width:1px;}</code> |
+| `stroke-size-1px` | ✅ | <code>.stroke-size-1px{stroke-width:1px;}</code> | <code>.stroke-size-1px{stroke-width:1px;}</code> |
+| `stroke-size-[1rem]` | ✅ | <code>.stroke-size-\[1rem\]{stroke-width:1rem;}</code> | <code>.stroke-size-\[1rem\]{stroke-width:1rem;}</code> |
+| `stroke-size-$variable` | ✅ | <code>.stroke-size-\$variable{stroke-width:var(--variable);}</code> | <code>.stroke-size-\$variable{stroke-width:var(--variable);}</code> |
+| `stroke-width-1` | ✅ | <code>.stroke-width-1{stroke-width:1px;}</code> | <code>.stroke-width-1{stroke-width:1px;}</code> |
+| `stroke-width-1px` | ✅ | <code>.stroke-width-1px{stroke-width:1px;}</code> | <code>.stroke-width-1px{stroke-width:1px;}</code> |
+| `stroke-width-[1rem]` | ✅ | <code>.stroke-width-\[1rem\]{stroke-width:1rem;}</code> | <code>.stroke-width-\[1rem\]{stroke-width:1rem;}</code> |
+| `stroke-width-$variable` | ✅ | <code>.stroke-width-\$variable{stroke-width:var(--variable);}</code> | <code>.stroke-width-\$variable{stroke-width:var(--variable);}</code> |
+| `stroke-dash-1` | ✅ | <code>.stroke-dash-1{stroke-dasharray:1;}</code> | <code>.stroke-dash-1{stroke-dasharray:1;}</code> |
+| `stroke-dash-[5,3,2]` | ✅ | <code>.stroke-dash-\[5\,3\,2\]{stroke-dasharray:5,3,2;}</code> | <code>.stroke-dash-\[5\,3\,2\]{stroke-dasharray:5,3,2;}</code> |
+| `stroke-offset-1` | ✅ | <code>.stroke-offset-1{stroke-dashoffset:1px;}</code> | <code>.stroke-offset-1{stroke-dashoffset:1px;}</code> |
+| `stroke-offset-1px` | ✅ | <code>.stroke-offset-1px{stroke-dashoffset:1px;}</code> | <code>.stroke-offset-1px{stroke-dashoffset:1px;}</code> |
+| `stroke-offset-[1rem]` | ✅ | <code>.stroke-offset-\[1rem\]{stroke-dashoffset:1rem;}</code> | <code>.stroke-offset-\[1rem\]{stroke-dashoffset:1rem;}</code> |
+| `stroke-cap-round` | ✅ | <code>.stroke-cap-round{stroke-linecap:round;}</code> | <code>.stroke-cap-round{stroke-linecap:round;}</code> |
+| `stroke-cap-auto` | ✅ | <code>.stroke-cap-auto{stroke-linecap:butt;}</code> | <code>.stroke-cap-auto{stroke-linecap:butt;}</code> |
+| `stroke-join-clip` | ✅ | <code>.stroke-join-clip{stroke-linejoin:miter-clip;}</code> | <code>.stroke-join-clip{stroke-linejoin:miter-clip;}</code> |
+| `stroke-join-auto` | ✅ | <code>.stroke-join-auto{stroke-linejoin:miter;}</code> | <code>.stroke-join-auto{stroke-linejoin:miter;}</code> |
 | `transform-none` | ✅ | <code>.transform-none{transform:none;}</code> | <code>.transform-none{transform:none;}</code> |
 | `transform-unset` | ✅ | <code>.transform-unset{transform:unset;}</code> | <code>.transform-unset{transform:unset;}</code> |
 | `origin-top-left` | ✅ | <code>.origin-top-left{transform-origin:top left;}</code> | <code>.origin-top-left{transform-origin:top left;}</code> |
@@ -511,6 +536,8 @@
 | `inset-s-$variable` | ✅ | <code>.inset-s-\$variable{inset-inline-start:var(--variable);}</code> | <code>.inset-s-\$variable{inset-inline-start:var(--variable);}</code> |
 | `inset-inline-$variable` | ✅ | <code>.inset-inline-\$variable{inset-inline-start:var(--variable);inset-inline-end:var(--variable);}</code> | <code>.inset-inline-\$variable{inset-inline-start:var(--variable);inset-inline-end:var(--variable);}</code> |
 | `z-$variable` | ✅ | <code>.z-\$variable{z-index:var(--variable);}</code> | <code>.z-\$variable{z-index:var(--variable);}</code> |
+| `stroke-dash-$variable` | ✅ | <code>.stroke-dash-\$variable{stroke-dasharray:var(--variable);}</code> | <code>.stroke-dash-\$variable{stroke-dasharray:var(--variable);}</code> |
+| `stroke-offset-$variable` | ✅ | <code>.stroke-offset-\$variable{stroke-dashoffset:var(--variable);}</code> | <code>.stroke-offset-\$variable{stroke-dashoffset:var(--variable);}</code> |
 | `transition-delay-$variable` | ✅ | <code>.transition-delay-\$variable{transition-delay:var(--variable);}</code> | <code>.transition-delay-\$variable{transition-delay:var(--variable);}</code> |
 | `text-size-$variable` | ✅ | <code>.text-size-\$variable{font-size:var(--variable);}</code> | <code>.text-size-\$variable{font-size:var(--variable);}</code> |
 | `fw-$variable` | ✅ | <code>.fw-\$variable{font-weight:var(--variable);}</code> | <code>.fw-\$variable{font-weight:var(--variable);}</code> |
@@ -872,39 +899,14 @@
 | `m--lg` | ❌ | <code>.m--lg{margin:calc(var(--spacing) * -4.5);}</code> | <code>.m--lg{margin:calc(1.125rem * -1);}</code> |
 | `m-lg` | ❌ | <code>.m-lg{margin:calc(var(--spacing) * 4.5);}</code> | <code>.m-lg{margin:1.125rem;}</code> |
 | `content-$unocss-var` | ❌ | <code>.content-\$unocss-var{align-content:var(--unocss-var);}</code> | <code>.content-\$unocss-var{content:var(--unocss-var);}</code> |
-| `fill-none` | ❌ | ❓ | <code>.fill-none{fill:none;}</code> |
-| `fill-current` | ❌ | ❓ | <code>.fill-current{fill:currentColor;}</code> |
-| `fill-green-400` | ❌ | ❓ | <code>.fill-green-400{--un-fill-opacity:1;fill:rgb(74 222 128 / var(--un-fill-opacity));}</code> |
-| `fill-opacity-80` | ❌ | ❓ | <code>.fill-opacity-80{--un-fill-opacity:0.8;}</code> |
-| `fill-opacity-$opacity-variable` | ❌ | ❓ | <code>.fill-opacity-\$opacity-variable{--un-fill-opacity:var(--opacity-variable);}</code> |
-| `fill-[#123]` | ❌ | ❓ | <code>.fill-\[\#123\]{--un-fill-opacity:1;fill:rgb(17 34 51 / var(--un-fill-opacity));}</code> |
-| `stroke-none` | ❌ | ❓ | <code>.stroke-none{stroke:none;}</code> |
-| `stroke-current` | ❌ | ❓ | <code>.stroke-current{stroke:currentColor;}</code> |
-| `stroke-green-400` | ❌ | ❓ | <code>.stroke-green-400{--un-stroke-opacity:1;stroke:rgb(74 222 128 / var(--un-stroke-opacity));}</code> |
-| `stroke-opacity-80` | ❌ | ❓ | <code>.stroke-opacity-80{--un-stroke-opacity:0.8;}</code> |
-| `stroke-opacity-$opacity-variable` | ❌ | ❓ | <code>.stroke-opacity-\$opacity-variable{--un-stroke-opacity:var(--opacity-variable);}</code> |
-| `stroke-[#123]` | ❌ | ❓ | <code>.stroke-\[\#123\]{--un-stroke-opacity:1;stroke:rgb(17 34 51 / var(--un-stroke-opacity));}</code> |
-| `stroke-[1rem]` | ❌ | ❓ | <code>.stroke-\[1rem\]{stroke-width:1rem;}</code> |
-| `stroke-[calc(1rem-1px)]` | ❌ | ❓ | <code>.stroke-\[calc\(1rem-1px\)\]{stroke-width:calc(1rem - 1px);}</code> |
+| `fill-green-400` | ❌ | <code>.fill-green-400{--un-fill-opacity:100%;fill:color-mix(in oklch, var(--color-green-400) var(--un-fill-opacity), transparent);}</code> | <code>.fill-green-400{--un-fill-opacity:1;fill:rgb(74 222 128 / var(--un-fill-opacity));}</code> |
+| `fill-opacity-80` | ❌ | <code>.fill-opacity-80{--un-fill-opacity:80%;}</code> | <code>.fill-opacity-80{--un-fill-opacity:0.8;}</code> |
+| `fill-[#123]` | ❌ | <code>.fill-\[\#123\]{--un-fill-opacity:100%;fill:color-mix(in oklch, #123 var(--un-fill-opacity), transparent);}</code> | <code>.fill-\[\#123\]{--un-fill-opacity:1;fill:rgb(17 34 51 / var(--un-fill-opacity));}</code> |
+| `stroke-green-400` | ❌ | <code>.stroke-green-400{--un-stroke-opacity:100%;stroke:color-mix(in oklch, var(--color-green-400) var(--un-stroke-opacity), transparent);}</code> | <code>.stroke-green-400{--un-stroke-opacity:1;stroke:rgb(74 222 128 / var(--un-stroke-opacity));}</code> |
+| `stroke-opacity-80` | ❌ | <code>.stroke-opacity-80{--un-stroke-opacity:80%;}</code> | <code>.stroke-opacity-80{--un-stroke-opacity:0.8;}</code> |
+| `stroke-[#123]` | ❌ | <code>.stroke-\[\#123\]{--un-stroke-opacity:100%;stroke:color-mix(in oklch, #123 var(--un-stroke-opacity), transparent);}</code> | <code>.stroke-\[\#123\]{--un-stroke-opacity:1;stroke:rgb(17 34 51 / var(--un-stroke-opacity));}</code> |
 | `stroke-size-none` | ❌ | ❓ | <code>.stroke-size-none{stroke-width:0;}</code> |
-| `stroke-size-1` | ❌ | ❓ | <code>.stroke-size-1{stroke-width:1px;}</code> |
-| `stroke-size-1px` | ❌ | ❓ | <code>.stroke-size-1px{stroke-width:1px;}</code> |
-| `stroke-size-[1rem]` | ❌ | ❓ | <code>.stroke-size-\[1rem\]{stroke-width:1rem;}</code> |
-| `stroke-size-$variable` | ❌ | ❓ | <code>.stroke-size-\$variable{stroke-width:var(--variable);}</code> |
-| `stroke-width-1` | ❌ | ❓ | <code>.stroke-width-1{stroke-width:1px;}</code> |
-| `stroke-width-1px` | ❌ | ❓ | <code>.stroke-width-1px{stroke-width:1px;}</code> |
-| `stroke-width-[1rem]` | ❌ | ❓ | <code>.stroke-width-\[1rem\]{stroke-width:1rem;}</code> |
-| `stroke-width-$variable` | ❌ | ❓ | <code>.stroke-width-\$variable{stroke-width:var(--variable);}</code> |
-| `stroke-dash-1` | ❌ | ❓ | <code>.stroke-dash-1{stroke-dasharray:1;}</code> |
-| `stroke-dash-[5,3,2]` | ❌ | ❓ | <code>.stroke-dash-\[5\,3\,2\]{stroke-dasharray:5,3,2;}</code> |
-| `stroke-offset-1` | ❌ | ❓ | <code>.stroke-offset-1{stroke-dashoffset:1px;}</code> |
-| `stroke-offset-1px` | ❌ | ❓ | <code>.stroke-offset-1px{stroke-dashoffset:1px;}</code> |
-| `stroke-offset-[1rem]` | ❌ | ❓ | <code>.stroke-offset-\[1rem\]{stroke-dashoffset:1rem;}</code> |
 | `stroke-offset-none` | ❌ | ❓ | <code>.stroke-offset-none{stroke-dashoffset:0;}</code> |
-| `stroke-cap-round` | ❌ | ❓ | <code>.stroke-cap-round{stroke-linecap:round;}</code> |
-| `stroke-cap-auto` | ❌ | ❓ | <code>.stroke-cap-auto{stroke-linecap:butt;}</code> |
-| `stroke-join-clip` | ❌ | ❓ | <code>.stroke-join-clip{stroke-linejoin:miter-clip;}</code> |
-| `stroke-join-auto` | ❌ | ❓ | <code>.stroke-join-auto{stroke-linejoin:miter;}</code> |
 | `transform` | ❌ | <code>.transform{transform:var(--un-rotate-x) var(--un-rotate-y) var(--un-rotate-z) var(--un-skew-x) var(--un-skew-y);}</code> | <code>.transform{transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |
 | `transform-gpu` | ❌ | <code>.transform-gpu{transform:translateZ(0) var(--un-rotate-x) var(--un-rotate-y) var(--un-rotate-z) var(--un-skew-x) var(--un-skew-y);}</code> | <code>.transform-gpu{transform:translate3d(var(--un-translate-x), var(--un-translate-y), var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |
 | `transform-cpu` | ❌ | <code>.transform-cpu{transform:var(--un-rotate-x) var(--un-rotate-y) var(--un-rotate-z) var(--un-skew-x) var(--un-skew-y);}</code> | <code>.transform-cpu{transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) rotate(var(--un-rotate)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y));}</code> |
@@ -1011,8 +1013,6 @@
 | `ring-offset-$variable` | ❌ | <code>.ring-offset-\$variable{--un-ring-offset-opacity:100%;--un-ring-offset-color:color-mix(in oklch, var(--variable) var(--un-ring-offset-opacity), transparent);}</code> | <code>.ring-offset-\$variable{--un-ring-offset-color:var(--variable);}</code> |
 | `ring-offset-width-$variable` | ❌ | ❓ | <code>.ring-offset-width-\$variable{--un-ring-offset-width:var(--variable);}</code> |
 | `ring-offset-size-$variable` | ❌ | ❓ | <code>.ring-offset-size-\$variable{--un-ring-offset-width:var(--variable);}</code> |
-| `stroke-dash-$variable` | ❌ | ❓ | <code>.stroke-dash-\$variable{stroke-dasharray:var(--variable);}</code> |
-| `stroke-offset-$variable` | ❌ | ❓ | <code>.stroke-offset-\$variable{stroke-dashoffset:var(--variable);}</code> |
 | `perspect-$variable` | ❌ | <code>.perspect-\$variable{perspective:var(--variable);}</code> | <code>.perspect-\$variable{-webkit-perspective:var(--variable);perspective:var(--variable);}</code> |
 | `perspect-origin-$variable` | ❌ | <code>.perspect-origin-\$variable{perspective-origin:var(--variable);}</code> | <code>.perspect-origin-\$variable{-webkit-perspective-origin:var(--variable);perspective-origin:var(--variable);}</code> |
 | `translate-x-$variable` | ❌ | <code>.translate-x-\$variable{--un-translate-x:var(--variable);translate:var(--un-translate-x) var(--un-translate-y);}</code> | <code>.translate-x-\$variable{--un-translate-x:var(--variable);transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |
@@ -1062,7 +1062,7 @@
 | `sm:m-1` | ❌ | <code>@media (min-width: 40rem){<br>.sm\:m-1{margin:0.25rem;}<br>}</code> | <code>@media (min-width: 640px){<br>.sm\:m-1{margin:0.25rem;}<br>}</code> |
 | `sm:m1` | ❌ | <code>@media (min-width: 40rem){<br>.sm\:m1{margin:0.25rem;}<br>}</code> | <code>@media (min-width: 640px){<br>.sm\:m1{margin:0.25rem;}<br>}</code> |
 | `sm:important:p-3` | ❌ | <code>@media (min-width: 40rem){<br>.sm\:important\:p-3{padding:0.75rem !important;}<br>}</code> | <code>@media (min-width: 640px){<br>.sm\:important\:p-3{padding:0.75rem !important;}<br>}</code> |
-| `all-[svg]:fill-red` | ❌ | ❓ | <code>.all-\[svg\]\:fill-red svg{--un-fill-opacity:1;fill:rgb(248 113 113 / var(--un-fill-opacity));}</code> |
+| `all-[svg]:fill-red` | ❌ | <code>.all-\[svg\]\:fill-red svg{--un-fill-opacity:100%;fill:color-mix(in oklch, var(--color-red-400) var(--un-fill-opacity), transparent);}</code> | <code>.all-\[svg\]\:fill-red svg{--un-fill-opacity:1;fill:rgb(248 113 113 / var(--un-fill-opacity));}</code> |
 | `dark:not-odd:text-red` | ❌ | <code>.dark .dark\:not-odd\:text-red:not(:nth-child(odd)){--un-text-opacity:100%;color:color-mix(in oklch, var(--color-red-400) var(--un-text-opacity), transparent);}</code> | <code>.dark .dark\:not-odd\:text-red:not(:nth-child(odd)){--un-text-opacity:1;color:rgb(248 113 113 / var(--un-text-opacity));}</code> |
 | `uno-layer-1:translate-0` | ❌ | <code>/* layer: 1 */<br>.uno-layer-1\:translate-0{--un-translate-x:calc(var(--spacing) * 0);--un-translate-y:calc(var(--spacing) * 0);translate:var(--un-translate-x) var(--un-translate-y);}</code> | <code>/* layer: 1 */<br>.uno-layer-1\:translate-0{--un-translate-x:0;--un-translate-y:0;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |
 | `layer-base:translate-0` | ❌ | <code>@layer base{<br>.layer-base\:translate-0{--un-translate-x:calc(var(--spacing) * 0);--un-translate-y:calc(var(--spacing) * 0);translate:var(--un-translate-x) var(--un-translate-y);}<br>}</code> | <code>@layer base{<br>.layer-base\:translate-0{--un-translate-x:0;--un-translate-y:0;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}<br>}</code> |
