@@ -256,6 +256,7 @@
 | `z-inherit` | ✅ | <code>.z-inherit{z-index:inherit;}</code> | <code>.z-inherit{z-index:inherit;}</code> |
 | `pos-z--1` | ✅ | <code>.pos-z--1{z-index:-1;}</code> | <code>.pos-z--1{z-index:-1;}</code> |
 | `position-z-auto` | ✅ | <code>.position-z-auto{z-index:auto;}</code> | <code>.position-z-auto{z-index:auto;}</code> |
+| `ring-offset-4` | ✅ | <code>.ring-offset-4{--un-ring-offset-width:4px;}</code> | <code>.ring-offset-4{--un-ring-offset-width:4px;}</code> |
 | `ring-inset` | ✅ | <code>.ring-inset{--un-ring-inset:inset;}</code> | <code>.ring-inset{--un-ring-inset:inset;}</code> |
 | `shadow-transparent` | ✅ | <code>.shadow-transparent{--un-shadow-color:transparent;}</code> | <code>.shadow-transparent{--un-shadow-color:transparent;}</code> |
 | `shadow-current` | ✅ | <code>.shadow-current{--un-shadow-color:currentColor;}</code> | <code>.shadow-current{--un-shadow-color:currentColor;}</code> |
@@ -540,6 +541,8 @@
 | `inset-s-$variable` | ✅ | <code>.inset-s-\$variable{inset-inline-start:var(--variable);}</code> | <code>.inset-s-\$variable{inset-inline-start:var(--variable);}</code> |
 | `inset-inline-$variable` | ✅ | <code>.inset-inline-\$variable{inset-inline-start:var(--variable);inset-inline-end:var(--variable);}</code> | <code>.inset-inline-\$variable{inset-inline-start:var(--variable);inset-inline-end:var(--variable);}</code> |
 | `z-$variable` | ✅ | <code>.z-\$variable{z-index:var(--variable);}</code> | <code>.z-\$variable{z-index:var(--variable);}</code> |
+| `ring-offset-width-$variable` | ✅ | <code>.ring-offset-width-\$variable{--un-ring-offset-width:var(--variable);}</code> | <code>.ring-offset-width-\$variable{--un-ring-offset-width:var(--variable);}</code> |
+| `ring-offset-size-$variable` | ✅ | <code>.ring-offset-size-\$variable{--un-ring-offset-width:var(--variable);}</code> | <code>.ring-offset-size-\$variable{--un-ring-offset-width:var(--variable);}</code> |
 | `stroke-dash-$variable` | ✅ | <code>.stroke-dash-\$variable{stroke-dasharray:var(--variable);}</code> | <code>.stroke-dash-\$variable{stroke-dasharray:var(--variable);}</code> |
 | `stroke-offset-$variable` | ✅ | <code>.stroke-offset-\$variable{stroke-dashoffset:var(--variable);}</code> | <code>.stroke-offset-\$variable{stroke-dashoffset:var(--variable);}</code> |
 | `transition-delay-$variable` | ✅ | <code>.transition-delay-\$variable{transition-delay:var(--variable);}</code> | <code>.transition-delay-\$variable{transition-delay:var(--variable);}</code> |
@@ -846,7 +849,6 @@
 | `ring-none` | ❌ | ❓ | <code>.ring-none{--un-ring-width:0;--un-ring-offset-shadow:var(--un-ring-inset) 0 0 0 var(--un-ring-offset-width) var(--un-ring-offset-color);--un-ring-shadow:var(--un-ring-inset) 0 0 0 calc(var(--un-ring-width) + var(--un-ring-offset-width)) var(--un-ring-color);box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}</code> |
 | `ring-offset` | ❌ | <code>.ring-offset{--un-ring-offset-width:1px;--un-ring-offset-shadow:var(--un-ring-inset,) 0 0 0 var(--un-ring-offset-width) var(--un-ring-offset-color);}</code> | <code>.ring-offset{--un-ring-offset-width:1px;}</code> |
 | `ring-offset-none` | ❌ | ❓ | <code>.ring-offset-none{--un-ring-offset-width:0;}</code> |
-| `ring-offset-4` | ❌ | <code>.ring-offset-4{--un-ring-offset-width:4px;--un-ring-offset-shadow:var(--un-ring-inset,) 0 0 0 var(--un-ring-offset-width) var(--un-ring-offset-color);}</code> | <code>.ring-offset-4{--un-ring-offset-width:4px;}</code> |
 | `ring-offset-green5` | ❌ | ❓ | <code>.ring-offset-green5{--un-ring-offset-opacity:1;--un-ring-offset-color:rgb(34 197 94 / var(--un-ring-offset-opacity));}</code> |
 | `ring-[calc(1rem-1px)]` | ❌ | <code>.ring-\[calc\(1rem-1px\)\]{--un-ring-opacity:100%;--un-ring-color:color-mix(in oklch, calc(1rem - 1px) var(--un-ring-opacity), transparent);}</code> | <code>.ring-\[calc\(1rem-1px\)\]{--un-ring-width:calc(1rem - 1px);}</code> |
 | `shadow` | ❌ | <code>.shadow{--un-shadow:var(--un-shadow-inset) 0 1px 3px 0 var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 1px 2px -1px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-inset-shadow), var(--un-inset-ring-shadow), var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}</code> | <code>.shadow{--un-shadow:var(--un-shadow-inset) 0 1px 3px 0 var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 1px 2px -1px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}</code> |
@@ -1010,9 +1012,7 @@
 | `outline-$variable` | ❌ | <code>.outline-\$variable{--un-outline-color-opacity:100%;outline-color:color-mix(in oklch, var(--variable) var(--un-outline-color-opacity), transparent);}</code> | <code>.outline-\$variable{outline-color:var(--variable);}</code> |
 | `outline-width-$variable` | ❌ | <code>.outline-width-\$variable{outline-style:var(--un-outline-style);outline-width:var(--variable);}</code> | <code>.outline-width-\$variable{outline-width:var(--variable);}</code> |
 | `outline-size-$variable` | ❌ | <code>.outline-size-\$variable{outline-style:var(--un-outline-style);outline-width:var(--variable);}</code> | <code>.outline-size-\$variable{outline-width:var(--variable);}</code> |
-| `ring-offset-$variable` | ❌ | <code>.ring-offset-\$variable{--un-ring-offset-opacity:100%;--un-ring-offset-color:color-mix(in oklch, var(--variable) var(--un-ring-offset-opacity), transparent);}</code> | <code>.ring-offset-\$variable{--un-ring-offset-color:var(--variable);}</code> |
-| `ring-offset-width-$variable` | ❌ | ❓ | <code>.ring-offset-width-\$variable{--un-ring-offset-width:var(--variable);}</code> |
-| `ring-offset-size-$variable` | ❌ | ❓ | <code>.ring-offset-size-\$variable{--un-ring-offset-width:var(--variable);}</code> |
+| `ring-offset-$variable` | ❌ | <code>.ring-offset-\$variable{--un-ring-offset-width:var(--variable);}</code> | <code>.ring-offset-\$variable{--un-ring-offset-color:var(--variable);}</code> |
 | `perspect-$variable` | ❌ | <code>.perspect-\$variable{perspective:var(--variable);}</code> | <code>.perspect-\$variable{-webkit-perspective:var(--variable);perspective:var(--variable);}</code> |
 | `perspect-origin-$variable` | ❌ | <code>.perspect-origin-\$variable{perspective-origin:var(--variable);}</code> | <code>.perspect-origin-\$variable{-webkit-perspective-origin:var(--variable);perspective-origin:var(--variable);}</code> |
 | `translate-x-$variable` | ❌ | <code>.translate-x-\$variable{--un-translate-x:var(--variable);translate:var(--un-translate-x) var(--un-translate-y);}</code> | <code>.translate-x-\$variable{--un-translate-x:var(--variable);transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}</code> |

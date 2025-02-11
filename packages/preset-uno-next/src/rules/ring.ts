@@ -52,6 +52,7 @@ export const rings: Rule<Theme>[] = [
   }, { autocomplete: 'ring-offset-$colors' }],
   [/^ring-offset-(.+)$/, createHandleColor('ring-offset'), { autocomplete: 'ring-offset-$colors' }],
   [/^ring-offset-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-ring-offset-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'ring-offset-(op|opacity)-<percent>' }],
+  [/^ring-offset-(?:width-|size-)?(.+)$/, ([, d]) => ({ '--un-ring-offset-width': h.bracket.cssvar.px(d) })],
 
   // style
   ['ring-inset', { '--un-ring-inset': 'inset' }],

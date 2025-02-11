@@ -51,8 +51,6 @@ exports[`presetStarter 1`] = `
   "preserve-flat",
   "indent",
   "indent-lg",
-  "ring-offset-width-$variable",
-  "ring-offset-size-$variable",
   "media-mouse:block",
   "group-hover:media-mouse:bg-red",
   "placeholder-color-red-1",
