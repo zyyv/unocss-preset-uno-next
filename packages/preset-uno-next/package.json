@@ -30,7 +30,7 @@
     "dev": "unbuild --stub"
   },
   "dependencies": {
-    "@unocss/core": "^0.65.1",
-    "@unocss/extractor-arbitrary-variants": "^0.65.1"
+    "@unocss/core": "^65.4.3",
+    "@unocss/extractor-arbitrary-variants": "^65.4.3"
   }
 }

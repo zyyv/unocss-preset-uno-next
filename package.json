@@ -3,32 +3,30 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@9.14.4",
+  "packageManager": "pnpm@10.2.1",
   "scripts": {
     "build": "pnpm -r --filter=./packages/* --parallel run build",
     "dev": "pnpm -r --filter=./packages/* --parallel run dev",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "vitest",
-    "test:update": "vitest --update"
-  },
-  "dependencies": {
-    "@unocss/core": "^0.65.1",
-    "@unocss/extractor-arbitrary-variants": "^0.65.1"
+    "test:update": "vitest --update",
+    "taze": "taze major -wIr"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.8.0",
-    "@babel/types": "^7.26.0",
+    "@babel/types": "^7.26.8",
     "@types/node": "^22.9.0",
-    "@unocss/eslint-plugin": "^0.65.1",
-    "@vitejs/plugin-vue": "^5.1.4",
+    "@unocss/eslint-plugin": "^65.4.3",
+    "@vitejs/plugin-vue": "^5.2.1",
     "bumpp": "^9.8.1",
-    "eslint": "^9.14.0",
+    "eslint": "^9.20.0",
     "preset-uno-next": "workspace:*",
+    "taze": "^18.4.0",
     "typescript": "5.7.2",
-    "unbuild": "^2.0.0",
-    "unocss": "^0.65.1",
-    "vite": "^6.0.2",
-    "vitest": "^2.1.4"
+    "unbuild": "^3.3.1",
+    "unocss": "^65.4.3",
+    "vite": "^6.1.0",
+    "vitest": "^3.0.5"
   }
 }
