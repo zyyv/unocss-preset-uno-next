@@ -59,6 +59,9 @@ importers:
       '@unocss/extractor-arbitrary-variants':
         specifier: ^65.4.3
         version: 65.4.3
+      '@unocss/rule-utils':
+        specifier: ^65.4.3
+        version: 65.4.3
 
 packages:
 

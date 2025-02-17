@@ -6,4 +6,9 @@ export default defineBuildConfig({
   ],
   clean: true,
   declaration: true,
+  rollup: {
+    dts: {
+      respectExternal: false,
+    },
+  },
 })
