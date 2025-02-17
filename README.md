@@ -30,7 +30,7 @@ This is a proof-of-concept repository, but it is also the direction I am working
   - PresetWind3
     - [x] animation
     - [x] background
-    - [ ] behaviors
+    - [x] behaviors
     - [ ] columns
     - [ ] container
     - [ ] divide

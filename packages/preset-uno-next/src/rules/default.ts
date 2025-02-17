@@ -3,7 +3,7 @@ import type { Theme } from '../theme'
 import { textAligns, verticalAligns } from './align'
 import { animations } from './animation'
 import { backgroundStyles } from './background'
-import { appearance, outline, willChange } from './behaviors'
+import { accents, appearance, carets, imageRenderings, listStyle, outline, overscrolls, scrollBehaviors, willChange } from './behaviors'
 import { borders } from './border'
 import { bgColors, colorScheme, opacity } from './color'
 import { containerParent } from './container'
@@ -37,6 +37,15 @@ export const rules: Rule<Theme>[] = [
   appearance,
   outline,
   willChange,
+  listStyle,
+  accents,
+  carets,
+  imageRenderings,
+  overscrolls,
+  outline,
+  scrollBehaviors,
+  willChange,
+
   borders,
   bgColors,
   opacity,

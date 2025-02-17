@@ -700,8 +700,26 @@
 | `bg-gradient-linear` | ✅ | <code>.bg-gradient-linear{background-image:linear-gradient(var(--un-gradient, var(--un-gradient-stops, rgb(255 255 255 / 0))));}</code> | <code>.bg-gradient-linear{background-image:linear-gradient(var(--un-gradient, var(--un-gradient-stops, rgb(255 255 255 / 0))));}</code> |
 | `bg-gradient-radial` | ✅ | <code>.bg-gradient-radial{background-image:radial-gradient(var(--un-gradient, var(--un-gradient-stops, rgb(255 255 255 / 0))));}</code> | <code>.bg-gradient-radial{background-image:radial-gradient(var(--un-gradient, var(--un-gradient-stops, rgb(255 255 255 / 0))));}</code> |
 | `bg-gradient-repeating-conic` | ✅ | <code>.bg-gradient-repeating-conic{background-image:repeating-conic-gradient(var(--un-gradient, var(--un-gradient-stops, rgb(255 255 255 / 0))));}</code> | <code>.bg-gradient-repeating-conic{background-image:repeating-conic-gradient(var(--un-gradient, var(--un-gradient-stops, rgb(255 255 255 / 0))));}</code> |
+| `list-none` | ✅ | <code>.list-none{list-style-type:none;}</code> | <code>.list-none{list-style-type:none;}</code> |
+| `list-disc` | ✅ | <code>.list-disc{list-style-type:disc;}</code> | <code>.list-disc{list-style-type:disc;}</code> |
+| `list-alpha` | ✅ | <code>.list-alpha{list-style-type:lower-alpha;}</code> | <code>.list-alpha{list-style-type:lower-alpha;}</code> |
+| `list-greek` | ✅ | <code>.list-greek{list-style-type:lower-greek;}</code> | <code>.list-greek{list-style-type:lower-greek;}</code> |
+| `list-outside` | ✅ | <code>.list-outside{list-style-position:outside;}</code> | <code>.list-outside{list-style-position:outside;}</code> |
+| `list-disc-outside` | ✅ | <code>.list-disc-outside{list-style-position:outside;list-style-type:disc;}</code> | <code>.list-disc-outside{list-style-position:outside;list-style-type:disc;}</code> |
+| `list-alpha-inside` | ✅ | <code>.list-alpha-inside{list-style-position:inside;list-style-type:lower-alpha;}</code> | <code>.list-alpha-inside{list-style-position:inside;list-style-type:lower-alpha;}</code> |
+| `list-inherit` | ✅ | <code>.list-inherit{list-style-type:inherit;}</code> | <code>.list-inherit{list-style-type:inherit;}</code> |
+| `list-image-[url(https://test.unocss.png)]` | ✅ | <code>.list-image-\[url\(https\:\/\/test\.unocss\.png\)\]{list-style-image:url(https://test.unocss.png);}</code> | <code>.list-image-\[url\(https\:\/\/test\.unocss\.png\)\]{list-style-image:url(https://test.unocss.png);}</code> |
+| `list-image-none` | ✅ | <code>.list-image-none{list-style-image:none;}</code> | <code>.list-image-none{list-style-image:none;}</code> |
 | `box-decoration-slice` | ✅ | <code>.box-decoration-slice{box-decoration-break:slice;}</code> | <code>.box-decoration-slice{box-decoration-break:slice;}</code> |
 | `box-decoration-initial` | ✅ | <code>.box-decoration-initial{box-decoration-break:initial;}</code> | <code>.box-decoration-initial{box-decoration-break:initial;}</code> |
+| `image-render-pixel` | ✅ | <code>.image-render-pixel{-ms-interpolation-mode:nearest-neighbor;image-rendering:-webkit-optimize-contrast;image-rendering:-moz-crisp-edges;image-rendering:-o-pixelated;image-rendering:pixelated;}</code> | <code>.image-render-pixel{-ms-interpolation-mode:nearest-neighbor;image-rendering:-webkit-optimize-contrast;image-rendering:-moz-crisp-edges;image-rendering:-o-pixelated;image-rendering:pixelated;}</code> |
+| `overscroll-x-auto` | ✅ | <code>.overscroll-x-auto{overscroll-behavior-x:auto;}</code> | <code>.overscroll-x-auto{overscroll-behavior-x:auto;}</code> |
+| `overscroll-y-unset` | ✅ | <code>.overscroll-y-unset{overscroll-behavior-y:unset;}</code> | <code>.overscroll-y-unset{overscroll-behavior-y:unset;}</code> |
+| `overscroll-contain` | ✅ | <code>.overscroll-contain{overscroll-behavior:contain;}</code> | <code>.overscroll-contain{overscroll-behavior:contain;}</code> |
+| `overscroll-none` | ✅ | <code>.overscroll-none{overscroll-behavior:none;}</code> | <code>.overscroll-none{overscroll-behavior:none;}</code> |
+| `overscroll-revert-layer` | ✅ | <code>.overscroll-revert-layer{overscroll-behavior:revert-layer;}</code> | <code>.overscroll-revert-layer{overscroll-behavior:revert-layer;}</code> |
+| `scroll-auto` | ✅ | <code>.scroll-auto{scroll-behavior:auto;}</code> | <code>.scroll-auto{scroll-behavior:auto;}</code> |
+| `scroll-unset` | ✅ | <code>.scroll-unset{scroll-behavior:unset;}</code> | <code>.scroll-unset{scroll-behavior:unset;}</code> |
 | `divide` | ✅ | ❓ | ❓ |
 | `backdrop-opacity` | ✅ | ❓ | ❓ |
 | `backdrop-saturate` | ✅ | ❓ | ❓ |
@@ -1306,28 +1324,10 @@
 | `via-opacity-40` | ❌ | <code>.via-opacity-40{--un-via-opacity:40%;}</code> | <code>.via-opacity-40{--un-via-opacity:0.4;}</code> |
 | `bg-linear-[70deg,blue,pink]` | ❌ | <code>.bg-linear-\[70deg\,blue\,pink\]{--un-gradient-position:70deg,blue,pink;background-image:linear-gradient(var(--un-gradient-stops,70deg,blue,pink));}</code> | ❓ |
 | `stops-[blue,pink]` | ❌ | <code>.stops-\[blue\,pink\]{--un-stops-opacity:100%;--un-gradient-stops:color-mix(in oklab, blue,pink var(--un-stops-opacity), transparent);}</code> | <code>.stops-\[blue\,pink\]{--un-gradient-stops:blue,pink;}</code> |
-| `list-none` | ❌ | ❓ | <code>.list-none{list-style-type:none;}</code> |
-| `list-disc` | ❌ | ❓ | <code>.list-disc{list-style-type:disc;}</code> |
-| `list-alpha` | ❌ | ❓ | <code>.list-alpha{list-style-type:lower-alpha;}</code> |
-| `list-greek` | ❌ | ❓ | <code>.list-greek{list-style-type:lower-greek;}</code> |
-| `list-outside` | ❌ | ❓ | <code>.list-outside{list-style-position:outside;}</code> |
-| `list-disc-outside` | ❌ | ❓ | <code>.list-disc-outside{list-style-position:outside;list-style-type:disc;}</code> |
-| `list-alpha-inside` | ❌ | ❓ | <code>.list-alpha-inside{list-style-position:inside;list-style-type:lower-alpha;}</code> |
-| `list-inherit` | ❌ | ❓ | <code>.list-inherit{list-style-type:inherit;}</code> |
-| `list-image-[url(https://test.unocss.png)]` | ❌ | ❓ | <code>.list-image-\[url\(https\:\/\/test\.unocss\.png\)\]{list-style-image:url(https://test.unocss.png);}</code> |
-| `list-image-none` | ❌ | ❓ | <code>.list-image-none{list-style-image:none;}</code> |
-| `accent-op-90` | ❌ | ❓ | <code>.accent-op-90{--un-accent-opacity:0.9;}</code> |
-| `accent-red` | ❌ | ❓ | <code>.accent-red{--un-accent-opacity:1;accent-color:rgb(248 113 113 / var(--un-accent-opacity));}</code> |
-| `caret-op-90` | ❌ | ❓ | <code>.caret-op-90{--un-caret-opacity:0.9;}</code> |
-| `caret-red` | ❌ | ❓ | <code>.caret-red{--un-caret-opacity:1;caret-color:rgb(248 113 113 / var(--un-caret-opacity));}</code> |
-| `image-render-pixel` | ❌ | ❓ | <code>.image-render-pixel{-ms-interpolation-mode:nearest-neighbor;image-rendering:-webkit-optimize-contrast;image-rendering:-moz-crisp-edges;image-rendering:-o-pixelated;image-rendering:pixelated;}</code> |
-| `overscroll-x-auto` | ❌ | ❓ | <code>.overscroll-x-auto{overscroll-behavior-x:auto;}</code> |
-| `overscroll-y-unset` | ❌ | ❓ | <code>.overscroll-y-unset{overscroll-behavior-y:unset;}</code> |
-| `overscroll-contain` | ❌ | ❓ | <code>.overscroll-contain{overscroll-behavior:contain;}</code> |
-| `overscroll-none` | ❌ | ❓ | <code>.overscroll-none{overscroll-behavior:none;}</code> |
-| `overscroll-revert-layer` | ❌ | ❓ | <code>.overscroll-revert-layer{overscroll-behavior:revert-layer;}</code> |
-| `scroll-auto` | ❌ | ❓ | <code>.scroll-auto{scroll-behavior:auto;}</code> |
-| `scroll-unset` | ❌ | ❓ | <code>.scroll-unset{scroll-behavior:unset;}</code> |
+| `accent-op-90` | ❌ | <code>.accent-op-90{--un-accent-opacity:90%;}</code> | <code>.accent-op-90{--un-accent-opacity:0.9;}</code> |
+| `accent-red` | ❌ | <code>.accent-red{--un-accent-opacity:100%;accent-color:color-mix(in oklch, var(--color-red-400) var(--un-accent-opacity), transparent);}</code> | <code>.accent-red{--un-accent-opacity:1;accent-color:rgb(248 113 113 / var(--un-accent-opacity));}</code> |
+| `caret-op-90` | ❌ | <code>.caret-op-90{--un-caret-opacity:90%;}</code> | <code>.caret-op-90{--un-caret-opacity:0.9;}</code> |
+| `caret-red` | ❌ | <code>.caret-red{--un-caret-opacity:100%;caret-color:color-mix(in oklch, var(--color-red-400) var(--un-caret-opacity), transparent);}</code> | <code>.caret-red{--un-caret-opacity:1;caret-color:rgb(248 113 113 / var(--un-caret-opacity));}</code> |
 | `columns-3` | ❌ | ❓ | <code>.columns-3{columns:3;}</code> |
 | `columns-5em` | ❌ | ❓ | <code>.columns-5em{columns:5em;}</code> |
 | `columns-auto` | ❌ | ❓ | <code>.columns-auto{columns:auto;}</code> |
