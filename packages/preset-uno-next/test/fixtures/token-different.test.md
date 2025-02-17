@@ -635,6 +635,63 @@
 | `@container/label` | ✅ | <code>.\@container\/label{container-type:inline-size;container-name:label;}</code> | <code>.\@container\/label{container-type:inline-size;container-name:label;}</code> |
 | `@container-normal` | ✅ | <code>.\@container-normal{container-type:normal;}</code> | <code>.\@container-normal{container-type:normal;}</code> |
 | `@container/label-normal` | ✅ | <code>.\@container\/label-normal{container-type:normal;container-name:label;}</code> | <code>.\@container\/label-normal{container-type:normal;container-name:label;}</code> |
+| `keyframes-pulse` | ✅ | <code>@keyframes pulse{0%, 100% {opacity:1} 50% {opacity:.5}}<br>.keyframes-pulse{animation:pulse;}</code> | <code>@keyframes pulse{0%, 100% {opacity:1} 50% {opacity:.5}}<br>.keyframes-pulse{animation:pulse;}</code> |
+| `keyframes-pulse-alt` | ✅ | <code>@keyframes pulse-alt{from{transform:scale3d(1,1,1)}50%{transform:scale3d(1.05,1.05,1.05)}to{transform:scale3d(1,1,1)}}<br>.keyframes-pulse-alt{animation:pulse-alt;}</code> | <code>@keyframes pulse-alt{from{transform:scale3d(1,1,1)}50%{transform:scale3d(1.05,1.05,1.05)}to{transform:scale3d(1,1,1)}}<br>.keyframes-pulse-alt{animation:pulse-alt;}</code> |
+| `animate-keyframes-pulse` | ✅ | <code>@keyframes pulse{0%, 100% {opacity:1} 50% {opacity:.5}}<br>.animate-keyframes-pulse{animation:pulse;}</code> | <code>@keyframes pulse{0%, 100% {opacity:1} 50% {opacity:.5}}<br>.animate-keyframes-pulse{animation:pulse;}</code> |
+| `animate-keyframes-pulse-alt` | ✅ | <code>@keyframes pulse-alt{from{transform:scale3d(1,1,1)}50%{transform:scale3d(1.05,1.05,1.05)}to{transform:scale3d(1,1,1)}}<br>.animate-keyframes-pulse-alt{animation:pulse-alt;}</code> | <code>@keyframes pulse-alt{from{transform:scale3d(1,1,1)}50%{transform:scale3d(1.05,1.05,1.05)}to{transform:scale3d(1,1,1)}}<br>.animate-keyframes-pulse-alt{animation:pulse-alt;}</code> |
+| `animate-none` | ✅ | <code>.animate-none{animation:none;}</code> | <code>.animate-none{animation:none;}</code> |
+| `animate-pulse` | ✅ | <code>@keyframes pulse{0%, 100% {opacity:1} 50% {opacity:.5}}<br>.animate-pulse{animation:pulse 2s cubic-bezier(0.4,0,.6,1) infinite;}</code> | <code>@keyframes pulse{0%, 100% {opacity:1} 50% {opacity:.5}}<br>.animate-pulse{animation:pulse 2s cubic-bezier(0.4,0,.6,1) infinite;}</code> |
+| `animate-pulse-alt` | ✅ | <code>@keyframes pulse-alt{from{transform:scale3d(1,1,1)}50%{transform:scale3d(1.05,1.05,1.05)}to{transform:scale3d(1,1,1)}}<br>.animate-pulse-alt{animation:pulse-alt 1s ease-in-out infinite;}</code> | <code>@keyframes pulse-alt{from{transform:scale3d(1,1,1)}50%{transform:scale3d(1.05,1.05,1.05)}to{transform:scale3d(1,1,1)}}<br>.animate-pulse-alt{animation:pulse-alt 1s ease-in-out infinite;}</code> |
+| `animate-duration-100ms` | ✅ | <code>.animate-duration-100ms{animation-duration:100ms;}</code> | <code>.animate-duration-100ms{animation-duration:100ms;}</code> |
+| `animate-duration-100s` | ✅ | <code>.animate-duration-100s{animation-duration:100s;}</code> | <code>.animate-duration-100s{animation-duration:100s;}</code> |
+| `animate-duration-100` | ✅ | <code>.animate-duration-100{animation-duration:100ms;}</code> | <code>.animate-duration-100{animation-duration:100ms;}</code> |
+| `animate-duration-100.00` | ✅ | <code>.animate-duration-100\.00{animation-duration:100ms;}</code> | <code>.animate-duration-100\.00{animation-duration:100ms;}</code> |
+| `animate-duration-100.02` | ✅ | <code>.animate-duration-100\.02{animation-duration:100.02ms;}</code> | <code>.animate-duration-100\.02{animation-duration:100.02ms;}</code> |
+| `animate-duration-100.30` | ✅ | <code>.animate-duration-100\.30{animation-duration:100.3ms;}</code> | <code>.animate-duration-100\.30{animation-duration:100.3ms;}</code> |
+| `animate-duration-100.32` | ✅ | <code>.animate-duration-100\.32{animation-duration:100.32ms;}</code> | <code>.animate-duration-100\.32{animation-duration:100.32ms;}</code> |
+| `animate-delay--1.37` | ✅ | <code>.animate-delay--1\.37{animation-delay:-1.37ms;}</code> | <code>.animate-delay--1\.37{animation-delay:-1.37ms;}</code> |
+| `animate-name-move` | ✅ | <code>.animate-name-move{animation-name:move;}</code> | <code>.animate-name-move{animation-name:move;}</code> |
+| `animate-normal` | ✅ | <code>.animate-normal{animation-direction:normal;}</code> | <code>.animate-normal{animation-direction:normal;}</code> |
+| `animate-paused` | ✅ | <code>.animate-paused{animation-play-state:paused;}</code> | <code>.animate-paused{animation-play-state:paused;}</code> |
+| `animate-play-paused` | ✅ | <code>.animate-play-paused{animation-play-state:paused;}</code> | <code>.animate-play-paused{animation-play-state:paused;}</code> |
+| `animate-play-state-running` | ✅ | <code>.animate-play-state-running{animation-play-state:running;}</code> | <code>.animate-play-state-running{animation-play-state:running;}</code> |
+| `animate-state-running` | ✅ | <code>.animate-state-running{animation-play-state:running;}</code> | <code>.animate-state-running{animation-play-state:running;}</code> |
+| `animate-mode-none` | ✅ | <code>.animate-mode-none{animation-fill-mode:none;}</code> | <code>.animate-mode-none{animation-fill-mode:none;}</code> |
+| `animate-fill-mode-both` | ✅ | <code>.animate-fill-mode-both{animation-fill-mode:both;}</code> | <code>.animate-fill-mode-both{animation-fill-mode:both;}</code> |
+| `animate-fill-backwards` | ✅ | <code>.animate-fill-backwards{animation-fill-mode:backwards;}</code> | <code>.animate-fill-backwards{animation-fill-mode:backwards;}</code> |
+| `animate-reverse` | ✅ | <code>.animate-reverse{animation-direction:reverse;}</code> | <code>.animate-reverse{animation-direction:reverse;}</code> |
+| `animate-direction-alternate-reverse` | ✅ | <code>.animate-direction-alternate-reverse{animation-direction:alternate-reverse;}</code> | <code>.animate-direction-alternate-reverse{animation-direction:alternate-reverse;}</code> |
+| `animate-count-2.4` | ✅ | <code>.animate-count-2\.4{animation-iteration-count:2.4;}</code> | <code>.animate-count-2\.4{animation-iteration-count:2.4;}</code> |
+| `animate-iteration-2` | ✅ | <code>.animate-iteration-2{animation-iteration-count:2;}</code> | <code>.animate-iteration-2{animation-iteration-count:2;}</code> |
+| `animate-iteration-count-2` | ✅ | <code>.animate-iteration-count-2{animation-iteration-count:2;}</code> | <code>.animate-iteration-count-2{animation-iteration-count:2;}</code> |
+| `animate-iteration-count-2-4-infinity` | ✅ | <code>.animate-iteration-count-2-4-infinity{animation-iteration-count:2,4,infinity;}</code> | <code>.animate-iteration-count-2-4-infinity{animation-iteration-count:2,4,infinity;}</code> |
+| `animate-iteration-count-[2,4,infinity]` | ✅ | <code>.animate-iteration-count-\[2\,4\,infinity\]{animation-iteration-count:2,4,infinity;}</code> | <code>.animate-iteration-count-\[2\,4\,infinity\]{animation-iteration-count:2,4,infinity;}</code> |
+| `animate-duration-$variable` | ✅ | <code>.animate-duration-\$variable{animation-duration:var(--variable);}</code> | <code>.animate-duration-\$variable{animation-duration:var(--variable);}</code> |
+| `animate-delay-$variable` | ✅ | <code>.animate-delay-\$variable{animation-delay:var(--variable);}</code> | <code>.animate-delay-\$variable{animation-delay:var(--variable);}</code> |
+| `animate-iteration-count-$variable` | ✅ | <code>.animate-iteration-count-\$variable{animation-iteration-count:var(--variable);}</code> | <code>.animate-iteration-count-\$variable{animation-iteration-count:var(--variable);}</code> |
+| `animate-ease` | ✅ | <code>.animate-ease{animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);}</code> | <code>.animate-ease{animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);}</code> |
+| `animate-ease-linear` | ✅ | <code>.animate-ease-linear{animation-timing-function:linear;}</code> | <code>.animate-ease-linear{animation-timing-function:linear;}</code> |
+| `animate-ease-$variable` | ✅ | <code>.animate-ease-\$variable{animation-timing-function:var(--variable);}</code> | <code>.animate-ease-\$variable{animation-timing-function:var(--variable);}</code> |
+| `animate-ease-[steps(4,_jump-start)]` | ✅ | <code>.animate-ease-\[steps\(4\,_jump-start\)\]{animation-timing-function:steps(4, jump-start);}</code> | <code>.animate-ease-\[steps\(4\,_jump-start\)\]{animation-timing-function:steps(4, jump-start);}</code> |
+| `animate-$variable` | ✅ | <code>.animate-\$variable{animation:var(--variable);}</code> | <code>.animate-\$variable{animation:var(--variable);}</code> |
+| `animate-[4s_linear_0s_infinite_alternate_move\_eye]` | ✅ | <code>.animate-\[4s_linear_0s_infinite_alternate_move\\_eye\]{animation:4s linear 0s infinite alternate move_eye;}</code> | <code>.animate-\[4s_linear_0s_infinite_alternate_move\\_eye\]{animation:4s linear 0s infinite alternate move_eye;}</code> |
+| `animate-inherit` | ✅ | <code>.animate-inherit{animation:inherit;}</code> | <code>.animate-inherit{animation:inherit;}</code> |
+| `animate-unset` | ✅ | <code>.animate-unset{animation:unset;}</code> | <code>.animate-unset{animation:unset;}</code> |
+| `divide` | ✅ | ❓ | ❓ |
+| `backdrop-opacity` | ✅ | ❓ | ❓ |
+| `backdrop-saturate` | ✅ | ❓ | ❓ |
+| `!animate-ping` | ✅ | <code>@keyframes ping{0%{transform:scale(1);opacity:1}75%,100%{transform:scale(2);opacity:0}}<br>.\!animate-ping{animation:ping 1s cubic-bezier(0,0,.2,1) infinite !important;}</code> | <code>@keyframes ping{0%{transform:scale(1);opacity:1}75%,100%{transform:scale(2);opacity:0}}<br>.\!animate-ping{animation:ping 1s cubic-bezier(0,0,.2,1) infinite !important;}</code> |
+| `hover:animate-bounce` | ✅ | <code>@keyframes bounce{0%, 100% {transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)} 50% {transform:translateY(0);animation-timing-function:cubic-bezier(0,0,0.2,1)}}<br>.hover\:animate-bounce:hover{animation:bounce 1s linear infinite;}</code> | <code>@keyframes bounce{0%, 100% {transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)} 50% {transform:translateY(0);animation-timing-function:cubic-bezier(0,0,0.2,1)}}<br>.hover\:animate-bounce:hover{animation:bounce 1s linear infinite;}</code> |
+| `data-dropdown:ring-green` | ✅ | ❓ | ❓ |
+| `h-svh` | ✅ | <code>.h-svh{height:100svh;}</code> | <code>.h-svh{height:100svh;}</code> |
+| `h-dvh` | ✅ | <code>.h-dvh{height:100dvh;}</code> | <code>.h-dvh{height:100dvh;}</code> |
+| `h-lvh` | ✅ | <code>.h-lvh{height:100lvh;}</code> | <code>.h-lvh{height:100lvh;}</code> |
+| `min-h-dvh` | ✅ | <code>.min-h-dvh{min-height:100dvh;}</code> | <code>.min-h-dvh{min-height:100dvh;}</code> |
+| `min-h-lvh` | ✅ | <code>.min-h-lvh{min-height:100lvh;}</code> | <code>.min-h-lvh{min-height:100lvh;}</code> |
+| `min-h-svh` | ✅ | <code>.min-h-svh{min-height:100svh;}</code> | <code>.min-h-svh{min-height:100svh;}</code> |
+| `max-h-dvh` | ✅ | <code>.max-h-dvh{max-height:100dvh;}</code> | <code>.max-h-dvh{max-height:100dvh;}</code> |
+| `max-h-svh` | ✅ | <code>.max-h-svh{max-height:100svh;}</code> | <code>.max-h-svh{max-height:100svh;}</code> |
+| `max-h-lvh` | ✅ | <code>.max-h-lvh{max-height:100lvh;}</code> | <code>.max-h-lvh{max-height:100lvh;}</code> |
 
 ## Different Tokens
 
@@ -1136,3 +1193,308 @@
 | `@[100px]/label:text-green` | ❌ | <code>@container label (min-width: 100px){<br>.\@\[100px\]\/label\:text-green{--un-text-opacity:100%;color:color-mix(in oklch, var(--color-green-400) var(--un-text-opacity), transparent);}<br>}</code> | <code>@container label (min-width: 100px){<br>.\@\[100px\]\/label\:text-green{--un-text-opacity:1;color:rgb(74 222 128 / var(--un-text-opacity));}<br>}</code> |
 | `starting:opacity-0` | ❌ | <code>@starting-style{<br>.starting\:opacity-0{opacity:0%;}<br>}</code> | <code>@starting-style{<br>.starting\:opacity-0{opacity:0;}<br>}</code> |
 | `starting:popover-open:opacity-0` | ❌ | <code>@starting-style{<br>.starting\:popover-open\:opacity-0:popover-open{opacity:0%;}<br>}</code> | <code>@starting-style{<br>.starting\:popover-open\:opacity-0:popover-open{opacity:0;}<br>}</code> |
+| `bg-auto` | ❌ | ❓ | <code>.bg-auto{background-size:auto;}</code> |
+| `bg-blend-normal` | ❌ | ❓ | <code>.bg-blend-normal{background-blend-mode:normal;}</code> |
+| `bg-blend-color-burn` | ❌ | ❓ | <code>.bg-blend-color-burn{background-blend-mode:color-burn;}</code> |
+| `bg-blend-luminosity` | ❌ | ❓ | <code>.bg-blend-luminosity{background-blend-mode:luminosity;}</code> |
+| `bg-blend-unset` | ❌ | ❓ | <code>.bg-blend-unset{background-blend:unset;}</code> |
+| `bg-bottom` | ❌ | ❓ | <code>.bg-bottom{background-position:bottom;}</code> |
+| `bg-clip-border` | ❌ | ❓ | <code>.bg-clip-border{-webkit-background-clip:border-box;background-clip:border-box;}</code> |
+| `bg-clip-text` | ❌ | ❓ | <code>.bg-clip-text{-webkit-background-clip:text;background-clip:text;}</code> |
+| `bg-clip-unset` | ❌ | ❓ | <code>.bg-clip-unset{-webkit-background-clip:unset;background-clip:unset;}</code> |
+| `bg-cover` | ❌ | ❓ | <code>.bg-cover{background-size:cover;}</code> |
+| `bg-fixed` | ❌ | ❓ | <code>.bg-fixed{background-attachment:fixed;}</code> |
+| `bg-gradient-to-t` | ❌ | ❓ | <code>.bg-gradient-to-t{--un-gradient-shape:to top in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);background-image:linear-gradient(var(--un-gradient));}</code> |
+| `bg-gradient-to-tl` | ❌ | ❓ | <code>.bg-gradient-to-tl{--un-gradient-shape:to top left in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);background-image:linear-gradient(var(--un-gradient));}</code> |
+| `bg-local` | ❌ | ❓ | <code>.bg-local{background-attachment:local;}</code> |
+| `bg-no-repeat` | ❌ | ❓ | <code>.bg-no-repeat{background-repeat:no-repeat;}</code> |
+| `bg-none` | ❌ | ❓ | <code>.bg-none{background-image:none;}</code> |
+| `bg-origin-border` | ❌ | ❓ | <code>.bg-origin-border{background-origin:border-box;}</code> |
+| `bg-origin-initial` | ❌ | ❓ | <code>.bg-origin-initial{background-origin:initial;}</code> |
+| `bg-repeat-space` | ❌ | ❓ | <code>.bg-repeat-space{background-repeat:space;}</code> |
+| `bg-repeat-revert` | ❌ | ❓ | <code>.bg-repeat-revert{background-repeat:revert;}</code> |
+| `bg-right-bottom` | ❌ | ❓ | <code>.bg-right-bottom{background-position:right bottom;}</code> |
+| `bg-scroll` | ❌ | ❓ | <code>.bg-scroll{background-attachment:scroll;}</code> |
+| `from-current` | ❌ | ❓ | <code>.from-current{--un-gradient-from-position:0%;--un-gradient-from:currentColor var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(255 255 255 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}</code> |
+| `from-10%` | ❌ | ❓ | <code>.from-10\%{--un-gradient-from-position:10%;}</code> |
+| `via-20%` | ❌ | ❓ | <code>.via-20\%{--un-gradient-via-position:20%;}</code> |
+| `to-90%` | ❌ | ❓ | <code>.to-90\%{--un-gradient-to-position:90%;}</code> |
+| `from-green-500` | ❌ | ❓ | <code>.from-green-500{--un-gradient-from-position:0%;--un-gradient-from:rgb(34 197 94 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(34 197 94 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}</code> |
+| `from-green-500/50` | ❌ | ❓ | <code>.from-green-500\/50{--un-gradient-from-position:0%;--un-gradient-from:rgb(34 197 94 / 0.5) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(34 197 94 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}</code> |
+| `from-transparent` | ❌ | ❓ | <code>.from-transparent{--un-gradient-from-position:0%;--un-gradient-from:transparent var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(255 255 255 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}</code> |
+| `from-$bg-from` | ❌ | ❓ | <code>.from-\$bg-from{--un-gradient-from-position:0%;--un-gradient-from:var(--bg-from) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(255 255 255 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}</code> |
+| `to-current` | ❌ | ❓ | <code>.to-current{--un-gradient-to-position:100%;--un-gradient-to:currentColor var(--un-gradient-to-position);}</code> |
+| `to-green-500` | ❌ | ❓ | <code>.to-green-500{--un-gradient-to-position:100%;--un-gradient-to:rgb(34 197 94 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);}</code> |
+| `to-green-500/50` | ❌ | ❓ | <code>.to-green-500\/50{--un-gradient-to-position:100%;--un-gradient-to:rgb(34 197 94 / 0.5) var(--un-gradient-to-position);}</code> |
+| `to-transparent` | ❌ | ❓ | <code>.to-transparent{--un-gradient-to-position:100%;--un-gradient-to:transparent var(--un-gradient-to-position);}</code> |
+| `to-$bg-to` | ❌ | ❓ | <code>.to-\$bg-to{--un-gradient-to-position:100%;--un-gradient-to:var(--bg-to) var(--un-gradient-to-position);}</code> |
+| `via-current` | ❌ | ❓ | <code>.via-current{--un-gradient-via-position:50%;--un-gradient-to:rgb(255 255 255 / 0);--un-gradient-stops:var(--un-gradient-from), currentColor var(--un-gradient-via-position), var(--un-gradient-to);}</code> |
+| `via-green-500` | ❌ | ❓ | <code>.via-green-500{--un-gradient-via-position:50%;--un-gradient-to:rgb(34 197 94 / 0);--un-gradient-stops:var(--un-gradient-from), rgb(34 197 94 / var(--un-via-opacity, 1)) var(--un-gradient-via-position), var(--un-gradient-to);}</code> |
+| `via-green-500/30` | ❌ | ❓ | <code>.via-green-500\/30{--un-gradient-via-position:50%;--un-gradient-to:rgb(34 197 94 / 0);--un-gradient-stops:var(--un-gradient-from), rgb(34 197 94 / 0.3) var(--un-gradient-via-position), var(--un-gradient-to);}</code> |
+| `via-transparent` | ❌ | ❓ | <code>.via-transparent{--un-gradient-via-position:50%;--un-gradient-to:rgb(255 255 255 / 0);--un-gradient-stops:var(--un-gradient-from), transparent var(--un-gradient-via-position), var(--un-gradient-to);}</code> |
+| `via-$bg-via` | ❌ | ❓ | <code>.via-\$bg-via{--un-gradient-via-position:50%;--un-gradient-to:rgb(255 255 255 / 0);--un-gradient-stops:var(--un-gradient-from), var(--bg-via) var(--un-gradient-via-position), var(--un-gradient-to);}</code> |
+| `via-opacity-30` | ❌ | ❓ | <code>.via-opacity-30{--un-via-opacity:0.3;}</code> |
+| `bg-gradient-from-current` | ❌ | ❓ | <code>.bg-gradient-from-current{--un-gradient-from-position:0%;--un-gradient-from:currentColor var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(255 255 255 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}</code> |
+| `bg-gradient-from-green-600` | ❌ | ❓ | <code>.bg-gradient-from-green-600{--un-gradient-from-position:0%;--un-gradient-from:rgb(22 163 74 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(22 163 74 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}</code> |
+| `bg-gradient-from-green-600/60` | ❌ | ❓ | <code>.bg-gradient-from-green-600\/60{--un-gradient-from-position:0%;--un-gradient-from:rgb(22 163 74 / 0.6) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(22 163 74 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}</code> |
+| `bg-gradient-from-transparent` | ❌ | ❓ | <code>.bg-gradient-from-transparent{--un-gradient-from-position:0%;--un-gradient-from:transparent var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(255 255 255 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}</code> |
+| `bg-gradient-to-current` | ❌ | ❓ | <code>.bg-gradient-to-current{--un-gradient-to-position:100%;--un-gradient-to:currentColor var(--un-gradient-to-position);}</code> |
+| `bg-gradient-to-green-600` | ❌ | ❓ | <code>.bg-gradient-to-green-600{--un-gradient-to-position:100%;--un-gradient-to:rgb(22 163 74 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);}</code> |
+| `bg-gradient-to-green-600/60` | ❌ | ❓ | <code>.bg-gradient-to-green-600\/60{--un-gradient-to-position:100%;--un-gradient-to:rgb(22 163 74 / 0.6) var(--un-gradient-to-position);}</code> |
+| `bg-gradient-to-transparent` | ❌ | ❓ | <code>.bg-gradient-to-transparent{--un-gradient-to-position:100%;--un-gradient-to:transparent var(--un-gradient-to-position);}</code> |
+| `bg-gradient-via-current` | ❌ | ❓ | <code>.bg-gradient-via-current{--un-gradient-via-position:50%;--un-gradient-to:rgb(255 255 255 / 0);--un-gradient-stops:var(--un-gradient-from), currentColor var(--un-gradient-via-position), var(--un-gradient-to);}</code> |
+| `bg-gradient-via-green-600` | ❌ | ❓ | <code>.bg-gradient-via-green-600{--un-gradient-via-position:50%;--un-gradient-to:rgb(22 163 74 / 0);--un-gradient-stops:var(--un-gradient-from), rgb(22 163 74 / var(--un-via-opacity, 1)) var(--un-gradient-via-position), var(--un-gradient-to);}</code> |
+| `bg-gradient-via-green-600/40` | ❌ | ❓ | <code>.bg-gradient-via-green-600\/40{--un-gradient-via-position:50%;--un-gradient-to:rgb(22 163 74 / 0);--un-gradient-stops:var(--un-gradient-from), rgb(22 163 74 / 0.4) var(--un-gradient-via-position), var(--un-gradient-to);}</code> |
+| `bg-gradient-via-transparent` | ❌ | ❓ | <code>.bg-gradient-via-transparent{--un-gradient-via-position:50%;--un-gradient-to:rgb(255 255 255 / 0);--un-gradient-stops:var(--un-gradient-from), transparent var(--un-gradient-via-position), var(--un-gradient-to);}</code> |
+| `bg-gradient-via-opacity-40` | ❌ | ❓ | <code>.bg-gradient-via-opacity-40{--un-via-opacity:0.4;}</code> |
+| `bg-gradient-[70deg,blue,pink]` | ❌ | ❓ | <code>.bg-gradient-\[70deg\,blue\,pink\]{--un-gradient:70deg,blue,pink;}</code> |
+| `bg-gradient-stops-[blue,pink]` | ❌ | ❓ | <code>.bg-gradient-stops-\[blue\,pink\]{--un-gradient-stops:blue,pink;}</code> |
+| `stops-[blue,pink]` | ❌ | ❓ | <code>.stops-\[blue\,pink\]{--un-gradient-stops:blue,pink;}</code> |
+| `bg-gradient-linear` | ❌ | ❓ | <code>.bg-gradient-linear{background-image:linear-gradient(var(--un-gradient, var(--un-gradient-stops, rgb(255 255 255 / 0))));}</code> |
+| `bg-gradient-radial` | ❌ | ❓ | <code>.bg-gradient-radial{background-image:radial-gradient(var(--un-gradient, var(--un-gradient-stops, rgb(255 255 255 / 0))));}</code> |
+| `bg-gradient-repeating-conic` | ❌ | ❓ | <code>.bg-gradient-repeating-conic{background-image:repeating-conic-gradient(var(--un-gradient, var(--un-gradient-stops, rgb(255 255 255 / 0))));}</code> |
+| `bg-gradient-shape-t` | ❌ | ❓ | <code>.bg-gradient-shape-t{--un-gradient-shape:to top in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}</code> |
+| `bg-gradient-shape-tl` | ❌ | ❓ | <code>.bg-gradient-shape-tl{--un-gradient-shape:to top left in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}</code> |
+| `bg-gradient-shape-[70deg]` | ❌ | ❓ | <code>.bg-gradient-shape-\[70deg\]{--un-gradient-shape:70deg in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}</code> |
+| `bg-gradient-shape-[closest-side]` | ❌ | ❓ | <code>.bg-gradient-shape-\[closest-side\]{--un-gradient-shape:closest-side in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}</code> |
+| `bg-gradient-shape-[circle_at_70%]` | ❌ | ❓ | <code>.bg-gradient-shape-\[circle_at_70\%\]{--un-gradient-shape:circle at 70% in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}</code> |
+| `bg-gradient-shape-[from_40deg]` | ❌ | ❓ | <code>.bg-gradient-shape-\[from_40deg\]{--un-gradient-shape:from 40deg in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}</code> |
+| `shape-tl` | ❌ | ❓ | <code>.shape-tl{--un-gradient-shape:to top left in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}</code> |
+| `shape-[70deg]` | ❌ | ❓ | <code>.shape-\[70deg\]{--un-gradient-shape:70deg in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}</code> |
+| `shape-[farthest-corner_at_0_0]` | ❌ | ❓ | <code>.shape-\[farthest-corner_at_0_0\]{--un-gradient-shape:farthest-corner at 0 0 in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}</code> |
+| `shape-[from_3.1416rad_at_10%_50%]` | ❌ | ❓ | <code>.shape-\[from_3\.1416rad_at_10\%_50\%\]{--un-gradient-shape:from 3.1416rad at 10% 50% in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);}</code> |
+| `list-none` | ❌ | ❓ | <code>.list-none{list-style-type:none;}</code> |
+| `list-disc` | ❌ | ❓ | <code>.list-disc{list-style-type:disc;}</code> |
+| `list-alpha` | ❌ | ❓ | <code>.list-alpha{list-style-type:lower-alpha;}</code> |
+| `list-greek` | ❌ | ❓ | <code>.list-greek{list-style-type:lower-greek;}</code> |
+| `list-outside` | ❌ | ❓ | <code>.list-outside{list-style-position:outside;}</code> |
+| `list-disc-outside` | ❌ | ❓ | <code>.list-disc-outside{list-style-position:outside;list-style-type:disc;}</code> |
+| `list-alpha-inside` | ❌ | ❓ | <code>.list-alpha-inside{list-style-position:inside;list-style-type:lower-alpha;}</code> |
+| `list-inherit` | ❌ | ❓ | <code>.list-inherit{list-style-type:inherit;}</code> |
+| `list-image-[url(https://test.unocss.png)]` | ❌ | ❓ | <code>.list-image-\[url\(https\:\/\/test\.unocss\.png\)\]{list-style-image:url(https://test.unocss.png);}</code> |
+| `list-image-none` | ❌ | ❓ | <code>.list-image-none{list-style-image:none;}</code> |
+| `box-decoration-slice` | ❌ | ❓ | <code>.box-decoration-slice{box-decoration-break:slice;}</code> |
+| `box-decoration-initial` | ❌ | ❓ | <code>.box-decoration-initial{box-decoration-break:initial;}</code> |
+| `accent-op-90` | ❌ | ❓ | <code>.accent-op-90{--un-accent-opacity:0.9;}</code> |
+| `accent-red` | ❌ | ❓ | <code>.accent-red{--un-accent-opacity:1;accent-color:rgb(248 113 113 / var(--un-accent-opacity));}</code> |
+| `caret-op-90` | ❌ | ❓ | <code>.caret-op-90{--un-caret-opacity:0.9;}</code> |
+| `caret-red` | ❌ | ❓ | <code>.caret-red{--un-caret-opacity:1;caret-color:rgb(248 113 113 / var(--un-caret-opacity));}</code> |
+| `image-render-pixel` | ❌ | ❓ | <code>.image-render-pixel{-ms-interpolation-mode:nearest-neighbor;image-rendering:-webkit-optimize-contrast;image-rendering:-moz-crisp-edges;image-rendering:-o-pixelated;image-rendering:pixelated;}</code> |
+| `overscroll-x-auto` | ❌ | ❓ | <code>.overscroll-x-auto{overscroll-behavior-x:auto;}</code> |
+| `overscroll-y-unset` | ❌ | ❓ | <code>.overscroll-y-unset{overscroll-behavior-y:unset;}</code> |
+| `overscroll-contain` | ❌ | ❓ | <code>.overscroll-contain{overscroll-behavior:contain;}</code> |
+| `overscroll-none` | ❌ | ❓ | <code>.overscroll-none{overscroll-behavior:none;}</code> |
+| `overscroll-revert-layer` | ❌ | ❓ | <code>.overscroll-revert-layer{overscroll-behavior:revert-layer;}</code> |
+| `scroll-auto` | ❌ | ❓ | <code>.scroll-auto{scroll-behavior:auto;}</code> |
+| `scroll-unset` | ❌ | ❓ | <code>.scroll-unset{scroll-behavior:unset;}</code> |
+| `columns-3` | ❌ | ❓ | <code>.columns-3{columns:3;}</code> |
+| `columns-5em` | ❌ | ❓ | <code>.columns-5em{columns:5em;}</code> |
+| `columns-auto` | ❌ | ❓ | <code>.columns-auto{columns:auto;}</code> |
+| `columns-[3_auto]` | ❌ | ❓ | <code>.columns-\[3_auto\]{columns:3 auto;}</code> |
+| `columns-[auto_13em]` | ❌ | ❓ | <code>.columns-\[auto_13em\]{columns:auto 13em;}</code> |
+| `columns-[auto_auto]` | ❌ | ❓ | <code>.columns-\[auto_auto\]{columns:auto auto;}</code> |
+| `columns-unset` | ❌ | ❓ | <code>.columns-unset{columns:unset;}</code> |
+| `break-before-avoid-page` | ❌ | ❓ | <code>.break-before-avoid-page{break-before:avoid-page;}</code> |
+| `break-inside-avoid-column` | ❌ | ❓ | <code>.break-inside-avoid-column{break-inside:avoid-column;}</code> |
+| `break-after-column` | ❌ | ❓ | <code>.break-after-column{break-after:column;}</code> |
+| `break-before-initial` | ❌ | ❓ | <code>.break-before-initial{break-before:initial;}</code> |
+| `break-inside-revert` | ❌ | ❓ | <code>.break-inside-revert{break-inside:revert;}</code> |
+| `break-after-unset` | ❌ | ❓ | <code>.break-after-unset{break-after:unset;}</code> |
+| `divide-y-4` | ❌ | ❓ | <code>.divide-y-4>:not([hidden])~:not([hidden]){--un-divide-y-reverse:0;border-top-width:calc(4px * calc(1 - var(--un-divide-y-reverse)));border-bottom-width:calc(4px * var(--un-divide-y-reverse));}</code> |
+| `divide-x-4` | ❌ | ❓ | <code>.divide-x-4>:not([hidden])~:not([hidden]){--un-divide-x-reverse:0;border-left-width:calc(4px * calc(1 - var(--un-divide-x-reverse)));border-right-width:calc(4px * var(--un-divide-x-reverse));}</code> |
+| `divide-x-reverse` | ❌ | ❓ | <code>.divide-x-reverse>:not([hidden])~:not([hidden]){--un-divide-x-reverse:1;}</code> |
+| `divide-block-4` | ❌ | ❓ | <code>.divide-block-4>:not([hidden])~:not([hidden]){--un-divide-block-reverse:0;border-block-start-width:calc(4px * calc(1 - var(--un-divide-block-reverse)));border-block-end-width:calc(4px * calc(1 - var(--un-divide-block-reverse)));}</code> |
+| `divide-inline-4` | ❌ | ❓ | <code>.divide-inline-4>:not([hidden])~:not([hidden]){--un-divide-inline-reverse:0;border-inline-start-width:calc(4px * calc(1 - var(--un-divide-inline-reverse)));border-inline-end-width:calc(4px * calc(1 - var(--un-divide-inline-reverse)));}</code> |
+| `divide-inline-reverse` | ❌ | ❓ | <code>.divide-inline-reverse>:not([hidden])~:not([hidden]){--un-divide-inline-reverse:1;}</code> |
+| `divide-green-500` | ❌ | ❓ | <code>.divide-green-500>:not([hidden])~:not([hidden]){--un-divide-opacity:1;border-color:rgb(34 197 94 / var(--un-divide-opacity));}</code> |
+| `divide-opacity-50` | ❌ | ❓ | <code>.divide-opacity-50>:not([hidden])~:not([hidden]){--un-divide-opacity:0.5;}</code> |
+| `divide-dashed` | ❌ | ❓ | <code>.divide-dashed>:not([hidden])~:not([hidden]){border-style:dashed;}</code> |
+| `divide-dotted` | ❌ | ❓ | <code>.divide-dotted>:not([hidden])~:not([hidden]){border-style:dotted;}</code> |
+| `divide-ridge` | ❌ | ❓ | <code>.divide-ridge>:not([hidden])~:not([hidden]){border-style:ridge;}</code> |
+| `divide-transparent` | ❌ | ❓ | <code>.divide-transparent>:not([hidden])~:not([hidden]){border-color:transparent;}</code> |
+| `divide-current` | ❌ | ❓ | <code>.divide-current>:not([hidden])~:not([hidden]){border-color:currentColor;}</code> |
+| `divide-none` | ❌ | ❓ | <code>.divide-none>:not([hidden])~:not([hidden]){border-style:none;}</code> |
+| `divide-x-none` | ❌ | ❓ | <code>.divide-x-none>:not([hidden])~:not([hidden]){--un-divide-x-reverse:0;border-left-width:calc(0px * calc(1 - var(--un-divide-x-reverse)));border-right-width:calc(0px * var(--un-divide-x-reverse));}</code> |
+| `divide-inline-none` | ❌ | ❓ | <code>.divide-inline-none>:not([hidden])~:not([hidden]){--un-divide-inline-reverse:0;border-inline-start-width:calc(0px * calc(1 - var(--un-divide-inline-reverse)));border-inline-end-width:calc(0px * calc(1 - var(--un-divide-inline-reverse)));}</code> |
+| `filter` | ❌ | ❓ | <code>.filter{filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `filter-none` | ❌ | ❓ | <code>.filter-none{filter:none;}</code> |
+| `filter-blur` | ❌ | ❓ | <code>.filter-blur{--un-blur:blur(8px);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `filter-blur-md` | ❌ | ❓ | <code>.filter-blur-md{--un-blur:blur(12px);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `filter-blur-4` | ❌ | ❓ | <code>.filter-blur-4{--un-blur:blur(4px);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `filter-blur-none` | ❌ | ❓ | <code>.filter-blur-none{--un-blur:blur(0);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `filter-unset` | ❌ | ❓ | <code>.filter-unset{filter:unset;}</code> |
+| `blur` | ❌ | ❓ | <code>.blur{--un-blur:blur(8px);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `blur-md` | ❌ | ❓ | <code>.blur-md{--un-blur:blur(12px);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `blur-4` | ❌ | ❓ | <code>.blur-4{--un-blur:blur(4px);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `blur-none` | ❌ | ❓ | <code>.blur-none{--un-blur:blur(0);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `brightness-0` | ❌ | ❓ | <code>.brightness-0{--un-brightness:brightness(0);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `brightness-60` | ❌ | ❓ | <code>.brightness-60{--un-brightness:brightness(0.6);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `contrast-125` | ❌ | ❓ | <code>.contrast-125{--un-contrast:contrast(1.25);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `drop-shadow` | ❌ | ❓ | <code>.drop-shadow{--un-drop-shadow:drop-shadow(0 1px 2px var(--un-drop-shadow-color, rgb(0 0 0 / 0.1))) drop-shadow(0 1px 1px var(--un-drop-shadow-color, rgb(0 0 0 / 0.06)));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `drop-shadow-[0_4px_3px_#000]` | ❌ | ❓ | <code>.drop-shadow-\[0_4px_3px_\#000\]{--un-drop-shadow:drop-shadow(0 4px 3px #000);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `drop-shadow-none` | ❌ | ❓ | <code>.drop-shadow-none{--un-drop-shadow:drop-shadow(0 0 var(--un-drop-shadow-color, rgb(0 0 0 / 0)));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `drop-shadow-sm` | ❌ | ❓ | <code>.drop-shadow-sm{--un-drop-shadow:drop-shadow(0 1px 1px var(--un-drop-shadow-color, rgb(0 0 0 / 0.05)));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `drop-shadow-color-red-300` | ❌ | ❓ | <code>.drop-shadow-color-red-300{--un-drop-shadow-opacity:1;--un-drop-shadow-color:rgb(252 165 165 / var(--un-drop-shadow-opacity));}</code> |
+| `drop-shadow-color-op-30` | ❌ | ❓ | <code>.drop-shadow-color-op-30{--un-drop-shadow-opacity:0.3;}</code> |
+| `grayscale` | ❌ | ❓ | <code>.grayscale{--un-grayscale:grayscale(1);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `grayscale-90` | ❌ | ❓ | <code>.grayscale-90{--un-grayscale:grayscale(0.9);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `hue-rotate-0` | ❌ | ❓ | <code>.hue-rotate-0{--un-hue-rotate:hue-rotate(0);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `hue-rotate-360` | ❌ | ❓ | <code>.hue-rotate-360{--un-hue-rotate:hue-rotate(360deg);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `invert` | ❌ | ❓ | <code>.invert{--un-invert:invert(1);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `invert-90` | ❌ | ❓ | <code>.invert-90{--un-invert:invert(0.9);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `saturate-0` | ❌ | ❓ | <code>.saturate-0{--un-saturate:saturate(0);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `saturate-30` | ❌ | ❓ | <code>.saturate-30{--un-saturate:saturate(0.3);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `saturate-120` | ❌ | ❓ | <code>.saturate-120{--un-saturate:saturate(1.2);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `sepia` | ❌ | ❓ | <code>.sepia{--un-sepia:sepia(1);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `sepia-80` | ❌ | ❓ | <code>.sepia-80{--un-sepia:sepia(0.8);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `backdrop-filter` | ❌ | ❓ | <code>.backdrop-filter{-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-filter-none` | ❌ | ❓ | <code>.backdrop-filter-none{-webkit-backdrop-filter:none;backdrop-filter:none;}</code> |
+| `backdrop-filter-revert` | ❌ | ❓ | <code>.backdrop-filter-revert{-webkit-backdrop-filter:revert;backdrop-filter:revert;}</code> |
+| `backdrop-blur` | ❌ | ❓ | <code>.backdrop-blur{--un-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-blur-md` | ❌ | ❓ | <code>.backdrop-blur-md{--un-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-blur-4` | ❌ | ❓ | <code>.backdrop-blur-4{--un-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-blur-none` | ❌ | ❓ | <code>.backdrop-blur-none{--un-backdrop-blur:blur(0);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-brightness-0` | ❌ | ❓ | <code>.backdrop-brightness-0{--un-backdrop-brightness:brightness(0);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-brightness-60` | ❌ | ❓ | <code>.backdrop-brightness-60{--un-backdrop-brightness:brightness(0.6);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-contrast-125` | ❌ | ❓ | <code>.backdrop-contrast-125{--un-backdrop-contrast:contrast(1.25);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-grayscale` | ❌ | ❓ | <code>.backdrop-grayscale{--un-backdrop-grayscale:grayscale(1);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-grayscale-90` | ❌ | ❓ | <code>.backdrop-grayscale-90{--un-backdrop-grayscale:grayscale(0.9);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-hue-rotate-0` | ❌ | ❓ | <code>.backdrop-hue-rotate-0{--un-backdrop-hue-rotate:hue-rotate(0);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-hue-rotate-360` | ❌ | ❓ | <code>.backdrop-hue-rotate-360{--un-backdrop-hue-rotate:hue-rotate(360deg);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-invert` | ❌ | ❓ | <code>.backdrop-invert{--un-backdrop-invert:invert(1);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-invert-90` | ❌ | ❓ | <code>.backdrop-invert-90{--un-backdrop-invert:invert(0.9);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-opacity-90` | ❌ | ❓ | <code>.backdrop-opacity-90{--un-backdrop-opacity:opacity(0.9);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-saturate-30` | ❌ | ❓ | <code>.backdrop-saturate-30{--un-backdrop-saturate:saturate(0.3);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-saturate-120` | ❌ | ❓ | <code>.backdrop-saturate-120{--un-backdrop-saturate:saturate(1.2);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-sepia` | ❌ | ❓ | <code>.backdrop-sepia{--un-backdrop-sepia:sepia(1);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `backdrop-sepia-80` | ❌ | ❓ | <code>.backdrop-sepia-80{--un-backdrop-sepia:sepia(0.8);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `line-clamp-7` | ❌ | ❓ | <code>.line-clamp-7{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:7;line-clamp:7;}</code> |
+| `line-clamp-100` | ❌ | ❓ | <code>.line-clamp-100{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:100;line-clamp:100;}</code> |
+| `line-clamp-none` | ❌ | ❓ | <code>.line-clamp-none{overflow:visible;display:block;-webkit-box-orient:horizontal;-webkit-line-clamp:none;line-clamp:none;}</code> |
+| `line-clamp-unset` | ❌ | ❓ | <code>.line-clamp-unset{overflow:visible;display:block;-webkit-box-orient:horizontal;-webkit-line-clamp:unset;line-clamp:unset;}</code> |
+| `snap-y` | ❌ | ❓ | <code>.snap-y{scroll-snap-type:y var(--un-scroll-snap-strictness);}</code> |
+| `snap-both` | ❌ | ❓ | <code>.snap-both{scroll-snap-type:both var(--un-scroll-snap-strictness);}</code> |
+| `snap-mandatory` | ❌ | ❓ | <code>.snap-mandatory{--un-scroll-snap-strictness:mandatory;}</code> |
+| `snap-none` | ❌ | ❓ | <code>.snap-none{scroll-snap-type:none;}</code> |
+| `snap-center` | ❌ | ❓ | <code>.snap-center{scroll-snap-align:center;}</code> |
+| `snap-align-none` | ❌ | ❓ | <code>.snap-align-none{scroll-snap-align:none;}</code> |
+| `snap-always` | ❌ | ❓ | <code>.snap-always{scroll-snap-stop:always;}</code> |
+| `scroll-m-[3em]` | ❌ | ❓ | <code>.scroll-m-\[3em\]{scroll-margin:3em;}</code> |
+| `scroll-m-0` | ❌ | ❓ | <code>.scroll-m-0{scroll-margin:0;}</code> |
+| `scroll-m-1/2` | ❌ | ❓ | <code>.scroll-m-1\/2{scroll-margin:50%;}</code> |
+| `scroll-m-auto` | ❌ | ❓ | <code>.scroll-m-auto{scroll-margin:auto;}</code> |
+| `scroll-m-none` | ❌ | ❓ | <code>.scroll-m-none{scroll-margin:0;}</code> |
+| `scroll-p-2` | ❌ | ❓ | <code>.scroll-p-2{scroll-padding:0.5rem;}</code> |
+| `scroll-p-t-2` | ❌ | ❓ | <code>.scroll-p-t-2{scroll-padding-top:0.5rem;}</code> |
+| `scroll-p2` | ❌ | ❓ | <code>.scroll-p2{scroll-padding:0.5rem;}</code> |
+| `scroll-pl-10px` | ❌ | ❓ | <code>.scroll-pl-10px{scroll-padding-left:10px;}</code> |
+| `scroll-pt-2` | ❌ | ❓ | <code>.scroll-pt-2{scroll-padding-top:0.5rem;}</code> |
+| `scroll-pt2` | ❌ | ❓ | <code>.scroll-pt2{scroll-padding-top:0.5rem;}</code> |
+| `scroll-pis-10px` | ❌ | ❓ | <code>.scroll-pis-10px{scroll-padding-inline-start:10px;}</code> |
+| `scroll-pbs-2` | ❌ | ❓ | <code>.scroll-pbs-2{scroll-padding-block-start:0.5rem;}</code> |
+| `scroll-pbs2` | ❌ | ❓ | <code>.scroll-pbs2{scroll-padding-block-start:0.5rem;}</code> |
+| `scroll-p-inline-none` | ❌ | ❓ | <code>.scroll-p-inline-none{scroll-padding-inline-start:0;scroll-padding-inline-end:0;}</code> |
+| `mix-blend-normal` | ❌ | ❓ | <code>.mix-blend-normal{mix-blend-mode:normal;}</code> |
+| `mix-blend-hard-light` | ❌ | ❓ | <code>.mix-blend-hard-light{mix-blend-mode:hard-light;}</code> |
+| `mix-blend-plus-lighter` | ❌ | ❓ | <code>.mix-blend-plus-lighter{mix-blend-mode:plus-lighter;}</code> |
+| `mix-blend-revert` | ❌ | ❓ | <code>.mix-blend-revert{mix-blend:revert;}</code> |
+| `space-y-none` | ❌ | ❓ | <code>.space-y-none>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0px * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0px * var(--un-space-y-reverse));}</code> |
+| `space-x-2` | ❌ | ❓ | <code>.space-x-2>:not([hidden])~:not([hidden]){--un-space-x-reverse:0;margin-left:calc(0.5rem * calc(1 - var(--un-space-x-reverse)));margin-right:calc(0.5rem * var(--un-space-x-reverse));}</code> |
+| `space-y-4` | ❌ | ❓ | <code>.space-y-4>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(1rem * var(--un-space-y-reverse));}</code> |
+| `space-x-reverse` | ❌ | ❓ | <code>.space-x-reverse>:not([hidden])~:not([hidden]){--un-space-x-reverse:1;}</code> |
+| `space-x-$space` | ❌ | ❓ | <code>.space-x-\$space>:not([hidden])~:not([hidden]){--un-space-x-reverse:0;margin-left:calc(var(--space) * calc(1 - var(--un-space-x-reverse)));margin-right:calc(var(--space) * var(--un-space-x-reverse));}</code> |
+| `space-x-[var(--space)]` | ❌ | ❓ | <code>.space-x-\[var\(--space\)\]>:not([hidden])~:not([hidden]){--un-space-x-reverse:0;margin-left:calc(var(--space) * calc(1 - var(--un-space-x-reverse)));margin-right:calc(var(--space) * var(--un-space-x-reverse));}</code> |
+| `space-inline-2` | ❌ | ❓ | <code>.space-inline-2{--un-space-inline-reverse:0;margin-inline-start:calc(0.5rem * calc(1 - var(--un-space-inline-reverse)));margin-inline-end:calc(0.5rem * calc(1 - var(--un-space-inline-reverse)));}</code> |
+| `space-block-4` | ❌ | ❓ | <code>.space-block-4{--un-space-block-reverse:0;margin-block-start:calc(1rem * calc(1 - var(--un-space-block-reverse)));margin-block-end:calc(1rem * calc(1 - var(--un-space-block-reverse)));}</code> |
+| `space-block-none` | ❌ | ❓ | <code>.space-block-none{--un-space-block-reverse:0;margin-block-start:calc(0px * calc(1 - var(--un-space-block-reverse)));margin-block-end:calc(0px * calc(1 - var(--un-space-block-reverse)));}</code> |
+| `space-inline-reverse` | ❌ | ❓ | <code>.space-inline-reverse{--un-space-inline-reverse:1;}</code> |
+| `space-inline-$space` | ❌ | ❓ | <code>.space-inline-\$space{--un-space-inline-reverse:0;margin-inline-start:calc(var(--space) * calc(1 - var(--un-space-inline-reverse)));margin-inline-end:calc(var(--space) * calc(1 - var(--un-space-inline-reverse)));}</code> |
+| `capitalize` | ❌ | ❓ | <code>.capitalize{text-transform:capitalize;}</code> |
+| `normal-case` | ❌ | ❓ | <code>.normal-case{text-transform:none;}</code> |
+| `hyphens-none` | ❌ | ❓ | <code>.hyphens-none{-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;}</code> |
+| `hyphens-auto` | ❌ | ❓ | <code>.hyphens-auto{-webkit-hyphens:auto;-ms-hyphens:auto;hyphens:auto;}</code> |
+| `hyphens-unset` | ❌ | ❓ | <code>.hyphens-unset{-webkit-hyphens:unset;-ms-hyphens:unset;hyphens:unset;}</code> |
+| `write-normal` | ❌ | ❓ | <code>.write-normal{writing-mode:horizontal-tb;}</code> |
+| `write-orient-sideways` | ❌ | ❓ | <code>.write-orient-sideways{text-orientation:sideways;}</code> |
+| `write-unset` | ❌ | ❓ | <code>.write-unset{writing-mode:unset;}</code> |
+| `write-orient-revert` | ❌ | ❓ | <code>.write-orient-revert{text-orientation:revert;}</code> |
+| `not-sr-only` | ❌ | ❓ | <code>.not-sr-only{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal;}</code> |
+| `isolate` | ❌ | ❓ | <code>.isolate{isolation:isolate;}</code> |
+| `isolate-auto` | ❌ | ❓ | <code>.isolate-auto{isolation:auto;}</code> |
+| `isolation-auto` | ❌ | ❓ | <code>.isolation-auto{isolation:auto;}</code> |
+| `object-none` | ❌ | ❓ | <code>.object-none{object-fit:none;}</code> |
+| `object-center` | ❌ | ❓ | <code>.object-center{object-position:center;}</code> |
+| `object-ct` | ❌ | ❓ | <code>.object-ct{object-position:center top;}</code> |
+| `object-cb` | ❌ | ❓ | <code>.object-cb{object-position:center bottom;}</code> |
+| `object-center-top` | ❌ | ❓ | <code>.object-center-top{object-position:center top;}</code> |
+| `object-center-bottom` | ❌ | ❓ | <code>.object-center-bottom{object-position:center bottom;}</code> |
+| `object-[center_25%]` | ❌ | ❓ | <code>.object-\[center_25\%\]{object-position:center 25%;}</code> |
+| `border-collapse` | ❌ | ❓ | <code>.border-collapse{border-collapse:collapse;}</code> |
+| `border-separate` | ❌ | ❓ | <code>.border-separate{border-collapse:separate;}</code> |
+| `border-spacing-0` | ❌ | ❓ | <code>.border-spacing-0{--un-border-spacing-x:0;--un-border-spacing-y:0;border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
+| `border-spacing-none` | ❌ | ❓ | <code>.border-spacing-none{--un-border-spacing-x:0;--un-border-spacing-y:0;border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
+| `border-spacing-[3px]` | ❌ | ❓ | <code>.border-spacing-\[3px\]{--un-border-spacing-x:3px;--un-border-spacing-y:3px;border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
+| `border-spacing-$var` | ❌ | ❓ | <code>.border-spacing-\$var{--un-border-spacing-x:var(--var);--un-border-spacing-y:var(--var);border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
+| `border-spacing-x-[3px]` | ❌ | ❓ | <code>.border-spacing-x-\[3px\]{--un-border-spacing-x:3px;border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
+| `border-spacing-y-$var` | ❌ | ❓ | <code>.border-spacing-y-\$var{--un-border-spacing-y:var(--var);border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
+| `caption-top` | ❌ | ❓ | <code>.caption-top{caption-side:top;}</code> |
+| `caption-bottom` | ❌ | ❓ | <code>.caption-bottom{caption-side:bottom;}</code> |
+| `inline-table` | ❌ | ❓ | <code>.inline-table{display:inline-table;}</code> |
+| `table` | ❌ | ❓ | <code>.table{display:table;}</code> |
+| `table-auto` | ❌ | ❓ | <code>.table-auto{table-layout:auto;}</code> |
+| `table-caption` | ❌ | ❓ | <code>.table-caption{display:table-caption;}</code> |
+| `table-empty-cells-visible` | ❌ | ❓ | <code>.table-empty-cells-visible{empty-cells:show;}</code> |
+| `table-empty-cells-hidden` | ❌ | ❓ | <code>.table-empty-cells-hidden{empty-cells:hide;}</code> |
+| `table-footer-group` | ❌ | ❓ | <code>.table-footer-group{display:table-footer-group;}</code> |
+| `table-row-group` | ❌ | ❓ | <code>.table-row-group{display:table-row-group;}</code> |
+| `touch-pan-left` | ❌ | ❓ | <code>.touch-pan-left{--un-pan-x:pan-left;touch-action:var(--un-pan-x) var(--un-pan-y) var(--un-pinch-zoom);}</code> |
+| `touch-pan-y` | ❌ | ❓ | <code>.touch-pan-y{--un-pan-y:pan-y;touch-action:var(--un-pan-x) var(--un-pan-y) var(--un-pinch-zoom);}</code> |
+| `touch-pinch-zoom` | ❌ | ❓ | <code>.touch-pinch-zoom{--un-pinch-zoom:pinch-zoom;touch-action:var(--un-pan-x) var(--un-pan-y) var(--un-pinch-zoom);}</code> |
+| `touch-manipulation` | ❌ | ❓ | <code>.touch-manipulation{touch-action:manipulation;}</code> |
+| `touch-none` | ❌ | ❓ | <code>.touch-none{touch-action:none;}</code> |
+| `touch-initial` | ❌ | ❓ | <code>.touch-initial{touch-action:initial;}</code> |
+| `lining-nums` | ❌ | ❓ | <code>.lining-nums{--un-numeric-figure:lining-nums;font-variant-numeric:var(--un-ordinal) var(--un-slashed-zero) var(--un-numeric-figure) var(--un-numeric-spacing) var(--un-numeric-fraction);}</code> |
+| `normal-nums` | ❌ | ❓ | <code>.normal-nums{font-variant-numeric:normal;}</code> |
+| `tabular-nums` | ❌ | ❓ | <code>.tabular-nums{--un-numeric-spacing:tabular-nums;font-variant-numeric:var(--un-ordinal) var(--un-slashed-zero) var(--un-numeric-figure) var(--un-numeric-spacing) var(--un-numeric-fraction);}</code> |
+| `bg-blend-$data` | ❌ | ❓ | <code>.bg-blend-\$data{background-blend-mode:var(--data);}</code> |
+| `divide-$variable` | ❌ | ❓ | <code>.divide-\$variable>:not([hidden])~:not([hidden]){border-color:var(--variable);}</code> |
+| `divide-x-$variable` | ❌ | ❓ | <code>.divide-x-\$variable>:not([hidden])~:not([hidden]){--un-divide-x-reverse:0;border-left-width:calc(var(--variable) * calc(1 - var(--un-divide-x-reverse)));border-right-width:calc(var(--variable) * var(--un-divide-x-reverse));}</code> |
+| `divide-inline-$variable` | ❌ | ❓ | <code>.divide-inline-\$variable>:not([hidden])~:not([hidden]){--un-divide-inline-reverse:0;border-inline-start-width:calc(var(--variable) * calc(1 - var(--un-divide-inline-reverse)));border-inline-end-width:calc(var(--variable) * calc(1 - var(--un-divide-inline-reverse)));}</code> |
+| `blur-$variable` | ❌ | ❓ | <code>.blur-\$variable{--un-blur:blur(var(--variable));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `brightness-$variable` | ❌ | ❓ | <code>.brightness-\$variable{--un-brightness:brightness(var(--variable));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `contrast-$variable` | ❌ | ❓ | <code>.contrast-\$variable{--un-contrast:contrast(var(--variable));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `drop-shadow-$variable` | ❌ | ❓ | <code>.drop-shadow-\$variable{--un-drop-shadow:drop-shadow(var(--variable));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `grayscale-$variable` | ❌ | ❓ | <code>.grayscale-\$variable{--un-grayscale:grayscale(var(--variable));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `hue-rotate-$variable` | ❌ | ❓ | <code>.hue-rotate-\$variable{--un-hue-rotate:hue-rotate(var(--variable));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `invert-$variable` | ❌ | ❓ | <code>.invert-\$variable{--un-invert:invert(var(--variable));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `saturate-$variable` | ❌ | ❓ | <code>.saturate-\$variable{--un-saturate:saturate(var(--variable));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `sepia-$variable` | ❌ | ❓ | <code>.sepia-\$variable{--un-sepia:sepia(var(--variable));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `backdrop-opacity-$variable` | ❌ | ❓ | <code>.backdrop-opacity-\$variable{--un-backdrop-opacity:opacity(var(--variable));-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `bg-image-$variable` | ❌ | ❓ | <code>.bg-image-\$variable{background-image:var(--variable);}</code> |
+| `object-position-$variable` | ❌ | ❓ | <code>.object-position-\$variable{object-position:var(--variable);}</code> |
+| `object-$fit` | ❌ | ❓ | <code>.object-\$fit{object-fit:var(--fit);}</code> |
+| `.dark:text-xl` | ❌ | ❓ | <code>.dark .\.dark\:text-xl{font-size:1.25rem;line-height:1.75rem;}</code> |
+| `@dark:text-xl` | ❌ | ❓ | <code>@media (prefers-color-scheme: dark){<br>.\@dark\:text-xl{font-size:1.25rem;line-height:1.75rem;}<br>}</code> |
+| `svg:fill-red` | ❌ | ❓ | <code>.svg\:fill-red svg{--un-fill-opacity:1;fill:rgb(248 113 113 / var(--un-fill-opacity));}</code> |
+| `supports-grid:block` | ❌ | ❓ | <code>@supports (display: grid){<br>.supports-grid\:block{display:block;}<br>}</code> |
+| `contrast-more:bg-black` | ❌ | ❓ | <code>@media (prefers-contrast: more){<br>.contrast-more\:bg-black{--un-bg-opacity:1;background-color:rgb(0 0 0 / var(--un-bg-opacity));}<br>}</code> |
+| `uno-layer-_pre:contrast-less:bg-gray-3` | ❌ | ❓ | <code>/* layer: _pre */<br>@media (prefers-contrast: less){<br>.uno-layer-_pre\:contrast-less\:bg-gray-3{--un-bg-opacity:1;background-color:rgb(209 213 219 / var(--un-bg-opacity));}<br>}</code> |
+| `motion-reduce:hover:translate-0` | ❌ | ❓ | <code>@media (prefers-reduced-motion: reduce){<br>.motion-reduce\:hover\:translate-0:hover{--un-translate-x:0;--un-translate-y:0;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}<br>}</code> |
+| `motion-safe:transition` | ❌ | ❓ | <code>@media (prefers-reduced-motion: no-preference){<br>.motion-safe\:transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}<br>}</code> |
+| `portrait:hidden` | ❌ | ❓ | <code>@media (orientation: portrait){<br>.portrait\:hidden{display:none;}<br>}</code> |
+| `landscape:hidden` | ❌ | ❓ | <code>@media (orientation: landscape){<br>.landscape\:hidden{display:none;}<br>}</code> |
+| `placeholder-red-400` | ❌ | ❓ | <code>.placeholder-red-400::placeholder{--un-placeholder-opacity:1;color:rgb(248 113 113 / var(--un-placeholder-opacity));}</code> |
+| `placeholder-inherit` | ❌ | ❓ | <code>.placeholder-inherit::placeholder{color:inherit;}</code> |
+| `-backdrop-hue-rotate-90` | ❌ | ❓ | <code>.-backdrop-hue-rotate-90{--un-backdrop-hue-rotate:hue-rotate(-90deg);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `-hue-rotate-90` | ❌ | ❓ | <code>.-hue-rotate-90{--un-hue-rotate:hue-rotate(-90deg);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `-hue-rotate--90` | ❌ | ❓ | <code>.-hue-rotate--90{--un-hue-rotate:hue-rotate(90deg);filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `-hue-rotate-[var(--for-hue,0.5turn)]` | ❌ | ❓ | <code>.-hue-rotate-\[var\(--for-hue\,0\.5turn\)\]{--un-hue-rotate:hue-rotate(calc((var(--for-hue,0.5turn)) * -1));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
+| `-scroll-mb-px` | ❌ | ❓ | <code>.-scroll-mb-px{scroll-margin-bottom:-1px;}</code> |
+| `-scroll-p-px` | ❌ | ❓ | <code>.-scroll-p-px{scroll-padding:-1px;}</code> |
+| `-space-x-4` | ❌ | ❓ | <code>.-space-x-4>:not([hidden])~:not([hidden]){--un-space-x-reverse:0;margin-left:calc(calc(1rem * calc(1 - var(--un-space-x-reverse))) * -1);margin-right:calc(calc(1rem * var(--un-space-x-reverse)) * -1);}</code> |
+| `@hover-text-red` | ❌ | ❓ | <code>@media (hover: hover) and (pointer: fine){<br>.\@hover-text-red:hover{--un-text-opacity:1;color:rgb(248 113 113 / var(--un-text-opacity));}<br>}</code> |
+| `@hover:[[open]_&]:text-blue` | ❌ | ❓ | <code>@media (hover: hover) and (pointer: fine){<br>[open] .\@hover\:\[\[open\]_\&\]\:text-blue:hover{--un-text-opacity:1;color:rgb(96 165 250 / var(--un-text-opacity));}<br>}</code> |
+| `@dark:contrast-more:p-10` | ❌ | ❓ | <code>@media (prefers-contrast: more){@media (prefers-color-scheme: dark){<br>.\@dark\:contrast-more\:p-10{padding:2.5rem;}<br>}}</code> |
+| `aria-hidden:hidden` | ❌ | ❓ | <code>.aria-hidden\:hidden[aria-hidden="true"]{display:none;}</code> |
+| `view-transition-foo` | ❌ | ❓ | <code>.view-transition-foo{view-transition-name:foo;}</code> |
+| `view-transition-none` | ❌ | ❓ | <code>.view-transition-none{view-transition-name:none;}</code> |

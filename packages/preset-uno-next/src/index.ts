@@ -63,6 +63,11 @@ export interface PresetUnoNextOptions extends PresetOptions {
    * @default true
    */
   arbitraryVariants?: boolean
+
+  /**
+   * Choose which theme keys to export as CSS variables.
+   */
+  themeKeys?: string[] | ((keys: string[]) => string[])
 }
 
 export const presetUnoNext = definePreset<PresetUnoNextOptions, Theme>((options = {}) => {
@@ -75,7 +80,7 @@ export const presetUnoNext = definePreset<PresetUnoNextOptions, Theme>((options 
     name: '@unocss/preset-uno-next',
     rules,
     theme,
-    preflights,
+    preflights: preflights(options),
     variants: variants(options),
     options,
     prefix: options.prefix,

@@ -1,9 +1,10 @@
 import type { Preflight } from '@unocss/core'
+import type { PresetUnoNextOptions } from '..'
 import type { Theme } from '../theme/types'
-import { animate } from './animate'
 import { theme } from './theme'
 
-export const preflights: Preflight<Theme>[] = [
-  theme(),
-  animate(),
-]
+export const preflights: (options: PresetUnoNextOptions) => Preflight<Theme>[] = (options) => {
+  return [
+    theme(options),
+  ]
+}

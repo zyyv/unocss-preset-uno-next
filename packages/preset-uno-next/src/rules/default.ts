@@ -1,6 +1,7 @@
 import type { Rule } from '@unocss/core'
 import type { Theme } from '../theme'
 import { textAligns, verticalAligns } from './align'
+import { animations } from './animation'
 import { appearance, outline, willChange } from './behaviors'
 import { borders } from './border'
 import { bgColors, colorScheme, opacity } from './color'
@@ -80,4 +81,6 @@ export const rules: Rule<Theme>[] = [
   zIndexes,
   overflows,
   svgUtilities,
+
+  animations,
 ].flat()
