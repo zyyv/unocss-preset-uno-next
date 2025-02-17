@@ -1,6 +1,6 @@
 import type { Rule } from '@unocss/core'
 import type { Theme } from '../theme'
-import { globalKeywords, h, makeGlobalStaticRules } from '@unocss/preset-mini/utils'
+import { globalKeywords, h, makeGlobalStaticRules } from '../utils'
 
 export const animations: Rule<Theme>[] = [
   [/^(?:animate-)?keyframes-(.+)$/, ([, name], { theme }) => {
