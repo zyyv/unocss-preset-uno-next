@@ -2,6 +2,7 @@ import type { Rule } from '@unocss/core'
 import type { Theme } from '../theme'
 import { textAligns, verticalAligns } from './align'
 import { animations } from './animation'
+import { backgroundStyles } from './background'
 import { appearance, outline, willChange } from './behaviors'
 import { borders } from './border'
 import { bgColors, colorScheme, opacity } from './color'
@@ -16,7 +17,7 @@ import { rings } from './ring'
 import { boxShadows } from './shadow'
 import { aspectRatio, sizes } from './size'
 import { margins, paddings } from './spacing'
-import { appearances, breaks, contains, contents, contentVisibility, cursors, displays, fontSmoothings, fontStyles, pointerEvents, resizes, textOverflows, textTransforms, textWraps, userSelects, whitespaces } from './static'
+import { appearances, backgroundBlendModes, breaks, contains, contents, contentVisibility, cursors, displays, dynamicViewportHeight, fontSmoothings, fontStyles, hyphens, isolations, mixBlendModes, objectPositions, pointerEvents, resizes, screenReadersAccess, textOverflows, textTransforms, textWraps, userSelects, whitespaces, writingModes, writingOrientations } from './static'
 import { svgUtilities } from './svg'
 import { transforms } from './transform'
 import { transitions } from './transition'
@@ -81,6 +82,15 @@ export const rules: Rule<Theme>[] = [
   zIndexes,
   overflows,
   svgUtilities,
-
   animations,
+  backgroundStyles,
+  hyphens,
+  writingModes,
+  writingOrientations,
+  screenReadersAccess,
+  isolations,
+  objectPositions,
+  backgroundBlendModes,
+  mixBlendModes,
+  dynamicViewportHeight,
 ].flat()

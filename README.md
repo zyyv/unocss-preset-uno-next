@@ -27,6 +27,24 @@ This is a proof-of-concept repository, but it is also the direction I am working
   - [x] transition
   - [x] typography
   - [x] variable
+  - PresetWind3
+    - [x] animation
+    - [x] background
+    - [ ] behaviors
+    - [ ] columns
+    - [ ] container
+    - [ ] divide
+    - [ ] filter
+    - [ ] line-clamp
+    - [ ] placeholder
+    - [ ] scrolls
+    - [ ] spacing
+    - [x] static
+    - [ ] table
+    - [ ] touch-actions
+    - [ ] typography
+    - [ ] variables
+    - [ ] view-transition
 - [x] Theme
   - [x] animate
   - [x] colors

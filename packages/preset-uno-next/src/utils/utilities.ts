@@ -203,6 +203,9 @@ export function parseColor(body: string, theme: Theme) {
     no,
     color: color ?? SpecialColorKey[name as keyof typeof SpecialColorKey],
     alpha: h.bracket.cssvar.percent(opacity ?? ''),
+    /**
+     * Key means the color is from theme object.
+     */
     key,
   }
 }

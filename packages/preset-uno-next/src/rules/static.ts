@@ -1,6 +1,6 @@
 import type { Rule } from '@unocss/core'
 import type { Theme } from '../theme'
-import { globalKeywords, h, makeGlobalStaticRules } from '../utils'
+import { globalKeywords, h, makeGlobalStaticRules, positionMap } from '../utils'
 
 const cursorValues = ['auto', 'default', 'none', 'context-menu', 'help', 'pointer', 'progress', 'wait', 'cell', 'crosshair', 'text', 'vertical-text', 'alias', 'copy', 'move', 'no-drop', 'not-allowed', 'grab', 'grabbing', 'all-scroll', 'col-resize', 'row-resize', 'n-resize', 'e-resize', 's-resize', 'w-resize', 'ne-resize', 'nw-resize', 'se-resize', 'sw-resize', 'ew-resize', 'ns-resize', 'nesw-resize', 'nwse-resize', 'zoom-in', 'zoom-out']
 const containValues = ['none', 'strict', 'content', 'size', 'inline-size', 'layout', 'style', 'paint']
@@ -115,6 +115,10 @@ export const textTransforms: Rule<Theme>[] = [
   ['case-lower', { 'text-transform': 'lowercase' }],
   ['case-capital', { 'text-transform': 'capitalize' }],
   ['case-normal', { 'text-transform': 'none' }],
+  ['uppercase', { 'text-transform': 'uppercase' }],
+  ['lowercase', { 'text-transform': 'lowercase' }],
+  ['capitalize', { 'text-transform': 'capitalize' }],
+  ['normal-case', { 'text-transform': 'none' }],
   ...makeGlobalStaticRules('case', 'text-transform'),
 ]
 
@@ -138,4 +142,133 @@ export const fontSmoothings: Rule<Theme>[] = [
     '-webkit-font-smoothing': 'auto',
     '-moz-osx-font-smoothing': 'auto',
   }],
+]
+
+export const hyphens: Rule<Theme>[] = [
+  ...['manual', 'auto', 'none', ...globalKeywords].map(keyword => [`hyphens-${keyword}`, {
+    '-webkit-hyphens': keyword,
+    '-ms-hyphens': keyword,
+    'hyphens': keyword,
+  }] as Rule<Theme>),
+]
+
+export const writingModes: Rule<Theme>[] = [
+  ['write-vertical-right', { 'writing-mode': 'vertical-rl' }],
+  ['write-vertical-left', { 'writing-mode': 'vertical-lr' }],
+  ['write-normal', { 'writing-mode': 'horizontal-tb' }],
+  ...makeGlobalStaticRules('write', 'writing-mode'),
+]
+
+export const writingOrientations: Rule<Theme>[] = [
+  ['write-orient-mixed', { 'text-orientation': 'mixed' }],
+  ['write-orient-sideways', { 'text-orientation': 'sideways' }],
+  ['write-orient-upright', { 'text-orientation': 'upright' }],
+  ...makeGlobalStaticRules('write-orient', 'text-orientation'),
+]
+
+export const screenReadersAccess: Rule<Theme>[] = [
+  [
+    'sr-only',
+    {
+      'position': 'absolute',
+      'width': '1px',
+      'height': '1px',
+      'padding': '0',
+      'margin': '-1px',
+      'overflow': 'hidden',
+      'clip': 'rect(0,0,0,0)',
+      'white-space': 'nowrap',
+      'border-width': 0,
+    },
+  ],
+  [
+    'not-sr-only',
+    {
+      'position': 'static',
+      'width': 'auto',
+      'height': 'auto',
+      'padding': '0',
+      'margin': '0',
+      'overflow': 'visible',
+      'clip': 'auto',
+      'white-space': 'normal',
+    },
+  ],
+]
+
+export const isolations: Rule<Theme>[] = [
+  ['isolate', { isolation: 'isolate' }],
+  ['isolate-auto', { isolation: 'auto' }],
+  ['isolation-auto', { isolation: 'auto' }],
+]
+
+export const objectPositions: Rule<Theme>[] = [
+  // object fit
+  ['object-cover', { 'object-fit': 'cover' }],
+  ['object-contain', { 'object-fit': 'contain' }],
+  ['object-fill', { 'object-fit': 'fill' }],
+  ['object-scale-down', { 'object-fit': 'scale-down' }],
+  ['object-none', { 'object-fit': 'none' }],
+
+  // object position
+  [/^object-(.+)$/, ([, d]) => {
+    if (positionMap[d])
+      return { 'object-position': positionMap[d] }
+    if (h.bracketOfPosition(d) != null)
+      return { 'object-position': h.bracketOfPosition(d)!.split(' ').map(e => h.position.fraction.auto.px.cssvar(e) ?? e).join(' ') }
+  }, { autocomplete: `object-(${Object.keys(positionMap).join('|')})` }],
+
+]
+
+export const backgroundBlendModes: Rule<Theme>[] = [
+  ['bg-blend-multiply', { 'background-blend-mode': 'multiply' }],
+  ['bg-blend-screen', { 'background-blend-mode': 'screen' }],
+  ['bg-blend-overlay', { 'background-blend-mode': 'overlay' }],
+  ['bg-blend-darken', { 'background-blend-mode': 'darken' }],
+  ['bg-blend-lighten', { 'background-blend-mode': 'lighten' }],
+  ['bg-blend-color-dodge', { 'background-blend-mode': 'color-dodge' }],
+  ['bg-blend-color-burn', { 'background-blend-mode': 'color-burn' }],
+  ['bg-blend-hard-light', { 'background-blend-mode': 'hard-light' }],
+  ['bg-blend-soft-light', { 'background-blend-mode': 'soft-light' }],
+  ['bg-blend-difference', { 'background-blend-mode': 'difference' }],
+  ['bg-blend-exclusion', { 'background-blend-mode': 'exclusion' }],
+  ['bg-blend-hue', { 'background-blend-mode': 'hue' }],
+  ['bg-blend-saturation', { 'background-blend-mode': 'saturation' }],
+  ['bg-blend-color', { 'background-blend-mode': 'color' }],
+  ['bg-blend-luminosity', { 'background-blend-mode': 'luminosity' }],
+  ['bg-blend-normal', { 'background-blend-mode': 'normal' }],
+  ...makeGlobalStaticRules('bg-blend', 'background-blend'),
+]
+
+export const mixBlendModes: Rule<Theme>[] = [
+  ['mix-blend-multiply', { 'mix-blend-mode': 'multiply' }],
+  ['mix-blend-screen', { 'mix-blend-mode': 'screen' }],
+  ['mix-blend-overlay', { 'mix-blend-mode': 'overlay' }],
+  ['mix-blend-darken', { 'mix-blend-mode': 'darken' }],
+  ['mix-blend-lighten', { 'mix-blend-mode': 'lighten' }],
+  ['mix-blend-color-dodge', { 'mix-blend-mode': 'color-dodge' }],
+  ['mix-blend-color-burn', { 'mix-blend-mode': 'color-burn' }],
+  ['mix-blend-hard-light', { 'mix-blend-mode': 'hard-light' }],
+  ['mix-blend-soft-light', { 'mix-blend-mode': 'soft-light' }],
+  ['mix-blend-difference', { 'mix-blend-mode': 'difference' }],
+  ['mix-blend-exclusion', { 'mix-blend-mode': 'exclusion' }],
+  ['mix-blend-hue', { 'mix-blend-mode': 'hue' }],
+  ['mix-blend-saturation', { 'mix-blend-mode': 'saturation' }],
+  ['mix-blend-color', { 'mix-blend-mode': 'color' }],
+  ['mix-blend-luminosity', { 'mix-blend-mode': 'luminosity' }],
+  ['mix-blend-plus-lighter', { 'mix-blend-mode': 'plus-lighter' }],
+  ['mix-blend-normal', { 'mix-blend-mode': 'normal' }],
+  ...makeGlobalStaticRules('mix-blend'),
+]
+
+export const dynamicViewportHeight: Rule<Theme>[] = [
+  ['min-h-dvh', { 'min-height': '100dvh' }],
+  ['min-h-svh', { 'min-height': '100svh' }],
+  ['min-h-lvh', { 'min-height': '100lvh' }],
+  ['h-dvh', { height: '100dvh' }],
+  ['h-svh', { height: '100svh' }],
+  ['h-lvh', { height: '100lvh' }],
+  ['max-h-dvh', { 'max-height': '100dvh' }],
+  ['max-h-svh', { 'max-height': '100svh' }],
+  ['max-h-lvh', { 'max-height': '100lvh' }],
 ]
