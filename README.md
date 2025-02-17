@@ -31,8 +31,8 @@ This is a proof-of-concept repository, but it is also the direction I am working
     - [x] animation
     - [x] background
     - [x] behaviors
-    - [ ] columns
-    - [ ] container
+    - [x] columns
+    - [x] container
     - [ ] divide
     - [ ] filter
     - [ ] line-clamp

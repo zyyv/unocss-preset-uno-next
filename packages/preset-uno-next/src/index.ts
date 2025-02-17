@@ -3,6 +3,7 @@ import { definePreset, type Postprocessor, type PresetOptions } from '@unocss/co
 import { extractorArbitraryVariants } from '@unocss/extractor-arbitrary-variants'
 import { preflights } from './preflights'
 import { rules } from './rules/default'
+import { shortcuts } from './shortcuts'
 import { shorthands } from './shorthands'
 import { theme } from './theme'
 import { variants } from './variants/default'
@@ -79,6 +80,7 @@ export const presetUnoNext = definePreset<PresetUnoNextOptions, Theme>((options 
   return {
     name: '@unocss/preset-uno-next',
     rules,
+    shortcuts,
     theme,
     preflights: preflights(options),
     variants: variants(options),

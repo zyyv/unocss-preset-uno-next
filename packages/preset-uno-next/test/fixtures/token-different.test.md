@@ -720,6 +720,19 @@
 | `overscroll-revert-layer` | ✅ | <code>.overscroll-revert-layer{overscroll-behavior:revert-layer;}</code> | <code>.overscroll-revert-layer{overscroll-behavior:revert-layer;}</code> |
 | `scroll-auto` | ✅ | <code>.scroll-auto{scroll-behavior:auto;}</code> | <code>.scroll-auto{scroll-behavior:auto;}</code> |
 | `scroll-unset` | ✅ | <code>.scroll-unset{scroll-behavior:unset;}</code> | <code>.scroll-unset{scroll-behavior:unset;}</code> |
+| `columns-3` | ✅ | <code>.columns-3{columns:3;}</code> | <code>.columns-3{columns:3;}</code> |
+| `columns-5em` | ✅ | <code>.columns-5em{columns:5em;}</code> | <code>.columns-5em{columns:5em;}</code> |
+| `columns-auto` | ✅ | <code>.columns-auto{columns:auto;}</code> | <code>.columns-auto{columns:auto;}</code> |
+| `columns-[3_auto]` | ✅ | <code>.columns-\[3_auto\]{columns:3 auto;}</code> | <code>.columns-\[3_auto\]{columns:3 auto;}</code> |
+| `columns-[auto_13em]` | ✅ | <code>.columns-\[auto_13em\]{columns:auto 13em;}</code> | <code>.columns-\[auto_13em\]{columns:auto 13em;}</code> |
+| `columns-[auto_auto]` | ✅ | <code>.columns-\[auto_auto\]{columns:auto auto;}</code> | <code>.columns-\[auto_auto\]{columns:auto auto;}</code> |
+| `columns-unset` | ✅ | <code>.columns-unset{columns:unset;}</code> | <code>.columns-unset{columns:unset;}</code> |
+| `break-before-avoid-page` | ✅ | <code>.break-before-avoid-page{break-before:avoid-page;}</code> | <code>.break-before-avoid-page{break-before:avoid-page;}</code> |
+| `break-inside-avoid-column` | ✅ | <code>.break-inside-avoid-column{break-inside:avoid-column;}</code> | <code>.break-inside-avoid-column{break-inside:avoid-column;}</code> |
+| `break-after-column` | ✅ | <code>.break-after-column{break-after:column;}</code> | <code>.break-after-column{break-after:column;}</code> |
+| `break-before-initial` | ✅ | <code>.break-before-initial{break-before:initial;}</code> | <code>.break-before-initial{break-before:initial;}</code> |
+| `break-inside-revert` | ✅ | <code>.break-inside-revert{break-inside:revert;}</code> | <code>.break-inside-revert{break-inside:revert;}</code> |
+| `break-after-unset` | ✅ | <code>.break-after-unset{break-after:unset;}</code> | <code>.break-after-unset{break-after:unset;}</code> |
 | `divide` | ✅ | ❓ | ❓ |
 | `backdrop-opacity` | ✅ | ❓ | ❓ |
 | `backdrop-saturate` | ✅ | ❓ | ❓ |
@@ -1328,19 +1341,6 @@
 | `accent-red` | ❌ | <code>.accent-red{--un-accent-opacity:100%;accent-color:color-mix(in oklch, var(--color-red-400) var(--un-accent-opacity), transparent);}</code> | <code>.accent-red{--un-accent-opacity:1;accent-color:rgb(248 113 113 / var(--un-accent-opacity));}</code> |
 | `caret-op-90` | ❌ | <code>.caret-op-90{--un-caret-opacity:90%;}</code> | <code>.caret-op-90{--un-caret-opacity:0.9;}</code> |
 | `caret-red` | ❌ | <code>.caret-red{--un-caret-opacity:100%;caret-color:color-mix(in oklch, var(--color-red-400) var(--un-caret-opacity), transparent);}</code> | <code>.caret-red{--un-caret-opacity:1;caret-color:rgb(248 113 113 / var(--un-caret-opacity));}</code> |
-| `columns-3` | ❌ | ❓ | <code>.columns-3{columns:3;}</code> |
-| `columns-5em` | ❌ | ❓ | <code>.columns-5em{columns:5em;}</code> |
-| `columns-auto` | ❌ | ❓ | <code>.columns-auto{columns:auto;}</code> |
-| `columns-[3_auto]` | ❌ | ❓ | <code>.columns-\[3_auto\]{columns:3 auto;}</code> |
-| `columns-[auto_13em]` | ❌ | ❓ | <code>.columns-\[auto_13em\]{columns:auto 13em;}</code> |
-| `columns-[auto_auto]` | ❌ | ❓ | <code>.columns-\[auto_auto\]{columns:auto auto;}</code> |
-| `columns-unset` | ❌ | ❓ | <code>.columns-unset{columns:unset;}</code> |
-| `break-before-avoid-page` | ❌ | ❓ | <code>.break-before-avoid-page{break-before:avoid-page;}</code> |
-| `break-inside-avoid-column` | ❌ | ❓ | <code>.break-inside-avoid-column{break-inside:avoid-column;}</code> |
-| `break-after-column` | ❌ | ❓ | <code>.break-after-column{break-after:column;}</code> |
-| `break-before-initial` | ❌ | ❓ | <code>.break-before-initial{break-before:initial;}</code> |
-| `break-inside-revert` | ❌ | ❓ | <code>.break-inside-revert{break-inside:revert;}</code> |
-| `break-after-unset` | ❌ | ❓ | <code>.break-after-unset{break-after:unset;}</code> |
 | `divide-y-4` | ❌ | ❓ | <code>.divide-y-4>:not([hidden])~:not([hidden]){--un-divide-y-reverse:0;border-top-width:calc(4px * calc(1 - var(--un-divide-y-reverse)));border-bottom-width:calc(4px * var(--un-divide-y-reverse));}</code> |
 | `divide-x-4` | ❌ | ❓ | <code>.divide-x-4>:not([hidden])~:not([hidden]){--un-divide-x-reverse:0;border-left-width:calc(4px * calc(1 - var(--un-divide-x-reverse)));border-right-width:calc(4px * var(--un-divide-x-reverse));}</code> |
 | `divide-x-reverse` | ❌ | ❓ | <code>.divide-x-reverse>:not([hidden])~:not([hidden]){--un-divide-x-reverse:1;}</code> |

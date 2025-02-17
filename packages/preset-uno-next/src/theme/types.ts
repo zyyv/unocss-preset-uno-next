@@ -38,6 +38,13 @@ export interface Theme {
   animation?: ThemeAnimation
   duration?: Record<string, string>
 
+  // container
+  containers?: {
+    center?: boolean
+    padding?: string | Record<string, string>
+    maxWidth?: Record<string, string>
+  }
+
   // for variant
   aria?: Record<string, string>
   data?: Record<string, string>

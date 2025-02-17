@@ -6,7 +6,8 @@ import { backgroundStyles } from './background'
 import { accents, appearance, carets, imageRenderings, listStyle, outline, overscrolls, scrollBehaviors, willChange } from './behaviors'
 import { borders } from './border'
 import { bgColors, colorScheme, opacity } from './color'
-import { containerParent } from './container'
+import { columns } from './columns'
+import { container, containerParent } from './container'
 import { textDecorations } from './decoration'
 import { flex } from './flex'
 import { gaps } from './gap'
@@ -50,6 +51,7 @@ export const rules: Rule<Theme>[] = [
   bgColors,
   opacity,
   colorScheme,
+  container,
   containerParent,
   textDecorations,
   flex,
@@ -102,4 +104,6 @@ export const rules: Rule<Theme>[] = [
   backgroundBlendModes,
   mixBlendModes,
   dynamicViewportHeight,
+
+  columns,
 ].flat()
