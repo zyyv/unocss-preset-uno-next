@@ -2,6 +2,15 @@ export interface Colors {
   [key: string]: Colors | string
 }
 
+export interface ThemeAnimation {
+  keyframes?: Record<string, string>
+  durations?: Record<string, string>
+  timingFns?: Record<string, string>
+  properties?: Record<string, object>
+  counts?: Record<string, string | number>
+  category?: Record<string, string>
+}
+
 export interface Theme {
   font?: Record<string, string>
   colors?: Colors
@@ -25,6 +34,9 @@ export interface Theme {
   textStrokeWidth?: Record<string, string>
   property?: Record<string, string>
   defaults?: Record<string, Record<string, string>>
+
+  animation?: ThemeAnimation
+  duration?: Record<string, string>
 
   // for variant
   aria?: Record<string, string>
