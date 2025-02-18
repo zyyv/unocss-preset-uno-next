@@ -1,6 +1,7 @@
 import type { Theme } from './types'
 
 export const blur = {
+  'DEFAULT': '8px',
   'xs': '4px',
   'sm': '8px',
   'md': '12px',

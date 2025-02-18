@@ -9,12 +9,16 @@ import { bgColors, colorScheme, opacity } from './color'
 import { columns } from './columns'
 import { container, containerParent } from './container'
 import { textDecorations } from './decoration'
+import { filters } from './filters'
 import { flex } from './flex'
 import { gaps } from './gap'
 import { grids } from './grid'
 import { overflows } from './layout'
+import { lineClamps } from './line-clamp'
+import { placeholders } from './placeholder'
 import { alignments, boxSizing, flexGridJustifiesAlignments, floats, insets, justifies, orders, placements, positions, zIndexes } from './position'
 import { rings } from './ring'
+import { scrolls } from './scrolls'
 import { boxShadows } from './shadow'
 import { aspectRatio, sizes } from './size'
 import { margins, paddings } from './spacing'
@@ -106,4 +110,8 @@ export const rules: Rule<Theme>[] = [
   dynamicViewportHeight,
 
   columns,
+  filters,
+  lineClamps,
+  placeholders,
+  scrolls,
 ].flat()

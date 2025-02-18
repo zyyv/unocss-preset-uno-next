@@ -13,7 +13,7 @@ export const SpecialColorKey = {
 }
 
 export function numberResolver(size: string, defaultValue?: string | number): number | undefined {
-  const v = h.fraction.number(size) ?? defaultValue
+  const v = h.number(size) ?? defaultValue
 
   if (v != null) {
     let num = Number(v)
@@ -50,16 +50,16 @@ export function directionSize(propertyPrefix: string): DynamicMatcher<Theme> {
   return (([_, direction, size]: string[]): CSSEntries | undefined => {
     let v: string | number | undefined
 
-    v = h.bracket.cssvar.global.auto.fraction.rem(size)
-
-    if (v != null) {
-      return directionMap[direction].map(i => [`${propertyPrefix}${i}`, v])
-    }
-
     v = numberResolver(size, spaceMap[size as keyof typeof spaceMap])
 
     if (v != null) {
       return directionMap[direction].map(i => [`${propertyPrefix}${i}`, `calc(var(--spacing) * ${v})`])
+    }
+
+    v = h.bracket.cssvar.global.auto.fraction.rem(size)
+
+    if (v != null) {
+      return directionMap[direction].map(i => [`${propertyPrefix}${i}`, v])
     }
 
     if (size?.startsWith('-')) {

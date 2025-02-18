@@ -34,10 +34,10 @@ This is a proof-of-concept repository, but it is also the direction I am working
     - [x] columns
     - [x] container
     - [ ] divide
-    - [ ] filter
-    - [ ] line-clamp
-    - [ ] placeholder
-    - [ ] scrolls
+    - [x] filter
+    - [x] line-clamp
+    - [x] placeholder
+    - [x] scrolls
     - [ ] spacing
     - [x] static
     - [ ] table
