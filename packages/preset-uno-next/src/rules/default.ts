@@ -24,10 +24,13 @@ import { aspectRatio, sizes } from './size'
 import { margins, paddings } from './spacing'
 import { appearances, backgroundBlendModes, breaks, contains, contents, contentVisibility, cursors, displays, dynamicViewportHeight, fontSmoothings, fontStyles, hyphens, isolations, mixBlendModes, objectPositions, pointerEvents, resizes, screenReadersAccess, textOverflows, textTransforms, textWraps, userSelects, whitespaces, writingModes, writingOrientations } from './static'
 import { svgUtilities } from './svg'
+import { tables } from './table'
+import { touchActions } from './touch-actions'
 import { transforms } from './transform'
 import { transitions } from './transition'
-import { fonts, tabSizes, textIndents, textShadows, textStrokes } from './typography'
+import { fonts, fontVariantNumeric, tabSizes, textIndents, textShadows, textStrokes } from './typography'
 import { cssProperty, cssVariables } from './variables'
+import { viewTransition } from './view-transition'
 
 export const rules: Rule<Theme>[] = [
   fonts,
@@ -114,4 +117,8 @@ export const rules: Rule<Theme>[] = [
   lineClamps,
   placeholders,
   scrolls,
+  tables,
+  touchActions,
+  fontVariantNumeric,
+  viewTransition,
 ].flat()

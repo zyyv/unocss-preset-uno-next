@@ -742,13 +742,44 @@
 | `object-center-top` | ✅ | <code>.object-center-top{object-position:center top;}</code> | <code>.object-center-top{object-position:center top;}</code> |
 | `object-center-bottom` | ✅ | <code>.object-center-bottom{object-position:center bottom;}</code> | <code>.object-center-bottom{object-position:center bottom;}</code> |
 | `object-[center_25%]` | ✅ | <code>.object-\[center_25\%\]{object-position:center 25%;}</code> | <code>.object-\[center_25\%\]{object-position:center 25%;}</code> |
+| `border-collapse` | ✅ | <code>.border-collapse{border-collapse:collapse;}</code> | <code>.border-collapse{border-collapse:collapse;}</code> |
+| `border-separate` | ✅ | <code>.border-separate{border-collapse:separate;}</code> | <code>.border-separate{border-collapse:separate;}</code> |
+| `border-spacing-[3px]` | ✅ | <code>.border-spacing-\[3px\]{--un-border-spacing-x:3px;--un-border-spacing-y:3px;border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> | <code>.border-spacing-\[3px\]{--un-border-spacing-x:3px;--un-border-spacing-y:3px;border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
+| `border-spacing-$var` | ✅ | <code>.border-spacing-\$var{--un-border-spacing-x:var(--var);--un-border-spacing-y:var(--var);border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> | <code>.border-spacing-\$var{--un-border-spacing-x:var(--var);--un-border-spacing-y:var(--var);border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
+| `border-spacing-x-[3px]` | ✅ | <code>.border-spacing-x-\[3px\]{--un-border-spacing-x:3px;border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> | <code>.border-spacing-x-\[3px\]{--un-border-spacing-x:3px;border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
+| `border-spacing-y-$var` | ✅ | <code>.border-spacing-y-\$var{--un-border-spacing-y:var(--var);border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> | <code>.border-spacing-y-\$var{--un-border-spacing-y:var(--var);border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
+| `caption-top` | ✅ | <code>.caption-top{caption-side:top;}</code> | <code>.caption-top{caption-side:top;}</code> |
+| `caption-bottom` | ✅ | <code>.caption-bottom{caption-side:bottom;}</code> | <code>.caption-bottom{caption-side:bottom;}</code> |
+| `inline-table` | ✅ | <code>.inline-table{display:inline-table;}</code> | <code>.inline-table{display:inline-table;}</code> |
+| `table` | ✅ | <code>.table{display:table;}</code> | <code>.table{display:table;}</code> |
+| `table-auto` | ✅ | <code>.table-auto{table-layout:auto;}</code> | <code>.table-auto{table-layout:auto;}</code> |
+| `table-caption` | ✅ | <code>.table-caption{display:table-caption;}</code> | <code>.table-caption{display:table-caption;}</code> |
+| `table-empty-cells-visible` | ✅ | <code>.table-empty-cells-visible{empty-cells:show;}</code> | <code>.table-empty-cells-visible{empty-cells:show;}</code> |
+| `table-empty-cells-hidden` | ✅ | <code>.table-empty-cells-hidden{empty-cells:hide;}</code> | <code>.table-empty-cells-hidden{empty-cells:hide;}</code> |
+| `table-footer-group` | ✅ | <code>.table-footer-group{display:table-footer-group;}</code> | <code>.table-footer-group{display:table-footer-group;}</code> |
+| `table-row-group` | ✅ | <code>.table-row-group{display:table-row-group;}</code> | <code>.table-row-group{display:table-row-group;}</code> |
+| `touch-pan-left` | ✅ | <code>.touch-pan-left{--un-pan-x:pan-left;touch-action:var(--un-pan-x) var(--un-pan-y) var(--un-pinch-zoom);}</code> | <code>.touch-pan-left{--un-pan-x:pan-left;touch-action:var(--un-pan-x) var(--un-pan-y) var(--un-pinch-zoom);}</code> |
+| `touch-pan-y` | ✅ | <code>.touch-pan-y{--un-pan-y:pan-y;touch-action:var(--un-pan-x) var(--un-pan-y) var(--un-pinch-zoom);}</code> | <code>.touch-pan-y{--un-pan-y:pan-y;touch-action:var(--un-pan-x) var(--un-pan-y) var(--un-pinch-zoom);}</code> |
+| `touch-pinch-zoom` | ✅ | <code>.touch-pinch-zoom{--un-pinch-zoom:pinch-zoom;touch-action:var(--un-pan-x) var(--un-pan-y) var(--un-pinch-zoom);}</code> | <code>.touch-pinch-zoom{--un-pinch-zoom:pinch-zoom;touch-action:var(--un-pan-x) var(--un-pan-y) var(--un-pinch-zoom);}</code> |
+| `touch-manipulation` | ✅ | <code>.touch-manipulation{touch-action:manipulation;}</code> | <code>.touch-manipulation{touch-action:manipulation;}</code> |
+| `touch-none` | ✅ | <code>.touch-none{touch-action:none;}</code> | <code>.touch-none{touch-action:none;}</code> |
+| `touch-initial` | ✅ | <code>.touch-initial{touch-action:initial;}</code> | <code>.touch-initial{touch-action:initial;}</code> |
+| `lining-nums` | ✅ | <code>.lining-nums{--un-numeric-figure:lining-nums;font-variant-numeric:var(--un-ordinal) var(--un-slashed-zero) var(--un-numeric-figure) var(--un-numeric-spacing) var(--un-numeric-fraction);}</code> | <code>.lining-nums{--un-numeric-figure:lining-nums;font-variant-numeric:var(--un-ordinal) var(--un-slashed-zero) var(--un-numeric-figure) var(--un-numeric-spacing) var(--un-numeric-fraction);}</code> |
+| `normal-nums` | ✅ | <code>.normal-nums{font-variant-numeric:normal;}</code> | <code>.normal-nums{font-variant-numeric:normal;}</code> |
+| `tabular-nums` | ✅ | <code>.tabular-nums{--un-numeric-spacing:tabular-nums;font-variant-numeric:var(--un-ordinal) var(--un-slashed-zero) var(--un-numeric-figure) var(--un-numeric-spacing) var(--un-numeric-fraction);}</code> | <code>.tabular-nums{--un-numeric-spacing:tabular-nums;font-variant-numeric:var(--un-ordinal) var(--un-slashed-zero) var(--un-numeric-figure) var(--un-numeric-spacing) var(--un-numeric-fraction);}</code> |
+| `bg-blend-$data` | ✅ | <code>.bg-blend-\$data{background-blend-mode:var(--data);}</code> | <code>.bg-blend-\$data{background-blend-mode:var(--data);}</code> |
 | `backdrop-opacity-$variable` | ✅ | <code>.backdrop-opacity-\$variable{--un-backdrop-opacity:opacity(var(--variable));-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> | <code>.backdrop-opacity-\$variable{--un-backdrop-opacity:opacity(var(--variable));-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
+| `bg-image-$variable` | ✅ | <code>.bg-image-\$variable{background-image:var(--variable);}</code> | <code>.bg-image-\$variable{background-image:var(--variable);}</code> |
+| `object-position-$variable` | ✅ | <code>.object-position-\$variable{object-position:var(--variable);}</code> | <code>.object-position-\$variable{object-position:var(--variable);}</code> |
+| `object-$fit` | ✅ | <code>.object-\$fit{object-fit:var(--fit);}</code> | <code>.object-\$fit{object-fit:var(--fit);}</code> |
 | `!animate-ping` | ✅ | <code>@keyframes ping{0%{transform:scale(1);opacity:1}75%,100%{transform:scale(2);opacity:0}}<br>.\!animate-ping{animation:ping 1s cubic-bezier(0,0,.2,1) infinite !important;}</code> | <code>@keyframes ping{0%{transform:scale(1);opacity:1}75%,100%{transform:scale(2);opacity:0}}<br>.\!animate-ping{animation:ping 1s cubic-bezier(0,0,.2,1) infinite !important;}</code> |
 | `-backdrop-hue-rotate-90` | ✅ | <code>.-backdrop-hue-rotate-90{--un-backdrop-hue-rotate:hue-rotate(-90deg);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> | <code>.-backdrop-hue-rotate-90{--un-backdrop-hue-rotate:hue-rotate(-90deg);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}</code> |
 | `hover:animate-bounce` | ✅ | <code>@keyframes bounce{0%, 100% {transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)} 50% {transform:translateY(0);animation-timing-function:cubic-bezier(0,0,0.2,1)}}<br>.hover\:animate-bounce:hover{animation:bounce 1s linear infinite;}</code> | <code>@keyframes bounce{0%, 100% {transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)} 50% {transform:translateY(0);animation-timing-function:cubic-bezier(0,0,0.2,1)}}<br>.hover\:animate-bounce:hover{animation:bounce 1s linear infinite;}</code> |
 | `-scroll-mb-px` | ✅ | <code>.-scroll-mb-px{scroll-margin-bottom:-1px;}</code> | <code>.-scroll-mb-px{scroll-margin-bottom:-1px;}</code> |
 | `-scroll-p-px` | ✅ | <code>.-scroll-p-px{scroll-padding:-1px;}</code> | <code>.-scroll-p-px{scroll-padding:-1px;}</code> |
 | `data-dropdown:ring-green` | ✅ | ❓ | ❓ |
+| `view-transition-foo` | ✅ | <code>.view-transition-foo{view-transition-name:foo;}</code> | <code>.view-transition-foo{view-transition-name:foo;}</code> |
+| `view-transition-none` | ✅ | <code>.view-transition-none{view-transition-name:none;}</code> | <code>.view-transition-none{view-transition-name:none;}</code> |
 | `h-svh` | ✅ | <code>.h-svh{height:100svh;}</code> | <code>.h-svh{height:100svh;}</code> |
 | `h-dvh` | ✅ | <code>.h-dvh{height:100dvh;}</code> | <code>.h-dvh{height:100dvh;}</code> |
 | `h-lvh` | ✅ | <code>.h-lvh{height:100lvh;}</code> | <code>.h-lvh{height:100lvh;}</code> |
@@ -1450,34 +1481,8 @@
 | `space-block-none` | ❌ | ❓ | <code>.space-block-none{--un-space-block-reverse:0;margin-block-start:calc(0px * calc(1 - var(--un-space-block-reverse)));margin-block-end:calc(0px * calc(1 - var(--un-space-block-reverse)));}</code> |
 | `space-inline-reverse` | ❌ | ❓ | <code>.space-inline-reverse{--un-space-inline-reverse:1;}</code> |
 | `space-inline-$space` | ❌ | ❓ | <code>.space-inline-\$space{--un-space-inline-reverse:0;margin-inline-start:calc(var(--space) * calc(1 - var(--un-space-inline-reverse)));margin-inline-end:calc(var(--space) * calc(1 - var(--un-space-inline-reverse)));}</code> |
-| `border-collapse` | ❌ | ❓ | <code>.border-collapse{border-collapse:collapse;}</code> |
-| `border-separate` | ❌ | ❓ | <code>.border-separate{border-collapse:separate;}</code> |
-| `border-spacing-0` | ❌ | ❓ | <code>.border-spacing-0{--un-border-spacing-x:0;--un-border-spacing-y:0;border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
+| `border-spacing-0` | ❌ | <code>.border-spacing-0{--un-border-spacing-x:calc(var(--spacing) * 0);--un-border-spacing-y:calc(var(--spacing) * 0);border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> | <code>.border-spacing-0{--un-border-spacing-x:0;--un-border-spacing-y:0;border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
 | `border-spacing-none` | ❌ | ❓ | <code>.border-spacing-none{--un-border-spacing-x:0;--un-border-spacing-y:0;border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
-| `border-spacing-[3px]` | ❌ | ❓ | <code>.border-spacing-\[3px\]{--un-border-spacing-x:3px;--un-border-spacing-y:3px;border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
-| `border-spacing-$var` | ❌ | ❓ | <code>.border-spacing-\$var{--un-border-spacing-x:var(--var);--un-border-spacing-y:var(--var);border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
-| `border-spacing-x-[3px]` | ❌ | ❓ | <code>.border-spacing-x-\[3px\]{--un-border-spacing-x:3px;border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
-| `border-spacing-y-$var` | ❌ | ❓ | <code>.border-spacing-y-\$var{--un-border-spacing-y:var(--var);border-spacing:var(--un-border-spacing-x) var(--un-border-spacing-y);}</code> |
-| `caption-top` | ❌ | ❓ | <code>.caption-top{caption-side:top;}</code> |
-| `caption-bottom` | ❌ | ❓ | <code>.caption-bottom{caption-side:bottom;}</code> |
-| `inline-table` | ❌ | ❓ | <code>.inline-table{display:inline-table;}</code> |
-| `table` | ❌ | ❓ | <code>.table{display:table;}</code> |
-| `table-auto` | ❌ | ❓ | <code>.table-auto{table-layout:auto;}</code> |
-| `table-caption` | ❌ | ❓ | <code>.table-caption{display:table-caption;}</code> |
-| `table-empty-cells-visible` | ❌ | ❓ | <code>.table-empty-cells-visible{empty-cells:show;}</code> |
-| `table-empty-cells-hidden` | ❌ | ❓ | <code>.table-empty-cells-hidden{empty-cells:hide;}</code> |
-| `table-footer-group` | ❌ | ❓ | <code>.table-footer-group{display:table-footer-group;}</code> |
-| `table-row-group` | ❌ | ❓ | <code>.table-row-group{display:table-row-group;}</code> |
-| `touch-pan-left` | ❌ | ❓ | <code>.touch-pan-left{--un-pan-x:pan-left;touch-action:var(--un-pan-x) var(--un-pan-y) var(--un-pinch-zoom);}</code> |
-| `touch-pan-y` | ❌ | ❓ | <code>.touch-pan-y{--un-pan-y:pan-y;touch-action:var(--un-pan-x) var(--un-pan-y) var(--un-pinch-zoom);}</code> |
-| `touch-pinch-zoom` | ❌ | ❓ | <code>.touch-pinch-zoom{--un-pinch-zoom:pinch-zoom;touch-action:var(--un-pan-x) var(--un-pan-y) var(--un-pinch-zoom);}</code> |
-| `touch-manipulation` | ❌ | ❓ | <code>.touch-manipulation{touch-action:manipulation;}</code> |
-| `touch-none` | ❌ | ❓ | <code>.touch-none{touch-action:none;}</code> |
-| `touch-initial` | ❌ | ❓ | <code>.touch-initial{touch-action:initial;}</code> |
-| `lining-nums` | ❌ | ❓ | <code>.lining-nums{--un-numeric-figure:lining-nums;font-variant-numeric:var(--un-ordinal) var(--un-slashed-zero) var(--un-numeric-figure) var(--un-numeric-spacing) var(--un-numeric-fraction);}</code> |
-| `normal-nums` | ❌ | ❓ | <code>.normal-nums{font-variant-numeric:normal;}</code> |
-| `tabular-nums` | ❌ | ❓ | <code>.tabular-nums{--un-numeric-spacing:tabular-nums;font-variant-numeric:var(--un-ordinal) var(--un-slashed-zero) var(--un-numeric-figure) var(--un-numeric-spacing) var(--un-numeric-fraction);}</code> |
-| `bg-blend-$data` | ❌ | ❓ | <code>.bg-blend-\$data{background-blend-mode:var(--data);}</code> |
 | `divide-$variable` | ❌ | ❓ | <code>.divide-\$variable>:not([hidden])~:not([hidden]){border-color:var(--variable);}</code> |
 | `divide-x-$variable` | ❌ | ❓ | <code>.divide-x-\$variable>:not([hidden])~:not([hidden]){--un-divide-x-reverse:0;border-left-width:calc(var(--variable) * calc(1 - var(--un-divide-x-reverse)));border-right-width:calc(var(--variable) * var(--un-divide-x-reverse));}</code> |
 | `divide-inline-$variable` | ❌ | ❓ | <code>.divide-inline-\$variable>:not([hidden])~:not([hidden]){--un-divide-inline-reverse:0;border-inline-start-width:calc(var(--variable) * calc(1 - var(--un-divide-inline-reverse)));border-inline-end-width:calc(var(--variable) * calc(1 - var(--un-divide-inline-reverse)));}</code> |
@@ -1490,9 +1495,6 @@
 | `invert-$variable` | ❌ | <code>.invert-\$variable{--un-invert:invert(var(--variable));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia) var(--un-drop-shadow);}</code> | <code>.invert-\$variable{--un-invert:invert(var(--variable));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
 | `saturate-$variable` | ❌ | <code>.saturate-\$variable{--un-saturate:saturate(var(--variable));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia) var(--un-drop-shadow);}</code> | <code>.saturate-\$variable{--un-saturate:saturate(var(--variable));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
 | `sepia-$variable` | ❌ | <code>.sepia-\$variable{--un-sepia:sepia(var(--variable));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia) var(--un-drop-shadow);}</code> | <code>.sepia-\$variable{--un-sepia:sepia(var(--variable));filter:var(--un-blur) var(--un-brightness) var(--un-contrast) var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate) var(--un-invert) var(--un-saturate) var(--un-sepia);}</code> |
-| `bg-image-$variable` | ❌ | ❓ | <code>.bg-image-\$variable{background-image:var(--variable);}</code> |
-| `object-position-$variable` | ❌ | ❓ | <code>.object-position-\$variable{object-position:var(--variable);}</code> |
-| `object-$fit` | ❌ | ❓ | <code>.object-\$fit{object-fit:var(--fit);}</code> |
 | `.dark:text-xl` | ❌ | ❓ | <code>.dark .\.dark\:text-xl{font-size:1.25rem;line-height:1.75rem;}</code> |
 | `@dark:text-xl` | ❌ | ❓ | <code>@media (prefers-color-scheme: dark){<br>.\@dark\:text-xl{font-size:1.25rem;line-height:1.75rem;}<br>}</code> |
 | `svg:fill-red` | ❌ | ❓ | <code>.svg\:fill-red svg{--un-fill-opacity:1;fill:rgb(248 113 113 / var(--un-fill-opacity));}</code> |
@@ -1513,5 +1515,3 @@
 | `@hover:[[open]_&]:text-blue` | ❌ | ❓ | <code>@media (hover: hover) and (pointer: fine){<br>[open] .\@hover\:\[\[open\]_\&\]\:text-blue:hover{--un-text-opacity:1;color:rgb(96 165 250 / var(--un-text-opacity));}<br>}</code> |
 | `@dark:contrast-more:p-10` | ❌ | ❓ | <code>@media (prefers-contrast: more){@media (prefers-color-scheme: dark){<br>.\@dark\:contrast-more\:p-10{padding:2.5rem;}<br>}}</code> |
 | `aria-hidden:hidden` | ❌ | ❓ | <code>.aria-hidden\:hidden[aria-hidden="true"]{display:none;}</code> |
-| `view-transition-foo` | ❌ | ❓ | <code>.view-transition-foo{view-transition-name:foo;}</code> |
-| `view-transition-none` | ❌ | ❓ | <code>.view-transition-none{view-transition-name:none;}</code> |

@@ -40,11 +40,11 @@ This is a proof-of-concept repository, but it is also the direction I am working
     - [x] scrolls
     - [ ] spacing
     - [x] static
-    - [ ] table
-    - [ ] touch-actions
-    - [ ] typography
-    - [ ] variables
-    - [ ] view-transition
+    - [x] table
+    - [x] touch-actions
+    - [x] typography
+    - [x] variables
+    - [x] view-transition
 - [x] Theme
   - [x] animate
   - [x] colors
@@ -70,6 +70,9 @@ This is a proof-of-concept repository, but it is also the direction I am working
   - [x] pseudo
   - [x] startingstyle
   - [x] supports
+  - PresetWind3
+    - [ ] xxx
+    - [ ] etc.
 
 - [x] Supplementary test case comparison - [See the result](./packages/preset-uno-next/test/fixtures/token-different.test.md)
 - [ ] Fix the difference

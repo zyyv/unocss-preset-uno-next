@@ -3,6 +3,7 @@ import type { Theme } from '../theme'
 import { colorableShadows, colorResolver, getStringComponent, globalKeywords, h, isCSSMathFn, numberResolver } from '../utils'
 import { passThemeKey } from '../utils/constant'
 import { bracketTypeRe } from '../utils/handlers/regex'
+import { varEmpty } from './static'
 
 export const fonts: Rule<Theme>[] = [
   // text
@@ -176,6 +177,30 @@ export const textShadows: Rule<Theme>[] = [
   // colors
   [/^text-shadow-color-(.+)$/, colorResolver('--un-text-shadow-color', 'text-shadow'), { autocomplete: 'text-shadow-color-$colors' }],
   [/^text-shadow-color-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-text-shadow-opacity': h.bracket.percent.cssvar(opacity) }), { autocomplete: 'text-shadow-color-(op|opacity)-<percent>' }],
+]
+
+export const fontVariantNumericBase = {
+  '--un-ordinal': varEmpty,
+  '--un-slashed-zero': varEmpty,
+  '--un-numeric-figure': varEmpty,
+  '--un-numeric-spacing': varEmpty,
+  '--un-numeric-fraction': varEmpty,
+}
+const custom = { preflightKeys: Object.keys(fontVariantNumericBase) }
+const baseFontVariantNumeric = {
+  'font-variant-numeric': 'var(--un-ordinal) var(--un-slashed-zero) var(--un-numeric-figure) var(--un-numeric-spacing) var(--un-numeric-fraction)',
+}
+
+export const fontVariantNumeric: Rule<Theme>[] = [
+  ['ordinal', { '--un-ordinal': 'ordinal', ...baseFontVariantNumeric }, { custom }],
+  ['slashed-zero', { '--un-slashed-zero': 'slashed-zero', ...baseFontVariantNumeric }, { custom }],
+  ['lining-nums', { '--un-numeric-figure': 'lining-nums', ...baseFontVariantNumeric }, { custom }],
+  ['oldstyle-nums', { '--un-numeric-figure': 'oldstyle-nums', ...baseFontVariantNumeric }, { custom }],
+  ['proportional-nums', { '--un-numeric-spacing': 'proportional-nums', ...baseFontVariantNumeric }, { custom }],
+  ['tabular-nums', { '--un-numeric-spacing': 'tabular-nums', ...baseFontVariantNumeric }, { custom }],
+  ['diagonal-fractions', { '--un-numeric-fraction': 'diagonal-fractions', ...baseFontVariantNumeric }, { custom }],
+  ['stacked-fractions', { '--un-numeric-fraction': 'stacked-fractions', ...baseFontVariantNumeric }, { custom }],
+  ['normal-nums', { 'font-variant-numeric': 'normal' }],
 ]
 
 function handleText([, s = 'base']: string[], { theme }: RuleContext<Theme>): CSSObject | undefined {

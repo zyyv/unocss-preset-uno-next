@@ -87,15 +87,11 @@ it('test case', async () => {
     presets: [presetUnoNext()],
   })
 
-  const cases = ['scroll-m-7', 'm-7px', 'm-9', 'm-1/2']
+  const cases = [
+    'border-spacing',
+  ]
 
   const { css } = await unoNext.generate(cases, { preflights: false })
 
-  expect(css).toMatchInlineSnapshot(`
-    "/* layer: default */
-    .m-1\\/2{margin:50%;}
-    .m-7px{margin:7px;}
-    .m-9{margin:calc(var(--spacing) * 9);}
-    .scroll-m-7{scroll-margin:calc(var(--spacing) * 7);}"
-  `)
+  expect(css).toMatchInlineSnapshot(`""`)
 })
