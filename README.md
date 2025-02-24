@@ -79,10 +79,84 @@ This is a proof-of-concept repository, but it is also the direction I am working
 
 ## Differences
 
-- New preflights for UnoCSS theme
-- Remove `zIndex` theme key
-- Remove theme color short key
-- etc.
+We have aligned with Tailwind4 in many rules, but we have made some adjustments in some rules to better fit the design philosophy of UnoCSS. Here are some of the adjusted rules:
+
+- Align with Tailwind4 rules & variants
+- In some rules, we removed the `xxx-none` rule
+- Remove theme color short key, don't support `bg-red-4`, `text-blue-4` etc
+- Different from Tailwind4, we retain support for color opacity. For example: `bg-op-50`, `text-op-50` etc
+- Output theme to css variables as preflight
+- [ ] Support css nested output
+- Rebuild the theme key to make it clearer
+
+<details>
+<summary>Click to see the differences</summary>
+
+### Removed Properties
+- `width`
+- `height`
+- `maxWidth`
+- `maxHeight`
+- `minWidth`
+- `minHeight`
+- `inlineSize`
+- `blockSize`
+- `maxInlineSize`
+- `maxBlockSize`
+- `minInlineSize`
+- `minBlockSize`
+- `borderColor`
+- `backgroundColor`
+- `textColor`
+- `shadowColor`
+- `accentColor`
+- `fontFamily`
+- `fontSize`
+- `lineHeight`
+- `letterSpacing`
+- `wordSpacing`
+- `boxShadow`
+- `textIndent`
+- `textStrokeWidth`
+- `ringWidth`
+- `lineWidth`
+- `zIndex`
+- `blur`
+- `dropShadow`
+- `easing`
+- `transitionProperty`
+- `media`
+- `supports`
+- `containers`
+- `gridAutoColumn`
+- `gridAutoRow`
+- `gridColumn`
+- `gridRow`
+- `gridTemplateColumn`
+- `gridTemplateRow`
+- `preflightRoot`
+- `preflightBase`
+### Renamed Properties
+`breakpoints` to `breakpoint`
+`verticalBreakpoints` to `verticalBreakpoint`
+`borderRadius` to `radius`
+`boxShadow` to `shadow`
+`easing` to `ease`
+`animation` to `animate`
+`blur` to `blur`
+`transitionProperty` to `property`
+### Restructured Properties
+`text` now includes `fontSize`, `lineHeight`, and `letterSpacing` as nested properties.
+`container` is now a nested object under `containers`.
+### Added Properties
+`font`
+`tracking`
+`leading`
+`insetShadow`
+`perspective`
+`defaults`
+
+</details>
 
 ## License
 
